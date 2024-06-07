@@ -1,7 +1,6 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
-  Button,
   Card,
   Col,
   Container,
@@ -17,7 +16,6 @@ import Avatar10 from "../../../assets/images/users/avatar-10.jpg";
 import JobProfile2 from "../../../assets/images/job-profile2.png";
 
 const Home = () => {
-
   return (
     <React.Fragment>
       <section className="section job-hero-section bg-light pb-0" id="hero">
@@ -35,7 +33,7 @@ const Home = () => {
                 </p>
                 <Form action="#" className="job-panel-filter">
                   <Row className="g-md-0 g-2">
-                    <Col md={4}>
+                    <Col className="col-md-4">
                       <div>
                         <Input
                           type="search"
@@ -45,29 +43,26 @@ const Home = () => {
                         />
                       </div>
                     </Col>
-                    <Col md={4}>
+                    <Col className="col-md-4">
                       <div>
-                        <div>
-                          <select className="form-control" data-choices>
-                            <option value="">Select job type</option>
-                            <option value="Full Time">Full Time</option>
-                            <option value="Part Time">Part Time</option>
-                            <option value="Freelance">Freelance</option>
-                            <option value="Internship">Internship</option>
-                          </select>
-                        </div>
+                        <select className="form-control" data-choices>
+                          <option value="">Select job type</option>
+                          <option value="Full Time">Full Time</option>
+                          <option value="Part Time">Part Time</option>
+                          <option value="Freelance">Freelance</option>
+                          <option value="Intership">Intership</option>
+                        </select>
                       </div>
                     </Col>
-                    <Col md={4}>
+                    <Col className="col-md-4">
                       <div className="h-100">
-                        <Button
-                          color="primary"
-                          className="btn submit-btn w-100 h-100"
+                        <button
+                          className="btn btn-primary submit-btn w-100 h-100"
                           type="submit"
                         >
                           <i className="ri-search-2-line align-bottom me-1"></i>{" "}
                           Find Job
-                        </Button>
+                        </button>
                       </div>
                     </Col>
                   </Row>
@@ -79,22 +74,22 @@ const Home = () => {
                     Trending Keywords:
                   </li>
                   <li className="list-inline-item">
-                    <Link to="#!" className="link-primary">
+                    <Link to="#!">
                       Design,
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link to="#!" className="link-primary">
+                    <Link to="#!">
                       Development,
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link to="#!" className="link-primary">
+                    <Link to="#!">
                       Manager,
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link to="#!" className="link-primary">
+                    <Link to="#!">
                       Senior
                     </Link>
                   </li>
@@ -103,7 +98,7 @@ const Home = () => {
             </Col>
             <Col lg={4}>
               <div className="position-relative home-img text-center mt-5 mt-lg-0">
-                <Card className="p-3 rounded shadow-lg inquiry-box">
+                <Card className="card-bg-fill p-3 rounded shadow-lg inquiry-box">
                   <div className="d-flex align-items-center">
                     <div className="avatar-sm flex-shrink-0 me-3">
                       <div className="avatar-title bg-warning-subtle text-warning rounded fs-18">
@@ -116,7 +111,7 @@ const Home = () => {
                   </div>
                 </Card>
 
-                <Card className="p-3 rounded shadow-lg application-box">
+                <Card className="card-bg-fill p-3 rounded shadow-lg application-box">
                   <h5 className="fs-15 lh-base mb-3">Applications</h5>
                   <div className="avatar-group">
                     <Link to="#!" className="avatar-group-item" id="brent">
@@ -153,7 +148,7 @@ const Home = () => {
                         />
                       </div>
                     </Link>
-                    <NavLink
+                    <Link
                       to="#!"
                       className="avatar-group-item"
                       data-bs-toggle="tooltip"
@@ -165,8 +160,8 @@ const Home = () => {
                           Z
                         </div>
                       </div>
-                    </NavLink>
-                    <NavLink
+                    </Link>
+                    <Link
                       to="#!"
                       className="avatar-group-item"
                       id="gonzalez"
@@ -181,7 +176,7 @@ const Home = () => {
                           className="rounded-circle img-fluid"
                         />
                       </div>
-                    </NavLink>
+                    </Link>
                     <Link to="#!" className="avatar-group-item" id="more">
                       <UncontrolledTooltip placement="top" target="more">
                         More Appliances

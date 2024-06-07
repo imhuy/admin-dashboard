@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import DualListBox from "react-dual-listbox";
 import "react-dual-listbox/lib/react-dual-listbox.css";
 import { Col, Row } from 'reactstrap';
-
-
-
 const options = [
     { value: "apple", label: "Apple" },
     { value: "banana", label: "Banana" },
@@ -19,8 +16,6 @@ const options = [
     { value: "orange", label: "Orange" },
     { value: "papaya", label: "Papaya" },
   ];
-  
-
   const Optgroup = [
     {
       label: "Cars",
@@ -44,7 +39,6 @@ const options = [
       ],
     },
   ];
-
   const OptgroupFilter = [
     {
       label: "Skoda",
@@ -64,7 +58,7 @@ const options = [
       ],
     },
   ];
-const MultiSelect = () => {
+const DualListbox = () => {
     const [selected, setSelected] = useState(["apple", "blueberry", "cherry"]);
     const [selectedOptGroup, setSelectedOptGroup] = useState([
       "hyundai",
@@ -115,7 +109,6 @@ const MultiSelect = () => {
                 if (filterInput === "") {
                   return true;
                 }
-
                 return new RegExp(filterInput, "i").test(Optgroup.label);
               }}
               filterPlaceholder="Search..."
@@ -152,11 +145,10 @@ const MultiSelect = () => {
             <p className="text-muted">Example of Dual Listbox Option Groups</p>
             <DualListBox
               canFilter
-              filterCallback={(Optgroup : any, filterInput : any) => {
+              filterCallback={(Optgroup : any, filterInput: any) => {
                 if (filterInput === "") {
                   return true;
                 }
-
                 return new RegExp(filterInput, "i").test(Optgroup.label);
               }}
               filterPlaceholder="Search..."
@@ -188,5 +180,4 @@ const MultiSelect = () => {
     </React.Fragment>
   )
 }
-
-export default MultiSelect
+export default DualListbox

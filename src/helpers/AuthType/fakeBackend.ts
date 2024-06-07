@@ -8,6 +8,7 @@ import {
   events,
   defaultevent,
   messages,
+  chatMessage,
   projectList,
   sellersList,
   transactions,
@@ -72,17 +73,17 @@ import {
   todoTaskList,
   todoCollapse,
   apiKey,
-  productsData,
-  orders,
+  applicationsStatisticData,
   customerList,
-  crmcontacts,
-  companies,
-  leads,
-  allTask,
+  orders,
+  productsData,
   ticketsTable,
+  allTask,
   jobCandidates,
   jobCategories,
-  chatMessage,
+  leads,
+  companies,
+  crmcontacts,
   tasklist
 } from "../../common/data";
 
@@ -100,7 +101,7 @@ const fakeBackend = () => {
   // This sets the mock adapter on the default instance
   const mock = new MockAdapter(axios, { onNoMatch: "passthrough" });
 
-  mock.onPost("/post-jwt-register").reply((config : any) => {
+  mock.onPost("/post-jwt-register").reply((config: any) => {
     const user = JSON.parse(config["data"]);
     users.push(user);
 
@@ -111,7 +112,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onPost("/post-jwt-login").reply((config : any) => {
+  mock.onPost("/post-jwt-login").reply((config: any) => {
     const user = JSON.parse(config["data"]);
     const validUser = users.filter(
       usr => usr.email === user.email && usr.password === user.password
@@ -138,7 +139,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onPost("/post-jwt-profile").reply((config : any) => {
+  mock.onPost("/post-jwt-profile").reply((config: any) => {
     const user = JSON.parse(config["data"]);
 
     const one = config.headers;
@@ -175,7 +176,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onPost("/social-login").reply((config : any) => {
+  mock.onPost("/social-login").reply((config: any) => {
     const user = JSON.parse(config["data"]);
     return new Promise((resolve, reject) => {
 
@@ -233,8 +234,9 @@ const fakeBackend = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (defaultevent) {
+          const data = [...defaultevent, ...events];
           // Passing fake JSON data as response
-          resolve([200, defaultevent]);
+          resolve([200, data]);
         } else {
           reject([400, "Cannot get upcomming events"]);
         }
@@ -254,206 +256,6 @@ const fakeBackend = () => {
       });
     });
   });
-
-      // Ecommerce
-
-  // Product
-  mock.onGet(url.GET_PRODUCTS).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (productsData) {
-          // Passing fake JSON data as response
-          resolve([200, productsData]);
-        } else {
-          reject([400, "Cannot get order Data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_PRODUCT).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot add event"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_PRODUCT).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_PRODUCT).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  });
-
-
-  mock.onDelete(url.DELETE_PRODUCT).reply((config: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          resolve([200, config.headers.data]);
-        } else {
-          reject([400, "Cannot delete event"]);
-        }
-      });
-    });
-  });
-
-  //ecommerce / orders
-  mock.onGet(url.GET_ORDERS).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (orders) {
-          // Passing fake JSON data as response
-          resolve([200, orders]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_ORDER).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_ORDER).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_ORDER).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_ORDER).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  });
-
-  // Ecommerce / Customer
-  mock.onGet(url.GET_CUSTOMERS).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (customerList) {
-          // Passing fake JSON data as response
-          resolve([200, customerList]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_CUSTOMER).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_CUSTOMER).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_CUSTOMER).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_CUSTOMER).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  }); 
 
   // crm companies
 
@@ -510,7 +312,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onGet(new RegExp(`${url.GET_MESSAGES}/*`)).reply((config : any) => {
+  mock.onGet(new RegExp(`${url.GET_MESSAGES}/*`)).reply((config: any) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (messages) {
@@ -528,7 +330,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onPost(url.ADD_MESSAGE).reply((config : any) => {
+  mock.onPost(url.ADD_MESSAGE).reply((config: any) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (config.data) {
@@ -541,7 +343,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onDelete(url.DELETE_MESSAGE).reply((config : any) => {
+  mock.onDelete(url.DELETE_MESSAGE).reply((config: any) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (config && config.headers) {
@@ -554,501 +356,6 @@ const fakeBackend = () => {
     });
   });
 
-   // Crm Contact
-   mock.onGet(url.GET_CONTACTS).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (crmcontacts) {
-          // Passing fake JSON data as response
-          resolve([200, crmcontacts]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_CONTACT).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_CONTACT).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_CONTACT).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_CONTACT).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  });
-
-   // Crm Companies
-   mock.onGet(url.GET_COMPANIES).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (companies) {
-          // Passing fake JSON data as response
-          resolve([200, companies]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_COMPANIES).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_COMPANIES).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_COMPANIES).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_COMPANIES).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  });
-
-   // Crm Leads
-   mock.onGet(url.GET_LEADS).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (leads) {
-          // Passing fake JSON data as response
-          resolve([200, leads]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_LEAD).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_LEAD).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_LEAD).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_LEAD).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  });
-
-  
-
-  //  Tasks List
-  mock.onGet(url.GET_TASK_LIST).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (allTask) {
-          // Passing fake JSON data as response
-          resolve([200, allTask]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_TASK).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_TASK).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_TASK).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_TASK).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  }); 
-
-    // Kanban Board
-    mock.onGet(url.GET_TASKS).reply(() => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (tasklist) {
-            // Passing fake JSON data as response
-            resolve([200, tasklist]);
-          } else {
-            reject([400, "Cannot get tasks"]);
-          }
-        });
-      });
-    });
-  
-    mock.onPost(url.ADD_TASKS).reply(user => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (user && user.data) {
-            // Passing fake JSON data as response
-            resolve([200, user.data]);
-          } else {
-            reject([400, "Cannot add user"]);
-          }
-        });
-      });
-    });
-  
-    mock.onPut(url.UPDATE_TASKS).reply((user) => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (user && user.data) {
-            // Passing fake JSON data as response
-            resolve([200, user.data]);
-          } else {
-            reject([400, "Cannot update user"]);
-          }
-        });
-      });
-    });
-  
-    mock.onDelete(url.DELETE_TASKS).reply(config => {
-      console.log("config", config);
-  
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (config && config.headers) {
-            // Passing fake JSON data as response
-            resolve([200, config.headers.card]);
-          } else {
-            reject([400, "Cannot delete users"]);
-          }
-        });
-      });
-    });
-
-  // Support Ticket
-
-  mock.onGet(url.GET_TICKETS_LIST).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (ticketsTable) {
-          // Passing fake JSON data as response
-          resolve([200, ticketsTable]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_TICKET).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_TICKET).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_TICKET).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPatch(url.UPDATE_TICKET).reply((event: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (event && event.data) {
-          // Passing fake JSON data as response
-          resolve([200, event.data]);
-        } else {
-          reject([400, "Cannot update event"]);
-        }
-      });
-    });
-  }); 
-
-   // candidate list
-   mock.onGet(url.GET_CANDIDATE).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (jobCandidates) {
-          // Passing fake JSON data as response
-          resolve([200, jobCandidates]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onDelete(url.DELETE_CANDIDATE).reply((config) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (config && config.headers) {
-          // Passing fake JSON data as response
-          resolve([200, config.headers.file]);
-        } else {
-          reject([400, "Cannot delete file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_NEW_CANDIDATE).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPut(url.UPDATE_CANDIDATE).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot update file data"]);
-        }
-      });
-    });
-  });
-
-  // Grid
-
-  mock.onGet(url.GET_CANDIDATE_GRID).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (jobCandidates) {
-          // Passing fake JSON data as response
-          resolve([200, jobCandidates]);
-        } else {
-          reject([400, "Cannot get file data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_CANDIDATE_GRID).reply((file) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (file && file.data) {
-          // Passing fake JSON data as response
-          resolve([200, file.data]);
-        } else {
-          reject([400, "Cannot add file data"]);
-        }
-      });
-    });
-  });
-
-  // category
-  mock.onGet(url.GET_CATEGORY_LIST).reply(() => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (jobCategories) {
-          // Passing fake JSON data as response
-          resolve([200, jobCategories]);
-        } else {
-          reject([400, "Cannot get Application Data"]);
-        }
-      });
-    });
-  });
-
-  mock.onPost(url.ADD_CATEGORY_LIST).reply((project) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (project && project.data) {
-          // Passing fake JSON data as response
-          resolve([200, project.data]);
-        } else {
-          reject([400, "Cannot add Project data"]);
-        }
-      });
-    });
-  });
 
   // Project > List
   mock.onGet(url.GET_PROJECT_LIST).reply(() => {
@@ -1078,7 +385,7 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onDelete(url.DELETE_MAIL).reply((config : any) => {
+  mock.onDelete(url.DELETE_MAIL).reply((config: any) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (config && config.headers) {
@@ -1090,6 +397,7 @@ const fakeBackend = () => {
       });
     });
   });
+  
 
   mock.onDelete(url.UNREAD_MAIL).reply(config => {
     return new Promise((resolve, reject) => {
@@ -1615,6 +923,26 @@ const fakeBackend = () => {
     });
   });
 
+  // Dashboard Job
+  // Applications Statistic
+  mock.onGet(new RegExp(`${url.GET_APPLICTION_DATA}/*`)).reply((config: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (applicationsStatisticData) {
+          // Passing fake JSON data as response
+          const { params } = config;
+          const filteredMessages: any = applicationsStatisticData.filter(
+            msg => msg.id === params.roomId
+          );
+          const data = filteredMessages.map((item: any) => item[params.roomId]);
+          resolve([200, data[0]]);
+        } else {
+          reject([400, "Cannot get messages"]);
+        }
+      });
+    });
+  });
+
   // Dashboard Crypto
   // Portfolio
   mock.onGet(url.GET_BTCPORTFOLIO_DATA).reply(() => {
@@ -1974,6 +1302,698 @@ const fakeBackend = () => {
     });
   });
 
+
+      // Ecommerce
+
+  // Product
+  mock.onGet(url.GET_PRODUCTS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (productsData) {
+          // Passing fake JSON data as response
+          resolve([200, productsData]);
+        } else {
+          reject([400, "Cannot get order Data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_PRODUCT).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot add event"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_PRODUCT).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_PRODUCT).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  });
+
+
+  mock.onDelete(url.DELETE_PRODUCT).reply((config: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          resolve([200, config.headers.data]);
+        } else {
+          reject([400, "Cannot delete event"]);
+        }
+      });
+    });
+  });
+
+  //ecommerce / orders
+  mock.onGet(url.GET_ORDERS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (orders) {
+          // Passing fake JSON data as response
+          resolve([200, orders]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_ORDER).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_ORDER).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_ORDER).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_ORDER).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  });
+
+  // Ecommerce / Customer
+  mock.onGet(url.GET_CUSTOMERS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (customerList) {
+          // Passing fake JSON data as response
+          resolve([200, customerList]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_CUSTOMER).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_CUSTOMER).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_CUSTOMER).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_CUSTOMER).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  }); 
+  //  Tasks List
+  mock.onGet(url.GET_TASK_LIST).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (allTask) {
+          // Passing fake JSON data as response
+          resolve([200, allTask]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_TASK).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_TASK).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_TASK).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_TASK).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  }); 
+
+    // Kanban Board
+    mock.onGet(url.GET_TASKS).reply(() => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (tasklist) {
+            // Passing fake JSON data as response
+            resolve([200, tasklist]);
+          } else {
+            reject([400, "Cannot get tasks"]);
+          }
+        });
+      });
+    });
+  
+    mock.onPost(url.ADD_TASKS).reply(user => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (user && user.data) {
+            // Passing fake JSON data as response
+            resolve([200, user.data]);
+          } else {
+            reject([400, "Cannot add user"]);
+          }
+        });
+      });
+    });
+  
+    mock.onPut(url.UPDATE_TASKS).reply((user) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (user && user.data) {
+            // Passing fake JSON data as response
+            resolve([200, user.data]);
+          } else {
+            reject([400, "Cannot update user"]);
+          }
+        });
+      });
+    });
+  
+    mock.onDelete(url.DELETE_TASKS).reply(config => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (config && config.headers) {
+            // Passing fake JSON data as response
+            resolve([200, config.headers.card]);
+          } else {
+            reject([400, "Cannot delete users"]);
+          }
+        });
+      });
+    });
+
+  // Support Ticket
+
+  mock.onGet(url.GET_TICKETS_LIST).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (ticketsTable) {
+          // Passing fake JSON data as response
+          resolve([200, ticketsTable]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_TICKET).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_TICKET).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_TICKET).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_TICKET).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  }); 
+
+   // candidate list
+   mock.onGet(url.GET_CANDIDATE).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (jobCandidates) {
+          // Passing fake JSON data as response
+          resolve([200, jobCandidates]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_CANDIDATE).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_CANDIDATE).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_CANDIDATE).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  // Grid
+
+  mock.onGet(url.GET_CANDIDATE_GRID).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (jobCandidates) {
+          // Passing fake JSON data as response
+          resolve([200, jobCandidates]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_CANDIDATE_GRID).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  // category
+  mock.onGet(url.GET_CATEGORY_LIST).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (jobCategories) {
+          // Passing fake JSON data as response
+          resolve([200, jobCategories]);
+        } else {
+          reject([400, "Cannot get Application Data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_CATEGORY_LIST).reply((project) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (project && project.data) {
+          // Passing fake JSON data as response
+          resolve([200, project.data]);
+        } else {
+          reject([400, "Cannot add Project data"]);
+        }
+      });
+    });
+  });
+
+   // Crm Contact
+   mock.onGet(url.GET_CONTACTS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (crmcontacts) {
+          // Passing fake JSON data as response
+          resolve([200, crmcontacts]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_CONTACT).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_CONTACT).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_CONTACT).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_CONTACT).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  });
+
+   // Crm Companies
+   mock.onGet(url.GET_COMPANIES).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (companies) {
+          // Passing fake JSON data as response
+          resolve([200, companies]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_COMPANIES).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_COMPANIES).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_COMPANIES).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_COMPANIES).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  });
+
+   // Crm Leads
+   mock.onGet(url.GET_LEADS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (leads) {
+          // Passing fake JSON data as response
+          resolve([200, leads]);
+        } else {
+          reject([400, "Cannot get file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onDelete(url.DELETE_LEAD).reply((config) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (config && config.headers) {
+          // Passing fake JSON data as response
+          resolve([200, config.headers.file]);
+        } else {
+          reject([400, "Cannot delete file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPost(url.ADD_NEW_LEAD).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot add file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPut(url.UPDATE_LEAD).reply((file) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (file && file.data) {
+          // Passing fake JSON data as response
+          resolve([200, file.data]);
+        } else {
+          reject([400, "Cannot update file data"]);
+        }
+      });
+    });
+  });
+
+  mock.onPatch(url.UPDATE_LEAD).reply((event: any) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (event && event.data) {
+          // Passing fake JSON data as response
+          resolve([200, event.data]);
+        } else {
+          reject([400, "Cannot update event"]);
+        }
+      });
+    });
+  });
+
   // File Manager
   // Folder
   mock.onGet(url.GET_FOLDERS).reply(() => {
@@ -2213,7 +2233,6 @@ const fakeBackend = () => {
     });
   });
 
-
    // Invoice
    mock.onDelete(url.DELETE_INVOICE).reply((config: any) => {
     return new Promise((resolve, reject) => {
@@ -2226,7 +2245,6 @@ const fakeBackend = () => {
       });
     });
   });
-
 
   //API Key
   mock.onGet(url.GET_API_KEY).reply(() => {

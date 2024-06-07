@@ -1,52 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Scrollspy from "react-scrollspy";
 import {
   Collapse,
   Container,
   NavbarToggler,
-  NavLink as TabLink,
+  NavLink,
 } from "reactstrap";
 import LogoDark from "../../../assets/images/logo-dark.png";
 import LogoLight from "../../../assets/images/logo-light.png";
 const Navbar = () => {
   const [isOpenMenu, setisOpenMenu] = useState<boolean>(false);
-  const [navClass, setnavClass] = useState<any>("");
+  const [navClass, setnavClass] = useState("");
 
   const toggle = () => setisOpenMenu(!isOpenMenu);
 
   useEffect(() => {
     window.addEventListener("scroll", scrollNavigation, true);
   });
-
-  const [activeLink, setActiveLink] = useState<any>();
-
-  useEffect(() => {
-    const activation = (event : any) => {
-      const target = event.target;
-      if (target) {
-        target.classList.add("active");
-        setActiveLink(target);
-        if (activeLink && activeLink !== target) {
-          activeLink.classList.remove("active");
-        }
-      }
-    };
-    const defaultLink = document.querySelector(".navbar li a.active");
-    if (defaultLink) {
-      defaultLink?.classList.add("active");
-      setActiveLink(defaultLink);
-    }
-    const links = document.querySelectorAll(".navbar a");
-    links.forEach((link) => {
-      link.addEventListener("click", activation);
-    });
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener("click", activation);
-      });
-    };
-  }, [activeLink]);
 
   const scrollNavigation = () => {
     var scrollup = document.documentElement.scrollTop;
@@ -56,6 +27,35 @@ const Navbar = () => {
       setnavClass("");
     }
   };
+
+  const [activeLink, setActiveLink] = useState<any>();
+  useEffect(() => {
+    const activation = (event: any) => {
+      const target: any = event.target;
+      if (target) {
+        target.classList.add('active');
+        setActiveLink(target);
+        if (activeLink && activeLink !== target) {
+          activeLink.classList.remove('active');
+        }
+      }
+    };
+    const defaultLink: any = document.querySelector('.navbar li.a.active');
+    if (defaultLink) {
+      defaultLink?.classList.add("active")
+      setActiveLink(defaultLink)
+    }
+    const links = document.querySelectorAll('.navbar a');
+    links.forEach((link) => {
+      link.addEventListener('click', activation);
+    });
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener('click', activation);
+      });
+    };
+  }, [activeLink]);
+
   return (
     <React.Fragment>
       <nav
@@ -66,7 +66,7 @@ const Navbar = () => {
         id="navbar"
       >
         <Container fluid className="custom-container">
-          <NavLink className="navbar-brand" to="/index">
+          <Link className="navbar-brand" to="/index">
             <img
               src={LogoDark}
               className="card-logo card-logo-dark"
@@ -79,7 +79,7 @@ const Navbar = () => {
               alt="logo light"
               height="17"
             />
-          </NavLink>
+          </Link>
           <NavbarToggler
             onClick={toggle}
             className="navbar-toggler py-0 fs-20 text-body"
@@ -93,7 +93,7 @@ const Navbar = () => {
             <i className="mdi mdi-menu"></i>
           </NavbarToggler>
 
-          <Collapse className="navbar-collapse" isOpen={isOpenMenu} id="navbarSupportedContent">
+          <Collapse className="navbar-collapse" id="navbarSupportedContent" isOpen={isOpenMenu}>
             <Scrollspy
               offset={-18}
               items={[
@@ -109,42 +109,42 @@ const Navbar = () => {
               id="navbar-example"
             >
               <li className="nav-item">
-                <TabLink className="nav-link fs-14 active" href="#hero">
+                <NavLink className="fs-16" href="#hero">
                   Home
-                </TabLink>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <TabLink className="nav-link fs-14" href="#process">
+                <NavLink className="fs-16" href="#process">
                   Process
-                </TabLink>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <TabLink className="nav-link fs-14" href="#categories">
+                <NavLink className="fs-16" href="#categories">
                   Categories
-                </TabLink>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <TabLink className="nav-link fs-14" href="#findJob">
+                <NavLink className="fs-16" href="#findJob">
                   Find Jobs
-                </TabLink>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <TabLink className="nav-link fs-14" href="#candidates">
+                <NavLink className="fs-16" href="#candidates">
                   Candidates
-                </TabLink>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <TabLink className="nav-link fs-14" href="#blog">
+                <NavLink className="fs-16" href="#blog">
                   Blog
-                </TabLink>
+                </NavLink>
               </li>
             </Scrollspy>
 
             <div>
-              <NavLink to="/auth-signin-basic" className="btn btn-soft-primary">
+              <Link to="/auth-signin-basic" className="btn btn-soft-primary">
                 <i className="ri-user-3-line align-bottom me-1"></i> Login &
                 Register
-              </NavLink>
+              </Link>
             </div>
           </Collapse>
         </Container>

@@ -9,11 +9,11 @@ const Categories = () => {
       <section className="section bg-light" id="categories">
         <Container>
           <Row className="justify-content-center">
-            <Col lg={7}>
+            <Col lg={7} >
               <div className="text-center mb-5">
-                <h1 className="mb-3 fw-semibold text-capitalize lh-base">
+                <h1 className="mb-3 ff-secondary fw-bold text-capitalize lh-base">
                   High demand jobs{" "}
-                  <span className="text-primary">Categories</span> featured
+                  <span className="text-primary">Categories</span> fratured
                 </h1>
                 <p className="text-muted">
                   Post a job to tell us about your project. We'll quickly match
@@ -24,7 +24,7 @@ const Categories = () => {
           </Row>
 
           <Row className="justify-content-center">
-            {categories.map((item : any, key : any) => (
+            {categories.map((item, key) => (
               <Col lg={3} md={6} key={key}>
                 <Card className="shadow-none text-center py-3">
                   <CardBody className="py-4">
@@ -37,7 +37,7 @@ const Categories = () => {
                     <Link to="#!" className="to-link">
                       <h5 className="fs-17 pt-1">{item.lable}</h5>
                     </Link>
-                    <p className="mb-0 text-muted">{item.job}</p>
+                    <p className="mb-0 text-muted">{item.jobs}</p>
                   </CardBody>
                 </Card>
               </Col>
@@ -45,19 +45,19 @@ const Categories = () => {
           </Row>
         </Container>
       </section>
-      <section className="py-5 bg-info position-relative">
+      <section className="py-5 bg-primary position-relative">
         <div className="bg-overlay bg-overlay-pattern opacity-50"></div>
         <Container>
           <Row className="align-items-center gy-4">
             <Col className="col-sm">
               <div>
-                <h4 className="text-white fw-bold mb-2">Ready to Started?</h4>
+                <h4 className="text-white mb-2">Ready to Started?</h4>
                 <p className="text-white-50 mb-0">
                   Create new account and refer your friend
                 </p>
               </div>
             </Col>
-            <Col sm="auto">
+            <Col className="col-sm-auto">
               <div>
                 <Link to="#!" className="btn bg-gradient btn-danger">
                   Create Free Account
