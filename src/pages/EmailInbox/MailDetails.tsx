@@ -13,19 +13,19 @@ import Rating from "react-rating";
 import { createSelector } from 'reselect';
 
 const MailDetails = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const selectmaildetailData = createSelector(
-        (state : any) => state.Mailbox.mailDetails,
-        (mailDetails) => mailDetails
+        (state:any) => state.Mailbox,
+        (mailDetails) => mailDetails.mailDetails
       );
     // Inside your component
     const mailDetails = useSelector(selectmaildetailData);
 
+
     useEffect(() => {
         dispatch(getMailDetails());
     }, [dispatch]);
-
 
     function sidebar() {
         var element = document.getElementsByTagName('body')[0];
@@ -36,7 +36,7 @@ const MailDetails = () => {
             <SimpleBar className="message-list-content mx-n4 px-4 message-list-scroll">
                 <ul className="message-list">
                     {
-                        mailDetails.map((item : any, key : any) => (
+                        mailDetails.map((item:any, key:any) => (
                             <li className={item.unread ? "unread" : ''} key={key}>
                                 <div className="col-mail col-mail-1">
                                     <div className="form-check checkbox-wrapper-mail fs-14">
@@ -44,11 +44,11 @@ const MailDetails = () => {
                                         <label className="form-check-label" htmlFor={item.forId}></label>
                                     </div>
                                     <button type="button" className="btn avatar-xs p-0 favourite-btn fs-15 active">
-                                        <Rating
+                                        {/* <Rating
                                             stop={1}
                                             emptySymbol="ri-star-fill text-muted"
                                             fullSymbol="ri-star-fill text-warning "
-                                        />
+                                        /> */}
                                     </button>
                                     <Link to="#" className="title">{item.name}</Link>
                                 </div>
@@ -60,7 +60,7 @@ const MailDetails = () => {
                                     <div className="date">{item.date}</div>
                                 </div>
                             </li>
-                        ))}
+                    ))}
                 </ul>
             </SimpleBar>
         </React.Fragment>

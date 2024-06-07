@@ -25,7 +25,7 @@ const ecomWidgets = [
         badge: "ri-arrow-right-up-line",
         badgeClass: "success",
         percentage: "+16.24",
-        counter: "559.25",
+        counter: 560,
         link: "View net earnings",
         bgcolor: "success",
         icon: "bx bx-dollar-circle",
@@ -40,7 +40,7 @@ const ecomWidgets = [
         badge: "ri-arrow-right-down-line",
         badgeClass: "danger",
         percentage: "-3.57",
-        counter: "36894",
+        counter: 36894,
         link: "View all orders",
         bgcolor: "info",
         icon: "bx bx-shopping-bag",
@@ -56,7 +56,7 @@ const ecomWidgets = [
         badge: "ri-arrow-right-up-line",
         badgeClass: "success",
         percentage: "+29.08",
-        counter: "183.35",
+        counter: 183.35,
         link: "See details",
         bgcolor: "warning",
         icon: "bx bx-user-circle",
@@ -70,9 +70,9 @@ const ecomWidgets = [
         label: "My Balance",
         badgeClass: "muted",
         percentage: "+0.00",
-        counter: "165.89",
+        counter: 166,
         link: "Withdraw money",
-        bgcolor: "danger",
+        bgcolor: "primary",
         icon: "bx bx-wallet",
         decimals: 2,
         prefix: "$",
@@ -390,4 +390,6 @@ const yearRevenueData = [
     },
 ];
 
-export { ecomWidgets, bestSellingProducts, topSellers, recentOrders, topCategories, allRevenueData, monthRevenueData, halfYearRevenueData, yearRevenueData };
+export {
+    ecomWidgets, bestSellingProducts, topSellers, recentOrders, topCategories, allRevenueData, monthRevenueData, halfYearRevenueData, yearRevenueData
+};

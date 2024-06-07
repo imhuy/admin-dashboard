@@ -1,14 +1,14 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
-const SellerChats = (props : any) => {
+const SellerChats = (props:any) => {
   const series = [
     {
       data: props.data,
     },
   ];
 
-  const options : any = {
+  const options:any = {
     chart: {
       sparkline: {
         enabled: true,
@@ -38,7 +38,7 @@ const SellerChats = (props : any) => {
       },
       y: {
         title: {
-          formatter: function () {
+          formatter: function (seriesName:any) {
             return "";
           },
         },

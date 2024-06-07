@@ -36,7 +36,7 @@ document.title ="Coming Soon | Velzon - React Admin & Dashboard Template";
     return (
         <React.Fragment>            
             <ParticlesAuth>
-                <div className="auth-page-content">
+                <div className="auth-page-content mt-lg-5">
                     <Container>
                         <Row>
                             <Col lg={12}>
@@ -50,7 +50,7 @@ document.title ="Coming Soon | Velzon - React Admin & Dashboard Template";
                                     <div>
                                         <Row className="justify-content-center mt-5">
                                             <Col lg={8}>
-                                                <Countdown date="2025/12/31" renderer={renderer} />
+                                                <Countdown date="2025/01/01" renderer={renderer} />
                                             </Col>
                                         </Row>
 

@@ -1,9 +1,9 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { seriesData1, seriesDataLinear } from "../series";
+import moment from "moment";
 
 import getChartColorsArray from "../../../../Components/Common/ChartsDynamicColor";
-import moment from "moment";
 
 const Basic = ({ dataColors } : any) => {
     var chartCandlestickBasicColors = getChartColorsArray(dataColors);

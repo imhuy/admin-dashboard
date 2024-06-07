@@ -18,7 +18,7 @@ import {
   getCurrentYearSessionData as getCurrentYearSessionDataApi
 } from "../../helpers/fakebackend_helper";
 
-export const getAllData = createAsyncThunk("dashboardAnalytics/getAllData", async (data : any) => {
+export const getAllData = createAsyncThunk("dashboardAnalytics/getAllData", async (data:any) => {
   try {
     var response;
 
@@ -38,7 +38,7 @@ export const getAllData = createAsyncThunk("dashboardAnalytics/getAllData", asyn
   }
 });
 
-export const getAudiencesMetricsChartsData = createAsyncThunk("dashboardAnalytics/getAudiencesMetricsChartsData", async (data : any) => {
+export const getAudiencesMetricsChartsData = createAsyncThunk("dashboardAnalytics/getAudiencesMetricsChartsData", async (data:any) => {
   try {
     var response;
 
@@ -61,7 +61,7 @@ export const getAudiencesMetricsChartsData = createAsyncThunk("dashboardAnalytic
   }
 });
 
-export const getUserDeviceChartsData = createAsyncThunk("dashboardAnalytics/getUserDeviceChartsData", async (data : any) => {
+export const getUserDeviceChartsData = createAsyncThunk("dashboardAnalytics/getUserDeviceChartsData", async (data:any) => {
   try {
     var response;
     if (data === "today") {
@@ -83,7 +83,7 @@ export const getUserDeviceChartsData = createAsyncThunk("dashboardAnalytics/getU
   }
 });
 
-export const getAudiencesSessionsChartsData = createAsyncThunk("dashboardAnalytics/getAudiencesSessionsChartsData", async (data : any) => {
+export const getAudiencesSessionsChartsData = createAsyncThunk("dashboardAnalytics/getAudiencesSessionsChartsData", async (data:any) => {
   try {
     var response;
     if (data === "today") {

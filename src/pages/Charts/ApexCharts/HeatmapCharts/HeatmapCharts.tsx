@@ -21,7 +21,7 @@ function generateData(count : any, yrange : any) {
 
 const BasicHeatmap = ({ dataColors } : any) => {
     var chartHeatMapBasicColors = getChartColorsArray(dataColors);
-    generateData("","");
+    generateData('','');
     const series = [{
         name: 'Metric1',
         data: generateData(18, {

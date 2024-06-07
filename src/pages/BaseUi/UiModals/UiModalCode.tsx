@@ -66,7 +66,7 @@ const [modal_standard, setmodal_standard] = useState<boolean>(false);
 const DefaultModalExample = () => (
     <PrismCode
         code={defaultModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -98,7 +98,7 @@ const [modal_center, setmodal_center] = useState<boolean>(false);
 const CenteredModalExample = () => (
     <PrismCode
         code={centeredModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -194,7 +194,7 @@ const [modal_grid, setmodal_grid] = useState<boolean>(false);
 const GridsModalExample = () => (
     <PrismCode
         code={gridsModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -228,12 +228,7 @@ const [modal_backdrop, setmodal_backdrop] = useState<boolean>(false);
             }} aria-label="Close"></Button>
     </ModalHeader>
     <ModalBody className="text-center p-5">
-        <lord-icon
-            src="https://cdn.lordicon.com/lupuorrc.json"
-            trigger="loop"
-            colors="primary:#121331,secondary:#08a88a"
-            style={{ width: "120px", height: "120px" }}>
-        </lord-icon>
+        <i className="bx bx-party display-4 text-success"></i>
 
         <div className="mt-4">
             <h4 className="mb-3">You've made it!</h4>
@@ -250,7 +245,7 @@ const [modal_backdrop, setmodal_backdrop] = useState<boolean>(false);
 const StaticBackdropModalExample = () => (
     <PrismCode
         code={staticBackdropModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -299,12 +294,7 @@ const [modal_togFirst, setmodal_togFirst] = useState<boolean>(false);
         </Button>
     </ModalHeader>
     <ModalBody className="text-center p-5">
-        <lord-icon
-            src="https://cdn.lordicon.com/tdrtiskw.json"
-            trigger="loop"
-            colors="primary:#f7b84b,secondary:#405189"
-            style={{ width: "130px", height: "130px" }}>
-        </lord-icon>
+        <i className="ri-error-warning-line display-2 text-warning"></i>
         <div className="mt-4 pt-4">
             <h4>Uh oh, something went wrong!</h4>
             <p className="text-muted"> The transfer was not successfully received by us. the email of the recipient wasn't correct.</p>
@@ -334,12 +324,7 @@ const [modal_togFirst, setmodal_togFirst] = useState<boolean>(false);
         ></Button>
     </ModalHeader>
     <ModalBody className="text-center p-5">
-        <lord-icon
-            src="https://cdn.lordicon.com/zpxybbhl.json"
-            trigger="loop"
-            colors="primary:#405189,secondary:#0ab39c"
-            style={{ width: "150px", height: "150px" }}>
-        </lord-icon>
+        <i className="ri-chat-smile-2-line display-2 text-success"></i>
         <div className="mt-4 pt-3">
             <h4 className="mb-3">Follow-Up Email</h4>
             <p className="text-muted mb-4">Hide this modal and show the first with the button below Automatically Send your invitees a follow -Up email.</p>
@@ -357,7 +342,7 @@ const [modal_togFirst, setmodal_togFirst] = useState<boolean>(false);
 const TogglebetweenExample = () => (
     <PrismCode
         code={togglebetweenCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -431,7 +416,7 @@ const [modal_tooltip, setmodal_tooltip] = useState<boolean>(false);
 const TooltipModalExample = () => (
     <PrismCode
         code={tooltipModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -464,7 +449,7 @@ const [modal_scroll, setmodal_scroll] = useState<boolean>(false);
 const ScrollableModalExample = () => (
     <PrismCode
         code={scrollableModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -524,7 +509,7 @@ const varyingModalCode =
 const VaryingModalExample = () => (
     <PrismCode
         code={varyingModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -628,7 +613,7 @@ const [modal_small, setmodal_small] = useState<boolean>(false);
 const OptionalModalExample = () => (
     <PrismCode
         code={optionalModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -722,7 +707,7 @@ const [modal_fullscreen_xxl, setmodal_fullscreen_xxl] = useState<boolean>(false)
 const FullscreenResponsiveExample = () => (
     <PrismCode
         code={fullscreenResponsiveCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -792,7 +777,7 @@ const [modal_animationRight, setmodal_animationRight] = useState<boolean>(false)
 const AnimationModalExample = () => (
     <PrismCode
         code={animationModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -852,7 +837,7 @@ const [modal_positionTop, setmodal_positionTop] = useState<boolean>(false);
 const PositionModalExample = () => (
     <PrismCode
         code={positionModalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

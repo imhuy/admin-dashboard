@@ -163,11 +163,34 @@ const Select2 = () => {
 
     ];
 
+    const customStyles = {
+        multiValue: (styles : any, { data } : any) => {
+            return {
+              ...styles,
+              backgroundColor: "#3762ea",
+            };
+          },
+          multiValueLabel: (styles : any, { data } : any) => ({
+            ...styles,
+            backgroundColor : "#405189" ,
+            color: "white",
+          }),
+          multiValueRemove: (styles : any, { data } : any) => ({
+            ...styles,
+            color: "white",
+            backgroundColor : "#405189" ,
+            ':hover': {
+              backgroundColor: "#405189" ,
+              color: 'white',
+            },
+          }),
+    }
+
     return (
         <React.Fragment>
             <div className="page-content">
                 <Container fluid>
-                    <BreadCrumb title="Slect2" pageTitle="Forms" />
+                    <BreadCrumb title="Select2" pageTitle="Forms" />
                     <Row>
                         <Col lg={12}>
                             <Card>
@@ -175,13 +198,13 @@ const Select2 = () => {
                                     <h5 className="card-title mb-0">Basic Select2</h5>
                                 </CardHeader>
                                 <CardBody>
-                                <p className="text-muted">Use <code>js-example-basic-single</code>, <code>js-example-basic-multiple</code>, <code>js-example-data-array</code>, <code>js-example-templating</code>, <code>select-flag-templating</code>,  class to show select2 example.</p>
+                                    <p className="text-muted">Use <code>js-example-basic-single</code>, <code>js-example-basic-multiple</code>, <code>js-example-data-array</code>, <code>js-example-templating</code>, <code>select-flag-templating</code>,  class to show select2 example.</p>
                                     <Row className="g-4">
                                         <Col lg={4}>
                                             <h6 className="fw-semibold">Basic Select</h6>
                                             <Select
                                                 value={sortBy}
-                                                onChange={(sortBy : any) => {
+                                                onChange={(sortBy:any) => {
                                                     setsortBy(sortBy);
                                                 }}
                                                 options={sortbyname}
@@ -196,11 +219,12 @@ const Select2 = () => {
                                             <Select
                                                 value={selectMulti}
                                                 isMulti={true}
-                                                onChange={(sortBy : any) => {
+                                                onChange={(sortBy:any) => {
                                                     setselectMulti(sortBy);
                                                 }}
                                                 options={sortbyMulti}
                                                 classNamePrefix="js-example-basic-multiple mb-0"
+                                                styles={customStyles}
                                             />
                                         </Col>
                                         <Col lg={4}>
@@ -208,7 +232,7 @@ const Select2 = () => {
 
                                             <Select
                                                 value={ajaxSelect}
-                                                onChange={(sortBy : any) => {
+                                                onChange={(sortBy:any) => {
                                                     setajaxSelect(sortBy);
                                                 }}
                                                 options={ajaxSelectOption}
@@ -222,7 +246,7 @@ const Select2 = () => {
 
                                             <Select
                                                 value={temp}
-                                                onChange={(sortBy : any) => {
+                                                onChange={(sortBy:any) => {
                                                     settemp(sortBy);
                                                 }}
                                                 options={tempOption}
@@ -235,7 +259,7 @@ const Select2 = () => {
 
                                             <Select
                                                 value={selTemp}
-                                                onChange={(sortBy : any) => {
+                                                onChange={(sortBy:any) => {
                                                     setselTemp(sortBy);
                                                 }}
                                                 options={selTempOption}
@@ -261,7 +285,7 @@ const Select2 = () => {
 
                                         <Select
                                             value={dissortBy}
-                                            onChange={(sortBy : any) => {
+                                            onChange={(sortBy:any) => {
                                                 setdissortBy(sortBy);
                                             }}
                                             options={dissortbyname}
@@ -272,12 +296,13 @@ const Select2 = () => {
                                         <Select
                                             value={disselectMulti}
                                             isMulti={true}
-                                            onChange={(sortBy : any) => {
+                                            onChange={(sortBy:any) => {
                                                 setdisselectMulti(sortBy);
                                             }}
                                             options={dissortbyMulti}
                                             classNamePrefix="js-example-disabled-multi mb-0"
                                             isDisabled={disable}
+                                            styles={customStyles}
                                         />
                                     </div>
                                     <div className="hstack gap-2 mt-3">

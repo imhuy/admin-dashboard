@@ -51,14 +51,17 @@ export * from "./dashboardProject/thunk";
 // Dashboard NFT
 export * from "./dashboardNFT/thunk";
 
+// Dashboard Job
+export * from "./dashboardJob/thunk";
+
 // Pages > Team
 export * from "./team/thunk";
 
 // File Manager
-export * from "./fileManager/thunk"
+export * from "./fileManager/thunk";
 
 // To do
-export * from "./todos/thunk"
+export * from "./todos/thunk";
 
 // Jobs
 export * from "./jobs/thunk";

@@ -6,23 +6,24 @@ import { getDialChartsData } from '../../slices/thunks';
 import { createSelector } from 'reselect';
 
 const DealType = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const selectDashboardData = createSelector(
-        (state : any) => state.DashboardCRM.dialTypeData,
-        (dialTypeData) => dialTypeData
+        (state:any) => state.DashboardCRM,
+        (dialTypeData) => dialTypeData.dialTypeData
       );
     // Inside your component
     const dialTypeData = useSelector(selectDashboardData);
+
 
     useEffect(() => {
         setchartData(dialTypeData);
     }, [dialTypeData]);
 
     const [seletedMonth, setSeletedMonth] = useState("Monthly");
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         setSeletedMonth(pType);
         dispatch(getDialChartsData(pType));
     };
@@ -53,7 +54,7 @@ const DealType = () => {
                     </div>
                     <div className="card-body pb-0">
                         <div id="deal-type-charts" dir="ltr">
-                            <DealTypeCharts series={chartData} dataColors='["--vz-warning", "--vz-danger", "--vz-success"]' />
+                            <DealTypeCharts series={chartData} dataColors='["--vz-warning", "--vz-danger", "--vz-success"]'/>
                         </div>
                     </div>
                 </Card>

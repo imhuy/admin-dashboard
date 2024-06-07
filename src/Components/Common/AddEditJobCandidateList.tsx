@@ -104,7 +104,7 @@ const AddEditJobCandidateList = ({ show, handleClose, handleShow, editItem }: mo
             <Modal id="showModal" isOpen={show} toggle={handleClose} centered>
                 <ModalHeader className="bg-light p-3" toggle={handleClose}>
                     {/* {!!isEdit ? "Edit Order" : "Add Order"} */}
-                    Add Customer
+                    Add Candidate
                 </ModalHeader>
 
                 <Form className="tablelist-form" onSubmit={(e: any) => {

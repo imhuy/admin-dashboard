@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Row } from 'reactstrap';
 
-const BreadCrumb = ({ title, pageTitle } : any) => {
+interface BreadCrumbProps {
+    title: string;
+    pageTitle : string;
+}
+
+const BreadCrumb = ({ title, pageTitle } : BreadCrumbProps) => {
     return (
         <React.Fragment>
             <Row>

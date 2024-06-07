@@ -509,7 +509,7 @@ const Formlayouts = () => {
                                                 <Col xs={12}>
                                                     <Label className="visually-hidden" htmlFor="inlineFormSelectPref">Preference</Label>
                                                     <select className="form-select" data-choices data-choices-sorting="true" id="inlineFormSelectPref">
-                                                        <option >Choose...</option>
+                                                        <option >Choose... </option>
                                                         <option defaultValue="1">One</option>
                                                         <option defaultValue="2">Two</option>
                                                         <option defaultValue="3">Three</option>

@@ -11,10 +11,10 @@ import {
 import Flatpickr from "react-flatpickr";
 import Select from "react-select";
 
-const CrmFilter = ({ show, onCloseClick } : any) => {
-  const [selectCountry, setselectCountry] = useState(null);
+const CrmFilter = ({ show, onCloseClick }:any) => {
+  const [selectCountry, setselectCountry] = useState<any>(null);
 
-  function handleselectCountry(selectCountry : any) {
+const handleselectCountry = (selectCountry:any) => {
     setselectCountry(selectCountry);
   }
 
@@ -34,15 +34,13 @@ const CrmFilter = ({ show, onCloseClick } : any) => {
         { label: "Spain", value: "Spain" },
         { label: "Syria", value: "Syria" },
         { label: "United Kingdom", value: "United Kingdom" },
-        {
-          label: "United States of America",
-          value: "United States of America",
-        },
+        { label: "United States of America", value: "United States of America"},
       ],
     },
   ];
+
   return (
-    <Offcanvas fade
+    <Offcanvas
       direction="end"
       isOpen={show}
       id="offcanvasExample"
@@ -83,7 +81,7 @@ const CrmFilter = ({ show, onCloseClick } : any) => {
             <Select
               className="mb-0"
               value={selectCountry}
-              onChange={(selectCountry : any) => {
+              onChange={(selectCountry:any) => {
                 handleselectCountry(selectCountry);
               }}
               options={country}

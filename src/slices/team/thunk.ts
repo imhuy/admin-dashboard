@@ -41,9 +41,9 @@ export const updateTeamData = createAsyncThunk("team/updateTeamData", async (pro
     }
 });
 
-export const deleteTeamData = createAsyncThunk("team/deleteTeamData", async (project : any) => {
+export const deleteTeamData = createAsyncThunk("team/deleteTeamData", async (team : any) => {
     try {
-        const response = deleteTeamDataApi(project);
+        const response = deleteTeamDataApi(team);
         toast.success("Team Data Delete Successfully", { autoClose: 3000 });
         return response;
     } catch (error) {

@@ -24,7 +24,7 @@ const htmlHighlightCode =
 const HtmlHighlightExample = () => (
     <PrismCode
         code={htmlHighlightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -47,7 +47,7 @@ const cssHighlightCode =
 const CssHighlightExample = () => (
     <PrismCode
         code={cssHighlightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -68,7 +68,7 @@ const javaScriptCode =
 const JavaScriptExample = () => (
     <PrismCode
         code={javaScriptCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

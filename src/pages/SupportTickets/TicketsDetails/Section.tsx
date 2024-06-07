@@ -36,13 +36,13 @@ const Section = () => {
                                 </div>
                                 <div className="col-md-auto mt-md-0 mt-4">
                                     <div className="hstack gap-1 flex-wrap">
-                                        <button type="button" className="btn avatar-xs mt-n1 p-0 favourite-btn active shadow-none">
+                                        <button type="button" className="btn avatar-xs mt-n1 p-0 favourite-btn active">
                                             <span className="avatar-title bg-transparent fs-15">
                                                 <i className="ri-star-fill"></i>
                                             </span>
                                         </button>
                                         <UncontrolledDropdown >
-                                            <DropdownToggle tag="button" type="button" className="btn py-0 fs-16 text-body shadow-none">
+                                            <DropdownToggle tag="button" type="button" className="btn py-0 fs-16 text-body">
                                                 <i className="ri-share-line"></i>
                                             </DropdownToggle>
 
@@ -52,7 +52,7 @@ const Section = () => {
                                                 <li><DropdownItem><i className="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</DropdownItem></li>
                                             </DropdownMenu>
                                         </UncontrolledDropdown>
-                                        <button type="button" className="btn py-0 fs-16 text-body shadow-none">
+                                        <button type="button" className="btn py-0 fs-16 text-body">
                                             <i className="ri-flag-line"></i>
                                         </button>
                                     </div>

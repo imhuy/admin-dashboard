@@ -20,7 +20,7 @@
         left: auto !important;
         right: 0px !important;
         width: 200px;
-        background-color: transparent;
+        background-color: transparent !important;
 
         .flatpickr-month{
             color: $gray-600 !important;
@@ -138,6 +138,7 @@
         }
     }
 }
+
 [data-layout-width="boxed"] {
     .dash-countdown {
         .countdownlist {
@@ -145,6 +146,7 @@
         }
     }
 }
+
 .marketplace-icon {
     position: absolute;
     float: right;
@@ -191,6 +193,7 @@
     display: inline-block;
     vertical-align: middle;
 }
+
 #portfolio_donut_charts {
     .apexcharts-pie {
         text {

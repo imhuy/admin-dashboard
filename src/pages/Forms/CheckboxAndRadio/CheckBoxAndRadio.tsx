@@ -7,7 +7,7 @@ import BreadCrumb from '../../../Components/Common/BreadCrumb';
 import {
     Checkbox, CustomCheckbox, Radio, CustomRadio, Switches, SwitchColor, CustomSwitches, InlineCheckboxRadio, WithoutLabels,
     RadioToggleButtons, OutlinedStyles
-} from './CheckboxAndRadioCode';
+} from '../CheckboxAndRadio/CheckboxAndRadioCode';
 
 
 const CheckBoxAndRadio = () => {
@@ -17,7 +17,7 @@ const CheckBoxAndRadio = () => {
             <UiContent />
             <div className="page-content">
                 <Container fluid>
-                    <BreadCrumb title="Checkboxs & Radios" pageTitle="Forms" />
+                    <BreadCrumb title="Checkbox & Radio" pageTitle="Forms" />
                     <Row>
                         <Col lg={12} >
                             <Card>

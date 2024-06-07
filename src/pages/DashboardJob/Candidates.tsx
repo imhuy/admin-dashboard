@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Col,
-  Card,
-  CardBody,
-  CardHeader,
-  Row,
-  Button,
-  UncontrolledTooltip,
-} from "reactstrap";
+import { Col, Card, CardBody, CardHeader, Row } from "reactstrap";
+
 //SimpleBar
 import SimpleBar from "simplebar-react";
 
@@ -20,7 +13,7 @@ import avtar5 from "../../assets/images/users/avatar-5.jpg";
 import avtar8 from "../../assets/images/users/avatar-8.jpg";
 
 const Candidates = () => {
-  const candidateListData : any =
+  const candidateListData =
     [
       { id: 1, img: avtar10, name: "Tonya Noble", username: "@tonya", designation: "Web Developer" },
       { id: 2, img: avtar1, name: "Nicholas Ball", username: "@nicholas", designation: "Assistant / Store Keeper" },
@@ -29,16 +22,15 @@ const Candidates = () => {
       { id: 5, img: avtar5, name: "Jennifer Bailey", username: "@jennifer", designation: "Marketing Director" },
       { id: 6, img: avtar8, name: "Hadley Leonard", username: "@hadley", designation: "Executive, HR Operations" }
     ];
-
   const [info, setInfo] = useState<any>([]);
 
-  const [candidateList, setCandidateList] = useState(candidateListData);
+  const [candidateList, setCandidateList] = useState<any>(candidateListData);
 
-  const searchCandidate = (ele : any) => {
+  const searchJob = (ele:any) => {
     let search = ele.target.value;
     if (search) {
       search = search.toUpperCase();
-      setCandidateList(candidateListData.filter((data : any) => (
+      setCandidateList(candidateListData.filter((data) => (
         data.name.toUpperCase().includes(search) ||
         data.username.toUpperCase().includes(search)
       ))
@@ -48,13 +40,14 @@ const Candidates = () => {
     }
   };
 
-  const favouriteBtn = (ele : any) => {
+  const favouriteBtn = (ele:any) => {
     if (ele.closest("button").classList.contains("active")) {
       ele.closest("button").classList.remove("active");
     } else {
       ele.closest("button").classList.add("active");
     }
   };
+
   return (
     <React.Fragment>
       <Col xxl={4}>
@@ -84,7 +77,7 @@ const Candidates = () => {
                     autoComplete="off"
                     id="searchList"
                     placeholder="Search candidate..."
-                    onKeyUp={(e) => searchCandidate(e)}
+                    onKeyUp={(e) => searchJob(e)}
                   />
                   <i className="ri-search-line search-icon"></i>
                 </div>
@@ -94,15 +87,11 @@ const Candidates = () => {
                   className="px-3 mx-n3"
                 >
                   <ul className="list-unstyled mb-0 pt-2" id="candidate-list">
-                    {(candidateList || []).map((item : any, key : any) => (<li key={key}>
+                    {(candidateList || []).map((item:any, key:any) => (<li key={key}>
                       <Link to="#" className="d-flex align-items-center py-2" onClick={() => setInfo(item)}>
                         <div className="flex-shrink-0 me-2">
                           <div className="avatar-xs">
-                            <img
-                              src={item.img}
-                              alt=""
-                              className="img-fluid rounded-circle candidate-img"
-                            />
+                            <img src={item.img} alt="" className="img-fluid rounded-circle candidate-img" />
                           </div>
                         </div>
                         <div className="flex-grow-1">
@@ -110,9 +99,7 @@ const Candidates = () => {
                             <span className="candidate-name">{item.name}</span>{" "}
                             <span className="text-muted fw-normal">{item.username}</span>
                           </h5>
-                          <div className="d-none candidate-position">
-                            {item.designation}
-                          </div>
+                          <div className="d-none candidate-position"> {item.designation} </div>
                         </div>
                       </Link>
                     </li>))}
@@ -131,6 +118,7 @@ const Candidates = () => {
                     className="img-thumbnail rounded-circle shadow-none"
                   />
                 </div>
+
                 <h5 id="candidate-name" className="mb-0">
                   {info.name || "Tonya Noble"}
                 </h5>
@@ -141,44 +129,42 @@ const Candidates = () => {
                 <div className="d-flex gap-2 justify-content-center mb-3">
                   <button
                     type="button"
-                    className="btn avatar-xs p-0 shadow-none"
-                    id="google"
+                    className="btn avatar-xs p-0"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="Google"
                   >
                     <span className="avatar-title rounded-circle bg-light text-body">
                       <i className="ri-google-line"></i>
                     </span>
-                    <UncontrolledTooltip placement="top" target="google">
-                      Google
-                    </UncontrolledTooltip>
                   </button>
+
                   <button
                     type="button"
-                    className="btn avatar-xs p-0 shadow-none"
-                    id="linkedin"
+                    className="btn avatar-xs p-0"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="Linkedin"
                   >
                     <span className="avatar-title rounded-circle bg-light text-body">
                       <i className="ri-linkedin-line"></i>
                     </span>
-                    <UncontrolledTooltip placement="top" target="linkedin">
-                      Linkedin
-                    </UncontrolledTooltip>
                   </button>
                   <button
                     type="button"
-                    className="btn avatar-xs p-0 shadow-none"
-                    id="dribble"
+                    className="btn avatar-xs p-0"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="Dribbble"
                   >
                     <span className="avatar-title rounded-circle bg-light text-body">
                       <i className="ri-dribbble-fill"></i>
                     </span>
-                    <UncontrolledTooltip placement="top" target="dribble">
-                      Dribbble
-                    </UncontrolledTooltip>
                   </button>
                 </div>
 
                 <div>
-                  <Button
+                  <button
                     type="button"
                     className="btn btn-success custom-toggle w-100"
                     data-bs-toggle="button"
@@ -192,7 +178,7 @@ const Candidates = () => {
                       <i className="ri-user-unfollow-line align-bottom me-1"></i>{" "}
                       Unfollow
                     </span>
-                  </Button>
+                  </button>
                 </div>
               </CardBody>
             </Col>
@@ -218,7 +204,7 @@ const Candidates = () => {
               </div>
             </div>
             <div className="mt-3 text-end">
-              <Link to="#!" className="btn btn-danger">
+              <Link to="#" className="btn btn-danger">
                 Invite Friends
               </Link>
             </div>

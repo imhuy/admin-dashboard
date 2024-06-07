@@ -84,7 +84,7 @@ const UiOffcanvas = () => {
                                                 Link with href
                                             </Link>
                                             <Button color="secondary" onClick={toggleDefultCanvas}>
-                                                Button with data-bs-target
+                                            Button with data-bs-target
                                             </Button>
                                         </div>
 
@@ -158,7 +158,7 @@ const UiOffcanvas = () => {
             </div >
 
             {/* Defult Offcanvas */}
-            <Offcanvas fade isOpen={open} toggle={toggleDefultCanvas} id="offcanvasExample">
+            <Offcanvas isOpen={open} toggle={toggleDefultCanvas} id="offcanvasExample">
                 <OffcanvasHeader toggle={toggleDefultCanvas} id="offcanvasExampleLabel" className="border-bottom" >
                     Recent Acitivity
                 </OffcanvasHeader>
@@ -305,12 +305,12 @@ const UiOffcanvas = () => {
                     </SimpleBar>
                 </OffcanvasBody>
                 <div className="offcanvas-foorter border-top p-3 text-center">
-                    <Link to="#" className="link-success">View All Activity <i className="ri-arrow-right-s-line align-middle ms-1"></i></Link>
+                    <Link to="#" className="link-success">View All Acitivity <i className="ri-arrow-right-s-line align-middle ms-1"></i></Link>
                 </div>
             </Offcanvas>
 
             {/* Top offcanvas */}
-            <Offcanvas fade
+            <Offcanvas
                 isOpen={isTop}
                 direction="top"
                 toggle={toggleTopCanvas}
@@ -436,7 +436,7 @@ const UiOffcanvas = () => {
             </Offcanvas>
 
             {/* Right offcanvas */}
-            <Offcanvas fade
+            <Offcanvas
                 isOpen={isRight}
                 direction="end"
                 toggle={toggleRightCanvas}
@@ -586,12 +586,12 @@ const UiOffcanvas = () => {
                     </SimpleBar>
                 </OffcanvasBody>
                 <div className="offcanvas-foorter border p-3 text-center">
-                    <Link to="#" className="link-success">View All Activity <i className="ri-arrow-right-s-line align-middle ms-1"></i></Link>
+                    <Link to="#" className="link-success">View All Acitivity <i className="ri-arrow-right-s-line align-middle ms-1"></i></Link>
                 </div>
             </Offcanvas>
 
             {/* Bottom offcanvas */}
-            <Offcanvas fade
+            <Offcanvas
                 isOpen={isBottom}
                 direction="bottom"
                 toggle={toggleBottomCanvas}
@@ -718,7 +718,7 @@ const UiOffcanvas = () => {
             </Offcanvas>
 
             {/* Left offcanvas */}
-            <Offcanvas fade
+            <Offcanvas
                 isOpen={isLeft}
                 direction="start"
                 toggle={toggleLeftCanvas}
@@ -869,7 +869,7 @@ const UiOffcanvas = () => {
             </Offcanvas>
 
             {/* Enable body scrolling */}
-            <Offcanvas fade
+            <Offcanvas
                 isOpen={isEnableScroll}
                 scrollable
                 backdrop={false}
@@ -1026,7 +1026,7 @@ const UiOffcanvas = () => {
             </Offcanvas>
 
             {/* Enable backdrop (default) */}
-            <Offcanvas fade
+            <Offcanvas
                 isOpen={isBackdrop}
                 toggle={toggleBackdrop}
                 id="offcanvasWithBackdrop"
@@ -1180,7 +1180,7 @@ const UiOffcanvas = () => {
             </Offcanvas>
 
             {/* Enable both scrolling & backdrop */}
-            <Offcanvas fade
+            <Offcanvas
                 isOpen={isScrollBackDrop}
                 scrollable
                 toggle={toggleScrollBackDrop}

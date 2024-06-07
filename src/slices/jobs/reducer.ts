@@ -40,7 +40,7 @@ const Jobslice = createSlice({
 
         builder.addCase(deleteJobApplicationList.fulfilled, (state: any, action: any) => {
             state.appList = state.appList.filter(
-                (job: any) => job.id !== action.payload
+                (job: any) => job.id.toString() !== action.payload.toString()
             );
         });
 

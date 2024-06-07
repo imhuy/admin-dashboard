@@ -80,7 +80,6 @@ interface TableContainerProps {
   tableClass?: any;
   theadClass?: any;
   trClass?: any;
-  iscustomPageSize?: any;
   thClass?: any;
   divClass?: any;
   SearchPlaceholder?: any;
@@ -88,7 +87,6 @@ interface TableContainerProps {
   handleCompanyClick?: any;
   handleContactClick?: any;
   handleTicketClick?: any;
-  isBordered?: any;
 }
 
 const TableContainer = ({
@@ -102,7 +100,6 @@ const TableContainer = ({
   thClass,
   divClass,
   SearchPlaceholder,
-  isBordered
 
 }: TableContainerProps) => {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);

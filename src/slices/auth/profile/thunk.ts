@@ -13,7 +13,7 @@ export const editProfile = (user : any) => async (dispatch : any) => {
 
         if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
             response = fireBaseBackend.editProfileAPI(
-                user.username,
+                user.first_name,
                 user.idx
             );
 

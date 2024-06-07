@@ -16,18 +16,18 @@ import logosm from "../../../assets/images/logo-sm.png";
 import { BootstrapToastsExample, ToastPlacementExample, BorderIconExample, ToastifyExample } from './UiNotificationsCode';
 
 const UiNotifications = () => {
-    const [toast1, setToast1] = useState(true);
-    const [toast2, setToast2] = useState(true);
-    const [toast3, setToast3] = useState(true);
-    const [toast4, setToast4] = useState(true);
-    const [toast5, setToast5] = useState(true);
-    const [toast6, setToast6] = useState(true);
+    const [toast1, setToast1] = useState<boolean>(true);
+    const [toast2, setToast2] = useState<boolean>(true);
+    const [toast3, setToast3] = useState<boolean>(true);
+    const [toast4, setToast4] = useState<boolean>(true);
+    const [toast5, setToast5] = useState<boolean>(true);
+    const [toast6, setToast6] = useState<boolean>(true);
     const [toast7, setToast7] = useState<boolean>(false);
     const [toast8, setToast8] = useState<boolean>(false);
     const [toast9, setToast9] = useState<boolean>(false);
     const [toast10, setToast10] = useState<boolean>(false);
 
-    const [toast11, setToast11] = useState(true);
+    const [toast11, setToast11] = useState<boolean>(true);
     const [position, setPosition] = useState<any>();
 
     const defaultnotify = () => toast("Welcome Back! This is a Toast Notification", { position: "top-right", hideProgressBar: true, className: 'bg-primary text-white' });
@@ -200,7 +200,7 @@ const UiNotifications = () => {
                                         <Form>
                                             <div className="mb-3">
                                                 <select className="form-select mt-2" onChange={(e) => setPosition(e.currentTarget.value)}>
-                                                    <option value="" defaultValue= "">Select a position...</option>
+                                                    <option value="">Select a position...</option>
                                                     <option value="top-0 start-0">Top left</option>
                                                     <option value="top-0 start-50 translate-middle-x">Top center</option>
                                                     <option value="top-0 end-0">Top right</option>

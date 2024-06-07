@@ -24,15 +24,14 @@ import logoLight from "../../../assets/images/logo-light.png";
 import classnames from "classnames";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 
-
 const FormWizard = () => {
-  const [activeTab, setactiveTab] = useState<number>(1);
-  const [activeArrowTab, setactiveArrowTab] = useState<number>(4);
-  const [activeVerticalTab, setactiveVerticalTab] = useState<number>(7);
-  const [progressbarvalue, setprogressbarvalue] = useState<number>(0);
-  const [passedSteps, setPassedSteps] = useState<any>([1]);
-  const [passedarrowSteps, setPassedarrowSteps] = useState<any>([1]);
-  const [passedverticalSteps, setPassedverticalSteps] = useState<any>([1]);
+  const [activeTab, setactiveTab] = useState(1);
+  const [activeArrowTab, setactiveArrowTab] = useState(4);
+  const [activeVerticalTab, setactiveVerticalTab] = useState(7);
+  const [progressbarvalue, setprogressbarvalue] = useState(0);
+  const [passedSteps, setPassedSteps] = useState([1]);
+  const [passedarrowSteps, setPassedarrowSteps] = useState([1]);
+  const [passedverticalSteps, setPassedverticalSteps] = useState([1]);
 
   function toggleTab(tab : any, value : any) {
     if (activeTab !== tab) {
@@ -73,15 +72,15 @@ document.title ="Wizard | Velzon - React Admin & Dashboard Template";
     <React.Fragment>
       <div className="page-content">        
         <Container fluid>
-          <BreadCrumb title="Forms" breadcrumbItem="Wizard" />
+          <BreadCrumb title="Forms" pageTitle="Wizard" />
           <Row>
             <Col xl={6}>
               <Card>
                 <CardHeader>
                   <h4 className="card-title mb-0">Progress Nav Steps</h4>
                 </CardHeader>
-                <CardBody className="form-steps">
-                  <Form action="#">
+                <CardBody>
+                  <Form action="#" className="form-steps">
                     <div className="text-center pt-3 pb-4 mb-1">
                       <h5>Signup Your Account</h5>
                     </div>
@@ -323,11 +322,11 @@ document.title ="Wizard | Velzon - React Admin & Dashboard Template";
                 <CardHeader>
                   <h4 className="card-title mb-0">Arrow Nav Steps</h4>
                 </CardHeader>
-                <CardBody className="form-steps">
-                  <Form>
-                  <div className="text-center pt-3 pb-4 mb-1 d-flex justify-content-center">
-                      <img src={logoDark} className="card-logo card-logo-dark" alt="logo dark" height="17" />
-                      <img src={logoLight} className="card-logo card-logo-light" alt="logo light" height="17" />
+                <CardBody>
+                  <Form className="form-steps">
+                    <div className="text-center pt-3 pb-4 mb-1">
+                    <img src={logoDark} className="card-logo mx-auto card-logo-dark" alt="logo dark" height="17" />
+                      <img src={logoLight} className="card-logo mx-auto card-logo-light" alt="logo light" height="17" />
                     </div>
                     <div className="step-arrow-nav mb-4">
                       <Nav

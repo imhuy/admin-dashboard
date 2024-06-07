@@ -76,10 +76,8 @@ const RadialbarCharts = () => {
                             </CardHeader>
 
                             <CardBody>
-                                <ImageRadialbar 
-                                // dataColors='["--vz-success"]'
-                                />
-                                {/* <div id="radialbar_with_img" data-colors='["--vz-success"]' class="apex-charts" dir="ltr"></div> */}
+                                <ImageRadialbar/>
+                                {/* dataColors='["--vz-success"]' */}
                             </CardBody>
                         </Card>
                     </Col>

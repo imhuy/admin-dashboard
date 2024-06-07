@@ -54,6 +54,9 @@ import DashboardProjectReducer from "./dashboardProject/reducer";
 // Dashboard NFT
 import DashboardNFTReducer from "./dashboardNFT/reducer";
 
+// Dashboard JOb
+import DashboardJobReducer from "./dashboardJob/reducer";
+
 // Pages > Team
 import TeamDataReducer from "./team/reducer";
 
@@ -91,6 +94,7 @@ const rootReducer = combineReducers({
     DashboardCrypto: DashboardCryptoReducer,
     DashboardProject: DashboardProjectReducer,
     DashboardNFT: DashboardNFTReducer,
+    DashBoardJob: DashboardJobReducer,
     Team: TeamDataReducer,
     FileManager: FileManagerReducer,
     Todos: TodosReducer,

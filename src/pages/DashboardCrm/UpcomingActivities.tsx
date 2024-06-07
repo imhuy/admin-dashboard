@@ -11,7 +11,7 @@ const UpcomingActivities = () => {
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Upcoming Activities</h4>
                         <div className="flex-shrink-0">
-                            <UncontrolledDropdown className="card-header-dropdown" direction="start">
+                            <UncontrolledDropdown className="card-header-dropdown" >
                                 <DropdownToggle className="text-reset dropdown-btn" tag="a" role="button">
                                     <span className="text-muted fs-18"><i className="mdi mdi-dots-vertical"></i></span>
                                 </DropdownToggle>
@@ -24,11 +24,11 @@ const UpcomingActivities = () => {
                     </CardHeader>
                     <CardBody className="card-body pt-0">
                         <ul className="list-group list-group-flush border-dashed">
-                            {(activities || []).map((item : any, key : any) => (
+                            {(activities || []).map((item, key) => (
                                 <li className="list-group-item ps-0" key={key}>
                                     <Row className="align-items-center g-3">
                                         <div className="col-auto">
-                                            <div className="avatar-sm p-1 py-2 h-auto bg-light rounded-3 shadow">
+                                            <div className="avatar-sm p-1 py-2 h-auto bg-light rounded-3">
                                                 <div className="text-center">
                                                     <h5 className="mb-0">{item.date}</h5>
                                                     <div className="text-muted">{item.weekDay}</div>
@@ -41,7 +41,7 @@ const UpcomingActivities = () => {
                                         </div>
                                         <div className="col-sm-auto">
                                             <div className="avatar-group">
-                                                {(item.subItem || []).map((subItem : any, key : any) => (
+                                                {(item.subItem || []).map((subItem, key) => (
                                                     <React.Fragment key={key}>
                                                         <div className="avatar-group-item">
                                                             <Link to="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">

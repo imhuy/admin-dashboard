@@ -20,7 +20,7 @@ const stacksVerticalCode =
 const StacksVerticalExample = () => (
     <PrismCode
         code={stacksVerticalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -61,7 +61,7 @@ const stacksHorizontalCode =
 const StacksHorizontalExample = () => (
     <PrismCode
         code={stacksHorizontalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -82,7 +82,7 @@ const textSelectionCode =
 const TextSelectionExample = () => (
     <PrismCode
         code={textSelectionCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -102,7 +102,7 @@ const pointerEventsCode =
 const PointerEventsExample = () => (
     <PrismCode
         code={pointerEventsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -128,7 +128,7 @@ const overflowCode =
 const OverflowExample = () => (
     <PrismCode
         code={overflowCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -181,7 +181,7 @@ const positionCode =
 const PositionExample = () => (
     <PrismCode
         code={positionCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -203,7 +203,7 @@ const shadowsCode =
 const ShadowsExample = () => (
     <PrismCode
         code={shadowsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -227,7 +227,7 @@ const widthCode =
 const WidthExample = () => (
     <PrismCode
         code={widthCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -251,7 +251,7 @@ const heightCode =
 const HeightExample = () => (
     <PrismCode
         code={heightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

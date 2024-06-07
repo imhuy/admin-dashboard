@@ -1,7 +1,6 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { useEffect, useMemo, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import {
-  Button,
   Card,
   CardBody,
   Col,
@@ -12,25 +11,11 @@ import {
   Table,
 } from "reactstrap";
 import Flatpickr from "react-flatpickr";
-import Select from "react-select";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import img6 from "../../../assets/images/companies/img-6.png";
 import { jobCompanies } from "../../../common/data/appsJobs";
-import Pagination from "../../../Components/Common/Pagination";
-
+import Pagination from "Components/Common/Pagination";
 const CompaniesList = () => {
-  const option = [
-    {
-      options: [
-        { label: "All", value: "All" },
-        { label: "Full Time", value: "Full Time" },
-        { label: "Part Time", value: "Part Time" },
-        { label: "Internship", value: "Internship" },
-        { label: "Freelance", value: "Freelance" },
-      ],
-    },
-  ];
-  const [isToggle, setIsToogle] = useState<boolean>(false);
   const [companiesList, setCompaniesList] = useState<any>();
   const [currentPage, setCurrentPage] = useState<any>(1);
 
@@ -43,14 +28,13 @@ const CompaniesList = () => {
   useEffect(() => {
     setCompaniesList(currentdata)
   }, [currentdata]);
-
   document.title = "Companies | Velzon - React Admin & Dashboard Template";
 
   return (
     <React.Fragment>
       <div className="page-content">
-        <Container fluid>
-          <BreadCrumb title="Companies List" pageTitle="Companies" />
+        <Container fluid className="container-fluid">
+          <BreadCrumb title="Companies" pageTitle="Job" />
           <Row>
             <Col xxl={9}>
               <Card>
@@ -85,24 +69,30 @@ const CompaniesList = () => {
 
                       <Col xxl={2} sm={4}>
                         <div className="input-light">
-                          <Select
-                            options={option}
+                          <select
+                            className="form-control"
                             name="choices-single-default"
                             id="idType"
-                          ></Select>
+                          >
+                            <option value="all" defaultValue=''>
+                              All
+                            </option>
+                            <option value="Full Time">Full Time</option>
+                            <option value="Part Time">Part Time</option>
+                            <option value="Intership">Intership</option>
+                            <option value="Freelance">Freelance</option>
+                          </select>
                         </div>
                       </Col>
 
                       <Col xxl={2} sm={4}>
-                        <Button
+                        <button
                           type="button"
-                          color="danger"
-                          className="btn w-100"
-                        //   onclick="filterData();"
+                          className="btn btn-primary w-100"
                         >
                           <i className="ri-equalizer-fill me-1 align-bottom"></i>{" "}
                           Filters
-                        </Button>
+                        </button>
                       </Col>
                     </Row>
                   </Form>
@@ -110,9 +100,9 @@ const CompaniesList = () => {
               </Card>
 
               <Row className="job-list-row" id="companies-list">
-                {(companiesList || []).map((item : any, key : any) => (
+                {(companiesList || []).map((item: any, key: any) => (
                   <Col xxl={3} md={6} key={key}>
-                    <Card className="companiesList-card">
+                    <Card className="card companiesList-card">
                       <CardBody>
                         <div className="avatar-sm mx-auto">
                           <div className="avatar-title bg-light rounded">
@@ -124,9 +114,9 @@ const CompaniesList = () => {
                           </div>
                         </div>
                         <div className="text-center">
-                          <a href="#!">
+                          <Link to="#">
                             <h5 className="mt-3 company-name">{item.lable}</h5>
-                          </a>
+                          </Link>
                           <div className="d-none company-desc">
                             {item.company_info}
                           </div>
@@ -143,9 +133,9 @@ const CompaniesList = () => {
                           </div>
                         </div>
                         <div>
-                          <button 
+                          <button
                             type="button"
-                            className="btn btn-soft-primary border-0 w-100 viewcompany-list"
+                            className="btn btn-soft-primary w-100 viewcompany-list"
                           >
                             <span className="vacancy">{item.vacancy}</span> Jobs
                             Available
@@ -156,12 +146,12 @@ const CompaniesList = () => {
                   </Col>
                 ))}
               </Row>
-
               <Pagination
                 perPageData={perPageData}
                 data={jobCompanies}
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage} />
+
             </Col>
             <Col xxl={3}>
               <Card id="company-overview">
@@ -177,46 +167,46 @@ const CompaniesList = () => {
                   </div>
 
                   <div className="text-center">
-                    <Link to="#!">
-                      <h5 className="overview-companyname fw-semibold fs-17">
+                    <NavLink to="#!">
+                      <h5 className="overview-companyname">
                         Syntyce Solutions
                       </h5>
-                    </Link>
+                    </NavLink>
                     <p className="text-muted overview-industryType">
                       IT Department
                     </p>
 
                     <ul className="list-inline mb-0">
                       <li className="list-inline-item avatar-xs">
-                        <Link
+                        <NavLink
                           to=""
-                          className="avatar-title bg-success-subtle text-success fs-15 rounded"
+                          className="avatar-title bg-dark-subtle text-body fs-15 rounded"
                         >
                           <i className="ri-global-line"></i>
-                        </Link>
+                        </NavLink>
                       </li>
                       <li className="list-inline-item avatar-xs">
-                        <Link
+                        <NavLink
                           to=""
                           className="avatar-title bg-danger-subtle text-danger fs-15 rounded"
                         >
                           <i className="ri-mail-line"></i>
-                        </Link>
+                        </NavLink>
                       </li>
                       <li className="list-inline-item avatar-xs">
-                        <Link
+                        <NavLink
                           to=""
                           className="avatar-title bg-warning-subtle text-warning fs-15 rounded"
                         >
                           <i className="ri-question-answer-line"></i>
-                        </Link>
+                        </NavLink>
                       </li>
                     </ul>
                   </div>
                 </CardBody>
 
                 <CardBody>
-                  <h6 className="text-muted text-uppercase fw-medium mb-3">
+                  <h6 className="text-muted text-uppercase fw-semibold mb-3">
                     Information
                   </h6>
                   <p className="text-muted mb-4 overview-companydesc">
@@ -231,51 +221,51 @@ const CompaniesList = () => {
                     <Table className="table table-borderless mb-4">
                       <tbody>
                         <tr>
-                          <td className="fw-medium">Industry Type</td>
+                          <td className="fw-semibold">Industry Type</td>
                           <td className="overview-industryType">
                             Chemical Industries
                           </td>
                         </tr>
                         <tr>
-                          <td className="fw-medium">Location</td>
+                          <td className="fw-semibold">Location</td>
                           <td className="overview-company_location">
                             Damascus, Syria
                           </td>
                         </tr>
                         <tr>
-                          <td className="fw-medium">Employee</td>
+                          <td className="fw-semibold">Employee</td>
                           <td className="overview-employee">10-50</td>
                         </tr>
                         <tr>
-                          <td className="fw-medium">Vacancy</td>
+                          <td className="fw-semibold">Vacancy</td>
                           <td className="overview-vacancy">23</td>
                         </tr>
                         <tr>
-                          <td className="fw-medium">Rating</td>
+                          <td className="fw-semibold">Rating</td>
                           <td>
                             <span className="overview-rating">4.8</span>{" "}
                             <i className="ri-star-fill text-warning align-bottom"></i>
                           </td>
                         </tr>
                         <tr>
-                          <td className="fw-medium">Website</td>
+                          <td className="fw-semibold">Website</td>
                           <td>
-                            <Link
+                            <NavLink
                               to=""
                               className="link-primary text-decoration-underline overview-website"
                             >
                               www.syntycesolution.com
-                            </Link>
+                            </NavLink>
                           </td>
                         </tr>
                         <tr>
-                          <td className="fw-medium">Contact Email</td>
+                          <td className="fw-semibold">Contact Email</td>
                           <td className="overview-email">
                             info@syntycesolution.com
                           </td>
                         </tr>
                         <tr>
-                          <td className="fw-medium">Since</td>
+                          <td className="fw-semibold">Since</td>
                           <td className="overview-since">1995</td>
                         </tr>
                       </tbody>
@@ -283,12 +273,10 @@ const CompaniesList = () => {
                   </div>
 
                   <div className="hstack gap-3">
-                    <Button
+                    <button
                       type="button"
-                      color="success"
-                      className={isToggle ? "btn btn-soft-success custom-toggle w-100 active" : "btn btn-soft-success custom-toggle w-100"}
+                      className="btn btn-soft-primary custom-toggle w-100"
                       data-bs-toggle="button"
-                      onClick={() => setIsToogle(!isToggle)}
                     >
                       <span className="icon-on">
                         <i className="ri-add-line align-bottom me-1"></i> Follow
@@ -297,11 +285,11 @@ const CompaniesList = () => {
                         <i className="ri-user-unfollow-line align-bottom me-1"></i>{" "}
                         Unfollow
                       </span>
-                    </Button>
-                    <Button to="#!" color="info" className="btn w-100">
+                    </button>
+                    <NavLink to="#" className="btn btn-info w-100">
                       More View{" "}
                       <i className="ri-arrow-right-line align-bottom"></i>
-                    </Button>
+                    </NavLink>
                   </div>
                 </CardBody>
               </Card>
@@ -317,7 +305,7 @@ const CompaniesList = () => {
                       </div>
                     </div>
                     <div className="flex-grow-1 ms-2">
-                      <h6 className="fs-16 ">Free trial</h6>
+                      <h6 className="fs-16 fw-bold">Free trial</h6>
                       <p className="text-muted mb-0">28 days left</p>
                     </div>
                     <div>
@@ -328,13 +316,13 @@ const CompaniesList = () => {
                   </div>
                 </CardBody>
                 <CardBody className="bg-danger-subtle border-top border-danger border-opacity-25 border-top-dashed">
-                  <Link
-                    to="#!"
+                  <NavLink
+                    to="#"
                     className="d-flex justify-content-between align-items-center text-body"
                   >
                     <span>See benefits</span>
                     <i className="ri-arrow-right-s-line fs-18"></i>
-                  </Link>
+                  </NavLink>
                 </CardBody>
               </Card>
             </Col>

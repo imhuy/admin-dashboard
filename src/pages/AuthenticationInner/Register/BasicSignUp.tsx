@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardBody, Col, Container, Row, FormFeedback, Input, Button, Form } from 'reactstrap';
-import ParticlesAuth from "../ParticlesAuth";
-
-//import images 
-import logoLight from "../../../assets/images/logo-light.png";
+import { Card, CardBody, Col, Container, Row, Form, FormFeedback, Input, Button } from 'reactstrap';
 
 //formik
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
+import ParticlesAuth from "../ParticlesAuth";
+
+//import images 
+import logoLight from "../../../assets/images/logo-light.png";
 
 const BasicSignUp = () => {
     document.title = "Basic SignUp | Velzon - React Admin & Dashboard Template";
@@ -43,7 +44,7 @@ const BasicSignUp = () => {
     return (
         <React.Fragment>
             <ParticlesAuth>
-                <div className="auth-page-content">
+                <div className="auth-page-content mt-lg-5">
 
                     <Container>
                         <Row>
@@ -69,7 +70,7 @@ const BasicSignUp = () => {
                                             <p className="text-muted">Get your free velzon account now</p>
                                         </div>
                                         <div className="p-2 mt-4">
-                                        <Form onSubmit={(e) => {
+                                            <Form onSubmit={(e) => {
                                                 e.preventDefault();
                                                 validation.handleSubmit();
                                                 return false;

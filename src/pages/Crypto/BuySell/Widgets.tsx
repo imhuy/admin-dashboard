@@ -6,7 +6,7 @@ import { buysellWidgets } from "../../../common/data";
 const Widgets = () => {
   return (
     <React.Fragment>
-      {buysellWidgets.map((item : any, key : any) => (
+      {buysellWidgets.map((item, key) => (
         <Col xl={3} sm={6} key={key}>
           <Card className="card-animate">
             <CardBody>
@@ -24,10 +24,7 @@ const Widgets = () => {
                 <div className="flex-shrink-0 avatar-sm">
                   <div
                     className={
-                      "avatar-title fs-22 rounded bg-" +
-                      item.iconClass +
-                      "-subtle text-" +
-                      item.iconClass
+                      "avatar-title fs-22 rounded bg-" +item.iconClass +"-subtle text-" +item.iconClass
                     }
                   >
                     <i className={item.icon}></i>

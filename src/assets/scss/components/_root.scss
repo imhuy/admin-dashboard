@@ -58,6 +58,7 @@
         //form
         --#{$prefix}input-bg-custom:                                #{$input-bg-custom};
         --#{$prefix}input-border-custom:                            #{$input-border-custom};
+
 }
 
 //sidebar light theme
@@ -208,7 +209,7 @@
             --#{$prefix}btn-hover-color:                            #{$white};
         }
         
-        dropdown-menu {
+        .dropdown-menu {
             --#{$prefix}dropdown-bg:                                #{$dropdown-bg-dark};
             --#{$prefix}dropdown-link-color:                        #{$dropdown-link-color-dark};
             --#{$prefix}dropdown-link-hover-color:                  #{$dropdown-link-hover-color-dark};
@@ -223,8 +224,6 @@
         --#{$prefix}input-border-custom:                            #{$input-border-custom-dark};
     }
 }
-    
-
 
 //topbar dark mode
 @if $topbar-dark-mode {
@@ -233,7 +232,7 @@
         --#{$prefix}header-bg:                                      #{$header-bg-dark};
         --#{$prefix}header-border:                                  #{$header-border-dark};
         --#{$prefix}header-item-color:                              #{$header-item-color-dark};
-        --#{$prefix}header-item-bg: #{$header-item-bg-dark};
+        --#{$prefix}header-item-bg:                                 #{$header-item-bg-dark};
         --#{$prefix}header-item-sub-color:                          #{$header-item-sub-color-dark};
         --#{$prefix}topbar-user-bg:                                 #{$topbar-user-bg-dark};
         --#{$prefix}topbar-search-bg:                               #{$topbar-search-bg-dark};
@@ -244,7 +243,7 @@
             --#{$prefix}header-bg:                                  #{$dark-header-bg-dark};
             --#{$prefix}header-border:                              #{$dark-header-border-dark};
             --#{$prefix}header-item-color:                          #{$dark-header-item-color-dark};
-            --#{$prefix}header-item-bg: #{$dark-header-item-bg-dark};
+            --#{$prefix}header-item-bg:                             #{$dark-header-item-bg-dark};
             --#{$prefix}header-item-sub-color:                      #{$dark-header-item-sub-color-dark};
             --#{$prefix}topbar-user-bg:                             #{$dark-topbar-user-bg-dark};
             --#{$prefix}topbar-search-bg:                           #{$dark-topbar-search-bg-dark};

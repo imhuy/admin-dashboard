@@ -2,7 +2,7 @@ const ticketsWidgets = [
     {
         id: 1,
         title: "Total Tickets",
-        counter: "547",
+        counter: 547,
         arrowIcon: "ri-arrow-up-line",
         percentage: "17.32 %",
         percentageClass: "success",
@@ -14,7 +14,7 @@ const ticketsWidgets = [
     {
         id: 2,
         title: "Pending Tickets",
-        counter: "124",
+        counter: 124,
         arrowIcon: "ri-arrow-down-line",
         percentage: "0.96 %",
         percentageClass: "danger",
@@ -26,7 +26,7 @@ const ticketsWidgets = [
     {
         id: 3,
         title: "Closed Tickets",
-        counter: "107",
+        counter: 107,
         arrowIcon: "ri-arrow-down-line",
         percentage: "3.87 %",
         percentageClass: "danger",
@@ -38,7 +38,7 @@ const ticketsWidgets = [
     {
         id: 4,
         title: "Deleted Tickets",
-        counter: "15.95",
+        counter: 15.95,
         arrowIcon: "ri-arrow-up-line",
         percentage: "1.09 %",
         percentageClass: "success",

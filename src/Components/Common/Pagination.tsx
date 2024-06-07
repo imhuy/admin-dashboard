@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Row } from "reactstrap";
 
-const Pagination = ({ data, currentPage, setCurrentPage, perPageData } : any) => {
+const Pagination = ({ data, currentPage, setCurrentPage, perPageData }: any) => {
 
-
-    const handleClick = (e : any) => {
+    const handleClick = (e: any) => {
         setCurrentPage(e);
     };
 
@@ -26,10 +25,11 @@ const Pagination = ({ data, currentPage, setCurrentPage, perPageData } : any) =>
         if (pageNumbers.length && pageNumbers.length < currentPage) {
             setCurrentPage(pageNumbers.length)
         }
+
     }, [pageNumbers.length, currentPage, setCurrentPage])
     return (
         <React.Fragment>
-                  <Row className="g-0 justify-content-end mb-4">
+            <Row className="g-0 justify-content-end mb-4">
                 <div className="col-sm-auto">
                     <ul className="pagination-block pagination pagination-separated justify-content-center justify-content-sm-end mb-sm-0">
                         {currentPage <= 1 ? (

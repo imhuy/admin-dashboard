@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Modal, ModalBody, ModalHeader, Input, Progress, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import FeatherIcon from 'feather-icons-react';
+// import FeatherIcon from 'feather-icons-react';
 
 
 //SimpleBar
@@ -39,16 +39,15 @@ const EmailSidebar = () => {
                 setModal(true);
               }}
             >
-              <FeatherIcon icon="plus-circle" className="icon-xs me-1 icon-dual-light" />
-              
+              {/* <FeatherIcon icon="plus-circle" className="icon-xs me-1 icon-dual-light" /> */}
+
               Compose
             </button>
           </div>
 
           <SimpleBar
             className="mx-n4 px-4 email-menu-sidebar-scroll"
-            data-simplebar
-          >
+            data-simplebar>
             <div className="mail-list mt-3">
               <Link to="#" className="active">
                 <i className="ri-inbox-archive-fill me-3 align-middle fw-medium"></i>{" "}
@@ -113,14 +112,14 @@ const EmailSidebar = () => {
             <div className="border-top border-top-dashed pt-3 mt-3">
               <Link
                 to="#"
-                className="btn btn-icon btn-sm btn-soft-inforounded-pill float-end"
+                className="btn btn-icon btn-sm btn-soft-info rounded-pill float-end"
               >
                 <i className="bx bx-plus fs-16"></i>
               </Link>
               <h5 className="fs-12 text-uppercase text-muted mb-3">Chat</h5>
 
-              <div className="mt-2 vstack gap-3">
-                <Link to="#" className="d-flex align-items-center">
+              <div className="mt-2 vstack gap-3 email-chat-list mx-n4">
+                <Link to="#" className="d-flex align-items-center active">
                   <div className="flex-shrink-0 me-2 avatar-xs">
                     <img
                       className="img-fluid rounded-circle"
@@ -258,9 +257,9 @@ const EmailSidebar = () => {
                   // You can store the "editor" and use when it is needed.
                   
                 }}
-                onChange={(event, editor) => {
-                  editor.getData();
-                }}
+                // onChange={(event, editor) => {
+                //   editor.getData();
+                // }}
               />
             </div>
           </div>

@@ -11,12 +11,12 @@ const Footer = () => {
             <footer className="custom-footer bg-dark py-5 position-relative">
                 <Container>
                     <Row>
-                        <Col lg={4} className="mt-4">
+                        <Col lg={4} className="mt-4 fs-13">
                             <div>
                                 <div>
                                     <img src={logolight} alt="logo light" height="17" />
                                 </div>
-                                <div className="mt-4 fs-13">
+                                <div className="mt-4">
                                     <p>Premium Multipurpose Admin & Dashboard Template</p>
                                     <p className="ff-secondary">You can build any type of web application like eCommerce, CRM, CMS, Project
                                         management apps, Admin Panels, etc using Velzon.</p>
@@ -45,7 +45,7 @@ const Footer = () => {
                                             <li><Link to="/apps-mailbox">Mailbox</Link></li>
                                             <li><Link to="/apps-chat">Chat</Link></li>
                                             <li><Link to="/apps-crm-deals">Deals</Link></li>
-                                            <li><Link to="/#">Kanban Board</Link></li>
+                                            <li><Link to="#">Kanban Board</Link></li>
                                         </ul>
                                     </div>
                                 </Col>

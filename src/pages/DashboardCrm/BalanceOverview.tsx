@@ -6,23 +6,24 @@ import { getBalanceChartsData } from '../../slices/thunks';
 import { createSelector } from 'reselect';
 
 const BalanceOverview = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const selectDashboardData = createSelector(
-        (state : any) => state.DashboardCRM.balanceOverviewData,
-        (balanceOverviewData) => balanceOverviewData
+        (state:any) => state.DashboardCRM,
+        (balanceOverviewData) => balanceOverviewData.balanceOverviewData
       );
     // Inside your component
     const balanceOverviewData = useSelector(selectDashboardData);
+
 
     useEffect(() => {
         setchartData(balanceOverviewData);
     }, [balanceOverviewData]);
 
     const [seletedMonth, setSeletedMonth] = useState("Current Year");
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         setSeletedMonth(pType);
         dispatch(getBalanceChartsData(pType));
     };
@@ -30,6 +31,7 @@ const BalanceOverview = () => {
     useEffect(() => {
         dispatch(getBalanceChartsData("today"));
     }, [dispatch]);
+
     return (
         <React.Fragment>
             <Col xxl={6}>
@@ -52,10 +54,10 @@ const BalanceOverview = () => {
                     </CardHeader>
                     <CardBody className="px-0">
                         <ul className="list-inline main-chart text-center mb-0">
-                            <li className="list-inline-item chart-border-left me-1 border-0">
+                            <li className="list-inline-item chart-border-left me-0 border-0">
                                 <h4 className="text-primary">$584k <span className="text-muted d-inline-block fs-13 align-middle ms-2">Revenue</span></h4>
                             </li>
-                            <li className="list-inline-item chart-border-left me-1">
+                            <li className="list-inline-item chart-border-left me-0">
                                 <h4>$497k<span className="text-muted d-inline-block fs-13 align-middle ms-2">Expenses</span>
                                 </h4>
                             </li>
@@ -65,7 +67,7 @@ const BalanceOverview = () => {
                         </ul>
 
                         <div id="revenue-expenses-charts" dir="ltr">
-                            <BalanceOverviewCharts series={chartData} dataColors='["--vz-success", "--vz-danger"]' />
+                            <BalanceOverviewCharts series={chartData} dataColors='["--vz-success", "--vz-danger"]'/>
                         </div>
                     </CardBody>
                 </Card>

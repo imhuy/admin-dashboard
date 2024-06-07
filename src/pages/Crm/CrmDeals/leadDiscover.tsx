@@ -8,13 +8,13 @@ import {
   Button
 } from "reactstrap";
 
-const leadDiscover = (props : any) => {
+const  leadDiscover = (props:any) => {
   return (
     <div className="col">
       <Card>
         <Link
           to="#"
-          className={"card-header bg-" + props.deal.bgColor + "-subtle text-"+ props.deal.bgColor}
+          className={"card-header bg-" + props.deal.bgColor+"-subtle"}
           id={"leadDiscovered" + props.index}
         >
           <h5 className="card-title text-uppercase fw-semibold mb-1 fs-15">
@@ -30,7 +30,7 @@ const leadDiscover = (props : any) => {
         toggler={"#leadDiscovered" + props.index}
         defaultOpen={true}
       >
-        {props.deal.subItems.map((subitem : any, subitemkey : any) => (
+        {props.deal.subItems.map((subitem:any, subitemkey:any) => (
           <React.Fragment key={subitemkey}>
             <Card
               className={
@@ -75,7 +75,7 @@ const leadDiscover = (props : any) => {
                     {subitem.subTitle}{" "}
                     <small
                       className={
-                        "badge bg-" + subitem.timeDurationClass +"-subtle text-"+subitem.timeDurationClass
+                        "badge bg-" + subitem.timeDurationClass+"-subtle text-" + subitem.timeDurationClass
                       }
                     >
                       {subitem.timeDuration}

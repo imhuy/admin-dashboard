@@ -14,7 +14,7 @@ const imgRoundedCircleCode =
 const ImgRoundedCircleExample = () => (
     <PrismCode
         code={imgRoundedCircleCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -32,7 +32,7 @@ const imgThumbnailsCode =
 const ImgThumbnailsExample = () => (
     <PrismCode
         code={imgThumbnailsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -71,7 +71,7 @@ const imgSizesCode =
 const ImgSizesExample = () => (
     <PrismCode
         code={imgSizesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -122,7 +122,7 @@ const avatarCode =
 const AvatarExample = () => (
     <PrismCode
         code={avatarCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -185,7 +185,7 @@ const avatarGroupCode =
 const AvatarGroupExample = () => (
     <PrismCode
         code={avatarGroupCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -210,7 +210,7 @@ const figuresCode =
 const FiguresExample = () => (
     <PrismCode
         code={figuresCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -226,7 +226,7 @@ const responsiveCode =
 const ResponsiveExample = () => (
     <PrismCode
         code={responsiveCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

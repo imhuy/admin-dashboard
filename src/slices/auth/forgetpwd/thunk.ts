@@ -8,7 +8,7 @@ import {
   postJwtForgetPwd,
 } from "../../../helpers/fakebackend_helper";
 
-const fireBaseBackend : any = getFirebaseBackend();
+const fireBaseBackend : any= getFirebaseBackend();
 
 export const userForgetPassword = (user : any, history : any) => async (dispatch : any) => {
   try {

@@ -584,20 +584,20 @@ const ToDoList = () => {
                             <label htmlFor="task-assign-input" className="form-label">Assigned To</label>
 
                             <div className="avatar-group d-flex justify-content-center" id="assignee-member">
-                                    {imgStore &&
-                                        imgStore.map((imageUrl: ImgData, index: number) => (
-                                            <div key={index}>
-                                                <Link to="#">
-                                                    <img
-                                                        src={imageUrl?.img}
-                                                        width={36}
-                                                        height={36}
-                                                        alt=""
-                                                        className="rounded-circle avatar-xs"
-                                                    />
-                                                </Link>
-                                            </div>
-                                        ))}
+                                {imgStore &&
+                                    imgStore.map((imageUrl: ImgData, index: number) => (
+                                        <div key={index}>
+                                            <Link to="#">
+                                                <img
+                                                    src={imageUrl?.img}
+                                                    width={36}
+                                                    height={36}
+                                                    alt=""
+                                                    className="rounded-circle avatar-xs"
+                                                />
+                                            </Link>
+                                        </div>
+                                    ))}
                             </div>
                             <div className="select-element">
                                 <button className={`btn btn-light w-100 d-flex justify-content-between ${droplist ? 'show' : ''}`} type="button" onClick={() => setDroplist(!droplist)}>
@@ -699,7 +699,6 @@ const ToDoList = () => {
                                 <FormFeedback type="invalid" className='d-block'>{validation.errors.dueDate}</FormFeedback>
                             ) : null}
                         </div>
-
                         <div className="hstack gap-2 justify-content-end">
                             <button type="button" className="btn btn-ghost-success" onClick={() => setModalTodo(false)}><i className="ri-close-fill align-bottom"></i> Close</button>
                             <button type="submit" className="btn btn-primary" id="addNewTodo">{!!isEdit ? "Save" : "Add Task"}</button>

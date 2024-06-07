@@ -10,7 +10,7 @@ const fadeUpCode =
 const FadeUpExample = () => (
     <PrismCode
         code={fadeUpCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -24,7 +24,7 @@ const fadeDownCode =
 const FadeDownExample = () => (
     <PrismCode
         code={fadeDownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -38,7 +38,7 @@ const fadeRightCode =
 const FadeRightExample = () => (
     <PrismCode
         code={fadeRightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -52,7 +52,7 @@ const fadeLeftCode =
 const FadeLeftExample = () => (
     <PrismCode
         code={fadeLeftCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -66,7 +66,7 @@ const fadeUpRightCode =
 const FadeUpRightExample = () => (
     <PrismCode
         code={fadeUpRightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -80,7 +80,7 @@ const fadeUpLeftCode =
 const FadeUpLeftExample = () => (
     <PrismCode
         code={fadeUpLeftCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -94,7 +94,7 @@ const fadeDownRightCode =
 const FadeDownRightExample = () => (
     <PrismCode
         code={fadeDownRightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -108,7 +108,7 @@ const fadeDownLeftCode =
 const FadeDownLeftExample = () => (
     <PrismCode
         code={fadeDownLeftCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -122,7 +122,7 @@ const flipLeftCode =
 const FlipLeftExample = () => (
     <PrismCode
         code={flipLeftCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -136,7 +136,7 @@ const flipRightCode =
 const FlipRightExample = () => (
     <PrismCode
         code={flipRightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -150,7 +150,7 @@ const filpUpCode =
 const FilpUpExample = () => (
     <PrismCode
         code={filpUpCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -164,7 +164,7 @@ const filpDownCode =
 const FilpDownExample = () => (
     <PrismCode
         code={filpDownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -177,7 +177,7 @@ const zoomInCode =
 const ZoomInExample = () => (
     <PrismCode
         code={zoomInCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -190,7 +190,7 @@ const zoomOutCode =
 const ZoomOutExample = () => (
     <PrismCode
         code={zoomOutCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -204,7 +204,7 @@ const zoomInUpCode =
 const ZoomInUpExample = () => (
     <PrismCode
         code={zoomInUpCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -218,7 +218,7 @@ const zoomOutUpCode =
 const ZoomOutUpExample = () => (
     <PrismCode
         code={zoomOutUpCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -232,7 +232,7 @@ const zoomInDownCode =
 const ZoomInDownExample = () => (
     <PrismCode
         code={zoomInDownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -246,7 +246,7 @@ const zoomOutDownCode =
 const ZoomOutDownExample = () => (
     <PrismCode
         code={zoomOutDownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -260,7 +260,7 @@ const zoomInRightCode =
 const ZoomInRightExample = () => (
     <PrismCode
         code={zoomInRightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -274,7 +274,7 @@ const zoomOutRightCode =
 const ZoomOutRightExample = () => (
     <PrismCode
         code={zoomOutRightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -288,7 +288,7 @@ const zoomInLeftCode =
 const ZoomInLeftExample = () => (
     <PrismCode
         code={zoomInLeftCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -302,7 +302,7 @@ const zoomOutLeftCode =
 const ZoomOutLeftExample = () => (
     <PrismCode
         code={zoomOutLeftCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -316,7 +316,7 @@ const durationCode =
 const DurationExample = () => (
     <PrismCode
         code={durationCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -330,7 +330,7 @@ const easingLinearCode =
 const EasingLinearExample = () => (
     <PrismCode
         code={easingLinearCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -344,7 +344,7 @@ const offset1Code =
 const Offset1Example = () => (
     <PrismCode
         code={offset1Code}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -358,7 +358,7 @@ const offset2Code =
 const Offset2Example = () => (
     <PrismCode
         code={offset2Code}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -372,7 +372,7 @@ const easeInBackCode =
 const EaseInBackExample = () => (
     <PrismCode
         code={easeInBackCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -386,7 +386,7 @@ const easeOutCubicCode =
 const EaseOutCubicExample = () => (
     <PrismCode
         code={easeOutCubicCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

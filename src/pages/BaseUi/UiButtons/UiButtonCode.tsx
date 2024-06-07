@@ -27,7 +27,7 @@ const defaultButtonsCode =
 const DefaultButtonsExample = () => (
     <PrismCode
         code={defaultButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -57,7 +57,7 @@ const outlineButtonsCode =
 const OutlineButtonsExample = () => (
     <PrismCode
         code={outlineButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -87,7 +87,7 @@ const roundedButtonsCode =
 const RoundedButtonsExample = () => (
     <PrismCode
         code={roundedButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -115,7 +115,7 @@ const softButtonsCode =
 const SoftButtonsExample = () => (
     <PrismCode
         code={softButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -147,7 +147,7 @@ const gradientButtonsCode =
 const GradientButtonsExample = () => (
     <PrismCode
         code={gradientButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -175,7 +175,7 @@ const animationButtonsCode =
 const AnimationButtonsExample = () => (
     <PrismCode
         code={animationButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -207,7 +207,7 @@ const labelButtonsCode =
 const LabelButtonsExample = () => (
     <PrismCode
         code={labelButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -231,7 +231,7 @@ const sizeButtonsCode =
 const SizeButtonsExample = () => (
     <PrismCode
         code={sizeButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -253,7 +253,7 @@ const widthButtonsCode =
 const WidthButtonsExample = () => (
     <PrismCode
         code={widthButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -277,42 +277,11 @@ const tagButtonsCode =
 const TagButtonsExample = () => (
     <PrismCode
         code={tagButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
 
-const baseClassCode =
-    `
-<!-- Tag Button -->
-<Button className="btn">Base class</Button>
-`;
-
-const BaseClassExample = () => (
-    <PrismCode
-        code={baseClassCode}
-        language={("html")}
-        plugins={["line-numbers"]}
-    />
-);
-
-// custom Sizing
-
-const customSizingCode =
-`
-<!-- Tag Button -->
-<button type="button" className="btn btn-primary" style={{'--tb-btn-padding-y': '.25rem','--tb-btn-padding-x': '.5rem', '--tb-btn-font-size': '.75rem',}}>
-    Custom button
-</button>
-`;
-
-const CustomSizingExample = () => (
-    <PrismCode
-        code={customSizingCode}
-        language={("html")}
-        plugins={["line-numbers"]}
-    />
-);
 
 // Buttons Grid
 
@@ -328,7 +297,7 @@ const gridButtonsCode =
 const GridButtonsExample = () => (
     <PrismCode
         code={gridButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -366,7 +335,7 @@ const checkButtonsCode =
 const CheckButtonsExample = () => (
     <PrismCode
         code={checkButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -394,7 +363,7 @@ const groupButtonsCode =
 const GroupButtonsExample = () => (
     <PrismCode
         code={groupButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -419,7 +388,7 @@ const iconButtonsCode =
 const IconButtonsExample = () => (
     <PrismCode
         code={iconButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -450,7 +419,7 @@ const toolbarButtonsCode =
 const ToolbarButtonsExample = () => (
     <PrismCode
         code={toolbarButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -482,7 +451,7 @@ const groupSizingButtonsCode =
 const GroupsizingButtonsExample = () => (
     <PrismCode
         code={groupSizingButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -540,7 +509,7 @@ const verticalButtonsCode =
 const VerticalButtonsExample = () => (
     <PrismCode
         code={verticalButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -568,7 +537,7 @@ const ghostButtonsCode =
 const GhostButtonsExample = () => (
     <PrismCode
         code={ghostButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -653,7 +622,7 @@ const loadingbuttonsCode =
 const LoadingbuttonsExample = () => (
     <PrismCode
         code={loadingbuttonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -684,7 +653,7 @@ const borderButtonsCode =
 const BorderButtonsExample = () => (
     <PrismCode
         code={borderButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -752,20 +721,49 @@ const customToggleButtonsCode =
 const CustomToggleButtonsExample = () => (
     <PrismCode
         code={customToggleButtonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
 
-// focus Ring
-const focusRingCode =
+const baseclassButtonsCode =
+`
+<button type="button" className="btn">Base class</button>
+`;
+
+const BaseClassExample = () => (
+    <PrismCode
+        code={baseclassButtonsCode}
+        language={("js")}
+        plugins={["line-numbers"]}
+    />
+);
+
+const customsizing =
+`
+<button type="button" className="btn btn-primary" style={{ '--tb-btn-padding-y': '.25rem', '--tb-btn-padding-x': '.5rem', '--tb-btn-font-size': '.75rem', }}>
+    Custom button
+</button>
+`;
+
+const CustomSizeExample = () => (
+    <PrismCode
+        code={customsizing}
+        language={("js")}
+        plugins={["line-numbers"]}
+    />
+);
+
+const focusringcode =
 `
 <Link href="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2">
     Focus ring
 </Link>
+
 <Link href="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style={{ '--vz-focus-ring-color': 'rgba(118, 93, 255, .25)', }}>
     Custom focus ring
 </Link>
+
 <Link href="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style={{ '--vz-focus-ring-x': '10px', '--vz-focus-ring-y': '10px', '--vz-focus-ring-blur': '4px', }}>
     Blurry offset focus ring
 </Link>
@@ -773,38 +771,37 @@ const focusRingCode =
 
 const FocusRingExample = () => (
     <PrismCode
-        code={focusRingCode}
-        language={("html")}
+        code={focusringcode}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
 
-// focus Ring
-const focusRingUtilityCode =
+const focusringutility =
 `
-<Row>
-    <Col lg={6}>
-        <p><Link href="#!" className="d-inline-flex focus-ring focus-ring-primary py-1 px-2 text-decoration-none border rounded-2">Primary focus</Link></p>
-        <p><Link href="#!" className="d-inline-flex focus-ring focus-ring-secondary py-1 px-2 text-decoration-none border rounded-2">Secondary focus</Link></p>
-        <p><Link href="#!" className="d-inline-flex focus-ring focus-ring-success py-1 px-2 text-decoration-none border rounded-2">Success focus</Link></p>
-        <p className="mb-lg-0"><Link href="#!" className="d-inline-flex focus-ring focus-ring-danger py-1 px-2 text-decoration-none border rounded-2">Danger focus</Link></p>
-    </Col>
-    <Col lg={6}>
-        <p><Link href="#!" className="d-inline-flex focus-ring focus-ring-warning py-1 px-2 text-decoration-none border rounded-2">Warning focus</Link></p>
-        <p><Link href="#!" className="d-inline-flex focus-ring focus-ring-info py-1 px-2 text-decoration-none border rounded-2">Info focus</Link></p>
-        <p><Link href="#!" className="d-inline-flex focus-ring focus-ring-light py-1 px-2 text-decoration-none border rounded-2">Light focus</Link></p>
-        <p className="mb-0"><Link href="#!" className="d-inline-flex focus-ring focus-ring-dark py-1 px-2 text-decoration-none border rounded-2">Dark focus</Link></p>
-    </Col>
-</Row>
-`;
+<p><Link href="#!" className="d-inline-flex focus-ring focus-ring-primary py-1 px-2 text-decoration-none border rounded-2">Primary focus</Link></p>
 
+<p><Link href="#!" className="d-inline-flex focus-ring focus-ring-secondary py-1 px-2 text-decoration-none border rounded-2">Secondary focus</Link></p>
+
+<p><Link href="#!" className="d-inline-flex focus-ring focus-ring-success py-1 px-2 text-decoration-none border rounded-2">Success focus</Link></p>
+
+<p className="mb-lg-0"><Link href="#!" className="d-inline-flex focus-ring focus-ring-danger py-1 px-2 text-decoration-none border rounded-2">Danger focus</Link></p>
+
+<p><Link href="#!" className="d-inline-flex focus-ring focus-ring-warning py-1 px-2 text-decoration-none border rounded-2">Warning focus</Link></p>
+
+<p><Link href="#!" className="d-inline-flex focus-ring focus-ring-info py-1 px-2 text-decoration-none border rounded-2">Info focus</Link></p>
+
+<p><Link href="#!" className="d-inline-flex focus-ring focus-ring-light py-1 px-2 text-decoration-none border rounded-2">Light focus</Link></p>
+
+<p className="mb-0"><Link href="#!" className="d-inline-flex focus-ring focus-ring-dark py-1 px-2 text-decoration-none border rounded-2">Dark focus</Link></p>
+`
 const FocusRingUtilityExample = () => (
     <PrismCode
-        code={focusRingUtilityCode}
-        language={("html")}
+        code={focusringutility}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
 
 
-export { DefaultButtonsExample,FocusRingExample, FocusRingUtilityExample, OutlineButtonsExample, RoundedButtonsExample, SoftButtonsExample, GradientButtonsExample, AnimationButtonsExample, LabelButtonsExample, SizeButtonsExample, WidthButtonsExample, TagButtonsExample, GridButtonsExample, CheckButtonsExample, GroupButtonsExample, IconButtonsExample, ToolbarButtonsExample, GroupsizingButtonsExample, BaseClassExample, CustomSizingExample, VerticalButtonsExample, GhostButtonsExample, LoadingbuttonsExample, BorderButtonsExample, CustomToggleButtonsExample };
+export { DefaultButtonsExample, OutlineButtonsExample, RoundedButtonsExample, SoftButtonsExample, GradientButtonsExample, AnimationButtonsExample, LabelButtonsExample, SizeButtonsExample, WidthButtonsExample, TagButtonsExample, GridButtonsExample, CheckButtonsExample, GroupButtonsExample, IconButtonsExample, ToolbarButtonsExample, GroupsizingButtonsExample, VerticalButtonsExample, GhostButtonsExample, LoadingbuttonsExample, BorderButtonsExample, CustomToggleButtonsExample, BaseClassExample, CustomSizeExample, FocusRingExample, FocusRingUtilityExample };

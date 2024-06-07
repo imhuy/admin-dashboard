@@ -15,8 +15,8 @@ import {
     Quarter,
     DistributedColumn,
     ColumnGroupLabels,
-    StackedColumnColors,
-    DumbBell
+    GroupStacked,
+    DumbbellChartColors
 } from "./ColumnCharts";
 
 
@@ -83,18 +83,18 @@ const ColumnCharts = () => {
                                     <h4 className="card-title mb-0">Grouped Stacked Columns</h4>
                                 </CardHeader>
                                 <CardBody>
-                                    <StackedColumnColors dataColors='["--vz-success", "--vz-primary","--vz-secondary", "--vz-danger"]' />
+                                    <GroupStacked 
+                                    dataColors='["--vz-success", "--vz-primary","--vz-secondary", "--vz-danger"]' />
                                 </CardBody>
                             </Card>
-                        </Col>
-
-                        <Col lg={6}>
+                        </Col><Col lg={6}>
                             <Card>
                                 <CardHeader>
                                     <h4 className="card-title mb-0">Dumbbell Chart</h4>
                                 </CardHeader>
                                 <CardBody>
-                                    <DumbBell dataColors='["--vz-success", "--vz-primary"]' />
+                                    <DumbbellChartColors 
+                                    dataColors='["--vz-success", "--vz-primary"]' />
                                 </CardBody>
                             </Card>
                         </Col>
@@ -157,12 +157,11 @@ const ColumnCharts = () => {
                                 <CardBody>
                                     <div id="dynamicloadedchart-wrap" dir="ltr">
                                         <div id="chart-year" className="apex-charts">
-                                            <DynamicColumn dataColors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-body-color", "--vz-info"]' />
+                                            <DynamicColumn dataColors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-dark", "--vz-info"]' />
                                         </div>
                                         <div id="chart-quarter" className="apex-charts">
-                                            <Quarter 
-                                            // dataColors='["--vz-primary"]'
-                                             />
+                                            <Quarter />
+                                            {/* dataColors='["--vz-primary"]'  */}
                                         </div>
                                     </div>
                                 </CardBody>

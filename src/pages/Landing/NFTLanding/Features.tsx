@@ -1,8 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
-import {featuresData} from "../../../common/data"
+import { featuresData } from '../../../common/data';
 
 const Features = () => {
     
@@ -20,14 +19,14 @@ const Features = () => {
                 </Row>
                 
                 <Row>
-                 {featuresData.map((item : any, key : any) => (
+                 {featuresData.map((item, key) => (
                     <Col key={key} lg={3}>
                         <Card className="shadow-none">
                             <CardBody>
                                 <img src={item.img} alt="" className="avatar-sm"/>
                                 <h5 className="mt-4">{item.title}</h5>
                                 <p className="text-muted fs-14">{item.textConent}</p>
-                                <Link to="#!" className="link-success fs-14">Read More <i className="ri-arrow-right-line align-bottom"></i></Link>
+                                <Link to="#" className="link-success fs-14">Read More <i className="ri-arrow-right-line align-bottom"></i></Link>
                             </CardBody>
                         </Card>
                     </Col>

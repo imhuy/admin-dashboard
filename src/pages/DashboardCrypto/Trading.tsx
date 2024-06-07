@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 const Trading = () => {
     //Tab 
-    const [activeTab, setActiveTab] = useState('1');
-    const toggleTab = (tab : any) => {
+    const [activeTab, setActiveTab] = useState<any>('1');
+    const toggleTab = (tab:any) => {
         if (activeTab !== tab) {
             setActiveTab(tab);
         }
@@ -13,7 +13,7 @@ const Trading = () => {
     return (
         <React.Fragment>
             <Col xl={4}>
-                <Card className='card-height-100'>
+                <Card>
                     <CardHeader className="align-items-center border-0 d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Trading</h4>
                         <div className="flex-shrink-0">

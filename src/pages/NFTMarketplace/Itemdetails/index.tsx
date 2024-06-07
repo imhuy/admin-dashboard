@@ -12,9 +12,6 @@ import Img3 from "../../../assets/images/nft/img-03.jpg";
 import Img5 from "../../../assets/images/nft/img-05.jpg";
 import Img6 from "../../../assets/images/nft/img-06.jpg";
 
-import ImgGif3 from "../../../assets/images/nft/gif/img-3.gif";
-import ImgGif4 from "../../../assets/images/nft/gif/img-4.gif";
-
 import avatar1 from "../../../assets/images/users/avatar-1.jpg";
 import avatar3 from "../../../assets/images/users/avatar-3.jpg";
 import avatar5 from "../../../assets/images/users/avatar-5.jpg";
@@ -31,14 +28,14 @@ import SimpleBar from "simplebar-react";
 const ItemDetails = () => {
     document.title = "Item Details | Velzon - React Admin & Dashboard Template";
 
-    const [customActiveTab, setcustomActiveTab] = useState("1");
-    const toggleCustom = (tab : any) => {
+    const [customActiveTab, setcustomActiveTab] = useState<any>("1");
+    const toggleCustom = (tab:any) => {
         if (customActiveTab !== tab) {
             setcustomActiveTab(tab);
         }
     };
 
-    const renderer = ({ days, hours, minutes, seconds, completed } : any) => {
+    const renderer = ({ days, hours, minutes, seconds, completed }:any) => {
         if (completed) {
             // Render a completed state
             return <span>You are good to go!</span>;
@@ -74,7 +71,7 @@ const ItemDetails = () => {
                                                         <img src={Img3} alt="" className="img-fluid rounded" />
                                                     </Col>
                                                     <Col className="col-3">
-                                                        <img src={ImgGif3} alt="" className="img-fluid rounded h-100 object-fit-cover" />
+                                                        <img src={"https://img.themesbrand.com/velzon/images/img-3.gif"} alt="" className="img-fluid rounded h-100 object-fit-cover" />
                                                     </Col>
                                                     <Col className="col-3">
                                                         <img src={Img6} alt="" className="img-fluid rounded" />
@@ -83,7 +80,7 @@ const ItemDetails = () => {
                                             </div>
                                         </Card>
                                         <div className="hstack gap-2">
-                                            <button className="btn btn-primary w-100">Place Bid</button>
+                                            <button className="btn btn-success w-100">Place Bid</button>
                                         </div>
                                     </div>
                                 </Col>
@@ -100,7 +97,7 @@ const ItemDetails = () => {
                                             </DropdownMenu>
                                         </UncontrolledDropdown>
 
-                                        <span className="badge bg-info-subtle text-info mb-3 fs-12"><i className="ri-eye-line me-1 align-bottom"></i> 8,634 people views this</span>
+                                        <span className="badge bg-info-subtle  text-info mb-3 fs-12"><i className="ri-eye-line me-1 align-bottom"></i> 8,634 people views this</span>
                                         <h4>Patterns Arts & Culture</h4>
                                         <div className="hstack gap-3 flex-wrap">
                                             <div className="text-muted">Creators : <Link to="#" className="text-primary fw-medium">Nancy Martino</Link></div>
@@ -124,7 +121,7 @@ const ItemDetails = () => {
                                                 <div className="p-2 border border-dashed rounded text-center">
                                                     <div>
                                                         <p className="text-muted fw-medium mb-1">Price :</p>
-                                                        <h5 className="fs-17 text-secondary mb-0"><i className="mdi mdi-ethereum me-1"></i> 83.06 ETH</h5>
+                                                        <h5 className="fs-17 text-success mb-0"><i className="mdi mdi-ethereum me-1"></i> 83.06 ETH</h5>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -151,7 +148,7 @@ const ItemDetails = () => {
                                                 <div className="p-2 border border-dashed rounded text-center">
                                                     <div>
                                                         <p className="text-muted fw-medium mb-1">Auction Ends:</p>
-                                                        <Countdown date="2024/3/19" renderer={renderer} />
+                                                        <Countdown date="2025/01/01" renderer={renderer} />
                                                     </div>
                                                 </div>
                                             </Col>
@@ -228,7 +225,7 @@ const ItemDetails = () => {
                                                                         <div className="d-flex align-items-center">
                                                                             <img src={avatar1} alt="" className="avatar-xs rounded object-fit-cover" />
                                                                             <div className="ms-2">
-                                                                                <Link to="#!"><h6 className="mb-1">Alexis Clarke</h6></Link>
+                                                                                <Link to="#"><h6 className="mb-1">Alexis Clarke</h6></Link>
                                                                                 <p className="text-muted mb-0">Creators</p>
                                                                             </div>
                                                                         </div>
@@ -247,7 +244,7 @@ const ItemDetails = () => {
                                                                         <div className="d-flex align-items-center">
                                                                             <img src={avatar3} alt="" className="avatar-xs rounded object-fit-cover" />
                                                                             <div className="ms-2">
-                                                                                <Link to="#!"><h6 className="mb-1">Glen Matney</h6></Link>
+                                                                                <Link to="#"><h6 className="mb-1">Glen Matney</h6></Link>
                                                                                 <p className="text-muted mb-0">Creators</p>
                                                                             </div>
                                                                         </div>
@@ -257,7 +254,7 @@ const ItemDetails = () => {
                                                                 <tr>
                                                                     <th scope="row">
                                                                         <div className="d-flex align-items-center">
-                                                                            <img src={ImgGif4} alt="" className="avatar-xs rounded object-fit-cover" />
+                                                                            <img src={"https://img.themesbrand.com/velzon/images/img-4.gif"} alt="" className="avatar-xs rounded object-fit-cover" />
                                                                             <Link to="/apps-nft-item-details" className="text-body"><span className="mb-0 ms-2">Evolved Reality</span></Link>
                                                                         </div>
                                                                     </th>
@@ -266,7 +263,7 @@ const ItemDetails = () => {
                                                                         <div className="d-flex align-items-center">
                                                                             <img src={avatar5} alt="" className="avatar-xs rounded object-fit-cover" />
                                                                             <div className="ms-2">
-                                                                                <Link to="#!"><h6 className="mb-1">Herbert Stokes</h6></Link>
+                                                                                <Link to="#"><h6 className="mb-1">Herbert Stokes</h6></Link>
                                                                                 <p className="text-muted mb-0">Creators</p>
                                                                             </div>
                                                                         </div>
@@ -285,7 +282,7 @@ const ItemDetails = () => {
                                                                         <div className="d-flex align-items-center">
                                                                             <img src={avatar8} alt="" className="avatar-xs rounded object-fit-cover" />
                                                                             <div className="ms-2">
-                                                                                <Link to="#!"><h6 className="mb-1">Michael Morris</h6></Link>
+                                                                                <Link to="#"><h6 className="mb-1">Michael Morris</h6></Link>
                                                                                 <p className="text-muted mb-0">Creators</p>
                                                                             </div>
                                                                         </div>
@@ -388,7 +385,7 @@ const ItemDetails = () => {
                                                                 <Col>
                                                                     <div className="p-2">
                                                                         <div className="progress animated-progress progress-sm">
-                                                                            <div className="progress-bar bg-success" role="progressbar" style={{ width: "50.16%" }}></div>
+                                                                            <div className="progress-bar bg-success" role="progressbar" style={{ width: "50.16%" }} ></div>
                                                                         </div>
                                                                     </div>
                                                                 </Col>
@@ -409,7 +406,7 @@ const ItemDetails = () => {
                                                                 <Col>
                                                                     <div className="p-2">
                                                                         <div className="progress animated-progress progress-sm">
-                                                                            <div className="progress-bar bg-success" role="progressbar" style={{ width: "19.32%" }}></div>
+                                                                            <div className="progress-bar bg-success" role="progressbar" style={{ width: "19.32%" }} ></div>
                                                                         </div>
                                                                     </div>
                                                                 </Col>
@@ -430,7 +427,7 @@ const ItemDetails = () => {
                                                                 <Col>
                                                                     <div className="p-2">
                                                                         <div className="progress animated-progress progress-sm">
-                                                                            <div className="progress-bar bg-success" role="progressbar" style={{ width: "18.12%" }}></div>
+                                                                            <div className="progress-bar bg-success" role="progressbar" style={{ width: "18.12%" }} ></div>
                                                                         </div>
                                                                     </div>
                                                                 </Col>
@@ -451,7 +448,7 @@ const ItemDetails = () => {
                                                                 <Col>
                                                                     <div className="p-2">
                                                                         <div className="progress animated-progress progress-sm">
-                                                                            <div className="progress-bar bg-warning" role="progressbar" style={{ width: "7.42%" }}></div>
+                                                                            <div className="progress-bar bg-warning" role="progressbar" style={{ width: "7.42%" }} ></div>
                                                                         </div>
                                                                     </div>
                                                                 </Col>
@@ -473,7 +470,7 @@ const ItemDetails = () => {
                                                                 <Col>
                                                                     <div className="p-2">
                                                                         <div className="progress animated-progress progress-sm">
-                                                                            <div className="progress-bar bg-danger" role="progressbar" style={{ width: "4.98%" }}></div>
+                                                                            <div className="progress-bar bg-danger" role="progressbar" style={{ width: "4.98%" }} ></div>
                                                                         </div>
                                                                     </div>
                                                                 </Col>
@@ -501,12 +498,16 @@ const ItemDetails = () => {
                                                                     <div className="border border-dashed rounded p-3">
                                                                         <div className="d-flex align-items-start mb-3">
                                                                             <div className="hstack gap-3">
-                                                                                <div className="badge rounded-pill bg-success mb-0">
-                                                                                <i className="mdi mdi-star"></i> 4.2
+                                                                                <div className="text-warning">
+                                                                                    <i className="mdi mdi-star"></i>
+                                                                                    <i className="mdi mdi-star"></i>
+                                                                                    <i className="mdi mdi-star"></i>
+                                                                                    <i className="mdi mdi-star"></i>
+                                                                                    <i className="mdi mdi-star"></i>
                                                                                 </div>
                                                                                 <div className="vr"></div>
                                                                                 <div className="flex-grow-1">
-                                                                                <p className="text-muted mb-0"> Superb sweatshirt. I loved it. It is for winter.</p>
+                                                                                    <h6 className="mb-0"> Superb Artwork</h6>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

@@ -5,7 +5,7 @@ import * as echarts from 'echarts/core';
 import getChartColorsArray from "../../../Components/Common/ChartsDynamicColor";
 
 //LineChart
-const LineChart = ({ dataColors } : any) => {
+const LineChart = ({ dataColors } : any ) => {
     var chartLineColors = getChartColorsArray(dataColors);
     var option = {
         grid: {
@@ -55,7 +55,7 @@ const LineChart = ({ dataColors } : any) => {
 }
 
 //Stacked Line Chart
-const StackedLineChart = ({ dataColors } : any) => {
+const StackedLineChart = ({ dataColors } : any ) => {
     var chartLineStackedColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -147,7 +147,7 @@ const StackedLineChart = ({ dataColors } : any) => {
 }
 
 //AreaChart
-const AreaChart = ({ dataColors } : any) => {
+const AreaChart = ({ dataColors } : any ) => {
     var chartAreaColors = getChartColorsArray(dataColors);
     var option = {
         grid: {
@@ -200,7 +200,7 @@ const AreaChart = ({ dataColors } : any) => {
 }
 
 //StackedAreaChart
-const StackedAreaChart = ({ dataColors } : any) => {
+const StackedAreaChart = ({ dataColors } : any ) => {
     var chartAreaStackedColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -321,7 +321,7 @@ const StackedAreaChart = ({ dataColors } : any) => {
 }
 
 //StepLine Chart
-const StepLineChart = ({ dataColors } : any) => {
+const StepLineChart = ({ dataColors } : any ) => {
     var chartStepLineColors = getChartColorsArray(dataColors);
     var option = {
 
@@ -401,7 +401,7 @@ const StepLineChart = ({ dataColors } : any) => {
 
 
 //Line Y Chart
-const LineYChart = ({ dataColors } : any) => {
+const LineYChart = ({ dataColors } : any ) => {
     var chartLineYColors = getChartColorsArray(dataColors);
     var option = {
         legend: {
@@ -483,7 +483,7 @@ const LineYChart = ({ dataColors } : any) => {
 }
 
 //Basic bar Chart
-const BasicBarChart = ({ dataColors } : any) => {
+const BasicBarChart = ({ dataColors } : any ) => {
     var chartBarColors = getChartColorsArray(dataColors);
     var option = {
         grid: {
@@ -537,10 +537,10 @@ const BasicBarChart = ({ dataColors } : any) => {
 }
 
 //Bar Label Chart
-const BarLabelChart = ({ dataColors } : any) => {
+const BarLabelChart = ({ dataColors } : any ) => {
     var chartBarLabelRotationColors = getChartColorsArray(dataColors);
     var app : any = {};
-    var myChart : any;
+    var myChart : any ;
 
 
     var posList = [
@@ -558,7 +558,7 @@ const BarLabelChart = ({ dataColors } : any) => {
         'insideBottomLeft',
         'insideBottomRight'
     ];
-    app.configParameters = {
+    app.configParameters  = {
         rotate: {
             min: -90,
             max: 90
@@ -595,7 +595,7 @@ const BarLabelChart = ({ dataColors } : any) => {
         position: 'insideBottom',
         distance: 15,
         onChange: function () {
-            var labelOption = {
+            var labelOption : any = {
                 rotate: app.config.rotate,
                 align: app.config.align,
                 verticalAlign: app.config.verticalAlign,
@@ -619,7 +619,7 @@ const BarLabelChart = ({ dataColors } : any) => {
             });
         }
     };
-    var labelOption = {
+    var labelOption : any = {
         show: true,
         position: app.config.position,
         distance: app.config.distance,
@@ -736,7 +736,7 @@ const BarLabelChart = ({ dataColors } : any) => {
         {
             name: 'Wetland',
             type: 'bar',
-            label: labelOption,
+            // label: labelOption,
             emphasis: {
                 focus: 'series'
             },
@@ -753,7 +753,7 @@ const BarLabelChart = ({ dataColors } : any) => {
 }
 
 //Horizontal Bar Chart
-const HorizontalBarChart = ({ dataColors } : any) => {
+const HorizontalBarChart = ({ dataColors } : any ) => {
     var chartBarLabelRotationColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -826,7 +826,7 @@ const HorizontalBarChart = ({ dataColors } : any) => {
 }
 
 //Stacked Horizontal Bar Chart
-const StackedHorizontalBarChart = ({ dataColors } : any) => {
+const StackedHorizontalBarChart = ({ dataColors } : any ) => {
     var chartBarStackedColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -949,7 +949,7 @@ const StackedHorizontalBarChart = ({ dataColors } : any) => {
 }
 
 //Pie Chart
-const PieChart = ({ dataColors } : any) => {
+const PieChart = ({ dataColors } : any ) => {
     var chartPieColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -1009,7 +1009,7 @@ const PieChart = ({ dataColors } : any) => {
 }
 
 //Doughnut Chart
-const DoughnutChart = ({ dataColors } : any) => {
+const DoughnutChart = ({ dataColors } : any ) => {
     var chartDoughnutColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -1077,7 +1077,7 @@ const DoughnutChart = ({ dataColors } : any) => {
 }
 
 //Basic Scatter Chart
-const BasicScatterChart = ({ dataColors } : any) => {
+const BasicScatterChart = ({ dataColors } : any ) => {
     var chartDoughnutColors = getChartColorsArray(dataColors);
     var option = {
         grid: {
@@ -1153,7 +1153,7 @@ const BasicScatterChart = ({ dataColors } : any) => {
 }
 
 //CandleStick Chart
-const CandleStickChart = ({ dataColors } : any) => {
+const CandleStickChart = ({ dataColors } : any ) => {
     var chartCandlestickColors = getChartColorsArray(dataColors);
     var option = {
         grid: {
@@ -1217,7 +1217,7 @@ const CandleStickChart = ({ dataColors } : any) => {
 }
 
 //Graph Chart
-const GraphChart = ({ dataColors } : any) => {
+const GraphChart = ({ dataColors } : any ) => {
     var chartGraphColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {},
@@ -1316,7 +1316,7 @@ const GraphChart = ({ dataColors } : any) => {
 }
 
 //Treemap Chart
-const TreemapChart = ({ dataColors } : any) => {
+const TreemapChart = ({ dataColors } : any ) => {
     var chartTreemapColors = getChartColorsArray(dataColors);
     var option = {
         color: chartTreemapColors,
@@ -1361,7 +1361,7 @@ const TreemapChart = ({ dataColors } : any) => {
 }
 
 //Sunburst Chart
-const SunburstChart = ({ dataColors } : any) => {
+const SunburstChart = ({ dataColors } : any ) => {
     var chartSunburstColors = getChartColorsArray(dataColors);
     const data = [{
         name: 'Grandpa',
@@ -1442,7 +1442,7 @@ const SunburstChart = ({ dataColors } : any) => {
 }
 
 //Parallel Chart
-const ParallelChart = ({ dataColors } : any) => {
+const ParallelChart = ({ dataColors } : any ) => {
     var chartParallelColors = getChartColorsArray(dataColors);
     var option = {
         parallelAxis: [{
@@ -1495,7 +1495,7 @@ const ParallelChart = ({ dataColors } : any) => {
 }
 
 //Sankey Chart
-const SankeyChart = ({ dataColors } : any) => {
+const SankeyChart = ({ dataColors } : any ) => {
     var chartSankeyColors = getChartColorsArray(dataColors);
     var option = {
         color: chartSankeyColors,
@@ -1568,7 +1568,7 @@ const SankeyChart = ({ dataColors } : any) => {
 }
 
 //funnel Chart
-const FunnelChart = ({dataColors} : any) => {
+const FunnelChart = ({dataColors}  : any ) => {
     var FunnelColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -1658,7 +1658,7 @@ const FunnelChart = ({dataColors} : any) => {
 }
 
 //Gauge Chart
-const GaugeChart = ({ dataColors } : any) => {
+const GaugeChart = ({ dataColors } : any ) => {
     var chartGaugeColors = getChartColorsArray(dataColors);
     var option = {
         tooltip: {
@@ -1699,9 +1699,9 @@ const GaugeChart = ({ dataColors } : any) => {
 }
 
 //Heatmap Chart
-const HeatmapChart = ({ dataColors } : any) => {
+const HeatmapChart = ({ dataColors } : any ) => {
     var chartHeatmapColors = getChartColorsArray(dataColors);
-    function getVirtulData(year : any) {
+    function getVirtulData(year : any ) {
         year = year || '2017';
         var date = +echarts.number.parseDate(year + '-01-01');
         var end = +echarts.number.parseDate(+year + 1 + '-01-01');

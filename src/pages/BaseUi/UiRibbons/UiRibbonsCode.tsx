@@ -43,7 +43,7 @@ const roundedRibbonCode =
 const RoundedRibbonExample = () => (
     <PrismCode
         code={roundedRibbonCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -90,7 +90,7 @@ const ribbonShapeCode =
 const RibbonShapeExample = () => (
     <PrismCode
         code={ribbonShapeCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -138,7 +138,7 @@ const filledRibbonsCode =
 const FilledRibbonsExample = () => (
     <PrismCode
         code={filledRibbonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -173,7 +173,7 @@ const boxedRibbonsCode =
 const BoxedRibbonsExample = () => (
     <PrismCode
         code={boxedRibbonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -208,7 +208,7 @@ const ribbonsCode =
 const RibbonsExample = () => (
     <PrismCode
         code={ribbonsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -252,7 +252,7 @@ const ribbonsHoverCode =
 const RibbonsHoverExample = () => (
     <PrismCode
         code={ribbonsHoverCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

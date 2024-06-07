@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getDirectContact, getMessages, addMessage, deleteMessage } from './thunk';
+import {
+  getDirectContact, getMessages, addMessage, deleteMessage
+} from './thunk';
 
-export const initialState : any = {
+export const initialState: any = {
   chats: [],
   messages: [],
-  channels: [],
   error: {},
+  loading: true
 };
 
 const chatSlice = createSlice({

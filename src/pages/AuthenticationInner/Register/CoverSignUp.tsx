@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Col, Container, Row, FormFeedback, Input, Button, Form } from 'reactstrap';
-
-import AuthSlider from '../authCarousel';
+import { Card, Col, Container, Row, Form, FormFeedback, Input, Button } from 'reactstrap';
 
 //formik
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
+import AuthSlider from '../authCarousel';
+
 
 const CoverSignUp = () => {
     document.title = "Cover SignUp | Velzon - React Admin & Dashboard Template";

@@ -3,9 +3,9 @@ import ReactApexChart from "react-apexcharts";
 
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
-const AudiencesCharts = ({ dataColors, series } : any) => {
+const AudiencesCharts = ({ dataColors, series }:any) => {
     var chartAudienceColumnChartsColors = getChartColorsArray(dataColors);
-    var options : any = {
+    var options:any = {
         chart: {
             type: 'bar',
             height: 309,
@@ -81,10 +81,10 @@ const AudiencesCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const AudiencesSessionsCharts = ({ dataColors, series } : any) => {
+const AudiencesSessionsCharts = ({ dataColors, series }:any) => {
     var chartHeatMapBasicColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         chart: {
             height: 400,
             type: 'heatmap',
@@ -133,7 +133,7 @@ const AudiencesSessionsCharts = ({ dataColors, series } : any) => {
         colors: chartHeatMapBasicColors,
         tooltip: {
             y: [{
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0) + "k";
                     }
@@ -155,9 +155,9 @@ const AudiencesSessionsCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const CountriesCharts = ({ dataColors, series } : any) => {
+const CountriesCharts = ({ dataColors, series }:any) => {
     var barchartCountriesColors = getChartColorsArray(dataColors);
-    var options : any = {
+    var options:any = {
         chart: {
             type: 'bar',
             height: 436,
@@ -183,6 +183,7 @@ const CountriesCharts = ({ dataColors, series } : any) => {
                 fontSize: '12px',
                 fontWeight: 400,
                 colors: ['#adb5bd']
+                // colors:['#878a99']
             }
         },
 
@@ -209,9 +210,9 @@ const CountriesCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const UsersByDeviceCharts = ({ dataColors, series } : any) => {
+const UsersByDeviceCharts = ({ dataColors, series }:any) => {
     var dountchartUserDeviceColors = getChartColorsArray(dataColors);
-    const options : any = {
+    const options:any = {
         labels: ["Desktop", "Mobile", "Tablet"],
         chart: {
             type: "donut",
@@ -249,7 +250,7 @@ const UsersByDeviceCharts = ({ dataColors, series } : any) => {
         },
         yaxis: {
             labels: {
-                formatter: function (value : any) {
+                formatter: function (value:any) {
                     return value + 'k Users';
                 }
             },
@@ -260,8 +261,7 @@ const UsersByDeviceCharts = ({ dataColors, series } : any) => {
     };
     return (
         <React.Fragment>
-            <ReactApexChart
-                dir="ltr"
+            <ReactApexChart dir="ltr"
                 options={options}
                 series={series}
                 type="donut"

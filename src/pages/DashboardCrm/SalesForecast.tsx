@@ -5,25 +5,26 @@ import { useSelector, useDispatch } from "react-redux";
 import { getSalesChartsData } from '../../slices/thunks';
 import { createSelector } from 'reselect';
 
-
 const SalesForecast = () => {
-    const dispatch : any = useDispatch();
+    
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const selectDashboardData = createSelector(
-        (state : any) => state.DashboardCRM.salesForecastData,
-        (salesForecastData) => salesForecastData
+        (state:any) => state.DashboardCRM,
+        (salesForecastData) => salesForecastData.salesForecastData
       );
     // Inside your component
     const salesForecastData = useSelector(selectDashboardData);
+
 
     useEffect(() => {
         setchartData(salesForecastData);
     }, [salesForecastData]);
 
     const [seletedMonth, setSeletedMonth] = useState("Nov 2021");
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         setSeletedMonth(pType);
         dispatch(getSalesChartsData(pType));
     };
@@ -53,8 +54,8 @@ const SalesForecast = () => {
                         </div>
                     </CardHeader>
                     <div className="card-body pb-0">
-                        <div id="sales-forecast-chart" className="apex-charts" dir="ltr">
-                            <SalesForecastCharts series={chartData} dataColors='["--vz-primary", "--vz-success", "--vz-warning"]' />
+                        <div id="sales-forecast-chart" className="apex-charts">
+                            <SalesForecastCharts series={chartData} dataColors='["--vz-primary", "--vz-success", "--vz-warning"]'/>
                         </div>
                     </div>
                 </Card>

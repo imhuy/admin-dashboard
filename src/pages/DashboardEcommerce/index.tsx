@@ -10,11 +10,10 @@ import Section from "./Section";
 import StoreVisits from "./StoreVisits";
 import TopSellers from "./TopSellers";
 
-
 const DashboardEcommerce = () => {
   document.title = "Dashboard | Velzon - React Admin & Dashboard Template";
 
-  const [rightColumn, setRightColumn] = useState(true);
+  const [rightColumn, setRightColumn] = useState<boolean>(true);
   const toggleRightColumn = () => {
     setRightColumn(!rightColumn);
   };

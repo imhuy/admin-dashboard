@@ -4,7 +4,6 @@ import BreadCrumb from '../../../Components/Common/BreadCrumb';
 import Widgets from './Widgets';
 import ICO from './ICO';
 
-
 const ICOList = () => {
     document.title="ICO LIST | Velzon - React Admin & Dashboard Template";
     return (

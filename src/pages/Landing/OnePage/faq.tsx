@@ -4,13 +4,13 @@ import classnames from "classnames";
 
 const Faqs = () => {
 
-    const [col1, setcol1] = useState(true);
+    const [col1, setcol1] = useState<boolean>(true);
     const [col2, setcol2] = useState<boolean>(false);
     const [col3, setcol3] = useState<boolean>(false);
     const [col4, setcol4] = useState<boolean>(false);
 
     const [col9, setcol5] = useState<boolean>(false);
-    const [col10, setcol6] = useState(true);
+    const [col10, setcol6] = useState<boolean>(true);
     const [col11, setcol7] = useState<boolean>(false);
     const [col12, setcol8] = useState<boolean>(false);
 

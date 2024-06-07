@@ -10,23 +10,23 @@ const TopPerformers = () => {
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Top Performers</h4>
                         <div className="d-flex gap-1">
-                            <button type="button" className="btn btn-soft-info btn-sm shadow-none">
+                            <button type="button" className="btn btn-soft-info btn-sm">
                                 1H
                             </button>
-                            <button type="button" className="btn btn-soft-info btn-sm shadow-none">
+                            <button type="button" className="btn btn-soft-info btn-sm">
                                 1D
                             </button>
-                            <button type="button" className="btn btn-soft-info btn-sm shadow-none">
+                            <button type="button" className="btn btn-soft-info btn-sm">
                                 7D
                             </button>
-                            <button type="button" className="btn btn-soft-primary btn-sm shadow-none">
+                            <button type="button" className="btn btn-soft-primary btn-sm">
                                 1M
                             </button>
                         </div>
                     </CardHeader>
                     <CardBody className="p-0">
                         <ul className="list-group list-group-flush border-dashed mb-0">
-                            {(topPerformers || []).map((item : any, key : any) => (
+                            {(topPerformers || []).map((item, key) => (
                                 <li className="list-group-item d-flex align-items-center" key={key}>
                                     <div className="flex-shrink-0">
                                         <img src={item.img} className="avatar-xs" alt="" />

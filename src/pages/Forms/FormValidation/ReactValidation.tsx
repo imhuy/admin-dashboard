@@ -11,23 +11,24 @@ import {
 import PreviewCardHeader from '../../../Components/Common/PreviewCardHeader';
 import { BrowserDefaults } from './FormValidationCode';
 
+
 const ReactValidation = () => {
 
     const [validation, setValidation] = useState<{
-        fnm: null | false | true;
-        lnm: null | false | true;
-        unm: null | false | true;
-        city: null | false | true;
-        stateV: null | false | true;
-    } > ({
-        fnm: null,
-        lnm: null,
-        unm: null,
-        city: null,
-        stateV: null,
-    });
+          fnm: null | false | true;
+          lnm: null | false | true;
+          unm: null | false | true;
+          city: null | false | true;
+          stateV: null | false | true;
+        }>({
+          fnm: null,
+          lnm: null,
+          unm: null,
+          city: null,
+          stateV: null,
+        });
 
-    function handleSubmit(e : any) {
+    function handleSubmit(e: any) {
         e.preventDefault();
         const modifiedV = { ...validation };
         var fnm = (document.getElementById("validationTooltip01") as HTMLInputElement)?.value;
@@ -69,8 +70,8 @@ const ReactValidation = () => {
     }
 
     //for change tooltip display propery
-    const onChangeValidation = (fieldName : any, value : any) => {
-        const modifiedV : any  = { ...validation };
+    const onChangeValidation = (fieldName: any, value: any) => {
+        const modifiedV : any = { ...validation };
         if (value !== "") {
             modifiedV[fieldName] = true;
         } else {
@@ -97,7 +98,7 @@ const ReactValidation = () => {
                                 className="needs-validation"
                                 method="post"
                                 id="tooltipForm"
-                                onSubmit={(e : any) => {
+                                onSubmit={(e) => {
                                     handleSubmit(e);
                                 }}
                             >

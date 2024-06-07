@@ -2,10 +2,10 @@ import React from 'react';
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
-const SalesForecastCharts = ({ dataColors, series } : any) => {
+const SalesForecastCharts = ({ dataColors, series }:any) => {
     var areachartSalesColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         chart: {
             type: 'bar',
             height: 341,
@@ -47,7 +47,7 @@ const SalesForecastCharts = ({ dataColors, series } : any) => {
         },
         yaxis: {
             labels: {
-                formatter: function (value : any) {
+                formatter: function (value:any) {
                     return "$" + value + "k";
                 }
             },
@@ -88,10 +88,10 @@ const SalesForecastCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const DealTypeCharts = ({ dataColors, series } : any) => {
+const DealTypeCharts = ({ dataColors, series }:any) => {
     var dealTypeChartsColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         chart: {
             height: 341,
             type: 'radar',
@@ -147,10 +147,10 @@ const DealTypeCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const BalanceOverviewCharts = ({ dataColors, series } : any) => {
+const BalanceOverviewCharts = ({ dataColors, series }:any) => {
     var revenueExpensesChartsColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         chart: {
             height: 290,
             type: 'area',
@@ -168,7 +168,7 @@ const BalanceOverviewCharts = ({ dataColors, series } : any) => {
         },
         yaxis: {
             labels: {
-                formatter: function (value : any) {
+                formatter: function (value:any) {
                     return "$" + value + "k";
                 }
             },

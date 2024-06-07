@@ -30,7 +30,7 @@ const NotificationDropdown = () => {
     return (
         <React.Fragment>
             <Dropdown isOpen={isNotificationDropdown} toggle={toggleNotificationDropdown} className="topbar-head-dropdown ms-1 header-item">
-                <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle shadow-none">
+                <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
                     <i className='bx bx-bell fs-22'></i>
                     <span
                         className="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">3<span
@@ -44,7 +44,7 @@ const NotificationDropdown = () => {
                                     <h6 className="m-0 fs-16 fw-semibold text-white"> Notifications </h6>
                                 </Col>
                                 <div className="col-auto dropdown-tabs">
-                                    <span className="badge bg-light-subtle text-body fs-13"> 4 New</span>
+                                    <span className="badge bg-light-subtle fs-13 text-body"> 4 New</span>
                                 </div>
                             </Row>
                         </div>

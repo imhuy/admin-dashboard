@@ -322,7 +322,7 @@ const Calender = () => {
       <DeleteModal
         show={deleteModal}
         onDeleteClick={handleDeleteEvent}
-        onCloseClick={() => { setDeleteModal(false) }} />
+        onCloseClick={() => { setDeleteModal(false) }} recordId={""} />
       <div className="page-content">
         <Container fluid>
           <BreadCrumb title="Calendar" pageTitle="Apps" />
@@ -564,7 +564,7 @@ const Calender = () => {
                                 mode: "range",
                                 dateFormat: "Y-m-d",
                               }}
-                              onChange={(date : any) => { setSelectedNewDay(date); validation.setFieldValue("defaultDate", date) }}
+                              onChange={(date) => { setSelectedNewDay(date); validation.setFieldValue("defaultDate", date) }}
                             />
                             <span className="input-group-text">
                               <i className="ri-calendar-event-line"></i>
@@ -582,7 +582,7 @@ const Calender = () => {
                             <Flatpickr className="form-control"
                               name="start"
                               value={validation.values.start || ""}
-                              onChange={(date : any) => validation.setFieldValue("start", date[0])}
+                              onChange={(date) => validation.setFieldValue("start", date[0])}
                               options={{
                                 enableTime: true,
                                 noCalendar: true,
@@ -603,7 +603,7 @@ const Calender = () => {
                             <Flatpickr className="form-control input-group"
                               name="end"
                               value={validation.values.end || ""}
-                              onChange={(date : any) => validation.setFieldValue("end", date[0])}
+                              onChange={(date) => validation.setFieldValue("end", date[0])}
                               options={{
                                 enableTime: true,
                                 noCalendar: true,

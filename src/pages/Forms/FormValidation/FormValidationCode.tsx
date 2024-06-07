@@ -240,7 +240,7 @@ const SupportedElements = () => {
 const code = `<Form className="was-validated">
 <div className="mb-3">
     <Label htmlFor="validationTextarea" className="form-label">Textarea</Label>
-    <textarea className="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea"
+    <textarea className="form-control" id="validationTextarea" placeholder="Required example textarea"
     required></textarea>
     <div className="invalid-feedback">
     Please enter a message in the textarea.

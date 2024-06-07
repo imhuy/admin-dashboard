@@ -37,14 +37,17 @@ const Team = () => {
         (teamData) => teamData.teamData
     );
     // Inside your component
-    const teamData = useSelector(selectteamData);
+    const teamData = useSelector<any>(selectteamData);
 
-    const [team, setTeam] = useState<any>();
+
+    const [team, setTeam] = useState<any>(null);
     const [deleteModal, setDeleteModal] = useState<boolean>(false);
     const [teamList, setTeamlist] = useState<any>([]);
+    console.log("teamList", teamList)
 
     //Modal  
-    const [teamMem, setTeamMem] = useState<any>();
+    const [teamMem, setTeamMem] = useState<any>('');
+    console.log("teamMem", teamMem)
     const [isEdit, setIsEdit] = useState<boolean>(false);
     const [modal, setModal] = useState<boolean>(false);
 
@@ -61,8 +64,6 @@ const Team = () => {
         if (modal) {
             setModal(false);
             setTeamMem(null);
-            setSelectedImage("")
-            setImgStore("")
         } else {
             setModal(true);
         }
@@ -70,7 +71,7 @@ const Team = () => {
 
     // Update To do
     const handleTeamClick = useCallback((arg: any) => {
-        const teamMem = arg;
+        const teamMem: any = arg;
         setTeamMem({
             id: teamMem.id,
             name: teamMem.name,
@@ -112,6 +113,7 @@ const Team = () => {
             buttonGroups[i].addEventListener('click', onButtonGroupClick);
         }
 
+
         function onButtonGroupClick(event: any) {
             const target = event.target as HTMLButtonElement;
             const targetId = target.id;
@@ -146,9 +148,9 @@ const Team = () => {
     };
 
     const searchList = (e: any) => {
-        let inputVal = e.toLowerCase();
+        let inputVal = e.target.value.toLowerCase();
 
-        const filterItems = (arr: any, query: any) => {
+        const filterItems = (arr: any, query: string) => {
             return arr.filter((el: any) => {
                 return el.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
             });
@@ -156,6 +158,7 @@ const Team = () => {
 
         let filterData = filterItems(teamData, inputVal);
         setTeamlist(filterData);
+
         const noResultElement = document.getElementById("noresult");
         const teamListElement = document.getElementById("teamlist");
 
@@ -175,7 +178,7 @@ const Team = () => {
             }
         }
     };
-
+    
 
     //OffCanvas  
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -194,7 +197,6 @@ const Team = () => {
         enableReinitialize: true,
 
         initialValues: {
-            id: (teamMem && teamMem.id) || '',
             name: (teamMem && teamMem.name) || '',
             userImage: (teamMem && teamMem.userImage) || '',
             designation: (teamMem && teamMem.designation) || '',
@@ -211,8 +213,8 @@ const Team = () => {
             if (isEdit) {
                 const updateTeamData = {
                     id: teamMem ? teamMem.id : 0,
-                    name: values.name,
                     userImage: values.userImage,
+                    name: values.name,
                     designation: values.designation,
                     projectCount: values.projectCount,
                     taskCount: values.taskCount
@@ -238,29 +240,29 @@ const Team = () => {
         },
     });
 
-    // Image Validation
-    const [imgStore, setImgStore] = useState<any>();
-    const [selectedImage, setSelectedImage] = useState<any>();
+      // Image Validation
+  const [imgStore, setImgStore] = useState<any>();
+  const [selectedImage, setSelectedImage] = useState<any>();
 
-    const handleClick = (item: any) => {
-        const newData = [...imgStore, item];
-        setImgStore(newData);
-        validation.setFieldValue('userImage', newData)
-    }
+  const handleClick = (item: any) => {
+    const newData = [...imgStore, item];
+    setImgStore(newData);
+    validation.setFieldValue('img', newData)
+  }
 
-    useEffect(() => {
-        setImgStore((teamMem && teamMem.userImage) || [])
-    }, [teamMem])
+  useEffect(() => {
+    setImgStore((teamMem && teamMem.img) || [])
+  }, [teamMem])
 
-    const handleImageChange = (event: any) => {
-        const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.onload = (e: any) => {
-            validation.setFieldValue('userImage', e.target.result);
-            setSelectedImage(e.target.result);
-        };
-        reader.readAsDataURL(file);
+  const handleImageChange = (event: any) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      validation.setFieldValue('img', e.target.result);
+      setSelectedImage(e.target.result);
     };
+    reader.readAsDataURL(file);
+  };
 
 
     return (
@@ -301,8 +303,7 @@ const Team = () => {
                                                 <li><Link className="dropdown-item" to="#">Last Year</Link></li>
                                             </DropdownMenu>
                                         </Dropdown>
-                                        <Button color="success"
-                                            onClick={() => handleTeamClicks()}>
+                                        <Button color="success" onClick={() => handleTeamClicks()}>
                                             <i className="ri-add-fill me-1 align-bottom"></i> Add Members</Button>
                                     </div>
                                 </Col>
@@ -331,7 +332,6 @@ const Team = () => {
                                                                         </button>
                                                                     </div>
                                                                 </Col>
-
                                                                 <UncontrolledDropdown direction='start' className="col text-end">
                                                                     <DropdownToggle tag="a" id="dropdownMenuLink2" role="button">
                                                                         <i className="ri-more-fill fs-17"></i>
@@ -353,6 +353,7 @@ const Team = () => {
                                                                 <div className="avatar-lg img-thumbnail rounded-circle flex-shrink-0">
                                                                     {item.userImage != null ?
                                                                         <img src={item.userImage} alt="" className="img-fluid d-block rounded-circle" />
+
                                                                         :
                                                                         <div className="avatar-title text-uppercase border rounded-circle bg-light text-primary">
                                                                             {item.name.charAt(0) + item.name.split(" ").slice(-1).toString().charAt(0)}
@@ -394,7 +395,6 @@ const Team = () => {
                                     </Col>
                                 </Row>
 
-
                                 <div className="modal fade" id="addmembers" tabIndex={1} aria-hidden="true">
                                     <div className="modal-dialog modal-dialog-centered">
                                         <Modal isOpen={modal} toggle={toggle} centered>
@@ -428,7 +428,7 @@ const Team = () => {
                                                                                     </label>
                                                                                     <input className="form-control d-none" defaultValue="" id="cover-image-input" type="file" accept="image/png, image/gif, image/jpeg" />
                                                                                 </div>
-                                                                                <button type="button" className="btn-close btn-close-white" id="createMemberBtn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                <button type="button" className="btn-close btn-close-white" onClick={() => setModal(false)} id="createMemberBtn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -444,14 +444,8 @@ const Team = () => {
                                                                                 </div>
                                                                             </div>
                                                                         </label>
-                                                                        <Input
-                                                                            name="userImage"
-                                                                            className="form-control d-none"
-                                                                            // defaultValue=""
-                                                                            id="member-image-input"
-                                                                            type="file"
-                                                                            accept="image/png, image/gif, image/jpeg"
-                                                                            onChange={handleImageChange}
+                                                                        <Input className="form-control d-none" id="member-image-input" type="file"
+                                                                            accept="image/png, image/gif, image/jpeg" onChange={handleImageChange}
                                                                             invalid={
                                                                                 validation.touched.userImage && validation.errors.userImage ? true : false
                                                                             }
@@ -459,13 +453,10 @@ const Team = () => {
                                                                     </div>
                                                                     <div className="avatar-lg" onClick={(item: any) => handleClick(item)}>
                                                                         <div className="avatar-title bg-light rounded-circle">
-                                                                            <img src={selectedImage || validation.values.userImage || userdummyimg} alt=" " id="member-img" className="avatar-md rounded-circle h-auto" />
+                                                                            <img src={ selectedImage || userdummyimg || validation.values.userImage} alt=" " id="member-img" className="avatar-md rounded-circle h-auto" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {validation.errors.userImage && validation.touched.userImage ? (
-                                                                    <FormFeedback type="invalid" className='d-block'> {validation.errors.userImage} </FormFeedback>
-                                                                ) : null}
                                                             </div>
 
                                                             <div className="mb-3">
@@ -557,13 +548,13 @@ const Team = () => {
                                     </div>
                                 </div>
 
-
                                 <Offcanvas
                                     isOpen={isOpen}
                                     direction="end"
                                     toggle={() => setIsOpen(!isOpen)}
                                     className="offcanvas-end border-0"
                                     tabIndex={1}
+                                    id="member-overview"
                                 >
                                     <OffcanvasBody className="profile-offcanvas p-0">
                                         <div className="team-cover">
@@ -590,8 +581,8 @@ const Team = () => {
                                         <div className="p-3 text-center">
                                             <img src={sideBar.userImage || avatar2} alt="" className="avatar-lg img-thumbnail rounded-circle mx-auto" />
                                             <div className="mt-3">
-                                                <h5 className="fs-15"><Link to="#" className="link-primary">{sideBar.name || "Nancy Martino"}</Link></h5>
-                                                <p className="text-muted">{sideBar.designation || "Team Leader & HR"}</p>
+                                                <h5 className="fs-15 profile-name"><Link to="#" className="link-primary">{sideBar.name || "Nancy Martino"}</Link></h5>
+                                                <p className="text-muted profile-designation">{sideBar.designation || "Team Leader & HR"}</p>
                                             </div>
                                             <div className="hstack gap-2 justify-content-center mt-4">
                                                 <div className="avatar-xs">
@@ -619,13 +610,13 @@ const Team = () => {
                                         <Row className="g-0 text-center">
                                             <Col xs={6}>
                                                 <div className="p-3 border border-dashed border-start-0">
-                                                    <h5 className="mb-1">{sideBar.projectCount || "124"}</h5>
+                                                    <h5 className="mb-1 profile-project">{sideBar.projectCount || "124"}</h5>
                                                     <p className="text-muted mb-0">Projects</p>
                                                 </div>
                                             </Col>
                                             <Col xs={6}>
                                                 <div className="p-3 border border-dashed border-start-0">
-                                                    <h5 className="mb-1">{sideBar.taskCount || "81"}</h5>
+                                                    <h5 className="mb-1 profile-task">{sideBar.taskCount || "81"}</h5>
                                                     <p className="text-muted mb-0">Tasks</p>
                                                 </div>
                                             </Col>

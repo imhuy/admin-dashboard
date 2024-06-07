@@ -7,12 +7,12 @@ import TimeTracking from "./TimeTracking";
 
 
 const TaskDetails = () => {
-    document.title="Task Details | Velzon - React Admin & Dashboard Template";
+    document.title="Tasks Details | Velzon - React Admin & Dashboard Template";
     return (
         <React.Fragment>
             <div className="page-content">
                 <Container fluid>
-                    <BreadCrumb title="Task Details" pageTitle="Tasks" />
+                    <BreadCrumb title="Tasks Details" pageTitle="Tasks" />
                     <Row>
                         <Col xxl={3}>
                             <TimeTracking />

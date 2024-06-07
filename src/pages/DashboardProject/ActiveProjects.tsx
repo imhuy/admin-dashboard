@@ -7,11 +7,11 @@ const ActiveProjects = () => {
     return (
         <React.Fragment>
             <Col xl={7}>
-                <Card className='card-height-100'>
+                <Card>
                     <CardHeader className="d-flex align-items-center">
                         <h4 className="card-title flex-grow-1 mb-0">Active Projects</h4>
                         <div className="flex-shrink-0">
-                            <Link to="#" className="btn btn-soft-info btn-sm shadow-none">Export Report</Link>
+                            <Link to="#" className="btn btn-soft-info btn-sm">Export Report</Link>
                         </div>
                     </CardHeader>
                     <CardBody>
@@ -29,7 +29,7 @@ const ActiveProjects = () => {
                                 </thead>
 
                                 <tbody>
-                                    {(activeProjects || []).map((item : any, key : any) => (<tr key={key}>
+                                    {(activeProjects || []).map((item, key) => (<tr key={key}>
                                         <td className="fw-medium">{item.projectName}</td>
                                         <td>
                                             <img src={item.img} className="avatar-xxs rounded-circle me-1" alt="" />
@@ -45,14 +45,14 @@ const ActiveProjects = () => {
                                         </td>
                                         <td>
                                             <div className="avatar-group flex-nowrap">
-                                                {item.subItem.map((item : any, key : any) => (<div className="avatar-group-item" key={key}>
+                                                {item.subItem.map((item, key) => (<div className="avatar-group-item" key={key}>
                                                     <Link to="#" className="d-inline-block">
                                                         <img src={item.assImg} alt="" className="rounded-circle avatar-xxs" />
                                                     </Link>
                                                 </div>))}
                                             </div>
                                         </td>
-                                        <td><span className={"badge bg-" + item.badgeClass+"-subtle text-" + item.badgeClass}>{item.badge}</span></td>
+                                        <td><span className={"badge bg-" + item.badgeClass+"-subtle text-"+item.badgeClass+""}>{item.badge}</span></td>
                                         <td className="text-muted">{item.dueDate}</td>
                                     </tr>))}
                                 </tbody>

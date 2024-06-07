@@ -55,7 +55,7 @@ export const getCustomers = createAsyncThunk("ecommerce/getCustomers", async () 
   }
 });
 
-export const deleteProducts = createAsyncThunk("ecommerce/deleteProducts", async (product : any) => {
+export const deleteProducts = createAsyncThunk("ecommerce/deleteProducts", async (product:any) => {
   try {
     const response = deleteProductsApi(product);
     toast.success("Product Delete Successfully", { autoClose: 3000 });
@@ -66,7 +66,7 @@ export const deleteProducts = createAsyncThunk("ecommerce/deleteProducts", async
   }
 });
 
-export const updateOrder = createAsyncThunk("ecommerce/updateOrder", async (order : any) => {
+export const updateOrder = createAsyncThunk("ecommerce/updateOrder", async (order:any) => {
   try {
     const response = updateOrderApi(order);
     const data = await response;
@@ -78,7 +78,7 @@ export const updateOrder = createAsyncThunk("ecommerce/updateOrder", async (orde
   }
 });
 
-export const addNewProduct = createAsyncThunk("ecommerce/addNewProduct", async (product : any) => {
+export const addNewProduct = createAsyncThunk("ecommerce/addNewProduct", async (product:any) => {
   try {
     const response = addNewProductApi(product);
     const data = await response;
@@ -90,7 +90,7 @@ export const addNewProduct = createAsyncThunk("ecommerce/addNewProduct", async (
   }
 });
 
-export const updateProduct = createAsyncThunk("ecommerce/updateProduct", async (product : any) => {
+export const updateProduct = createAsyncThunk("ecommerce/updateProduct", async (product:any) => {
   try {
     const response = updateProductApi(product);
     const data = await response;
@@ -103,7 +103,7 @@ export const updateProduct = createAsyncThunk("ecommerce/updateProduct", async (
   }
 });
 
-export const deleteOrder = createAsyncThunk("ecommerce/deleteOrder", async (order : any) => {
+export const deleteOrder = createAsyncThunk("ecommerce/deleteOrder", async (order:any) => {
   try {
     const response = deleteOrderApi(order);
     toast.success("Order Deleted Successfully", { autoClose: 3000 });
@@ -114,7 +114,7 @@ export const deleteOrder = createAsyncThunk("ecommerce/deleteOrder", async (orde
   }
 });
 
-export const addNewOrder = createAsyncThunk("ecommerce/addNewOrder", async (order : any) => {
+export const addNewOrder = createAsyncThunk("ecommerce/addNewOrder", async (order:any) => {
   try {
     const response = addNewOrderApi(order);
     const data = await response;
@@ -126,7 +126,7 @@ export const addNewOrder = createAsyncThunk("ecommerce/addNewOrder", async (orde
   }
 });
 
-export const updateCustomer = createAsyncThunk("ecommerce/updateCustomer", async (customer : any) => {
+export const updateCustomer = createAsyncThunk("ecommerce/updateCustomer", async (customer:any) => {
   try {
     const response = updateCustomerApi(customer);
     const data = await response;
@@ -138,7 +138,7 @@ export const updateCustomer = createAsyncThunk("ecommerce/updateCustomer", async
   }
 });
 
-export const deleteCustomer = createAsyncThunk("ecommerce/deleteCustomer", async (customer : any) => {
+export const deleteCustomer = createAsyncThunk("ecommerce/deleteCustomer", async (customer:any) => {
   try {
     const response = deleteCustomerApi(customer);
     toast.success("Customer Deleted Successfully", { autoClose: 3000 });
@@ -149,7 +149,7 @@ export const deleteCustomer = createAsyncThunk("ecommerce/deleteCustomer", async
   }
 });
 
-export const addNewCustomer = createAsyncThunk("ecommerce/addNewCustomer", async (customer : any) => {
+export const addNewCustomer = createAsyncThunk("ecommerce/addNewCustomer", async (customer:any) => {
   try {
     const response = addNewCustomerApi(customer);
     const data = await response;

@@ -107,6 +107,7 @@ const JobCategories = () => {
       handleSearchData({ data: categoryList, item: item, setState: setCategoryData })
     }
   }
+
   const handleSearchData = ({ data, item, setState }: any) => {
     setState(
       data.filter((search: any) =>
@@ -202,15 +203,15 @@ const JobCategories = () => {
           </Row>
 
           <Row className="row-cols-xxl-5 row-cols-lg-3 row-cols-md-2 row-cols-1">
-            {categoryData && categoryData.map((item: any, key: any) => (
+            {(categoryData || []).map((item: any, key: any) => (
               <Col key={key}>
                 <Card>
                   <CardBody className="text-center py-4">
-                    <i className={item.icon + " display-5 text-primary"} />
+                    <i className={item.iconName + " display-5 text-primary"} />
                     <Link to="#" className="stretched-link">
                       <h5 className="mt-4">{item.lable}</h5>
                     </Link>
-                    <p className="text-muted mb-0">{item.position} Position</p>
+                    <p className="text-muted mb-0">{item.position}</p>
                   </CardBody>
                 </Card>
               </Col>
@@ -241,9 +242,9 @@ const JobCategories = () => {
                   return false;
                 }}
               >
+
                 <div className="mb-4">
-                  {/* We have added remix Icon */}
-                  <label htmlFor="lable-input" className="form-lable">Icon</label>
+                  <label htmlFor="icon-input" className="form-label">Icon <span className="text-danger">* We have added Remix icon</span></label>
                   <Input type="text" className="form-control" id="icon-input"
                     placeholder="ri-bar-chart-fill"
                     name='iconName'
@@ -280,7 +281,7 @@ const JobCategories = () => {
 
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="position-input" className="form-label">Position <span className="text-danger"> *(Enter Position in number)</span></label>
+                  <label htmlFor="position-input" className="form-label">Position</label>
                   <Input type="text" className="form-control" id="position-input"
                     placeholder="Enter position"
                     name='position'

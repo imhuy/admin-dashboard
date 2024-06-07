@@ -2,13 +2,13 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardBody, Col, Container, Input, Row } from "reactstrap";
 import BreadCrumb from "../../../../Components/Common/BreadCrumb";
-import Pagination from "../../../../Components/Common/Pagination";
 import { ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 
 import { getCandidateList as onGetCandidateList } from "slices/thunks";
 import AddEditJobCandidateList from "Components/Common/AddEditJobCandidateList";
+import Pagination from "Components/Common/Pagination";
 
 
 const CandidateList = () => {
@@ -46,8 +46,6 @@ const CandidateList = () => {
   const [isBookmarkClick, setIsBookmarkClick] = useState<boolean>(false);
 
   const sortbyname = [
-    // {
-    //   options: [
     { label: "All", value: "All" },
     { label: "Today", value: "Today" },
     { label: "Yesterday", value: "Yesterday" },
@@ -55,12 +53,10 @@ const CandidateList = () => {
     { label: "Last 30 Days", value: "Last 30 Days" },
     { label: "Thise Month", value: "Thise Month" },
     { label: "Last Year", value: "Last Year" },
-    //   ],
-    // },
   ];
 
   const [candidateData, setCandidateData] = useState<any>();
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   //pagination
   const perPageData = 8;
@@ -140,9 +136,9 @@ const CandidateList = () => {
 
           <Row className="gy-2 mb-2" id="candidate-list">
             {(candidateData || []).map((item: any, key: any) => (
-              <Col lg={12} key={key}>
-                <Card className="mb-0">
-                  <CardBody>
+              <Col className="col-lg-12" key={key}>
+                <Card className="card mb-0">
+                  <CardBody className="card-body">
                     <div className="d-lg-flex align-items-center">
                       <div className="flex-shrink-0">
                         {item.nickname ? (
@@ -199,6 +195,7 @@ const CandidateList = () => {
                           to="#"
                           onClick={(e) => {
                             e.preventDefault();
+                            
                             setIsBookmarkClick(!isBookmarkClick)
                           }}
                           className={isBookmarkClick ? "btn btn-ghost-danger btn-icon custom-toggle active" : "btn btn-ghost-danger btn-icon custom-toggle"}

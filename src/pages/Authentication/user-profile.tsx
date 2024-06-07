@@ -28,17 +28,19 @@ import { editProfile, resetProfileFlag } from "../../slices/thunks";
 import { createSelector } from "reselect";
 
 const UserProfile = () => {
-  const dispatch : any = useDispatch();
+  const dispatch: any = useDispatch();
 
   const [email, setemail] = useState("admin@gmail.com");
   const [idx, setidx] = useState("1");
 
   const [userName, setUserName] = useState("Admin");
 
-  const selectLayoutState = (state : any) => state.Profile;
+
+
+  const selectLayoutState = (state: any) => state.Profile;
   const userprofileData = createSelector(
     selectLayoutState,
-    (state : any) => ({
+    (state) => ({
       user: state.user,
       success: state.success,
       error: state.error
@@ -46,45 +48,38 @@ const UserProfile = () => {
   );
   // Inside your component
   const {
-    user, success, error 
+    user, success, error
   } = useSelector(userprofileData);
 
 
   useEffect(() => {
-    // if (sessionStorage.getItem("authUser")) {
-    //   const obj = sessionStorage.getItem("authUser");
-
-    //   if (!isEmpty(user)) {
-    //     obj.data.first_name = user.first_name;
-    //     sessionStorage.removeItem("authUser");
-    //     sessionStorage.setItem("authUser", JSON.stringify(obj));
-    //   }
-
-    //   setUserName(obj.data.first_name);
-    //   setemail(obj.data.email);
-    //   setidx(obj.data._id || "1");
-
-    //   setTimeout(() => {
-    //     dispatch(resetProfileFlag());
-    //   }, 3000);
-    // }
     if (sessionStorage.getItem("authUser")) {
       const storedUser = sessionStorage.getItem("authUser");
       if (storedUser) {
         const obj = JSON.parse(storedUser);
 
-        if (!isEmpty(user)) {
-          obj.data.first_name = user.first_name;
-          sessionStorage.removeItem("authUser");
-          sessionStorage.setItem("authUser", JSON.stringify(obj));
+        if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
+
+          obj.displayName = user.username;
+          setUserName(obj.displayName || "Admin");
+          setemail(obj.email || "admin@gmail.com");
+          setidx(obj.uid || '1');
+        } else if (process.env.REACT_APP_DEFAULTAUTH === "fake" ||
+          process.env.REACT_APP_DEFAULTAUTH === "jwt"
+        ) {
+          if (!isEmpty(user)) {
+            obj.data.first_name = user.first_name;
+            sessionStorage.removeItem("authUser");
+            sessionStorage.setItem("authUser", JSON.stringify(obj));
+          }
+
+          setUserName(obj.data.first_name || "Admin");
+          setemail(obj.data.email || "admin@gmail.com");
+          setidx(obj.data._id || "1");
+
         }
-
-        setUserName(obj.data.first_name);
-        setemail(obj.data.email);
-        setidx(obj.data._id || "1");
-
         setTimeout(() => {
-          return dispatch(resetProfileFlag());
+          dispatch(resetProfileFlag());
         }, 3000);
       }
     }
@@ -92,7 +87,7 @@ const UserProfile = () => {
 
 
 
-  const validation : any = useFormik({
+  const validation = useFormik({
     // enableReinitialize : use this flag when initial values needs to be changed
     enableReinitialize: true,
 
@@ -111,7 +106,7 @@ const UserProfile = () => {
   document.title = "Profile | Velzon - React Admin & Dashboard Template";
   return (
     <React.Fragment>
-      <div className="page-content">
+      <div className="page-content mt-lg-5">
         <Container fluid>
           <Row>
             <Col lg="12">

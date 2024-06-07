@@ -91,7 +91,7 @@ const UpdateDonut = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="donut"
-            height={280}
+            height={280.7}
         />
 
     )
@@ -147,7 +147,7 @@ const MonochromePie = () => {
             series={series}
             options={options}
             type="pie"
-            height={300}
+            height={300.7}
         />
 
     )
@@ -194,7 +194,7 @@ const GradientDonut = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="donut"
-            height={300}
+            height={290.7}
         />
 
     )
@@ -272,7 +272,7 @@ const PatternedDonut = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="donut"
-            height={300}
+            height={280.7}
         />
 
     )
@@ -331,8 +331,9 @@ const ImagePieChart = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="pie"
-            height={250}
+            height={263.6}
         />
+
     )
 }
 

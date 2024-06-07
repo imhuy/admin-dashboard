@@ -1,6 +1,6 @@
 import React from "react";
 
-const EcommerceOrderProduct = (props : any) => {
+const EcommerceOrderProduct = (props:any) => {
   return (
     <React.Fragment>
       <tr>

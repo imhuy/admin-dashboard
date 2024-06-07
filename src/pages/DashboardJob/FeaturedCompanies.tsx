@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import { Card, CardBody, CardHeader, Col, Table } from "reactstrap";
 import { featuredCompany } from "../../common/data/dashboardJobs";
 
+interface featuredCompanyType {
+  id: number,
+  img: string,
+  lable: string,
+  city: string,
+  bgColor: string
+}
+
 const FeaturedCompanies = () => {
   return (
     <React.Fragment>
@@ -11,7 +19,7 @@ const FeaturedCompanies = () => {
           <CardHeader className="align-items-center d-flex">
             <h4 className="card-title mb-0 flex-grow-1">Featured Companies</h4>
             <div className="flex-shrink-0">
-              <Link to="#!" className="btn btn-soft-primary btn-sm">
+              <Link to="#" className="btn btn-soft-primary btn-sm">
                 View All Companies{" "}
                 <i className="ri-arrow-right-line align-bottom"></i>
               </Link>
@@ -22,12 +30,12 @@ const FeaturedCompanies = () => {
             <div className="table-responsive table-card">
               <Table className="table table-centered table-hover align-middle table-nowrap mb-0">
                 <tbody>
-                  {featuredCompany.map((company : any, key : any) => (
+                  {(featuredCompany || []).map((company: featuredCompanyType, key: number) => (
                     <tr key={key}>
                       <td>
                         <div className="d-flex align-items-center">
                           <div className="avatar-xs me-2 flex-shrink-0">
-                            <div className={"avatar-title bg-" + company.bgcolor + "-subtle rounded"}>
+                            <div className={"avatar-title bg-" + company.bgColor + "-subtle rounded"}>
                               <img src={company.img} alt="" height="16" />
                             </div>
                           </div>
@@ -41,29 +49,29 @@ const FeaturedCompanies = () => {
                       <td>
                         <ul className="list-inline mb-0">
                           <li className="list-inline-item">
-                            <Link to="#!" className="link-secondary">
+                            <Link to="#" className="link-secondary">
                               <i className="ri-facebook-fill"></i>
                             </Link>
                           </li>
                           <li className="list-inline-item">
-                            <Link to="#!" className="link-danger">
+                            <Link to="#" className="link-danger">
                               <i className="ri-mail-line"></i>
                             </Link>
                           </li>
                           <li className="list-inline-item">
-                            <Link to="#!" className="link-primary">
+                            <Link to="#" className="link-primary">
                               <i className="ri-global-line"></i>
                             </Link>
                           </li>
                           <li className="list-inline-item">
-                            <Link to="#!" className="link-info">
+                            <Link to="#" className="link-info">
                               <i className="ri-twitter-line"></i>
                             </Link>
                           </li>
                         </ul>
                       </td>
                       <td>
-                        <Link to="#!" className="btn btn-link btn-sm shadow-none">
+                        <Link to="#" className="btn btn-link btn-sm">
                           View More{" "}
                           <i className="ri-arrow-right-line align-bottom"></i>
                         </Link>
@@ -73,8 +81,8 @@ const FeaturedCompanies = () => {
                 </tbody>
               </Table>
             </div>
-            <div className="align-items-center mt-4 pt-2 justify-content-between d-md-flex">
-              <div className="flex-shrink-0 mb-2 mb-md-0">
+            <div className="align-items-center mt-4 pt-2 justify-content-between d-flex">
+              <div className="flex-shrink-0">
                 <div className="text-muted">
                   Showing <span className="fw-semibold">5</span> of{" "}
                   <span className="fw-semibold">25</span> Results

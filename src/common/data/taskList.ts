@@ -16,7 +16,7 @@ const taskWidgets = [
     {
         id: 1,
         label: "Total Tasks",
-        counter: "234",
+        counter: 234,
         badge: "ri-arrow-up-line",
         badgeClass: "success",
         percentage: "17.32 %",
@@ -29,7 +29,7 @@ const taskWidgets = [
     {
         id: 2,
         label: "Pending Tasks",
-        counter: "64.5",
+        counter: 64.5,
         badge: "ri-arrow-down-line",
         badgeClass: "danger",
         percentage: "0.87 %",
@@ -42,7 +42,7 @@ const taskWidgets = [
     {
         id: 3,
         label: "Completed Tasks",
-        counter: "116.21",
+        counter: 116.21,
         badge: "ri-arrow-down-line",
         badgeClass: "danger",
         percentage: "2.52 %",
@@ -55,7 +55,7 @@ const taskWidgets = [
     {
         id: 4,
         label: "Deleted Tasks",
-        counter: "14.84",
+        counter: 14.84,
         badge: "ri-arrow-up-line",
         badgeClass: "success",
         percentage: "0.63 %",
@@ -86,7 +86,7 @@ const allTask = [
         id: 2,
         taskId: "#VLZ453",
         project: "Skote - v1.0.0",
-        task: "Profile Page Structure",
+        task: "Profile Page Satructure",
         creater: "Mary Cousar",
         // subItem: [avatar10, avatar9, avatar5],
         subItem: [{ id: 1, img: avatar10 }, { id: 2, img: avatar9 }, { id: 3, img: avatar5 }],
@@ -234,7 +234,7 @@ const kanbanBoardData = [
             {
                 id: 11,
                 taskId: "#VL2436",
-                title: "Profile Page Structure",
+                title: "Profile Page Satructure",
                 desc: "Profile Page means a web page accessible to the public or to guests.",
                 progressBar: "15%",
                 date: "03 Jan, 2022",

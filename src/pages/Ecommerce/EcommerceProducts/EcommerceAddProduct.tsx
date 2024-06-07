@@ -664,7 +664,7 @@ const EcommerceAddProduct = (props:any) => {
                       altFormat: "d M, Y, G:i K",
                       dateFormat: "d M, Y, G:i K",
                     }}
-                    onChange={(e : any) =>
+                    onChange={(e) =>
                       dateformate(e)
                     }
                     value={validation.values.publishedDate || ""}

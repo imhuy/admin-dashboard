@@ -20,37 +20,36 @@ const UpcomingActivity = () => {
 
     const chartDataOptions = [
         {
-            id : 1,
-            title : "Application",
-            persantage : "16.24",
+            id: 1,
+            title: "Application",
+            persantage: "16.24",
             series: [{
                 name: "Results",
                 data: [0, 68, 35, 90, 99],
             }],
-            dataColors : '["--vz-success" , "--vz-transparent"]'
+            dataColors: '["--vz-success" , "--vz-transparent"]'
         },
         {
-            id : 2,
-            title : "Interviewed",
-            persantage : "34.24",
+            id: 2,
+            title: "Interviewed",
+            persantage: "34.24",
             series: [{
                 name: "Results",
                 data: [0, 98, 85, 90, 67],
             }],
-            dataColors : '["--vz-danger" , "--vz-transparent"]'
+            dataColors: '["--vz-danger" , "--vz-transparent"]'
         },
         {
-            id : 3,
-            title : "Hired",
-            persantage : "6.67",
+            id: 3,
+            title: "Hired",
+            persantage: "6.67",
             series: [{
                 name: "Results",
                 data: [0, 65, 103, 75, 120],
             }],
-            dataColors : '["--vz-success" , "--vz-transparent"]'
+            dataColors: '["--vz-success" , "--vz-transparent"]'
         },
-    ]
-
+    ];
     return (
         <React.Fragment>
             <Row>
@@ -79,7 +78,7 @@ const UpcomingActivity = () => {
                                     <ListGroupItem className="ps-0" key={key}>
                                         <Row className="align-items-center g-3">
                                             <Col className="col-auto">
-                                                <div className="avatar-sm p-1 py-2 h-auto bg-light rounded-3 shadow">
+                                                <div className="avatar-sm p-1 py-2 h-auto bg-light rounded-3">
                                                     <div className="text-center">
                                                         <h5 className="mb-0">{item.date}</h5>
                                                         <div className="text-muted">{item.weekDay}</div>
@@ -92,10 +91,12 @@ const UpcomingActivity = () => {
                                             </Col>
                                             <Col className="col-sm-auto">
                                                 <div className="avatar-group">
-                                                    {item.subItem.map((item : any, key : any) => (
+                                                    {item.subItem.map((item, key) => (
                                                         <React.Fragment key={key}>
                                                             {item.img ? (<div className="avatar-group-item">
-                                                                <Link to="#" className="d-inline-block" id={item.targetId}>
+                                                                <Link to="#" className="d-inline-block" 
+                                                                // id={item.targetId}
+                                                                >
                                                                     <img src={item.img} alt="" className="rounded-circle avatar-xxs" />
                                                                 </Link>
                                                             </div>) : (<div className="avatar-group-item">
@@ -206,7 +207,7 @@ const UpcomingActivity = () => {
                                         <div className="acitivity-timeline acitivity-main">
                                             <div className="acitivity-item d-flex">
                                                 <div className="flex-shrink-0 avatar-xs acitivity-avatar">
-                                                    <div className="avatar-title bg-success-subtle text-success rounded-circle shadow">
+                                                    <div className="avatar-title bg-success-subtle text-success rounded-circle">
                                                         <i className="ri-shopping-cart-2-line"></i>
                                                     </div>
                                                 </div>
@@ -218,7 +219,7 @@ const UpcomingActivity = () => {
                                             </div>
                                             <div className="acitivity-item py-3 d-flex">
                                                 <div className="flex-shrink-0 avatar-xs acitivity-avatar">
-                                                    <div className="avatar-title bg-primary-subtle text-primary rounded-circle shadow">
+                                                    <div className="avatar-title bg-primary-subtle text-primary rounded-circle">
                                                         <i className="ri-stack-fill"></i>
                                                     </div>
                                                 </div>
@@ -241,7 +242,7 @@ const UpcomingActivity = () => {
                                             </div>
                                             <div className="acitivity-item py-3 d-flex">
                                                 <div className="flex-shrink-0">
-                                                    <img src={avatar2} alt="" className="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                    <img src={avatar2} alt="" className="avatar-xs rounded-circle acitivity-avatar" />
                                                 </div>
                                                 <div className="flex-grow-1 ms-3">
                                                     <h6 className="mb-1">Natasha Carey have liked the products</h6>
@@ -252,7 +253,7 @@ const UpcomingActivity = () => {
                                             <div className="acitivity-item py-3 d-flex">
                                                 <div className="flex-shrink-0">
                                                     <div className="avatar-xs acitivity-avatar">
-                                                        <div className="avatar-title rounded-circle bg-secondary shadow">
+                                                        <div className="avatar-title rounded-circle bg-secondary">
                                                             <i className="mdi mdi-sale fs-14"></i>
                                                         </div>
                                                     </div>
@@ -266,7 +267,7 @@ const UpcomingActivity = () => {
                                             <div className="acitivity-item py-3 d-flex">
                                                 <div className="flex-shrink-0">
                                                     <div className="avatar-xs acitivity-avatar">
-                                                        <div className="avatar-title rounded-circle bg-danger-subtle text-danger shadow">
+                                                        <div className="avatar-title rounded-circle bg-danger-subtle text-danger">
                                                             <i className="ri-bookmark-fill"></i>
                                                         </div>
                                                     </div>
@@ -280,7 +281,7 @@ const UpcomingActivity = () => {
                                             <div className="acitivity-item py-3 d-flex">
                                                 <div className="flex-shrink-0">
                                                     <div className="avatar-xs acitivity-avatar">
-                                                        <div className="avatar-title rounded-circle bg-secondary shadow">
+                                                        <div className="avatar-title rounded-circle bg-secondary">
                                                             <i className="mdi mdi-sale fs-14"></i>
                                                         </div>
                                                     </div>
@@ -294,7 +295,7 @@ const UpcomingActivity = () => {
                                             <div className="acitivity-item py-3 d-flex">
                                                 <div className="flex-shrink-0">
                                                     <div className="avatar-xs acitivity-avatar">
-                                                        <div className="avatar-title rounded-circle bg-info-subtle text-info shadow">
+                                                        <div className="avatar-title rounded-circle bg-info-subtle text-info">
                                                             <i className="ri-line-chart-line"></i>
                                                         </div>
                                                     </div>
@@ -307,7 +308,7 @@ const UpcomingActivity = () => {
                                             </div>
                                             <div className="acitivity-item d-flex">
                                                 <div className="flex-shrink-0">
-                                                    <img src={avatar3} alt="" className="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                    <img src={avatar3} alt="" className="avatar-xs rounded-circle acitivity-avatar" />
                                                 </div>
                                                 <div className="flex-grow-1 ms-3">
                                                     <h6 className="mb-1">Frank Hook Commented</h6>
@@ -326,20 +327,20 @@ const UpcomingActivity = () => {
 
             <Row>
                 {(chartDataOptions || []).map((item, key) => (
-                <Col xl={4} md={6} key={key}>
-                    <Card className="card-height-100">
-                        <div className="d-flex">
-                            <div className="flex-grow-1 p-3">
-                                <h5 className="mb-3">{item.title}</h5>
-                                <p className="mb-0 text-muted"><span className="badge bg-light text-success mb-0"> <i className="ri-arrow-up-line align-middle"></i> {item.persantage} % </span> vs. previous month</p>
+                    <Col xl={4} md={6} key={key}>
+                        <Card className="card-height-100">
+                            <div className="d-flex">
+                                <div className="flex-grow-1 p-3">
+                                    <h5 className="mb-3">{item.title}</h5>
+                                    <p className="mb-0 text-muted"><span className="badge bg-light text-success mb-0"> <i className="ri-arrow-up-line align-middle"></i> {item.persantage} % </span> vs. previous month</p>
+                                </div>
+                                <div>
+                                    {/* <div className="apex-charts" data-colors='["--vz-success" , "--vz-transparent"]' dir="ltr" id="results_sparkline_charts"></div> */}
+                                    <OtherWidgetsCharts dataColors={item.dataColors} seriesData={item.series} />
+                                </div>
                             </div>
-                            <div>
-                                {/* <div className="apex-charts" data-colors='["--vz-success" , "--vz-transparent"]' dir="ltr" id="results_sparkline_charts"></div> */}
-                                <OtherWidgetsCharts dataColors={item.dataColors} seriesData={item.series} />
-                            </div>
-                        </div>
-                    </Card>
-                </Col>
+                        </Card>
+                    </Col>
                 ))}
             </Row>
         </React.Fragment>

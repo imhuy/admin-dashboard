@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getProducts, addNewProduct, updateProduct, deleteProducts, getOrders, addNewOrder, updateOrder, deleteOrder, getCustomers, addNewCustomer, updateCustomer, deleteCustomer, getSellers } from './thunk';
-export const initialState :any= {
+export const initialState: any = {
   products: [],
   orders: [],
   sellers: [],
@@ -13,39 +13,39 @@ const EcommerceSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getProducts.fulfilled, (state:any, action:any) => {
+    builder.addCase(getProducts.fulfilled, (state: any, action: any) => {
       state.products = action.payload;
     });
 
-    builder.addCase(getProducts.rejected, (state:any, action:any) => {
+    builder.addCase(getProducts.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(addNewProduct.fulfilled, (state:any, action:any) => {
-      state.products.push(action.payload);
+    builder.addCase(addNewProduct.fulfilled, (state: any, action: any) => {
+      state.products.unshift(action.payload);
     });
 
-    builder.addCase(addNewProduct.rejected, (state:any, action:any) => {
+    builder.addCase(addNewProduct.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(updateProduct.fulfilled, (state:any, action:any) => {
-      state.products = state.products.map((product:any) =>
+    builder.addCase(updateProduct.fulfilled, (state: any, action: any) => {
+      state.products = state.products.map((product: any) =>
         product.id === action.payload.id
           ? { ...product, ...action.payload }
           : product
       );;
     });
 
-    builder.addCase(updateProduct.rejected, (state:any, action:any) => {
+    builder.addCase(updateProduct.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(deleteProducts.fulfilled, (state:any, action:any) => {
-      state.products = (state.products || []).filter((product:any) => product.id.toString() !== action.payload.product.toString());
+    builder.addCase(deleteProducts.fulfilled, (state: any, action: any) => {
+      state.products = (state.products || []).filter((product: any) => product.id.toString() !== action.payload.product.toString());
     });
 
-    builder.addCase(deleteProducts.rejected, (state:any, action:any) => {
+    builder.addCase(deleteProducts.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
@@ -62,7 +62,7 @@ const EcommerceSlice = createSlice({
     });
 
     builder.addCase(addNewOrder.fulfilled, (state: any, action: any) => {
-      state.orders.push(action.payload);
+      state.orders.unshift(action.payload);
       state.isOrderCreated = true;
     });
 
@@ -92,51 +92,51 @@ const EcommerceSlice = createSlice({
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(getSellers.fulfilled, (state:any, action:any) => {
+    builder.addCase(getSellers.fulfilled, (state: any, action: any) => {
       state.sellers = action.payload;
     });
 
-    builder.addCase(getSellers.rejected, (state:any, action:any) => {
+    builder.addCase(getSellers.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(getCustomers.fulfilled, (state:any, action:any) => {
+    builder.addCase(getCustomers.fulfilled, (state: any, action: any) => {
       state.customers = action.payload;
       state.isCustomerCreated = false;
       state.isCustomerSuccess = true;
     });
 
-    builder.addCase(getCustomers.rejected, (state:any, action:any) => {
+    builder.addCase(getCustomers.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
       state.isCustomerCreated = false;
       state.isCustomerSuccess = false;
     });
 
-    builder.addCase(addNewCustomer.fulfilled, (state:any, action:any) => {
-      state.customers.push(action.payload);
+    builder.addCase(addNewCustomer.fulfilled, (state: any, action: any) => {
+      state.customers.unshift(action.payload);
       state.isCustomerCreated = true;
     });
-    builder.addCase(addNewCustomer.rejected, (state:any, action:any) => {
+    builder.addCase(addNewCustomer.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(updateCustomer.fulfilled, (state:any, action:any) => {
-      state.customers = state.customers.map((customer:any) =>
+    builder.addCase(updateCustomer.fulfilled, (state: any, action: any) => {
+      state.customers = state.customers.map((customer: any) =>
         customer.id === action.payload.id
           ? { ...customer, ...action.payload }
           : customer
       );
     });
-    builder.addCase(updateCustomer.rejected, (state:any, action:any) => {
+    builder.addCase(updateCustomer.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
 
-    builder.addCase(deleteCustomer.fulfilled, (state:any, action:any) => {
+    builder.addCase(deleteCustomer.fulfilled, (state: any, action: any) => {
       state.customers = state.customers.filter(
-        (customer:any) => customer.id.toString() !== action.payload.customer.toString()
+        (customer: any) => customer.id.toString() !== action.payload.customer.toString()
       );
     });
-    builder.addCase(deleteCustomer.rejected, (state:any, action:any) => {
+    builder.addCase(deleteCustomer.rejected, (state: any, action: any) => {
       state.error = action.payload.error || null;
     });
   }

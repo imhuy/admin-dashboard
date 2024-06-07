@@ -43,25 +43,14 @@ const UiCards = () => {
         500: 1
     };
 
-    const delthis = (id : any) => { document.getElementById(id)?.remove(); };
+    const [col1, setCol1] = useState<boolean>(true);
+    const [col2, setCol2] = useState<boolean>(true);
+    const [col3, setCol3] = useState<boolean>(true);
 
-    const [coll1, setcoll1] = useState(true);
-    const t_coll1 = () => {
-        setcoll1(!coll1);
-    };
-
-    const [coll2, setcoll2] = useState(true);
-    const t_coll2 = () => {
-        setcoll2(!coll2);
-    };
-
-    const [coll3, setcoll3] = useState(true);
-    const t_coll3 = () => {
-        setcoll3(!coll3);
-    };
+    const delthis = (id: any) => { document.getElementById(id)?.remove() };
 
     // Card Spinner
-    const spinner = (id : any) => {
+    const spinner = (id: any) => {
         document.getElementById(id)?.classList.remove("d-none");
         document.getElementById(id)?.classList.add("d-block");
         setTimeout(function () {
@@ -69,8 +58,8 @@ const UiCards = () => {
             document.getElementById(id)?.classList.add("d-none");
         }, 3000);
     };
-    
-    document.title="Cards | Velzon - React Admin & Dashboard Template";
+
+    document.title = "Cards | Velzon - React Admin & Dashboard Template";
 
     return (
         <React.Fragment>
@@ -487,31 +476,31 @@ const UiCards = () => {
                                         <div className="flex-shrink-0">
                                             <ul className="list-inline card-toolbar-menu d-flex align-items-center mb-0">
                                                 <li className="list-inline-item">
-                                                    <Link to="#" className="align-middle" role="button" onClick={() => spinner('spinner1')}>
+                                                    <Link className="align-middle" to="#" onClick={() => spinner('customer-loader')}>
                                                         <i className="mdi mdi-refresh align-middle"></i>
                                                     </Link>
                                                 </li>
                                                 <li className="list-inline-item">
-                                                    <Link to="#" className="align-middle minimize-card" onClick={t_coll1} role="button">
-                                                        <i className="mdi mdi-plus align-middle plus" />
-                                                        <i className="mdi mdi-minus align-middle minus" />
+                                                    <Link className="align-middle minimize-card" to="#" onClick={() => setCol1(!col1)}>
+                                                        <i className="mdi mdi-plus align-middle plus"></i>
+                                                        <i className="mdi mdi-minus align-middle minus"></i>
                                                     </Link>
                                                 </li>
                                                 <li className="list-inline-item">
-                                                    <button type="button" onClick={() => delthis("card-none1")} className="btn-close fs-10 align-middle"></button>
+                                                    <button onClick={() => delthis('card-none1')} className="btn-close fs-10 align-middle"></button>
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div className="card-preloader d-none" id='spinner1'>
-                                        <div className="card-status">
-                                            <div className="spinner-border text-success"><span className="visually-hidden">Loading...</span>
+                                        <div className="card-preloader d-none" id='customer-loader'>
+                                            <div className="card-status">
+                                                <div className="spinner-border text-success"><span className="visually-hidden">Loading...</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </CardHeader>
 
-                                <Collapse isOpen={coll1} className="card-body" id="collapseexample1">
+                                <Collapse isOpen={col1} className="card-body" id="collapseexample1">
                                     <div className="d-flex">
                                         <div className="flex-shrink-0">
                                             <i className="ri-checkbox-circle-fill text-success"></i>
@@ -545,6 +534,7 @@ const UiCards = () => {
                                 </Collapse>
                             </Card>
                         </Col>
+
                         <Col xl={4} id="card-none2">
                             <Card>
                                 <CardHeader>
@@ -555,32 +545,31 @@ const UiCards = () => {
                                         <div className="flex-shrink-0">
                                             <ul className="list-inline card-toolbar-menu d-flex align-items-center mb-0">
                                                 <li className="list-inline-item">
-                                                    <Link to="#" className="align-middle" role="button" onClick={() => spinner('spinner2')}>
+                                                    <Link className="align-middle" to="#" onClick={() => spinner("growing-reload")}>
                                                         <i className="mdi mdi-refresh align-middle"></i>
                                                     </Link>
                                                 </li>
                                                 <li className="list-inline-item">
-                                                    <Link to="#" className="align-middle minimize-card" role="button" onClick={t_coll2}>
+                                                    <Link className="align-middle minimize-card" to="#" onClick={() => setCol2(!col2)}>
                                                         <i className="mdi mdi-plus align-middle plus"></i>
                                                         <i className="mdi mdi-minus align-middle minus"></i>
                                                     </Link>
                                                 </li>
                                                 <li className="list-inline-item">
-                                                    <button type="button" onClick={() => delthis("card-none2")} className="btn-close fs-10 align-middle"></button>
+                                                    <button type="button" onClick={() => delthis('card-none2')} className="btn-close fs-10 align-middle"></button>
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div className="card-preloader d-none" id='spinner2'>
-                                        <div className="card-status">
-                                            <div className="spinner-grow text-danger">
-                                                <span className="visually-hidden">Loading...</span>
+                                        <div className="card-preloader d-none" id='growing-reload'>
+                                            <div className="card-status">
+                                                <div className="spinner-grow text-danger">
+                                                    <span className="visually-hidden">Loading...</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </CardHeader>
-
-                                <Collapse isOpen={coll2} className="card-body" id="collapseExample2">
+                                <Collapse isOpen={col2} className="card-body" id="collapseExample2">
                                     <div className="d-flex">
                                         <div className="flex-shrink-0">
                                             <i className="ri-checkbox-circle-fill text-success"></i>
@@ -608,6 +597,7 @@ const UiCards = () => {
                                 </Collapse>
                             </Card>
                         </Col>
+
                         <Col xl={4} id="card-none3">
                             <Card>
                                 <CardHeader>
@@ -618,30 +608,29 @@ const UiCards = () => {
                                         <div className="flex-shrink-0">
                                             <ul className="list-inline card-toolbar-menu d-flex align-items-center mb-0">
                                                 <li className="list-inline-item">
-                                                    <Link to="#" className="align-middle" role="button" onClick={() => spinner('spinner3')}>
+                                                    <Link className="align-middle" to="#" onClick={() => spinner('spinner3')}>
                                                         <i className="mdi mdi-refresh align-middle"></i>
                                                     </Link>
                                                 </li>
                                                 <li className="list-inline-item">
-                                                    <Link to="#" className="align-middle minimize-card" role="button" onClick={t_coll3}>
+                                                    <Link className="align-middle minimize-card" to="#" onClick={() => setCol3(!col3)}>
                                                         <i className="mdi mdi-plus align-middle plus"></i>
                                                         <i className="mdi mdi-minus align-middle minus"></i>
                                                     </Link>
                                                 </li>
                                                 <li className="list-inline-item">
-                                                    <button type="button" onClick={() => delthis("card-none3")} className="btn-close fs-10 align-middle"></button>
+                                                    <button type="button" onClick={() => delthis('card-none3')} className="btn-close fs-10 align-middle"></button>
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div className="card-preloader d-none" id='spinner3'>
-                                        <div className="card-status">
-                                            <img src={spinner1} alt="" className="img-fluid custom-loader" />
+                                        <div className="card-preloader d-none" id='spinner3'>
+                                            <div className="card-status">
+                                                <img src={spinner1} alt="" className="img-fluid custom-loader" />
+                                            </div>
                                         </div>
                                     </div>
                                 </CardHeader>
-
-                                <Collapse isOpen={coll3} className="card-body" id="collapseExample3">
+                                <Collapse isOpen={col3} className="card-body" id="collapseExample3">
                                     <div className="d-flex">
                                         <div className="flex-shrink-0">
                                             <i className="ri-checkbox-circle-fill text-success"></i>
@@ -674,7 +663,7 @@ const UiCards = () => {
                     <Row>
                         <Col className="col-12">
                             <div className="justify-content-between d-flex align-items-center mt-3 mb-4">
-                                <h5 className="mb-0 text-decoration-underline">Card Caps & Overlays</h5>
+                                <h5 className="mb-0 text-decoration-underline">Card Image Caps & Overlays</h5>
                             </div>
                             <Row>
                                 <Col lg={6} xxl={4}>

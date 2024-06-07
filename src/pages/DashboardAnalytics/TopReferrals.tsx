@@ -13,7 +13,7 @@ const TopReferrals = () => {
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Top Referrals Pages</h4>
                         <div className="flex-shrink-0">
-                            <button type="button" className="btn btn-soft-primary btn-sm shadow-none">
+                            <button type="button" className="btn btn-soft-primary btn-sm">
                                 Export Report
                             </button>
                         </div>
@@ -37,11 +37,11 @@ const TopReferrals = () => {
                         </Row>
                         <div className="mt-3 pt-2">
                             <div className="progress progress-lg rounded-pill">
-                                <div className="progress-bar bg-primary" role="progressbar" style={{ width: "25%" }}></div>
-                                <div className="progress-bar bg-info" role="progressbar" style={{ width: "18%" }}></div>
-                                <div className="progress-bar bg-success" role="progressbar" style={{ width: "22%" }}></div>
-                                <div className="progress-bar bg-warning" role="progressbar" style={{ width: "16%" }}></div>
-                                <div className="progress-bar bg-danger" role="progressbar" style={{ width: "19%" }}></div>
+                                <div className="progress-bar bg-primary" role="progressbar" style={{ width: "25%" }} ></div>
+                                <div className="progress-bar bg-info" role="progressbar" style={{ width: "18%" }} ></div>
+                                <div className="progress-bar bg-success" role="progressbar" style={{ width: "22%" }} ></div>
+                                <div className="progress-bar bg-warning" role="progressbar" style={{ width: "16%" }} ></div>
+                                <div className="progress-bar bg-danger" role="progressbar" style={{ width: "19%" }} ></div>
                             </div>
                         </div>
 

@@ -31,6 +31,7 @@ import img12 from "../../../assets/images/small/img-12.jpg";
 
 const UiSwiperSlider = () => {
 
+   
 
     document.title="Swiper Slider | Velzon - React Admin & Dashboard Template";
 
@@ -48,9 +49,7 @@ const UiSwiperSlider = () => {
                                 <CardBody>
                                     <p className="text-muted">Use <code>default-swiper</code> class to set a default swiper.</p>
 
-                                    <Swiper className="mySwiper swiper default-swiper rounded" 
-                                    modules={[Autoplay]} 
-                                    loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }}>
+                                    <Swiper className="mySwiper swiper default-swiper rounded" modules={[Autoplay]} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }}>
                                         <div className="swiper-wrapper">
                                             <SwiperSlide><img src={img1} alt="" className="img-fluid" /></SwiperSlide>
                                             <SwiperSlide><img src={img2} alt="" className="img-fluid" /></SwiperSlide>
@@ -70,9 +69,7 @@ const UiSwiperSlider = () => {
                                 <CardBody>
                                     <p className="text-muted">Use <code>navigation-swiper</code> class to set a swiper with navigation and pagination.</p>
 
-                                    <Swiper 
-                                    modules={[Navigation, Pagination, Autoplay]} 
-                                    pagination={{ clickable: true }} navigation={true} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }} className="mySwiper swiper navigation-swiper rounded">
+                                    <Swiper modules={[Navigation, Pagination, Autoplay]} pagination={{ clickable: true }} navigation={true} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }} className="mySwiper swiper navigation-swiper rounded">
                                         <div className="swiper-wrapper">
                                             <SwiperSlide><img src={img4} alt="" className="img-fluid" /></SwiperSlide>
                                             <SwiperSlide><img src={img5} alt="" className="img-fluid" /></SwiperSlide>
@@ -92,9 +89,7 @@ const UiSwiperSlider = () => {
                                 <CardBody>
                                     <p className="text-muted">Use <code>pagination-dynamic-swiper</code> class to set a dynamic swiper with pagination.</p>
 
-                                    <Swiper pagination={{ clickable: true, dynamicBullets: true, }} 
-                                    modules={[Pagination, Autoplay]} 
-                                    loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }} className="mySwiper swiper pagination-dynamic-swiper rounded" >
+                                    <Swiper pagination={{ clickable: true, dynamicBullets: true, }} modules={[Pagination, Autoplay]} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }} className="mySwiper swiper pagination-dynamic-swiper rounded" >
                                         <div className="swiper-wrapper">
                                             <SwiperSlide><img src={img7} alt="" className="img-fluid" /></SwiperSlide>
                                             <SwiperSlide><img src={img8} alt="" className="img-fluid" /></SwiperSlide>
@@ -133,7 +128,7 @@ const UiSwiperSlider = () => {
                                 <CardBody>
                                     <p className="text-muted">Use <code>pagination-custom-swiper</code> class to set a swiper with custom pagination.</p>
 
-                                    <Swiper pagination={{ clickable: true, dynamicBullets: true, }} modules={[Pagination, Autoplay]} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }} className="mySwiper swiper pagination-custom-swiper rounded" >
+                                    <Swiper pagination={{ el: '.swiper-pagination'}} modules={[Pagination, Autoplay]} loop={true} autoplay={{ delay: 2500, disableOnInteraction: false }} className="mySwiper swiper pagination-custom-swiper rounded" >
                                         <div className="swiper-wrapper">
                                             <SwiperSlide><img src={img2} alt="" className="img-fluid" /></SwiperSlide>
                                             <SwiperSlide><img src={img3} alt="" className="img-fluid" /></SwiperSlide>
@@ -384,10 +379,10 @@ const UiSwiperSlider = () => {
                                                             <div className="flex-grow-1 text-muted">by <Link to="" className="text-body text-truncate">Ron Mackie</Link></div>
                                                             <div className="flex-shrink-0">
                                                                 <div className="d-flex gap-3">
-                                                                    <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                    <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                         <i className="ri-thumb-up-fill text-muted align-bottom me-1"></i> 2.2K
                                                                     </button>
-                                                                    <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                    <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                         <i className="ri-question-answer-fill text-muted align-bottom me-1"></i> 1.3K
                                                                     </button>
                                                                 </div>
@@ -410,10 +405,10 @@ const UiSwiperSlider = () => {
                                                         <div className="flex-grow-1 text-muted">by <Link to="" className="text-body text-truncate">Nancy Martino</Link></div>
                                                         <div className="flex-shrink-0">
                                                             <div className="d-flex gap-3">
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-thumb-up-fill text-muted align-bottom me-1"></i> 3.2K
                                                                 </button>
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-question-answer-fill text-muted align-bottom me-1"></i> 1.1K
                                                                 </button>
                                                             </div>
@@ -436,10 +431,10 @@ const UiSwiperSlider = () => {
                                                         <div className="flex-grow-1 text-muted">by <Link to="" className="text-body text-truncate">Henry Baird</Link></div>
                                                         <div className="flex-shrink-0">
                                                             <div className="d-flex gap-3">
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-thumb-up-fill text-muted align-bottom me-1"></i> 632
                                                                 </button>
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-question-answer-fill text-muted align-bottom me-1"></i> 95
                                                                 </button>
                                                             </div>
@@ -462,10 +457,10 @@ const UiSwiperSlider = () => {
                                                         <div className="flex-grow-1 text-muted">by <Link to="" className="text-body text-truncate">Jason McQuaid</Link></div>
                                                         <div className="flex-shrink-0">
                                                             <div className="d-flex gap-3">
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-thumb-up-fill text-muted align-bottom me-1"></i> 825
                                                                 </button>
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-question-answer-fill text-muted align-bottom me-1"></i> 101
                                                                 </button>
                                                             </div>
@@ -488,10 +483,10 @@ const UiSwiperSlider = () => {
                                                         <div className="flex-grow-1 text-muted">by <Link to="" className="text-body text-truncate">Erica Kernan</Link></div>
                                                         <div className="flex-shrink-0">
                                                             <div className="d-flex gap-3">
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-thumb-up-fill text-muted align-bottom me-1"></i> 3.4K
                                                                 </button>
-                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none shadow-none px-0">
+                                                                <button type="button" className="btn btn-sm fs-12 btn-link text-body text-decoration-none px-0">
                                                                     <i className="ri-question-answer-fill text-muted align-bottom me-1"></i> 1.3k
                                                                 </button>
                                                             </div>

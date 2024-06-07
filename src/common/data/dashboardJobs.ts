@@ -17,48 +17,42 @@ const jobWidgets = [
   {
     id: 1,
     lable: "TOTAL JOBS",
-    counter: "36894",
-    separator: ",",
+    jobs: "36,894",
     series: [95],
-    color: "#45cb85d9",
+    color: "#09b39b",
   },
   {
     id: 2,
     lable: "APPLY JOBS",
-    counter: "28410",
-    separator: ",",
+    jobs: "28,410",
     series: [97],
-    color: "#45cb85d9",
+    color: "#09b39b",
   },
   {
     id: 3,
     lable: "NEW JOBS",
-    counter: "4305",
-    separator: ",",
+    jobs: "4,305",
     series: [80],
-    color: "#45cb85d9",
+    color: "#09b39b",
   },
   {
     id: 4,
     lable: "INTERVIEW",
-    counter: "5021",
-    separator: ",",
+    jobs: "5,021",
     series: [89],
     color: "#f06548",
   },
   {
     id: 5,
     lable: "HIRED",
-    counter: "3948",
-    separator: ",",
+    jobs: "3,948",
     series: [64],
-    color: "#45cb85d9",
+    color: "#09b39b",
   },
   {
     id: 6,
     lable: "REJECTED",
-    counter: "1340",
-    separator: ",",
+    jobs: "1,340",
     series: [20],
     color: "#f06548",
   },
@@ -70,35 +64,35 @@ const featuredCompany = [
     img: img1,
     lable: "Force Medicines",
     city: " Cullera, Spain",
-    bgcolor:"secondary",
+    bgColor: "secondary"
   },
   {
     id: 2,
     img: img3,
     lable: "Syntyce Solutions",
     city: "Mughairah, UAE",
-    bgcolor:"warning",
+    bgColor: "warning"
   },
   {
     id: 3,
     img: img2,
     lable: "Moetic Fashion",
     city: "Mughairah, UAE",
-    bgcolor:"primary",
+    bgColor: "primary"
   },
   {
     id: 4,
     img: img4,
     lable: "Meta4Systems",
     city: "Germany",
-    bgcolor:"danger",
+    bgColor: "danger"
   },
   {
     id: 5,
     img: img5,
     lable: "Themesbrand",
     city: " Limestone, US",
-    bgcolor:"danger",
+    bgColor: "danger"
   },
 ];
 
@@ -113,8 +107,8 @@ const recentApplicants = [
     city: "California, US",
     type: "Full Time",
     typeColor: "success",
-    rat: "5.0",
-    rating: "(245 Rating)",
+    rating: "5.0",
+    ratingDetails: "(245 Rating)"
   },
   {
     id: 2,
@@ -126,8 +120,8 @@ const recentApplicants = [
     city: "Mughairah, UAE",
     type: "Freelancer",
     typeColor: "secondary",
-    rat: "4.5",
-    rating: "(665 Rating)",
+    rating: "4.7",
+    ratingDetails: "(1.34 Rating)"
   },
   {
     id: 3,
@@ -139,8 +133,8 @@ const recentApplicants = [
     city: "4,305",
     type: "Part Time",
     typeColor: "danger",
-    rat: "4.9",
-    rating: "(89 Rating)",
+    rating: "4.5",
+    ratingDetails: "(2.93 Rating)"
   },
   {
     id: 4,
@@ -152,8 +146,8 @@ const recentApplicants = [
     city: "Germany",
     type: "Part Time",
     typeColor: "danger",
-    rat: "4.3",
-    rating: "(47 Rating)",
+    rating: "2.3",
+    ratingDetails: "(4.5 Rating)"
   },
   {
     id: 5,
@@ -165,8 +159,8 @@ const recentApplicants = [
     city: " Limestone, US",
     type: "Full Time",
     typeColor: "success",
-    rat: "4.7",
-    rating: "(161 Rating)",
+    rating: "4.5",
+    ratingDetails: "(645 Rating)"
   },
   {
     id: 6,
@@ -178,8 +172,8 @@ const recentApplicants = [
     city: " Limestone, US",
     type: "Freelancer",
     typeColor: "secondary",
-    rat: "4.7",
-    rating: "(3.21k Rating)",
+    rating: "4.5",
+    ratingDetails: "(12 Rating)"
   },
   {
     id: 7,
@@ -191,8 +185,8 @@ const recentApplicants = [
     city: " Limestone, US",
     type: "Part Time",
     typeColor: "danger",
-    rat: "4.7",
-    rating: "(2.93k Rating)",
+    rating: "2.5",
+    ratingDetails: "(6.3 Rating)"
   },
   {
     id: 8,
@@ -204,8 +198,81 @@ const recentApplicants = [
     city: " Limestone, US",
     type: "Full Time",
     typeColor: "success",
-    rat: "4.7",
-    rating: "(4.31k Rating)",
+    rating: "4.7",
+    ratingDetails: "(23 Rating)"
   },
 ];
-export { jobWidgets, featuredCompany, recentApplicants };
+
+const applicationsStatisticData = [
+  {
+    id: "all",
+    all: [
+      {
+        name: "New Application",
+        data: [89, 56, 74, 98, 72, 38, 64, 46, 84, 58, 46, 49],
+      },
+      {
+        name: "Interview",
+        data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10],
+      },
+      {
+        name: " Hired",
+        data: [36, 42, 60, 42, 13, 18, 29, 37, 36, 51, 32, 35],
+      },
+    ]
+  },
+  {
+    id: "month",
+    month: [
+      {
+        name: "New Application",
+        data: [89, 50, 74, 100, 72, 16, 64, 46, 84, 58, 16, 49],
+      },
+      {
+        name: "Interview",
+        data: [45, 52, 18, 24, 33, 26, 21, 10, 6, 8, 30, 10],
+      },
+      {
+        name: " Hired",
+        data: [36, 42, 30, 42, 13, 18, 19, 37, 36, 55, 32, 35],
+      },
+    ]
+  },
+  {
+    id: "halfMonth",
+    halfMonth: [
+      {
+        name: "New Application",
+        data: [89, 56, 74, 98, 80, 38, 64, 46, 84, 58, 46, 30],
+      },
+      {
+        name: "Interview",
+        data: [50, 52, 38, 24, 33, 60, 21, 20, 6, 10, 15, 10],
+      },
+      {
+        name: " Hired",
+        data: [36, 40, 60, 42, 20, 18, 29, 36, 36, 51, 45, 35],
+      },
+    ]
+  },
+  {
+    id: "year",
+    year: [
+      {
+        name: "New Application",
+        data: [89, 60, 74, 100, 72, 38, 40, 46, 84, 58, 46, 49],
+      },
+      {
+        name: "Interview",
+        data: [45, 52, 35, 24, 33, 26, 21, 20, 10, 8, 20, 10],
+      },
+      {
+        name: " Hired",
+        data: [16, 42, 30, 42, 13, 18, 29, 67, 36, 51, 30, 35],
+      },
+    ]
+  }
+
+]
+
+export { jobWidgets, featuredCompany, recentApplicants, applicationsStatisticData };

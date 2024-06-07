@@ -21,7 +21,7 @@ const displayHeadingCode =
 const DisplayHeadingExample = () => (
     <PrismCode
         code={displayHeadingCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -47,7 +47,7 @@ const headingsCode =
 const HeadingsExample = () => (
     <PrismCode
         code={headingsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -71,7 +71,7 @@ const blockquotesCode =
 const BlockquotesExample = () => (
     <PrismCode
         code={blockquotesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -120,7 +120,7 @@ const blockquoteColorCode =
 const BlockquoteColorExample = () => (
     <PrismCode
         code={blockquoteColorCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -169,7 +169,7 @@ const blockquoteBorderColorCode =
 const BlockquoteBorderColorExample = () => (
     <PrismCode
         code={blockquoteBorderColorCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -201,7 +201,7 @@ const inlineTextCode =
 const InlineTextExample = () => (
     <PrismCode
         code={inlineTextCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -227,7 +227,7 @@ const unstyleListCode =
 const UnstyleListExample = () => (
     <PrismCode
         code={unstyleListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -247,7 +247,7 @@ const inlineListCode =
 const InlineListExample = () => (
     <PrismCode
         code={inlineListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -284,7 +284,7 @@ const descriptionListCode =
 const DescriptionListExample = () => (
     <PrismCode
         code={descriptionListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -307,7 +307,7 @@ const textWrappingCode =
 const TextWrappingExample = () => (
     <PrismCode
         code={textWrappingCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -333,7 +333,7 @@ const fontSizeCode =
 const FontSizeExample = () => (
     <PrismCode
         code={fontSizeCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -349,7 +349,7 @@ const wordBreakCode =
 const WordBreakExample = () => (
     <PrismCode
         code={wordBreakCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -377,7 +377,7 @@ const fontWeightCode =
 const FontWeightExample = () => (
     <PrismCode
         code={fontWeightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -399,7 +399,7 @@ const lineHeightCode =
 const LineHeightExample = () => (
     <PrismCode
         code={lineHeightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -419,7 +419,7 @@ const textTransformCode =
 const TextTransformExample = () => (
     <PrismCode
         code={textTransformCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -439,7 +439,7 @@ const textDecrationCode =
 const TextDecrationExample = () => (
     <PrismCode
         code={textDecrationCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -464,7 +464,7 @@ const textTruncationCode =
 const TextTruncationExample = () => (
     <PrismCode
         code={textTruncationCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -482,7 +482,7 @@ const visibilityCode =
 const VisibilityExample = () => (
     <PrismCode
         code={visibilityCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -501,7 +501,7 @@ const clearfixCode =
 const ClearfixExample = () => (
     <PrismCode
         code={clearfixCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

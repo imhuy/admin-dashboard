@@ -6,23 +6,24 @@ import { getProjectStatusChartsData } from '../../slices/thunks';
 import { createSelector } from 'reselect';
 
 const ProjectsStatus = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
-    const [chartData, setchartData] = useState<any>([]);
-
+    const [chartData, setchartData] = useState([]);
+    
     const selectprojectstatusData = createSelector(
-        (state : any) => state.DashboardProject.projectStatusData,
-        (projectStatusData) => projectStatusData
+        (state:any) => state.DashboardProject,
+        (projectStatusData) => projectStatusData.projectStatusData
       );
     // Inside your component
     const projectStatusData = useSelector(selectprojectstatusData);
+
 
     useEffect(() => {
         setchartData(projectStatusData);
     }, [projectStatusData]);
 
     const [seletedMonth, setSeletedMonth] = useState("All Time");
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         setSeletedMonth(pType);
         dispatch(getProjectStatusChartsData(pType));
     };

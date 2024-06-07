@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {productData} from "../../../common/data"
+import { productData } from '../../../common/data';
 
 const Products = () => {
-    const [nav, setNav] = useState("All");
+    const [nav, setNav] = useState<string>("All");
 
-  
     return (
         <React.Fragment>
             <section className="section bg-light" id="marketplace">
@@ -18,22 +17,22 @@ const Products = () => {
                                 <p className="text-muted mb-4">Collection widgets specialize in displaying many elements of the same type, such as a collection of pictures from a collection of articles.</p>
                                 <Nav pills className="nav-pills filter-btns justify-content-center" role="tablist">
                                     <NavItem role="presentation">
-                                        <NavLink type="button" onClick={() => setNav("All")} className={nav === "All" ? " fw-medium active" : "fw-medium"}>All Items</NavLink>
+                                        <NavLink type="button" onClick={() => setNav("All")} className={nav === "All" ? " fw-medium active" : "fw-medium text-primary"}>All Items</NavLink>
                                     </NavItem>
                                     <NavItem role="presentation">
-                                        <NavLink type="button" onClick={() => setNav("artwork")} className={nav === "artwork" ? " fw-medium active" : "fw-medium"}>Artwork</NavLink>
+                                        <NavLink type="button" onClick={() => setNav("artwork")} className={nav === "artwork" ? " fw-medium active" : "fw-medium text-primary"}>Artwork</NavLink>
                                     </NavItem>
                                     <NavItem role="presentation">
-                                        <NavLink type="button" onClick={() => setNav("music")} className={nav === "music" ? " fw-medium active" : "fw-medium"}>Music</NavLink>
+                                        <NavLink type="button" onClick={() => setNav("music")} className={nav === "music" ? " fw-medium active" : "fw-medium text-primary"}>Music</NavLink>
                                     </NavItem>
                                     <NavItem role="presentation">
-                                        <NavLink type="button" onClick={() => setNav("games")} className={nav === "games" ? " fw-medium active" : "fw-medium"}>Games</NavLink>
+                                        <NavLink type="button" onClick={() => setNav("games")} className={nav === "games" ? " fw-medium active" : "fw-medium text-primary"}>Games</NavLink>
                                     </NavItem>
                                     <NavItem role="presentation">
-                                        <NavLink type="button" onClick={() => setNav("crypto-card")} className={nav === "crypto-card" ? " fw-medium active" : "fw-medium"}>Crypto Card</NavLink>
+                                        <NavLink type="button" onClick={() => setNav("crypto-card")} className={nav === "crypto-card" ? " fw-medium active" : "fw-medium text-primary"}>Crypto Card</NavLink>
                                     </NavItem>
                                     <NavItem role="presentation">
-                                        <NavLink type="button" onClick={() => setNav("3d-style")} className={nav === "3d-style" ? " fw-medium active" : "fw-medium"}>3d Style</NavLink>
+                                        <NavLink type="button" onClick={() => setNav("3d-style")} className={nav === "3d-style" ? " fw-medium active" : "fw-medium text-primary"}>3d Style</NavLink>
                                     </NavItem>
                                 </Nav>
                             </div>
@@ -50,7 +49,7 @@ const Products = () => {
                                         <img src={item.img} alt="" className="card-img-top explore-img" />
                                         <div className="bg-overlay"></div>
                                         <div className="place-bid-btn">
-                                            <Link to="#!" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
+                                            <Link to="#" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
                                         </div>
                                     </div>
                                     <div className="card-body">

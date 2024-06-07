@@ -142,7 +142,7 @@ const FormValidations = () => {
                       }}
                     >
                       <Row>
-                        <Col md="4">
+                        <Col md={4}>
                           <FormGroup className="mb-3">
                             <Label htmlFor="validationCustom01">First name</Label>
                             <Input
@@ -169,7 +169,7 @@ const FormValidations = () => {
                             ) : null}
                           </FormGroup>
                         </Col>
-                        <Col md="4">
+                        <Col md={4}>
                           <FormGroup className="mb-3">
                             <Label htmlFor="validationCustom02">Last name</Label>
                             <Input
@@ -196,31 +196,33 @@ const FormValidations = () => {
                             ) : null}
                           </FormGroup>
                         </Col>
-                        <Col md="4">
+                        <Col md={4}>
                           <FormGroup className="mb-3">
-                            <Label htmlFor="validationCustom02">User name</Label>
-                            <Input
-                              name="username"
-                              placeholder="username"
-                              type="text"
-                              className="form-control"
-                              id="validationCustom03"
-                              onChange={validation.handleChange}
-                              onBlur={validation.handleBlur}
-                              value={validation.values.username || ""}
-                              invalid={
-                                validation.touched.username &&
-                                  validation.errors.username
-                                  ? true
-                                  : false
-                              }
-                            />
-                            {validation.touched.username &&
-                              validation.errors.username ? (
-                              <FormFeedback type="invalid">
-                                {validation.errors.username}
-                              </FormFeedback>
-                            ) : null}
+                            <Label htmlFor="validationTooltipUsername">Username</Label>
+                            <InputGroup>
+                              <span className="input-group-text" id="inputGroupPrepend2">@</span>
+                              <Input
+                                name="username"
+                                type="text"
+                                className="form-control"
+                                id="validationTooltipUsername"
+                                onChange={validation.handleChange}
+                                onBlur={validation.handleBlur}
+                                value={validation.values.username || ""}
+                                invalid={
+                                  validation.touched.username &&
+                                    validation.errors.username
+                                    ? true
+                                    : false
+                                }
+                              />
+                              {validation.touched.username &&
+                                validation.errors.username ? (
+                                <FormFeedback type="invalid">
+                                  {validation.errors.username}
+                                </FormFeedback>
+                              ) : null}
+                            </InputGroup>
                           </FormGroup>
                         </Col>
                       </Row>
@@ -232,6 +234,7 @@ const FormValidations = () => {
                               name="city"
                               placeholder="City"
                               type="text"
+                              id="validationCustom03"
                               className="form-control"
                               onChange={validation.handleChange}
                               onBlur={validation.handleBlur}
@@ -350,7 +353,7 @@ const FormValidations = () => {
                     <Form className="was-validated">
                       <div className="mb-3">
                         <Label htmlFor="validationTextarea" className="form-label">Textarea</Label>
-                        <textarea className="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea"
+                        <textarea className="form-control" id="validationTextarea" placeholder="Required example textarea"
                           required></textarea>
                         <div className="invalid-feedback">
                           Please enter a message in the textarea.

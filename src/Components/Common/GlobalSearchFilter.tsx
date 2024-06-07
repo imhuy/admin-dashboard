@@ -8,14 +8,14 @@ import {
     DropdownItem,
     DropdownMenu,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 import Flatpickr from "react-flatpickr";
 import Select from "react-select";
-import { Link } from 'react-router-dom';
 
 const ProductsGlobalFilter = () => {
     return (
         <React.Fragment>
-             <div className="col-sm-auto ms-auto">
+            <div className="col-sm-auto ms-auto">
                 <div>
                     <Link
                         to="/apps-ecommerce-add-product"
@@ -30,7 +30,7 @@ const ProductsGlobalFilter = () => {
     );
 };
 const CustomersGlobalFilter = () => {
-    const [customerStatus, setcustomerStatus] = useState<any>(null);
+    const [customerStatus, setcustomerStatus] = useState(null);
 
     function handlecustomerStatus(customerStatus: any) {
         setcustomerStatus(customerStatus);
@@ -46,7 +46,6 @@ const CustomersGlobalFilter = () => {
             ],
         },
     ];
-
     return (
         <React.Fragment>
             <Col xl={7}>
@@ -71,8 +70,8 @@ const CustomersGlobalFilter = () => {
                         <div>
                             <Select
                                 value={customerStatus}
-                                onChange={(customerStatus: any) => {
-                                    handlecustomerStatus(customerStatus);
+                                onChange={(e: any) => {
+                                    handlecustomerStatus(e);
                                 }}
                                 options={customerstatus}
                                 name="choices-single-default"
@@ -126,7 +125,7 @@ const OrderGlobalFilter = () => {
         },
     ];
 
-    const orderpayement: any = [
+    const orderpayement = [
         {
             options: [
                 { label: "Select Payment", value: "Select Payment" },
@@ -160,9 +159,7 @@ const OrderGlobalFilter = () => {
                 <div>
                     <Select
                         value={orderStatus}
-                        onChange={(e: any) => {
-                            handleorderStatus(e);
-                        }}
+                        onChange={handleorderStatus}
                         options={orderstatus}
                         name="choices-single-default"
                         id="idStatus"
@@ -174,9 +171,7 @@ const OrderGlobalFilter = () => {
                 <div>
                     <Select
                         value={orderPayement}
-                        onChange={(orderPayement: any) => {
-                            handleorderPayement(orderPayement);
-                        }}
+                        onChange={handleorderPayement}
                         options={orderpayement}
                         name="choices-payment-default"
                         id="idPayment"
@@ -198,21 +193,22 @@ const OrderGlobalFilter = () => {
 };
 
 const ContactsGlobalFilter = () => {
-    const [sortBy, setsortBy] = useState<any>(null);
+    const [sortBy, setSortBy] = useState<any>(null);
 
-    function handlesortBy(sortBy: any) {
-        setsortBy(sortBy);
+    function handleSortBy(selectedOption: any) {
+        setSortBy(selectedOption);
     }
 
-    const sortbyname = [
+    const sortOptions = [
         {
             options: [
-                { label: "Owner", value: "Owner" },
-                { label: "Company", value: "Company" },
-                { label: "Location", value: "Location" }
-            ],
-        },
+                { label: 'Owner', value: 'Owner' },
+                { label: 'Company', value: 'Company' },
+                { label: 'Location', value: 'Location' }
+            ]
+        }
     ];
+
     return (
         <React.Fragment>
             <div className="col-md-auto ms-auto">
@@ -221,13 +217,10 @@ const ContactsGlobalFilter = () => {
                     <Select
                         className="mb-0"
                         value={sortBy}
-                        onChange={(sortBy: any) => {
-                            handlesortBy(sortBy);
-                        }}
-                        options={sortbyname}
+                        onChange={handleSortBy}
+                        options={sortOptions}
                         id="choices-single-default"
-                    >
-                    </Select>
+                    />
                 </div>
             </div>
         </React.Fragment>
@@ -258,9 +251,7 @@ const CompaniesGlobalFilter = () => {
                     <Select
                         className="mb-0"
                         value={sortBy}
-                        onChange={(sortBy: any) => {
-                            handlesortBy(sortBy);
-                        }}
+                        onChange={handlesortBy}
                         options={sortbyname}
                         id="choices-single-default"
                     ></Select>
@@ -289,7 +280,7 @@ const CryptoOrdersGlobalFilter = () => {
             <Col xl={2} md={4}>
                 <select className="form-control" data-choices data-choices-search-false name="choices-single-default"
                     id="choices-single-default">
-                    <option defaultValue="">Select Type</option>
+                    <option defaultValue="all">Select Type</option>
                     <option value="Buy">Sell</option>
                     <option value="Sell">Buy</option>
                 </select>
@@ -297,9 +288,10 @@ const CryptoOrdersGlobalFilter = () => {
             <Col xl={2} md={4}>
                 <select className="form-control" data-choices data-choices-search-false name="choices-single-default2"
                     id="choices-single-default2">
-                    <option defaultValue="">Select Status</option>
+                    <option defaultValue="all">Select Status</option>
                     <option value="Successful">Successful</option>
                     <option value="Cancelled">Cancelled</option>
+                    <option value="Pending">Pending</option>
                 </select>
             </Col>
             <Col xl={1} md={4}>
@@ -310,7 +302,7 @@ const CryptoOrdersGlobalFilter = () => {
 };
 
 const InvoiceListGlobalSearch = () => {
-    const [isStatus, setisStatus] = useState<any>(null);
+    const [isStatus, setisStatus] = useState(null);
 
 
     function handleisStatus(isStatus: any) {
@@ -349,9 +341,7 @@ const InvoiceListGlobalSearch = () => {
                 <div className="input-light">
                     <Select
                         value={isStatus}
-                        onChange={(isStatus: any) => {
-                            handleisStatus(isStatus);
-                        }}
+                        onChange={handleisStatus}
                         options={allstatus}
                         name="choices-single-default"
                         id="idStatus"

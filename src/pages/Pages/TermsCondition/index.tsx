@@ -1,47 +1,36 @@
 import React from "react";
-import { Button, Card, CardBody, Col, Container, Row } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Card, CardBody, Col, Container, Row } from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 
 const TermsCondition = () => {
-  document.title =
-    "Terms & Condition | Velzon - React Admin & Dashboard Template";
+  document.title = "Terms & Condition | Velzon - React Admin & Dashboard Template";
   return (
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <BreadCrumb title="Term & Conditions" pageTitle="Pages" />
+          <BreadCrumb title="Terms & Condition" pageTitle="Pages" />
           <Row className="justify-content-center">
-            <Col className="col-lg-10">
+            <Col lg={10}>
               <Card>
                 <div className="bg-warning-subtle position-relative">
-                  <CardBody className="card-body p-5">
+                  <CardBody className="p-5">
                     <div className="text-center">
-                      <h3 className="fw-semibold">Term & Conditions</h3>
+                      <h3>Term & Conditions</h3>
                       <p className="mb-0 text-muted">
                         Last update: 16 Sept, 2022
                       </p>
                     </div>
                   </CardBody>
+
                   <div className="shape">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      version="1.1"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      // xmlns:svgjs="http://svgjs.com/svgjs"
-                      width="100%"
-                      height="60"
-                      preserveAspectRatio="none"
-                      viewBox="0 0 1440 60"
-                    >
-                      <g mask='url("#SvgjsMask1001")' fill="none">
-                        <path
-                          d="M 0,4 C 144,13 432,48 720,49 C 1008,50 1296,17 1440,9L1440 60L0 60z"
-                          style={{ fill: "var(--vz-secondary-bg)" }}
-                        ></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns-svgjs="http://svgjs.com/svgjs" width="1440" height="60" preserveAspectRatio="none" viewBox="0 0 1440 60">
+                      <g mask="url(&quot;#SvgjsMask1001&quot;)" fill="none">
+                        <path d="M 0,4 C 144,13 432,48 720,49 C 1008,50 1296,17 1440,9L1440 60L0 60z" style={{ fill: "var(--vz-secondary-bg)" }}></path>
                       </g>
                       <defs>
                         <mask id="SvgjsMask1001">
-                          <rect width="100%" height="60" fill="#ffffff"></rect>
+                          <rect width="1440" height="60" fill="#FFFFFF"></rect>
                         </mask>
                       </defs>
                     </svg>
@@ -49,7 +38,7 @@ const TermsCondition = () => {
                 </div>
                 <CardBody className="p-4">
                   <div>
-                    <h5 className="fw-semibold">Welcome to Velzon!</h5>
+                    <h5>Welcome to Velzon!</h5>
                     <p className="text-muted">
                       These terms and conditions outline the rules and
                       regulations for the use of Company Name's Website, located
@@ -71,7 +60,7 @@ const TermsCondition = () => {
                   </div>
 
                   <div>
-                    <h5 className="fw-semibold">License</h5>
+                    <h5>License</h5>
                     <p className="text-muted">
                       Unless otherwise stated, Company Name and/or its licensors
                       own the intellectual property rights for all material on
@@ -164,15 +153,13 @@ const TermsCondition = () => {
                   </div>
 
                   <div className="text-end">
-                    <Button color="success" className="btn btn-success">
+                    <Link to="#" className="btn btn-success me-2">
                       Accept
-                    </Button>
-                    <Button
-                      color="outline-danger"
-                      className="btn btn-outline-danger m-1"
-                    >
-                      <i className="ri-close-line align-bottom "></i> Decline
-                    </Button>
+                    </Link>
+                    <Link to="#" className="btn btn-outline-danger">
+                      <i className="ri-close-line align-bottom me-1"></i>{" "}
+                      Decline
+                    </Link>
                   </div>
                 </CardBody>
               </Card>

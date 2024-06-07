@@ -29,7 +29,7 @@ import img8 from "../../../assets/images/small/img-8.jpg";
 const UiTabs = () => {
 
     // Default Tabs
-    const [activeTab, setactiveTab] = useState("1");
+    const [activeTab, setactiveTab] = useState<string>("2");
     const toggle = (tab : any) => {
         if (activeTab !== tab) {
             setactiveTab(tab);
@@ -37,7 +37,7 @@ const UiTabs = () => {
     };
 
     // Justify Tabs
-    const [justifyTab, setjustifyTab] = useState("1");
+    const [justifyTab, setjustifyTab] = useState<string>("2");
     const justifyToggle = (tab : any) => {
         if (justifyTab !== tab) {
             setjustifyTab(tab);
@@ -45,7 +45,7 @@ const UiTabs = () => {
     };
 
     // Pills Tabs
-    const [pillsTab, setpillsTab] = useState("1");
+    const [pillsTab, setpillsTab] = useState<string>("1");
     const pillsToggle = (tab : any) => {
         if (pillsTab !== tab) {
             setpillsTab(tab);
@@ -53,7 +53,7 @@ const UiTabs = () => {
     };
 
     // Pills Justified Tabs
-    const [justifyPillsTab, setjustifyPillsTab] = useState("1");
+    const [justifyPillsTab, setjustifyPillsTab] = useState<string>("1");
     const justifyPillsToggle = (tab : any) => {
         if (justifyPillsTab !== tab) {
             setjustifyPillsTab(tab);
@@ -61,7 +61,7 @@ const UiTabs = () => {
     };
 
     // Vertical Nav Tabs
-    const [verticalTab, setverticalTab] = useState("1");
+    const [verticalTab, setverticalTab] = useState<string>("1");
     const toggleVertical = (tab : any) => {
         if (verticalTab !== tab) {
             setverticalTab(tab);
@@ -69,7 +69,7 @@ const UiTabs = () => {
     };
 
     // Card Header Tabs
-    const [cardHeaderTab, setcardHeaderTab] = useState("1");
+    const [cardHeaderTab, setcardHeaderTab] = useState<string>("1");
     const cardHeaderToggle = (tab : any) => {
         if (cardHeaderTab !== tab) {
             setcardHeaderTab(tab);
@@ -77,7 +77,7 @@ const UiTabs = () => {
     };
 
     // Header Justify Tabs
-    const [headerJustifyTab, setheaderJustifyTab] = useState("1");
+    const [headerJustifyTab, setheaderJustifyTab] = useState<string>("1");
     const headerJustifyToggle = (tab : any) => {
         if (headerJustifyTab !== tab) {
             setheaderJustifyTab(tab);
@@ -85,7 +85,7 @@ const UiTabs = () => {
     };
 
     // Custom Tabs Bordered
-    const [customActiveTab, setcustomActiveTab] = useState("1");
+    const [customActiveTab, setcustomActiveTab] = useState<string>("1");
     const toggleCustom = (tab : any) => {
         if (customActiveTab !== tab) {
             setcustomActiveTab(tab);
@@ -93,7 +93,7 @@ const UiTabs = () => {
     };
 
     // Arrow Nav tabs
-    const [arrowNavTab, setarrowNavTab] = useState("1");
+    const [arrowNavTab, setarrowNavTab] = useState<string>("1");
     const arrowNavToggle = (tab : any) => {
         if (arrowNavTab !== tab) {
             setarrowNavTab(tab);
@@ -101,7 +101,7 @@ const UiTabs = () => {
     };
 
     // Bottom Card Nav Tabs
-    const [bottomCardTab, setbottomCardTab] = useState("1");
+    const [bottomCardTab, setbottomCardTab] = useState<string>("1");
     const bottonCardToggle = (tab : any) => {
         if (bottomCardTab !== tab) {
             setbottomCardTab(tab);
@@ -109,7 +109,7 @@ const UiTabs = () => {
     };
 
     // Custom Hover Tabs
-    const [customHoverTab, setcustomHoverTab] = useState("1");
+    const [customHoverTab, setcustomHoverTab] = useState<string>("1");
     const customHovertoggle = (tab : any) => {
         if (customHoverTab !== tab) {
             setcustomHoverTab(tab);
@@ -118,7 +118,7 @@ const UiTabs = () => {
 
     // Custom Vertical Tabs
 
-    const [customverticalTab, setcustomverticalTab] = useState("1");
+    const [customverticalTab, setcustomverticalTab] = useState<string>("1");
     const customtoggleVertical = (tab : any) => {
         if (customverticalTab !== tab) {
             setcustomverticalTab(tab);
@@ -127,7 +127,7 @@ const UiTabs = () => {
 
     // Animation Nav
 
-    const [animationNavTab, setanimationNavTab] = useState("1");
+    const [animationNavTab, setanimationNavTab] = useState<string>("1");
     const animationNavToggle = (tab : any) => {
         if (animationNavTab !== tab) {
             setanimationNavTab(tab);
@@ -135,7 +135,7 @@ const UiTabs = () => {
     };
 
     // Nav With Badge
-    const [navBadgeTab, setnavBadgeTab] = useState("1");
+    const [navBadgeTab, setnavBadgeTab] = useState<string>("1");
     const navBadgeToggle = (tab : any) => {
         if (navBadgeTab !== tab) {
             setnavBadgeTab(tab);
@@ -143,7 +143,7 @@ const UiTabs = () => {
     };
 
     // Border Top Nav
-    const [topBorderTab, settopBorderTab] = useState("1");
+    const [topBorderTab, settopBorderTab] = useState<string>("1");
     const topBordertoggle = (tab : any) => {
         if (topBorderTab !== tab) {
             settopBorderTab(tab);
@@ -151,7 +151,7 @@ const UiTabs = () => {
     };
 
     // Border Top Nav Justified Tabs
-    const [topBorderjustifyTab, settopBorderjustifyTab] = useState("1");
+    const [topBorderjustifyTab, settopBorderjustifyTab] = useState<string>("1");
     const topBorderJustifytoggle = (tab : any) => {
         if (topBorderjustifyTab !== tab) {
             settopBorderjustifyTab(tab);
@@ -159,7 +159,7 @@ const UiTabs = () => {
     };
 
     // Colored Nav
-    const [colorNavTab, setcolorNavTab] = useState("1");
+    const [colorNavTab, setcolorNavTab] = useState<string>("1");
     const colorNavToggle = (tab : any) => {
         if (colorNavTab !== tab) {
             setcolorNavTab(tab);
@@ -167,7 +167,7 @@ const UiTabs = () => {
     };
 
     // Light Nav
-    const [lightNavTab, setlightNavTab] = useState("1");
+    const [lightNavTab, setlightNavTab] = useState<string>("1");
     const lightNavToggle = (tab : any) => {
         if (lightNavTab !== tab) {
             setlightNavTab(tab);
@@ -175,7 +175,7 @@ const UiTabs = () => {
     };
 
     // Outline Border Nav Tabs
-    const [outlineBorderNav, setoutlineBorderNav] = useState("1");
+    const [outlineBorderNav, setoutlineBorderNav] = useState<string>("1");
     const outlineBorderNavtoggle = (tab : any) => {
         if (outlineBorderNav !== tab) {
             setoutlineBorderNav(tab);
@@ -183,7 +183,7 @@ const UiTabs = () => {
     };
 
     // Custom Nav Tabs
-    const [customNav, setcustomNav] = useState("1");
+    const [customNav, setcustomNav] = useState<string>("1");
     const customNavtoggle = (tab : any) => {
         if (customNav !== tab) {
             setcustomNav(tab);
@@ -228,7 +228,7 @@ const UiTabs = () => {
                                         </NavItem>
                                     </Nav>
 
-                                    <TabContent activeTab={activeTab} className="text-muted">
+                                    <TabContent activeTab={activeTab} className="text-muted" >
                                         <TabPane tabId="1" id="home">
                                             <h6>Graphic Design</h6>
                                             <p className="mb-0">
@@ -575,7 +575,7 @@ const UiTabs = () => {
                                     <p className="text-muted">Use <code>flex-column</code> class to create Vertical nav tabs.</p>
                                     <Row>
                                         <Col md={3}>
-                                            <Nav pills className="flex-column" id="v-pills-tab">
+                                            <Nav pills className="flex-column text-center" id="v-pills-tab">
                                                 <NavItem>
                                                     <NavLink
                                                         style={{ cursor: "pointer" }}

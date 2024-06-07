@@ -2,10 +2,10 @@ import React from 'react';
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
-const ProjectsOverviewCharts = ({ dataColors, series } : any) => {
+const ProjectsOverviewCharts = ({ dataColors,series }:any) => {
     var linechartcustomerColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         chart: {
             height: 374,
             type: 'line',
@@ -81,7 +81,7 @@ const ProjectsOverviewCharts = ({ dataColors, series } : any) => {
         tooltip: {
             shared: true,
             y: [{
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0);
                     }
@@ -89,7 +89,7 @@ const ProjectsOverviewCharts = ({ dataColors, series } : any) => {
 
                 }
             }, {
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return "$" + y.toFixed(2) + "k";
                     }
@@ -97,7 +97,7 @@ const ProjectsOverviewCharts = ({ dataColors, series } : any) => {
 
                 }
             }, {
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0);
                     }
@@ -120,10 +120,11 @@ const ProjectsOverviewCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const TeamMembersCharts = ({ seriesData, chartsColor } : any) => {
+const TeamMembersCharts = ({ seriesData, chartsColor }:any) => {
+    // const series=  isApexSeriesData.series,
     const series = [seriesData];
 
-    const options : any = {
+    const options:any = {
         chart: {
             type: 'radialBar',
             width: 36,
@@ -164,10 +165,10 @@ const TeamMembersCharts = ({ seriesData, chartsColor } : any) => {
     );
 };
 
-const PrjectsStatusCharts = ({ dataColors, series } : any) => {
+const PrjectsStatusCharts = ({ dataColors, series }:any) => {
     var donutchartProjectsStatusColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         labels: ["Completed", "In Progress", "Yet to Start", "Cancelled"],
         chart: {
             type: "donut",

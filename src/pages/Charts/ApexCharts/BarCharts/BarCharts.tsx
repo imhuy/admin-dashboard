@@ -4,13 +4,13 @@ import user from "../../../../assets/images/small/img-4.jpg";
 
 import getChartColorsArray from "../../../../Components/Common/ChartsDynamicColor";
 
-const Basic = ({ dataColors } :any ) => {
+const Basic = ({ dataColors } : any) => {
     var BasicColors = getChartColorsArray(dataColors);
     const series = [{
         data: [380, 430, 450, 475, 550, 584, 780, 1100, 1220, 1365]
     }];
 
-    const options :any = {
+    const options : any = {
         chart: {
             toolbar: {
                 show: !1,
@@ -41,17 +41,18 @@ const Basic = ({ dataColors } :any ) => {
                 series={series}
                 type="bar"
                 height={350}
+
             />
         </React.Fragment>
     );
 };
 
-const CustomDataLabel = ({ dataColors } :any) => {
+const CustomDataLabel = ({ dataColors } : any) => {
     var chartDatalabelsBarColors = getChartColorsArray(dataColors);
     const series = [{
         data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'bar',
             height: 350,
@@ -76,7 +77,7 @@ const CustomDataLabel = ({ dataColors } :any) => {
             style: {
                 colors: ['#fff']
             },
-            formatter: function (val :any, opt :any) {
+            formatter: function (val : any, opt : any) {
                 return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val;
             },
             offsetX: 0,
@@ -137,7 +138,7 @@ const CustomDataLabel = ({ dataColors } :any) => {
     );
 };
 
-const Stacked = ({ dataColors } :any) => {
+const Stacked = ({ dataColors } : any) => {
     var chartStackedBarColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'Marine Sprite',
@@ -155,7 +156,7 @@ const Stacked = ({ dataColors } :any) => {
         name: 'Reborn Kid',
         data: [25, 12, 19, 32, 25, 24, 10]
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'bar',
             height: 350,
@@ -182,7 +183,7 @@ const Stacked = ({ dataColors } :any) => {
         xaxis: {
             categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
             labels: {
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return val + "K";
                 }
             }
@@ -194,7 +195,7 @@ const Stacked = ({ dataColors } :any) => {
         },
         tooltip: {
             y: {
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return val + "K";
                 }
             }
@@ -223,7 +224,7 @@ const Stacked = ({ dataColors } :any) => {
     );
 };
 
-const Stacked2 = ({ dataColors } :any) => {
+const Stacked2 = ({ dataColors } : any) => {
     var chartStackedBar100Colors = getChartColorsArray(dataColors);
     const series = [
         {
@@ -248,7 +249,7 @@ const Stacked2 = ({ dataColors } :any) => {
         },
     ];
 
-    const options :any = {
+    const options : any = {
         chart: {
             stacked: !0,
             stackType: "100%",
@@ -276,7 +277,7 @@ const Stacked2 = ({ dataColors } :any) => {
         },
         tooltip: {
             y: {
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return val + "K";
                 },
             },
@@ -305,7 +306,7 @@ const Stacked2 = ({ dataColors } :any) => {
     );
 };
 
-const Negative = ({ dataColors } :any) => {
+const Negative = ({ dataColors } : any) => {
     var chartNegativeBarColors = getChartColorsArray(dataColors);
     const series = [
         {
@@ -324,7 +325,7 @@ const Negative = ({ dataColors } :any) => {
         },
     ];
 
-    const options :any = {
+    const options : any = {
         chart: {
             type: "bar",
             height: 360,
@@ -368,12 +369,12 @@ const Negative = ({ dataColors } :any) => {
         tooltip: {
             shared: !1,
             x: {
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return val;
                 },
             },
             y: {
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return Math.abs(val) + "%";
                 },
             },
@@ -409,7 +410,7 @@ const Negative = ({ dataColors } :any) => {
                 text: "Percent",
             },
             labels: {
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return Math.abs(Math.round(val)) + "%";
                 },
             },
@@ -429,7 +430,7 @@ const Negative = ({ dataColors } :any) => {
     );
 };
 
-const Markers = ({ dataColors } :any) => {
+const Markers = ({ dataColors } : any) => {
     var chartBarMarkersColors = getChartColorsArray(dataColors);
     const series = [
         {
@@ -511,7 +512,7 @@ const Markers = ({ dataColors } :any) => {
         },
     ];
 
-    var options :any = {
+    var options : any = {
         chart: {
             toolbar: {
                 show: !1,
@@ -524,7 +525,7 @@ const Markers = ({ dataColors } :any) => {
         },
         colors: chartBarMarkersColors,
         dataLabels: {
-            formatter: function (val :any, opt :any) {
+            formatter: function (val : any, opt : any) {
                 var goals =
                     opt.w.config.series[opt.seriesIndex].data[opt.dataPointIndex].goals;
 
@@ -557,7 +558,7 @@ const Markers = ({ dataColors } :any) => {
     );
 };
 
-const Reversed = ({ dataColors } :any) => {
+const Reversed = ({ dataColors } : any) => {
     var chartBarReversedColors = getChartColorsArray(dataColors);
     const series = [
         {
@@ -565,7 +566,7 @@ const Reversed = ({ dataColors } :any) => {
         },
     ];
 
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'bar',
             height: 350,
@@ -634,7 +635,7 @@ const Reversed = ({ dataColors } :any) => {
     );
 };
 
-const Patterned = ({ dataColors } :any) => {
+const Patterned = ({ dataColors } : any) => {
     var chartPatternedColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'Marine Sprite',
@@ -649,7 +650,7 @@ const Patterned = ({ dataColors } :any) => {
         name: 'Bucket Slope',
         data: [9, 7, 5, 8, 6, 9, 4]
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'bar',
             height: 350,
@@ -692,7 +693,7 @@ const Patterned = ({ dataColors } :any) => {
         tooltip: {
             shared: false,
             y: {
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return val + "K";
                 }
             }
@@ -730,7 +731,7 @@ const Patterned = ({ dataColors } :any) => {
     );
 };
 
-const Groupes = ({ dataColors } :any) => {
+const Groupes = ({ dataColors } : any) => {
     var chartGroupbarColors = getChartColorsArray(dataColors);
     const series = [
         {
@@ -741,7 +742,7 @@ const Groupes = ({ dataColors } :any) => {
         },
     ];
 
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'bar',
             height: 410,
@@ -800,7 +801,7 @@ const BarwithImages = () => {
         ]
     }];
 
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'bar',
             height: 410,

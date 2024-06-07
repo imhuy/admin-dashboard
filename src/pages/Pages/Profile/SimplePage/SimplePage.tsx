@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardBody, CardHeader, Col, Container, DropdownItem, DropdownMenu, DropdownToggle, Input, Label, Nav, NavItem, NavLink, Pagination, PaginationItem, PaginationLink, Progress, Row, TabContent, Table, TabPane, UncontrolledCollapse, UncontrolledDropdown } from 'reactstrap';
 import classnames from 'classnames';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import  { Autoplay } from "swiper/modules";
 
 //Images
 import profileBg from '../../../../assets/images/profile-bg.jpg';
@@ -27,8 +27,9 @@ import smallImage9 from '../../../../assets/images/small/img-9.jpg';
 import { projects, documents } from '../../../../common/data';
 
 const SimplePage = () => {
+    document.title = "Profile | Velzon - React Admin & Dashboard Template";
 
-    // SwiperCore.use([Autoplay]);
+    
 
     const [activeTab, setActiveTab] = useState('1');
     const [activityTab, setActivityTab] = useState('1');
@@ -45,7 +46,6 @@ const SimplePage = () => {
         }
     };
 
-    document.title = "Profile | Velzon - React Admin & Dashboard Template";
 
     return (
         <React.Fragment>
@@ -105,41 +105,45 @@ const SimplePage = () => {
                                 <div className="d-flex">
                                     <Nav pills className="animation-nav profile-nav gap-2 gap-lg-3 flex-grow-1"
                                         role="tablist">
-                                        <NavItem>
+                                        <NavItem className="fs-14">
                                             <NavLink
                                                 href="#overview-tab"
-                                                className={classnames({ active: activeTab === '1' }, "fs-14")}
+                                                className={classnames({ active: activeTab === '1' })}
                                                 onClick={() => { toggleTab('1'); }}
+                                                
                                             >
                                                 <i className="ri-airplay-fill d-inline-block d-md-none"></i> <span
                                                     className="d-none d-md-inline-block">Overview</span>
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem>
+                                        <NavItem className="fs-14">
                                             <NavLink
                                                 href="#activities"
-                                                className={classnames({ active: activeTab === '2' }, "fs-14")}
+                                                className={classnames({ active: activeTab === '2' })}
                                                 onClick={() => { toggleTab('2'); }}
+                                                
                                             >
                                                 <i className="ri-list-unordered d-inline-block d-md-none"></i> <span
                                                     className="d-none d-md-inline-block">Activities</span>
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem>
+                                        <NavItem className="fs-14">
                                             <NavLink
                                                 href="#projects"
-                                                className={classnames({ active: activeTab === '3' }, "fs-14")}
+                                                className={classnames({ active: activeTab === '3' })}
                                                 onClick={() => { toggleTab('3'); }}
+                                                
                                             >
                                                 <i className="ri-price-tag-line d-inline-block d-md-none"></i> <span
                                                     className="d-none d-md-inline-block">Projects</span>
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem>
+                                        <NavItem className="fs-14">
                                             <NavLink
                                                 href="#documents"
-                                                className={classnames({ active: activeTab === '4' }, "fs-14")}
+                                                className={classnames({ active: activeTab === '4' })}
                                                 onClick={() => { toggleTab('4'); }}
+                                                
                                             >
                                                 <i className="ri-folder-4-line d-inline-block d-md-none"></i> <span
                                                     className="d-none d-md-inline-block">Documents</span>
@@ -203,7 +207,7 @@ const SimplePage = () => {
                                                             <div>
                                                                 <Link to="#" className="avatar-xs d-block">
                                                                     <span
-                                                                        className="avatar-title rounded-circle fs-16 bg-body text-body">
+                                                                        className="avatar-title rounded-circle fs-16 bg-dark text-light">
                                                                         <i className="ri-github-fill"></i>
                                                                     </span>
                                                                 </Link>
@@ -294,7 +298,7 @@ const SimplePage = () => {
                                                                 </div>
                                                                 <div className="flex-shrink-0 ms-2">
                                                                     <button type="button"
-                                                                        className="btn btn-sm btn-outline-success shadow-none"><i
+                                                                        className="btn btn-sm btn-outline-success"><i
                                                                             className="ri-user-add-line align-middle"></i></button>
                                                                 </div>
                                                             </div>
@@ -312,7 +316,7 @@ const SimplePage = () => {
                                                                 </div>
                                                                 <div className="flex-shrink-0 ms-2">
                                                                     <button type="button"
-                                                                        className="btn btn-sm btn-outline-success shadow-none"><i
+                                                                        className="btn btn-sm btn-outline-success"><i
                                                                             className="ri-user-add-line align-middle"></i></button>
                                                                 </div>
                                                             </div>
@@ -330,7 +334,7 @@ const SimplePage = () => {
                                                                 </div>
                                                                 <div className="flex-shrink-0 ms-2">
                                                                     <button type="button"
-                                                                        className="btn btn-sm btn-outline-success shadow-none"><i
+                                                                        className="btn btn-sm btn-outline-success"><i
                                                                             className="ri-user-add-line align-middle"></i></button>
                                                                 </div>
                                                             </div>
@@ -464,7 +468,7 @@ const SimplePage = () => {
                                                                         role="tablist">
                                                                         <NavItem>
                                                                             <NavLink
-                                                                                href="#"
+                                                                                to="#today-tab"
                                                                                 className={classnames({ active: activityTab === '1' })}
                                                                                 onClick={() => { toggleActivityTab('1'); }}
                                                                             >
@@ -473,7 +477,7 @@ const SimplePage = () => {
                                                                         </NavItem>
                                                                         <NavItem>
                                                                             <NavLink
-                                                                                href="#"
+                                                                                to="#weekly-tab"
                                                                                 className={classnames({ active: activityTab === '2' })}
                                                                                 onClick={() => { toggleActivityTab('2'); }}
                                                                             >
@@ -482,7 +486,7 @@ const SimplePage = () => {
                                                                         </NavItem>
                                                                         <NavItem className="nav-item">
                                                                             <NavLink
-                                                                                href="#"
+                                                                                to="#monthly-tab"
                                                                                 className={classnames({ active: activityTab === '3' })}
                                                                                 onClick={() => { toggleActivityTab('3'); }}
                                                                             >
@@ -504,7 +508,7 @@ const SimplePage = () => {
                                                                                         <button className="accordion-button p-2 shadow-none" type="button" id="headingOne" >
                                                                                             <div className="d-flex">
                                                                                                 <div className="flex-shrink-0">
-                                                                                                    <img src={avatar2} alt="" className="avatar-xs rounded-circle shadow" />
+                                                                                                    <img src={avatar2} alt="" className="avatar-xs rounded-circle" />
                                                                                                 </div>
                                                                                                 <div
                                                                                                     className="flex-grow-1 ms-3">
@@ -546,7 +550,7 @@ const SimplePage = () => {
                                                                                                 <div
                                                                                                     className="flex-shrink-0 avatar-xs">
                                                                                                     <div
-                                                                                                        className="avatar-title bg-light text-success rounded-circle shadow">
+                                                                                                        className="avatar-title bg-light text-success rounded-circle">
                                                                                                         M
                                                                                                     </div>
                                                                                                 </div>
@@ -571,7 +575,7 @@ const SimplePage = () => {
                                                                                             <Row className="g-2">
                                                                                                 <div className="col-auto">
                                                                                                     <div
-                                                                                                        className="d-flex border border-dashed p-2 rounded position-relative shadow">
+                                                                                                        className="d-flex border border-dashed p-2 rounded position-relative">
                                                                                                         <div
                                                                                                             className="flex-shrink-0">
                                                                                                             <i
@@ -593,7 +597,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                                 <div className="col-auto">
                                                                                                     <div
-                                                                                                        className="d-flex border border-dashed p-2 rounded position-relative shadow">
+                                                                                                        className="d-flex border border-dashed p-2 rounded position-relative">
                                                                                                         <div
                                                                                                             className="flex-shrink-0">
                                                                                                             <i
@@ -654,7 +658,7 @@ const SimplePage = () => {
                                                                                                 <div
                                                                                                     className="flex-shrink-0 avatar-xs">
                                                                                                     <div
-                                                                                                        className="avatar-title bg-light text-muted rounded-circle shadow">
+                                                                                                        className="avatar-title bg-light text-muted rounded-circle">
                                                                                                         <i
                                                                                                             className="ri-user-3-fill"></i>
                                                                                                     </div>
@@ -730,7 +734,7 @@ const SimplePage = () => {
                                                                                                 project.</p>
                                                                                             <div className="avatar-group">
                                                                                                 <Link to="#"
-                                                                                                    className="avatar-group-item shadow"
+                                                                                                    className="avatar-group-item"
                                                                                                     data-bs-toggle="tooltip"
                                                                                                     data-bs-trigger="hover"
                                                                                                     data-bs-placement="top"
@@ -741,7 +745,7 @@ const SimplePage = () => {
                                                                                                         className="rounded-circle avatar-xs" />
                                                                                                 </Link>
                                                                                                 <Link to="#"
-                                                                                                    className="avatar-group-item shadow"
+                                                                                                    className="avatar-group-item"
                                                                                                     data-bs-toggle="tooltip"
                                                                                                     data-bs-trigger="hover"
                                                                                                     data-bs-placement="top"
@@ -752,7 +756,7 @@ const SimplePage = () => {
                                                                                                         className="rounded-circle avatar-xs" />
                                                                                                 </Link>
                                                                                                 <Link to="#"
-                                                                                                    className="avatar-group-item shadow"
+                                                                                                    className="avatar-group-item"
                                                                                                     data-bs-toggle="tooltip"
                                                                                                     data-bs-trigger="hover"
                                                                                                     data-bs-placement="top"
@@ -767,7 +771,7 @@ const SimplePage = () => {
                                                                                                     </div>
                                                                                                 </Link>
                                                                                                 <Link to="#"
-                                                                                                    className="avatar-group-item shadow"
+                                                                                                    className="avatar-group-item"
                                                                                                     data-bs-toggle="tooltip"
                                                                                                     data-bs-trigger="hover"
                                                                                                     data-bs-placement="top"
@@ -1359,7 +1363,7 @@ const SimplePage = () => {
 
                                                 <Card>
                                                     <CardBody>
-                                                        <h5 className="card-title">Projects</h5>
+                                                        {/* <h5 className="card-title"></h5> */}
                                                         <div className="d-flex justify-content-end gap-2 mb-2">
                                                             <div className="slider-button-prev">
                                                                 <div className="avatar-title fs-18 rounded px-1">
@@ -1398,7 +1402,7 @@ const SimplePage = () => {
                                                                                         Last Update : <span className="fw-semibold text-body">4 hr Ago</span></p>
                                                                                 </div>
                                                                                 <div className="flex-shrink-0 ms-2">
-                                                                                    <div className="badge bg-warning-subtle text-warning fs-10">
+                                                                                    <div className="badge bg-warning-subtle  text-warning fs-10">
                                                                                         Inprogress</div>
                                                                                 </div>
                                                                             </div>
@@ -1412,7 +1416,7 @@ const SimplePage = () => {
                                                                                         </div>
                                                                                         <div className="avatar-group">
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar4}
                                                                                                         alt=""
@@ -1420,7 +1424,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar5}
                                                                                                         alt=""
@@ -1428,7 +1432,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <div
                                                                                                         className="avatar-title rounded-circle bg-light text-primary">
@@ -1437,7 +1441,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar2}
                                                                                                         alt=""
@@ -1482,7 +1486,7 @@ const SimplePage = () => {
                                                                                         </div>
                                                                                         <div className="avatar-group">
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar2}
                                                                                                         alt=""
@@ -1490,7 +1494,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <div
                                                                                                         className="avatar-title rounded-circle bg-light text-primary">
@@ -1522,7 +1526,7 @@ const SimplePage = () => {
                                                                                 </div>
                                                                                 <div className="flex-shrink-0 ms-2">
                                                                                     <div
-                                                                                        className="badge bg-warning-subtle text-warning fs-10">
+                                                                                        className="badge bg-warning-subtle  text-warning fs-10">
                                                                                         Inprogress</div>
                                                                                 </div>
                                                                             </div>
@@ -1537,7 +1541,7 @@ const SimplePage = () => {
                                                                                         </div>
                                                                                         <div className="avatar-group">
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar5}
                                                                                                         alt=""
@@ -1587,7 +1591,7 @@ const SimplePage = () => {
                                                                                         </div>
                                                                                         <div className="avatar-group">
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar4}
                                                                                                         alt=""
@@ -1595,7 +1599,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar5}
                                                                                                         alt=""
@@ -1627,7 +1631,7 @@ const SimplePage = () => {
                                                                                 </div>
                                                                                 <div className="flex-shrink-0 ms-2">
                                                                                     <div
-                                                                                        className="badge bg-warning-subtle text-warning fs-10">
+                                                                                        className="badge bg-warning-subtle  text-warning fs-10">
                                                                                         Inprogress</div>
                                                                                 </div>
                                                                             </div>
@@ -1643,7 +1647,7 @@ const SimplePage = () => {
                                                                                         </div>
                                                                                         <div className="avatar-group">
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar4}
                                                                                                         alt=""
@@ -1651,7 +1655,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <img src={avatar5}
                                                                                                         alt=""
@@ -1659,7 +1663,7 @@ const SimplePage = () => {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div
-                                                                                                className="avatar-group-item shadow">
+                                                                                                className="avatar-group-item">
                                                                                                 <div className="avatar-xs">
                                                                                                     <div
                                                                                                         className="avatar-title rounded-circle bg-light text-primary">
@@ -1688,7 +1692,7 @@ const SimplePage = () => {
                                                 <div className="acitivity-timeline">
                                                     <div className="acitivity-item d-flex">
                                                         <div className="flex-shrink-0">
-                                                            <img src={avatar1} alt="" className="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                            <img src={avatar1} alt="" className="avatar-xs rounded-circle acitivity-avatar" />
                                                         </div>
                                                         <div className="flex-grow-1 ms-3">
                                                             <h6 className="mb-1">Oliver Phillips <span
@@ -1700,7 +1704,7 @@ const SimplePage = () => {
                                                     </div>
                                                     <div className="acitivity-item py-3 d-flex">
                                                         <div className="flex-shrink-0 avatar-xs acitivity-avatar">
-                                                            <div className="avatar-title bg-success-subtle text-success rounded-circle shadow"> N </div>
+                                                            <div className="avatar-title bg-success-subtle text-success rounded-circle"> N </div>
                                                         </div>
                                                         <div className="flex-grow-1 ms-3">
                                                             <h6 className="mb-1">Nancy Martino <span
@@ -1744,7 +1748,7 @@ const SimplePage = () => {
                                                     </div>
                                                     <div className="acitivity-item py-3 d-flex">
                                                         <div className="flex-shrink-0">
-                                                            <img src={avatar2} alt="" className="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                            <img src={avatar2} alt="" className="avatar-xs rounded-circle acitivity-avatar" />
                                                         </div>
                                                         <div className="flex-grow-1 ms-3">
                                                             <h6 className="mb-1">Natasha Carey <span className="badge bg-success-subtle text-success align-middle">Completed</span>
@@ -1778,7 +1782,7 @@ const SimplePage = () => {
                                                     </div>
                                                     <div className="acitivity-item py-3 d-flex">
                                                         <div className="flex-shrink-0">
-                                                            <img src={avatar6} alt="" className="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                            <img src={avatar6} alt="" className="avatar-xs rounded-circle acitivity-avatar" />
                                                         </div>
                                                         <div className="flex-grow-1 ms-3">
                                                             <h6 className="mb-1">Bethany Johnson</h6>
@@ -1791,7 +1795,7 @@ const SimplePage = () => {
                                                         <div className="flex-shrink-0">
                                                             <div className="avatar-xs acitivity-avatar">
                                                                 <div
-                                                                    className="avatar-title rounded-circle bg-danger-subtle text-danger shadow">
+                                                                    className="avatar-title rounded-circle bg-danger-subtle text-danger">
                                                                     <i className="ri-shopping-bag-line"></i>
                                                                 </div>
                                                             </div>
@@ -1808,7 +1812,7 @@ const SimplePage = () => {
                                                     <div className="acitivity-item py-3 d-flex">
                                                         <div className="flex-shrink-0">
                                                             <img src={avatar7} alt=""
-                                                                className="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                                className="avatar-xs rounded-circle acitivity-avatar" />
                                                         </div>
                                                         <div className="flex-grow-1 ms-3">
                                                             <h6 className="mb-1">Lewis Pratt</h6>
@@ -1822,7 +1826,7 @@ const SimplePage = () => {
                                                         <div className="flex-shrink-0">
                                                             <div className="avatar-xs acitivity-avatar">
                                                                 <div
-                                                                    className="avatar-title rounded-circle bg-info-subtle text-info shadow">
+                                                                    className="avatar-title rounded-circle bg-info-subtle text-info">
                                                                     <i className="ri-line-chart-line"></i>
                                                                 </div>
                                                             </div>
@@ -1839,7 +1843,7 @@ const SimplePage = () => {
                                                     <div className="acitivity-item d-flex">
                                                         <div className="flex-shrink-0">
                                                             <img src={avatar8} alt=""
-                                                                className="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                                className="avatar-xs rounded-circle acitivity-avatar" />
                                                         </div>
                                                         <div className="flex-grow-1 ms-3">
                                                             <h6 className="mb-1">New ticket received <span
@@ -1862,8 +1866,8 @@ const SimplePage = () => {
                                                 <Row>
                                                     {(projects || []).map((item, key) => (
                                                         <Col xxl={3} sm={6} key={key}>
-                                                            <Card className={`profile-project-card profile-project-${item.cardBorderColor}`}>
-                                                                <CardBody className="p-4 shadow">
+                                                            <Card className={`profile-project-card shadow-none profile-project-${item.cardBorderColor}`}>
+                                                                <CardBody className="p-4">
                                                                     <div className="d-flex">
                                                                         <div className="flex-grow-1 text-muted overflow-hidden">
                                                                             <h5 className="fs-14 text-truncate"><Link to="#"
@@ -1954,7 +1958,7 @@ const SimplePage = () => {
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    {(documents || []).map((item : any, key : any) => (
+                                                                    {(documents || []).map((item, key) => (
                                                                         <tr key={key}>
                                                                             <td>
                                                                                 <div className="d-flex align-items-center">

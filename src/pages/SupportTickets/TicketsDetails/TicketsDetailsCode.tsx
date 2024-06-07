@@ -21,7 +21,7 @@ app.appendChild(Wrapper.generate("button", "Load").click(() => run({
 const TicketCodeExample = () => (
     <PrismCode
         code={ticketCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

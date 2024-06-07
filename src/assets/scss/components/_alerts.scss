@@ -2,7 +2,6 @@
 // alerts.scss
 //
 
-
 // alert-label-icon
 
 .alert-label-icon {
@@ -86,7 +85,6 @@
 // Alert example loop
 
 @each $color, $value in $theme-colors {
-    
 
     // alert border left
     .alert-border-left {
@@ -131,7 +129,7 @@
     .alert{
         &.alert-#{$color} {
             .btn-close::after{
-                color: var(--#{$prefix}#{$color});
+                color: $value;
             }
         }
         
@@ -159,6 +157,4 @@
         }
     }
 }
-
-
    

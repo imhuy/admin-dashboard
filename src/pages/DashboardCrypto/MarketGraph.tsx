@@ -6,49 +6,51 @@ import { getMarketChartsData } from '../../slices/thunks';
 import { createSelector } from 'reselect';
 
 const MarketGraph = () => {
-    const dispatch: any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const marketgraphData = createSelector(
-        (state: any) => state.DashboardCrypto.marketData,
-        (marketData) => marketData
-    );
+        (state:any) => state.DashboardCrypto,
+        (marketData) => marketData.marketData
+      );
     // Inside your component
     const marketData = useSelector(marketgraphData);
+
 
     useEffect(() => {
         setchartData(marketData);
     }, [marketData]);
 
-    const onChangeChartPeriod = (pType: any) => {
+    const onChangeChartPeriod = (pType:any) => {
         dispatch(getMarketChartsData(pType));
     };
 
     useEffect(() => {
         dispatch(getMarketChartsData("all"));
     }, [dispatch]);
+
     return (
         <React.Fragment>
             <Row>
-                <Col xl={12} className='p-0 ms-2 ps-1'>
-                    <Card >
+                <Col xl={12}>
+                    <Card>
                         <CardHeader className="border-0 align-items-center d-flex">
                             <h4 className="card-title mb-0 flex-grow-1">Market Graph</h4>
                             <div className="d-flex gap-1">
-                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("hour"); }}>
+                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("hour"); }}>
                                     1H
                                 </button>
-                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("week"); }}>
+                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("week"); }}>
                                     7D
                                 </button>
-                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("month"); }}>
+                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("month"); }}>
                                     1M
                                 </button>
-                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("year"); }}>
+                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("year"); }}>
                                     1Y
                                 </button>
-                                <button type="button" className="btn btn-soft-primary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("all"); }}>
+                                <button type="button" className="btn btn-soft-primary btn-sm" onClick={() => { onChangeChartPeriod("all"); }}>
                                     ALL
                                 </button>
                             </div>
@@ -87,7 +89,9 @@ const MarketGraph = () => {
                             </div>
                         </CardBody>
                         <div className="card-body p-0 pb-3">
-                            <MarkerCharts series={chartData} dataColors='["--vz-success", "--vz-danger"]' />
+                            <div id="Market_chart" className="apex-charts" dir="ltr">
+                                <MarkerCharts series={chartData} dataColors='["--vz-success", "--vz-danger"]'/>
+                            </div>
                         </div>
                     </Card>
                 </Col>

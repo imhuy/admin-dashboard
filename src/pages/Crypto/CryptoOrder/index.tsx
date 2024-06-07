@@ -9,11 +9,11 @@ import { createSelector } from 'reselect';
 
 
 const CryproOrder = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const cryptoorderData = createSelector(
-        (state : any) => state.Crypto.orderList,
-        (orderList : any) => orderList
+        (state) => state.Crypto,
+        (orderList) => orderList.orderList
       );
     // Inside your component
     const orderList = useSelector(cryptoorderData);

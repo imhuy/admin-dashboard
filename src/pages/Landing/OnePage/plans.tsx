@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
 
 const Plans = () => {
-    const [plan, setPlan] = useState(true);
+    const [plan, setPlan] = useState<boolean>(true);
     const toggle = () => setPlan(!plan);
     return (
         <React.Fragment>

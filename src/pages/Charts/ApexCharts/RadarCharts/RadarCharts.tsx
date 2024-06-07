@@ -29,7 +29,7 @@ const SimpleRadar = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="radar"
-            height={350}
+            height={365}
         />
     )
 }
@@ -83,7 +83,7 @@ const MultipleRadar = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="radar"
-            height={350}
+            height={365}
         />
     )
 }
@@ -153,7 +153,7 @@ const PolygonRadar = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="radar"
-            height={350}
+            height={365}
         />
     )
 }

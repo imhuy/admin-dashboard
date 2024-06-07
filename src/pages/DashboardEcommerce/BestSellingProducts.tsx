@@ -11,7 +11,7 @@ const BestSellingProducts = () => {
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Best Selling Products</h4>
                         <div className="flex-shrink-0">
-                            <UncontrolledDropdown className="card-header-dropdown" direction='start'>
+                            <UncontrolledDropdown className="card-header-dropdown">
                                 <DropdownToggle tag="a" className="text-reset" role="button">
                                     <span className="fw-semibold text-uppercase fs-12">Sort by: </span><span className="text-muted">Today<i className="mdi mdi-chevron-down ms-1"></i></span>
                                 </DropdownToggle>
@@ -31,7 +31,7 @@ const BestSellingProducts = () => {
                         <div className="table-responsive table-card">
                             <table className="table table-hover table-centered align-middle table-nowrap mb-0">
                                 <tbody>
-                                    {(bestSellingProducts || []).map((item : any, key : any) => (
+                                    {(bestSellingProducts || []).map((item, key) => (
                                         <tr key={key}>
                                             <td>
                                                 <div className="d-flex align-items-center">
@@ -45,7 +45,7 @@ const BestSellingProducts = () => {
                                                 </div>
                                             </td>
                                             <td>
-                                                <h5 className="fs-14 my-1 fw-normal">${item.price}</h5>
+                                                <h5 className="fs-14 my-1 fw-normal">${(item.price).toFixed(2)}</h5>
                                                 <span className="text-muted">Price</span>
                                             </td>
                                             <td>
@@ -53,7 +53,7 @@ const BestSellingProducts = () => {
                                                 <span className="text-muted">Orders</span>
                                             </td>
                                             <td>
-                                                <h5 className="fs-14 my-1 fw-normal">{item.stock ? item.stock : <span className="badge bg-danger-subtle text-danger">Out of stock</span>} </h5>
+                                                <h5 className="fs-14 my-1 fw-normal">{item.stock ? item.stock : <span className="badge bg-danger-subtle  text-danger">Out of stock</span>} </h5>
                                                 <span className="text-muted">Stock</span>
                                             </td>
                                             <td>

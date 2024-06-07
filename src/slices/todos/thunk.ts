@@ -21,7 +21,7 @@ export const getTodos = createAsyncThunk("todos/getTodos", async () => {
   }
 });
 
-export const addNewTodo = createAsyncThunk("todos/addNewTodo", async (todo : any) => {
+export const addNewTodo = createAsyncThunk("todos/addNewTodo", async (todo:any) => {
   try {
     const response = addNewTodoApi(todo);
     const data = await response;
@@ -33,7 +33,7 @@ export const addNewTodo = createAsyncThunk("todos/addNewTodo", async (todo : any
   }
 });
 
-export const updateTodo = createAsyncThunk("todos/updateTodo", async (todo : any) => {
+export const updateTodo = createAsyncThunk("todos/updateTodo", async (todo:any) => {
   try {
     const response = updateTodoApi(todo);
     const data = await response;
@@ -45,7 +45,8 @@ export const updateTodo = createAsyncThunk("todos/updateTodo", async (todo : any
   }
 });
 
-export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (todo : any) => {
+export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (todo:any) => {
+  
   try {
     const response = deleteTodoApi(todo);
     const data = await response;
@@ -66,7 +67,7 @@ export const getProjects = createAsyncThunk("todos/getProjects", async () => {
   }
 });
 
-export const addNewProject = createAsyncThunk("todos/addNewProject", async (project : any) => {
+export const addNewProject = createAsyncThunk("todos/addNewProject", async (project:any) => {
   try {
     const response = addNewProjectApi(project);
     const data = await response;

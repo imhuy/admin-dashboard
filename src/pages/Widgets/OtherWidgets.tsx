@@ -122,17 +122,24 @@ const OtherWidgets = () => {
 
             <Row>
 
-                {(otherWidgets2 || []).map((item, key) => (<Col lg={4} key={key}>
+                {(otherWidgets2 || []).map((item: any, key: any) => (<Col lg={4} key={key}>
                     <Card>
                         <CardBody>
                             <h5 className="fs-15 fw-semibold">{item.title}</h5>
                             <p className="text-muted">{item.subTitle}</p>
                             <div className="d-flex flex-wrap justify-content-evenly">
-                                {item.subItem.map((item, key) => (<p className="text-muted mb-0" key={key}><i className={"fs-18 align-middle me-2 " + item.icon + " text-" + item.iconClass}></i>{item.label}</p>))}
+                                {item.subItem.map((item: any, key: any) => (<p className="text-muted mb-0" key={key}><i className={"fs-18 align-middle me-2 " + item.icon + " text-" + item.iconClass}></i>{item.label}</p>))}
                             </div>
                         </CardBody>
                         <div className="progress animated-progess rounded-bottom rounded-0" style={{ height: "6px" }}>
-                            {item.progressBar.map((item, key) => (<div className={"progress-bar rounded-0 " + item.bgColor} role="progressbar" style={{ width: item.width }} key={key}></div>))}
+                            {item.progressBar.map((item: any, key: any) => (
+                                <div
+                                    className={"progress-bar rounded-0 " + item.bgColor}
+                                    role="progressbar"
+                                    style={{ width: item.width }}
+                                    key={key}>
+                                </div>
+                            ))}
                         </div>
                     </Card>
                 </Col>))}

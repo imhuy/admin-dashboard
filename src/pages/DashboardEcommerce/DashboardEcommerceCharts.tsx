@@ -136,7 +136,6 @@ const RevenueCharts = ({ dataColors, series } : any) => {
 
 const StoreVisitsCharts = ({ dataColors } : any) => {
   var chartDonutBasicColors = getChartColorsArray(dataColors);
-
   const series = [44, 55, 41, 17, 15];
   var options : any = {
     labels: ["Direct", "Social", "Email", "Other", "Referrals"],
@@ -164,7 +163,7 @@ const StoreVisitsCharts = ({ dataColors } : any) => {
         series={series}
         type="donut"
         height="333"
-        className="apex-charts mt-3"
+        className="apex-charts"
       />
     </React.Fragment>
   );

@@ -8,11 +8,12 @@ import UiContent from '../../../Components/Common/UiContent';
 import BreadCrumb from '../../../Components/Common/BreadCrumb';
 import { Link } from 'react-router-dom';
 
-import { DefaultButtonsExample, OutlineButtonsExample, RoundedButtonsExample, SoftButtonsExample, GradientButtonsExample, AnimationButtonsExample, LabelButtonsExample, SizeButtonsExample, WidthButtonsExample, TagButtonsExample, GridButtonsExample, CheckButtonsExample, GroupButtonsExample, IconButtonsExample, ToolbarButtonsExample, GroupsizingButtonsExample, VerticalButtonsExample, GhostButtonsExample, LoadingbuttonsExample, BorderButtonsExample, CustomToggleButtonsExample, BaseClassExample, CustomSizingExample, FocusRingExample, FocusRingUtilityExample } from './UiButtonCode';
+import { DefaultButtonsExample, OutlineButtonsExample, RoundedButtonsExample, SoftButtonsExample, GradientButtonsExample, AnimationButtonsExample, LabelButtonsExample, SizeButtonsExample, WidthButtonsExample, TagButtonsExample, GridButtonsExample, CheckButtonsExample, GroupButtonsExample, IconButtonsExample, ToolbarButtonsExample, GroupsizingButtonsExample, VerticalButtonsExample, GhostButtonsExample, LoadingbuttonsExample, BorderButtonsExample, CustomToggleButtonsExample, BaseClassExample, CustomSizeExample, FocusRingExample, FocusRingUtilityExample } from './UiButtonCode';
 
 
 const UiButtons = () => {
     document.title = "Buttons | Velzon - React Admin & Dashboard Template";
+
     const favouriteBtn = (ele : any) => {
         if (ele.closest("button").classList.contains("active")) {
             ele.closest("button").classList.remove("active");
@@ -20,6 +21,8 @@ const UiButtons = () => {
             ele.closest("button").classList.add("active");
         }
     };
+
+
     return (
         <React.Fragment>
             <UiContent />
@@ -67,14 +70,14 @@ const UiButtons = () => {
                                     <p className="text-muted">Use <code>outline</code>  atrribute with the below-mentioned variation to create a button with the outline.</p>
                                     <div className="live-preview">
                                         <div className="d-flex flex-wrap gap-2">
-                                            <Button color="primary" outline className='shadow-none' > Primary </Button>
-                                            <Button color="secondary" outline className='shadow-none' > Secondary </Button>
-                                            <Button color="success" outline className='shadow-none' > Success </Button>
-                                            <Button color="info" outline className='shadow-none' > Info </Button>
-                                            <Button color="warning" outline className='shadow-none' > Warning </Button>
-                                            <Button color="danger" outline className='shadow-none' > Danger </Button>
-                                            <Button color="dark" outline className='shadow-none' > Dark </Button>
-                                            <Button color="light" outline className='shadow-none' > Light </Button>
+                                            <Button color="primary" outline > primary </Button>
+                                            <Button color="secondary" outline > Secondary </Button>
+                                            <Button color="success" outline > Success </Button>
+                                            <Button color="info" outline > Info </Button>
+                                            <Button color="warning" outline > Warning </Button>
+                                            <Button color="danger" outline > Danger </Button>
+                                            <Button color="dark" outline > Dark </Button>
+                                            <Button color="light" outline > Light </Button>
                                         </div>
                                     </div>
                                     <div className="d-none code-view">
@@ -125,15 +128,15 @@ const UiButtons = () => {
                             <Card>
                                 <PreviewCardHeader title="Soft Buttons" />
                                 <CardBody>
-                                    <p className="text-muted">Use <code>btn-soft-</code>  class with the below-mentioned variation to create a button with the soft background.</p>                                        <div className="live-preview">
+                                    <p className="text-muted">Use <code>btn-subtle-</code>  class with the below-mentioned variation to create a button with the soft background.</p>                                        <div className="live-preview">
                                         <div className="d-flex flex-wrap gap-2">
-                                            <Button color='primary' className="shadow-none btn-soft-primary"> Primary </Button>
-                                            <Button className="shadow-none btn-soft-secondary"> Secondary </Button>
-                                            <Button className="shadow-none btn-soft-success"> Success </Button>
-                                            <Button className="shadow-none btn-soft-info"> Info </Button>
-                                            <Button className="shadow-none btn-soft-warning"> Warning </Button>
-                                            <Button className="shadow-none btn-soft-danger"> Danger </Button>
-                                            <Button className="shadow-none btn-soft-dark"> Dark </Button>
+                                            <button className="btn btn-soft-primary waves-effect waves-light"> Primary </button>
+                                            <button className="btn btn-soft-secondary waves-effect waves-light"> Secondary </button>
+                                            <button className="btn btn-soft-success waves-effect waves-light"> Success </button>
+                                            <button className="btn btn-soft-info waves-effect waves-light"> Info </button>
+                                            <button className="btn btn-soft-warning waves-effect waves-light"> Warning </button>
+                                            <button className="btn btn-soft-danger waves-effect waves-light"> Danger </button>
+                                            <button className="btn btn-soft-dark waves-effect waves-light"> Dark </button>
                                         </div>
                                     </div>
                                     <div className="d-none code-view">
@@ -157,13 +160,13 @@ const UiButtons = () => {
                                     <p className="text-muted">Use <code>btn-ghost-</code>  class with the below-mentioned variation to create a button with the transparent background.</p>
                                     <div className="live-preview">
                                         <div className="d-flex flex-wrap gap-2">
-                                            <Button color="primary" outline className="shadow-none btn btn-ghost-primary">Primary</Button>
-                                            <Button color="secondary" outline className="shadow-none btn btn-ghost-secondary">Secondary</Button>
-                                            <Button color="success" outline className="shadow-none btn btn-ghost-success">Success</Button>
-                                            <Button color="info" outline className="shadow-none btn btn-ghost-info">Info</Button>
-                                            <Button color="warning" outline className="shadow-none btn btn-ghost-warning">Warning</Button>
-                                            <Button color="danger" outline className="shadow-none btn btn-ghost-danger">Danger</Button>
-                                            <Button color="dark" outline className="shadow-none btn btn-ghost-dark">Dark</Button>
+                                            <Button color="primary" outline className="btn btn-ghost-primary">Primary</Button>
+                                            <Button color="secondary" outline className="btn btn-ghost-secondary">Secondary</Button>
+                                            <Button color="success" outline className="btn btn-ghost-success">Success</Button>
+                                            <Button color="info" outline className="btn btn-ghost-info">Info</Button>
+                                            <Button color="warning" outline className="btn btn-ghost-warning">Warning</Button>
+                                            <Button color="danger" outline className="btn btn-ghost-danger">Danger</Button>
+                                            <Button color="dark" outline className="btn btn-ghost-dark">Dark</Button>
                                         </div>
                                     </div>
 
@@ -562,7 +565,7 @@ const UiButtons = () => {
                                             <Link to="#" className="btn btn-primary"> Link </Link>
                                             <Button color="success" type="submit"> Button </Button>
                                             <Button color="info" type="button"> Input </Button>
-                                            <Button color="danger" type="submit"> Submit </Button>
+                                            <Button color="success" type="submit"> Submit </Button>
                                             <Button color="warning" type="reset"> Reset </Button>
                                         </div>
                                     </div>
@@ -581,7 +584,7 @@ const UiButtons = () => {
                     <Row>
                         <Col lg={6}>
                             <Card>
-                            <PreviewCardHeader title="Base class" />
+                                <PreviewCardHeader title="Base class" />
                                 <CardBody>
                                     <p className="text-muted">
                                         Bootstrap has a base <code>.btn</code> class that sets up basic styles such as padding and content alignment. By default, <code>.btn</code> controls have a transparent border and background color, and lack any explicit focus and hover styles.
@@ -601,7 +604,6 @@ const UiButtons = () => {
                                 </CardBody>
                             </Card>
                         </Col>
-
                         <Col lg={6}>
                             <Card>
                                 <PreviewCardHeader title="Custom sizing with CSS variables" />
@@ -610,14 +612,14 @@ const UiButtons = () => {
                                         You can even roll your own custom sizing with CSS variables:
                                     </p>
                                     <div className="live-preview">
-                                            <button type="button" className="btn btn-primary" style={{ paddingTop: '.25rem', paddingBottom: '.25rem', paddingLeft: '.5rem', paddingRight: '.5rem', fontSize: '.75rem' }}>
-                                                Custom button
-                                            </button>
+                                        <button type="button" className="btn btn-primary" style={{ paddingTop: '.25rem', paddingBottom: '.25rem', paddingLeft: '.5rem', paddingRight: '.5rem', fontSize: '.75rem' }}>
+                                            Custom button
+                                        </button>
                                     </div>
                                     <div className="d-none code-view">
                                         <pre className="language-markup" >
                                             <code>
-                                                <CustomSizingExample />
+                                                <CustomSizeExample />
                                             </code>
                                         </pre>
                                     </div>
@@ -953,16 +955,18 @@ const UiButtons = () => {
                                 <PreviewCardHeader title="Focus Ring" />
                                 <CardBody>
                                     <p className="text-muted">Click directly on the link below to see the focus ring in action, or into the example below and then press <kbd>Tab</kbd>.</p>
-                                    <div className="d-flex gap-3">
-                                        <Link to="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2">
-                                            Focus ring
-                                        </Link>
-                                        <Link to="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style={{ boxShadow: '0 0 0 .25rem rgba(118, 93, 255, .25)' }}>
-                                            Custom focus ring
-                                        </Link>
-                                        <Link to="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style={{ boxShadow: '10px 10px 4px 0 rgba(0, 0, 0, 0.25)' }}>
-                                            Blurry offset focus ring
-                                        </Link>
+                                    <div className="live-preview">
+                                        <div className="d-flex gap-3">
+                                            <Link to="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2">
+                                                Focus ring
+                                            </Link>
+                                            <Link to="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style={{ boxShadow: '0 0 0 .25rem rgba(118, 93, 255, .25)' }}>
+                                                Custom focus ring
+                                            </Link>
+                                            <Link to="#!" className="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style={{ boxShadow: '10px 10px 4px 0 rgba(0, 0, 0, 0.25)' }}>
+                                                Blurry offset focus ring
+                                            </Link>
+                                        </div>
                                     </div>
                                     <div className="d-none code-view">
                                         <pre className="language-markup" style={{ height: "275px" }}>
@@ -972,6 +976,7 @@ const UiButtons = () => {
                                         </pre>
                                     </div>
                                 </CardBody>
+
                             </Card>
                         </Col>
                     </Row>

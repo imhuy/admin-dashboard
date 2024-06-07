@@ -2,10 +2,10 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
-const MarketplaceChart = ({ dataColors, series } : any) => {
+const MarketplaceChart = ({ dataColors, series }:any) => {
     var MarketplaceChartColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         chart: {
             height: 350,
             type: 'line',
@@ -44,7 +44,7 @@ const MarketplaceChart = ({ dataColors, series } : any) => {
     );
 };
 
-const PopularityChart = ({ dataColors } : any) => {
+const PopularityChart = ({ dataColors }:any) => {
     var PopularityChartColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'Like',
@@ -54,7 +54,7 @@ const PopularityChart = ({ dataColors } : any) => {
         data: [-11.45, -15.42, -7.9, -12.42, -12.6, -18.1, -18.2, -14.16]
     }];
 
-    const options : any = {
+    const options:any = {
         chart: {
             type: 'bar',
             height: 260,
@@ -85,7 +85,7 @@ const PopularityChart = ({ dataColors } : any) => {
         yaxis: {
             labels: {
                 show: false,
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     return y.toFixed(0) + "%";
                 }
             }
@@ -111,9 +111,9 @@ const PopularityChart = ({ dataColors } : any) => {
     );
 };
 
-const TopArtworkChart = ({ seriesData, chartsColor } : any) => {
+const TopArtworkChart = ({ seriesData, chartsColor }:any) => {
     const topartworkColors = [chartsColor];
-    var options : any = {
+    var options:any = {
         chart: {
             width: 80,
             height: 30,
@@ -138,7 +138,7 @@ const TopArtworkChart = ({ seriesData, chartsColor } : any) => {
             },
             y: {
                 title: {
-                    formatter: function () {
+                    formatter: function (seriesName:any) {
                         return '';
                     }
                 }

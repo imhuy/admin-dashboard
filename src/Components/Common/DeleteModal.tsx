@@ -1,17 +1,23 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { Modal, ModalBody } from "reactstrap";
 
-const DeleteModal = ({ show, onDeleteClick, onCloseClick } : any) => {
+interface DeleteModalProps {
+  show ?: boolean;
+  onDeleteClick ?: () => void;
+  onCloseClick ?: () => void;
+  recordId ?: string;
+}
+
+const DeleteModal: React.FC<DeleteModalProps> = ({ show, onDeleteClick, onCloseClick, recordId }) => {
   return (
-    <Modal isOpen={show} toggle={onCloseClick} centered={true}>
+    <Modal fade={true} isOpen={show} toggle={onCloseClick} centered={true}>
       <ModalBody className="py-3 px-5">
         <div className="mt-2 text-center">
-        <i className="ri-delete-bin-line display-5 text-danger"></i>
+          <i className="ri-delete-bin-line display-5 text-danger"></i>
           <div className="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
             <h4>Are you sure ?</h4>
             <p className="text-muted mx-4 mb-0">
-              Are you sure you want to remove this record ?
+              Are you sure you want to remove this record {recordId ? recordId : ""} ?
             </p>
           </div>
         </div>
@@ -35,13 +41,7 @@ const DeleteModal = ({ show, onDeleteClick, onCloseClick } : any) => {
         </div>
       </ModalBody>
     </Modal>
-  );
-};
-
-DeleteModal.propTypes = {
-  onCloseClick: PropTypes.func,
-  onDeleteClick: PropTypes.func,
-  show: PropTypes.any,
+  ) as unknown as JSX.Element;
 };
 
 export default DeleteModal;

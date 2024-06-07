@@ -1,13 +1,24 @@
 import React from 'react';
-import { Input } from 'reactstrap';
 
-export const Filter = ({ column } : any) => {
+export const Filter = ({ column }: any) => {
+
   return (
-    <div style={{ marginTop: 5 }}>
-      {column.canFilter && column.render('Filter')}
-    </div>
-  );
-};
+    <>
+      {column.Filter && (
+        <div style={{ marginTop: 5 }}>
+          {column.render('Filter')}
+        </div>
+      )}
+    </>
+  )
+}
+
+interface DefaultColumnProps {
+  column?: any;
+  filterValue?: any;
+  setFilter?: any;
+  preFilteredRows?: any;
+}
 
 export const DefaultColumnFilter = ({
   column: {
@@ -15,11 +26,11 @@ export const DefaultColumnFilter = ({
     setFilter,
     preFilteredRows: { length },
   },
-} : any) => {
+}: DefaultColumnProps) => {
   return (
-    <Input
+    <input
       value={filterValue || ''}
-      onChange={(e) => {
+      onChange={(e: any) => {
         setFilter(e.target.value || undefined);
       }}
       placeholder={`search (${length}) ...`}
@@ -27,12 +38,20 @@ export const DefaultColumnFilter = ({
   );
 };
 
+interface SelectColumnFilterProps {
+  column?: any;
+  filterValue?: any;
+  setFilter?: any;
+  preFilteredRows?: any;
+  id?: any;
+}
+
 export const SelectColumnFilter = ({
   column: { filterValue, setFilter, preFilteredRows, id },
-} : any) => {
+}: SelectColumnFilterProps) => {
   const options = React.useMemo(() => {
-    const options : any = new Set();
-    preFilteredRows.forEach((row : any) => {
+    const options: any = new Set();
+    preFilteredRows.forEach((row: any) => {
       options.add(row.values[id]);
     });
     return [...options.values()];
@@ -48,7 +67,7 @@ export const SelectColumnFilter = ({
       }}
     >
       <option value=''>All</option>
-      {options.map((option) => (
+      {options.map((option: any) => (
         <option key={option} value={option}>
           {option}
         </option>

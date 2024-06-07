@@ -18,9 +18,10 @@ import logoLight from "../../assets/images/logo-light.png";
 import { createSelector } from 'reselect';
 //import images
 
-const Login = (props : any) => {
-    const dispatch : any = useDispatch();
-    const selectLayoutState = (state : any) => state;
+const Login = (props: any) => {
+    const dispatch: any = useDispatch();
+
+    const selectLayoutState = (state: any) => state;
     const loginpageData = createSelector(
         selectLayoutState,
         (state) => ({
@@ -35,13 +36,15 @@ const Login = (props : any) => {
     } = useSelector(loginpageData);
 
     const [userLogin, setUserLogin] = useState<any>([]);
-    const [showPassword, setShowPassword] = useState<boolean>(false);
+    const [passwordShow, setPasswordShow] = useState<boolean>(false);
+
     const [loader, setLoader] = useState<boolean>(false);
+
 
     useEffect(() => {
         if (user && user) {
-            const updatedUserData = process.env.REACT_APP_DEFAULTAUTH === "firebase" ? user.multiFactor.user.email : user.user.email;
-            const updatedUserPassword = process.env.REACT_APP_DEFAULTAUTH === "firebase" ? "" : user.user.confirm_password;
+            const updatedUserData = process.env.REACT_APP_DEFAULTAUTH === "firebase" ? user.multiFactor.user.email : user.email;
+            const updatedUserPassword = process.env.REACT_APP_DEFAULTAUTH === "firebase" ? "" : user.confirm_password;
             setUserLogin({
                 email: updatedUserData,
                 password: updatedUserPassword
@@ -49,7 +52,7 @@ const Login = (props : any) => {
         }
     }, [user]);
 
-    const validation : any = useFormik({
+    const validation: any = useFormik({
         // enableReinitialize : use this flag when initial values needs to be changed
         enableReinitialize: true,
 
@@ -67,15 +70,13 @@ const Login = (props : any) => {
         }
     });
 
-    const signIn = (type : any) => {
+    const signIn = (type: any) => {
         dispatch(socialLogin(type, props.router.navigate));
     };
 
-    //handleTwitterLoginResponse
-    // const twitterResponse = e => {}
 
     //for facebook and google authentication
-    const socialResponse = (type : any) => {
+    const socialResponse = (type: any) => {
         signIn(type);
     };
 
@@ -93,7 +94,7 @@ const Login = (props : any) => {
     return (
         <React.Fragment>
             <ParticlesAuth>
-                <div className="auth-page-content">
+                <div className="auth-page-content mt-lg-5">
                     <Container>
                         <Row>
                             <Col lg={12}>
@@ -154,7 +155,7 @@ const Login = (props : any) => {
                                                         <Input
                                                             name="password"
                                                             value={validation.values.password || ""}
-                                                            type={showPassword ? "text" : "password"}
+                                                            type={passwordShow ? "text" : "password"}
                                                             className="form-control pe-5"
                                                             placeholder="Enter Password"
                                                             onChange={validation.handleChange}
@@ -166,7 +167,7 @@ const Login = (props : any) => {
                                                         {validation.touched.password && validation.errors.password ? (
                                                             <FormFeedback type="invalid">{validation.errors.password}</FormFeedback>
                                                         ) : null}
-                                                        <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted shadow-none" onClick={() => setShowPassword(!showPassword)} type="button" id="password-addon"><i className="ri-eye-fill align-middle"></i></button>
+                                                        <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon" onClick={() => setPasswordShow(!passwordShow)}><i className="ri-eye-fill align-middle"></i></button>
                                                     </div>
                                                 </div>
 
@@ -176,7 +177,7 @@ const Login = (props : any) => {
                                                 </div>
 
                                                 <div className="mt-4">
-                                                <Button color="success"
+                                                    <Button color="success"
                                                         disabled={loader && true}
                                                         className="btn btn-success w-100" type="submit">
                                                         {loader && <Spinner size="sm" className='me-2'> Loading... </Spinner>}
@@ -196,7 +197,7 @@ const Login = (props : any) => {
                                                                 e.preventDefault();
                                                                 socialResponse("facebook");
                                                             }}
-                                                            >
+                                                        >
                                                             <i className="ri-facebook-fill fs-16" />
                                                         </Link>
                                                         <Link
@@ -206,7 +207,7 @@ const Login = (props : any) => {
                                                                 e.preventDefault();
                                                                 socialResponse("google");
                                                             }}
-                                                            >
+                                                        >
                                                             <i className="ri-google-fill fs-16" />
                                                         </Link>
                                                         <Button color="dark" className="btn-icon"><i className="ri-github-fill fs-16"></i></Button>{" "}

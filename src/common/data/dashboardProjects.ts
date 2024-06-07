@@ -8,7 +8,6 @@ import avatar6 from "../../assets/images/users/avatar-6.jpg";
 import avatar7 from "../../assets/images/users/avatar-7.jpg";
 import avatar8 from "../../assets/images/users/avatar-8.jpg";
 
-
 const projectsWidgets = [
     {
         id: 1,
@@ -19,7 +18,7 @@ const projectsWidgets = [
         icon: "ri-arrow-down-s-line",
         percentage: "5.02 %",
         caption: "Projects this month",
-        subCounter: [{ id: 1, counter: "825", suffix: "" }]
+        subCounter: [{ id: 1, counter: 825, suffix: "" }]
     },
     {
         id: 2,
@@ -30,7 +29,7 @@ const projectsWidgets = [
         icon: "ri-arrow-up-s-line",
         percentage: "3.58 %",
         caption: "Leads this month",
-        subCounter: [{ id: 1, counter: "7522", suffix: "", separator: "," }]
+        subCounter: [{ id: 1, counter: 7522, suffix: "" }]
     },
     {
         id: 3,
@@ -41,7 +40,7 @@ const projectsWidgets = [
         icon: "ri-arrow-down-s-line",
         percentage: "10.35 %",
         caption: "Work this month",
-        subCounter: [{ id: 1, counter: "168", suffix: "h" }, { id: 1, counter: "40", suffix: "m" }]
+        subCounter: [{ id: 1, counter: 168, suffix: "h" }, { id: 1, counter: 40, suffix: "m" }]
     }
 ];
 

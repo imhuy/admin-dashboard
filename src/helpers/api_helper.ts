@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import config from "../config";
 
 const { api } = config;
@@ -42,22 +42,18 @@ axios.interceptors.response.use(
  * Sets the default authorization
  * @param {*} token
  */
-const setAuthorization = (token : any) => {
+const setAuthorization = (token : string) => {
   axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 };
 
 class APIClient {
   /**
-   * Fetches data from given url
+   * Fetches data from the given URL
    */
+  get = (url: string, params?: any): Promise<AxiosResponse> => {
+    let response: Promise<AxiosResponse>;
 
-  //  get = (url, params) => {
-  //   return axios.get(url, params);
-  // };
-  get = (url : any, params : any) => {
-    let response;
-
-    let paramKeys : any = [];
+    let paramKeys: string[] = [];
 
     if (params) {
       Object.keys(params).map(key => {
@@ -73,29 +69,33 @@ class APIClient {
 
     return response;
   };
+
   /**
-   * post given data to url
+   * Posts the given data to the URL
    */
-  create = (url : any, data : any) => {
+  create = (url: string, data: any): Promise<AxiosResponse> => {
     return axios.post(url, data);
   };
+
   /**
    * Updates data
    */
-  update = (url : any, data : any) => {
+  update = (url: string, data: any): Promise<AxiosResponse> => {
     return axios.patch(url, data);
   };
 
-  put = (url : any, data : any) => {
+  put = (url: string, data: any): Promise<AxiosResponse> => {
     return axios.put(url, data);
   };
+
   /**
-   * Delete
+   * Deletes data
    */
   delete = (url: string, config?: AxiosRequestConfig): Promise<AxiosResponse> => {
     return axios.delete(url, { ...config });
   };
 }
+
 const getLoggedinUser = () => {
   const user = sessionStorage.getItem("authUser");
   if (!user) {

@@ -4,7 +4,7 @@ import PrismCode from "../../../Components/Common/Prism";
 
 const bootstrapToastsCode =
 `<!-- Default Toast --> 
-const [toast1, setToast1] = useState(true);
+const [toast1, setToast1] = useState<boolean>(true);
 
 <Toast isOpen={toast1}>
     <ToastHeader toggle={() => setToast1(!toast1)}>
@@ -18,7 +18,7 @@ const [toast1, setToast1] = useState(true);
 </Toast>
 
 <!-- Translucent Toast --> 
-const [toast2, setToast2] = useState(true);
+const [toast2, setToast2] = useState<boolean>(true);
 
 <Toast isOpen={toast2}>
     <ToastHeader toggle={() => setToast2(!toast2)}>
@@ -32,7 +32,7 @@ const [toast2, setToast2] = useState(true);
 </Toast>
 
 <!-- Stacking Toast --> 
-const [toast3, setToast3] = useState(true);
+const [toast3, setToast3] = useState<boolean>(true);
 
 <Toast isOpen={toast3}>
     <ToastHeader toggle={() => setToast3(!toast3)}>
@@ -46,7 +46,7 @@ const [toast3, setToast3] = useState(true);
 </Toast>
 
 <!-- Placement Toast --> 
-const [toast5, setToast5] = useState(true);
+const [toast5, setToast5] = useState<boolean>(true);
 
 <div className="bg-light" style={{ position: "relative", minHeight: "200px" }}>
     <Toast isOpen={toast5} style={{ position: "absolute", top: "16px", right: "16px" }}>
@@ -62,7 +62,7 @@ const [toast5, setToast5] = useState(true);
 </div>
 
  <!-- Flexbox container for aligning the toasts -->
-const [toast6, setToast6] = useState(true);
+const [toast6, setToast6] = useState<boolean>(true);
 
 <div className="bg-light d-flex justify-content-center align-items-center" style={{ height: "200px" }}>
     <Toast isOpen={toast6}>
@@ -81,7 +81,7 @@ const [toast6, setToast6] = useState(true);
 const BootstrapToastsExample = () => (
     <PrismCode
         code={bootstrapToastsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -91,7 +91,7 @@ const toastPlacementCode =
     `
 <!-- Toast Placement -->
 
-const [toast11, setToast11] = useState(true);
+const [toast11, setToast11] = useState<boolean>(true);
 const [position, setPosition] = useState();
 
 <Form>
@@ -130,7 +130,7 @@ const [position, setPosition] = useState();
 const ToastPlacementExample = () => (
     <PrismCode
         code={toastPlacementCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -210,7 +210,7 @@ const borderIconCode =
 const BorderIconExample = () => (
     <PrismCode
         code={borderIconCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -260,7 +260,7 @@ const durationnotify = () => toast("Toast Duration 5s", { position: "top-right",
 const ToastifyExample = () => (
     <PrismCode
         code={toastifyCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

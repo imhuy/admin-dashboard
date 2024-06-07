@@ -6,7 +6,7 @@ import { taskWidgets } from '../../../common/data';
 const Widgets = () => {
     return (
         <React.Fragment>
-            {taskWidgets.map((item : any, key : any) => (
+            {taskWidgets.map((item, key) => (
                 <Col xxl={3} sm={6} key={key}>
                     <Card className="card-animate">
                         <CardBody>
@@ -18,7 +18,7 @@ const Widgets = () => {
                                             <CountUp
                                                 start={0}
                                                 end={item.counter}
-                                                decimal={item.decimals}
+                                                // decimal={item.decimals}
                                                 suffix={item.suffix}
                                                 duration={3}
                                             />
@@ -30,7 +30,7 @@ const Widgets = () => {
                                 </div>
                                 <div>
                                     <div className="avatar-sm flex-shrink-0">
-                                        <span className={"avatar-title rounded-circle fs-4 bg-" + item.iconClass}>
+                                        <span className={"avatar-title rounded-circle fs-4 bg-" + item.iconClass + "-subtle text-" + item.iconClass}>
                                             <i className={item.icon}></i>
                                         </span>
                                     </div>

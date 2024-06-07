@@ -25,7 +25,7 @@ const UiList = () => {
             <UiContent />
             <div className="page-content">
                 <Container fluid>
-                    <BreadCrumb title="Lists" pageTitle="Base UI" />
+                    <BreadCrumb title="List" pageTitle="Base UI" />
                     <Row>
                         <Col xxl={4} xl={6}>
                             <Card>

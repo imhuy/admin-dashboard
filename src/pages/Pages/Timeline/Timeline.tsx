@@ -5,7 +5,7 @@ import BreadCrumb from '../../../Components/Common/BreadCrumb';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Link } from 'react-router-dom';
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Navigation, Thumbs } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,10 +13,10 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 //import Images
-import avatar5 from "../../../assets/images/users/avatar-5.jpg"; 
-import avatar4 from "../../../assets/images/users/avatar-4.jpg"; 
-import avatar3 from "../../../assets/images/users/avatar-3.jpg"; 
-import avatar7 from "../../../assets/images/users/avatar-7.jpg"; 
+import avatar5 from "../../../assets/images/users/avatar-5.jpg";
+import avatar4 from "../../../assets/images/users/avatar-4.jpg";
+import avatar3 from "../../../assets/images/users/avatar-3.jpg";
+import avatar7 from "../../../assets/images/users/avatar-7.jpg";
 
 import small2 from "../../../assets/images/small/img-2.jpg";
 import small3 from "../../../assets/images/small/img-3.jpg";
@@ -28,17 +28,17 @@ import small9 from "../../../assets/images/small/img-9.jpg";
 
 
 const Timeline = () => {
-    
-    // SwiperCore.use([FreeMode, Navigation, Thumbs]);
-    const [thumbsSwiper] = useState<any>(null);
 
-document.title="Timeline | Velzon - React Admin & Dashboard Template";
+    // SwiperCore.use([FreeMode, Navigation, Thumbs]);
+    const [thumbsSwiper] = useState(null);
+
+    document.title = "Timeline | Velzon - React Admin & Dashboard Template";
 
     return (
         <React.Fragment>
             <div className="page-content">
                 <Container fluid>
-                <BreadCrumb title="Timeline" pageTitle="Pages" />       
+                    <BreadCrumb title="Timeline" pageTitle="Pages" />
                     <Row>
                         <Col lg={12}>
                             <div>
@@ -50,7 +50,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                         <div className="content">
                                             <div className="d-flex">
                                                 <div className="flex-shrink-0">
-                                                    <img src={avatar5} alt="" className="avatar-sm rounded"/>
+                                                    <img src={avatar5} alt="" className="avatar-sm rounded" />
                                                 </div>
                                                 <div className="flex-grow-1 ms-3">
                                                     <h5 className="fs-15">@Erica245 <small className="text-muted fs-13 fw-normal">- 10 min Ago</small></h5>
@@ -110,10 +110,10 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                             <p className="text-muted">Every team project can have a velzon. Use the velzon to share information with your team to understand and contribute to your project.</p>
                                             <div className="avatar-group mb-2">
                                                 <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="Christi">
-                                                    <img src={avatar4} alt="" className="rounded-circle avatar-xs"/>
+                                                    <img src={avatar4} alt="" className="rounded-circle avatar-xs" />
                                                 </Link>
                                                 <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="Frank Hook">
-                                                    <img src={avatar3} alt="" className="rounded-circle avatar-xs"/>
+                                                    <img src={avatar3} alt="" className="rounded-circle avatar-xs" />
                                                 </Link>
                                                 <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title=" Ruby">
                                                     <div className="avatar-xs">
@@ -189,7 +189,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                 <h5 className="mb-4">Left Timeline</h5>
                                 <div className="timeline-2">
                                     <div className="timeline-year">
-                                        <p className='shadow'>12 Dec 2021</p>
+                                        <p>12 Dec 2021</p>
                                     </div>
                                     <div className="timeline-continue">
                                         <Row className="timeline-right">
@@ -199,7 +199,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                                 </p>
                                             </Col>
                                             <Col xs={12}>
-                                                <div className="timeline-box shadow">
+                                                <div className="timeline-box">
                                                     <div className="timeline-text">
                                                         <div className="d-flex">
                                                             <img src={avatar7} alt="" className="avatar-sm rounded" />
@@ -220,7 +220,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                                 </p>
                                             </Col>
                                             <Col xs={12}>
-                                                <div className="timeline-box shadow">
+                                                <div className="timeline-box">
                                                     <div className="timeline-text">
                                                         <h5>Trip planning</h5>
                                                         <p className="text-muted">In the trip planner, keep only one or two activities in a day if the purpose of the trip is to relax and take it easy during the vacation :</p>
@@ -246,7 +246,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                         <Row>
                                             <Col xs={12}>
                                                 <div className="timeline-year">
-                                                    <p className='shadow'>08 Dec 2021</p>
+                                                    <p>08 Dec 2021</p>
                                                 </div>
                                             </Col>
                                         </Row>
@@ -258,7 +258,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                                 </p>
                                             </Col>
                                             <Col xs={12}>
-                                                <div className="timeline-box shadow">
+                                                <div className="timeline-box">
                                                     <div className="timeline-text">
                                                         <h5>Velzon - Project Discussion</h5>
                                                         <p className="text-muted mb-0">The purpose of the discussion is to interpret and describe the significance of your findings in light of what was already known about the research problem being investigated, and to explain any new understanding or fresh insights about the problem after you've taken the findings into consideration.</p>
@@ -274,7 +274,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                                 </p>
                                             </Col>
                                             <Col xs={12}>
-                                                <div className="timeline-box shadow">
+                                                <div className="timeline-box">
                                                     <div className="timeline-text">
                                                         <h5>Client Meeting (Nancy Martino)</h5>
                                                         <p className="text-muted mb-0">A client meeting, meaning, direct collaboration and communication with a customer, is the best way to understand their needs and how you can help support them.</p>
@@ -308,7 +308,7 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                                         <p><span>05 Dec 2021</span></p>
                                     </div>
                                     <div className="timeline-launch">
-                                        <div className="timeline-box shadow">
+                                        <div className="timeline-box">
                                             <div className="timeline-text">
                                                 <h5>Our Company Activity</h5>
                                                 <p className="text-muted text-capitalize mb-0">Wow...!!! What a Journey So Far...!!!</p>
@@ -324,12 +324,12 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                             <div>
                                 <h5>Horizontal Timeline</h5>
                                 <div className="horizontal-timeline my-3">
-                                <Swiper className="timelineSlider"
+                                    <Swiper className="timelineSlider"
                                         navigation={true}
                                         thumbs={{ swiper: thumbsSwiper }}
                                         slidesPerView={5}
-                                        modules={[Thumbs, FreeMode, Navigation]}
-                                    >                                      
+                                        modules={[Thumbs, Navigation]}
+                                    >
                                         <div className="swiper-wrapper">
                                             <SwiperSlide>
                                                 <div className="card pt-2 border-0 item-box text-center">
@@ -429,11 +429,11 @@ document.title="Timeline | Velzon - React Admin & Dashboard Template";
                     </Row>
 
                 </Container>
-                
+
             </div>
         </React.Fragment>
-    )
-}
+    );
+};
 
 export default Timeline
 

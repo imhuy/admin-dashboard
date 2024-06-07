@@ -25,11 +25,11 @@ import Dropzone from "react-dropzone";
 const KYCVerification = () => {
   const [isKycVerification, setIsKycVerification] = useState<boolean>(false);
   const toggleKycVerification = () => setIsKycVerification(!isKycVerification);
-  const [activeTab, setActiveTab] = useState(1);
-  const [passedSteps, setPassedSteps] = useState([1]);
+  const [activeTab, setActiveTab] = useState<any>(1);
+  const [passedSteps, setPassedSteps] = useState<any>([1]);
   const [selectedFiles, setselectedFiles] = useState<any>([]);
 
-  function toggleTab(tab : any) {
+  function toggleTab(tab:any) {
     if (activeTab !== tab) {
       var modifiedSteps = [...passedSteps, tab];
 
@@ -42,13 +42,13 @@ const KYCVerification = () => {
 
   const [selectCountry, setselectCountry] = useState(null);
 
-  function handleselectCountry(selectCountry : any) {
+  function handleselectCountry(selectCountry:any) {
     setselectCountry(selectCountry);
   }
   /**
    * Formats the size
    */
-  function formatBytes(bytes : any, decimals = 2) {
+  function formatBytes(bytes:any, decimals = 2) {
     if (bytes === 0) return "0 Bytes";
     const k = 1024;
     const dm = decimals < 0 ? 0 : decimals;
@@ -58,8 +58,8 @@ const KYCVerification = () => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
 
-  function handleAcceptedFiles(files : any) {
-    files.map((file : any) =>
+  function handleAcceptedFiles(files:any) {
+    files.map((file:any) =>
       Object.assign(file, {
         preview: URL.createObjectURL(file),
         formattedSize: formatBytes(file.size),
@@ -326,7 +326,7 @@ const KYCVerification = () => {
                       <Select
                         className="mb-0"
                         value={selectCountry}
-                        onChange={(selectCountry : any) => {
+                        onChange={(selectCountry:any) => {
                           handleselectCountry(selectCountry);
                         }}
                         options={country}
@@ -518,7 +518,7 @@ const KYCVerification = () => {
                   )}
                 </Dropzone>
                 <div className="list-unstyled mb-0" id="file-previews">
-                  {selectedFiles.map((f : any, i : any) => {
+                  {selectedFiles.map((f:any, i:any) => {
                     return (
                       <Card
                         className="mt-1 mb-0 shadow-none border dz-processing dz-image-preview dz-success dz-complete"

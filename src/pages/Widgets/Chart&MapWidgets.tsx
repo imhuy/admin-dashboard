@@ -3,14 +3,14 @@ import { Alert, Button, Card, CardBody, CardHeader, Col, DropdownItem, DropdownM
 import { Link } from 'react-router-dom';
 
 import CountUp from "react-countup";
-
+import { VectorMap } from '@south-paw/react-vector-maps'
+import world from '../../common/world.svg.json';
+import at from '../../common/world.svg.json'
 import { MyPortfolioCharts } from './WidgetsCharts';
 import { SessionsByCountriesCharts } from './WidgetsCharts';
 import { AudiencesMetricsCharts } from './WidgetsCharts';
 import { TopReferralsPagesCharts } from './WidgetsCharts';
 import { widgetsAudiences, widgetsPortfolio, } from "../../common/data/index";
-import { VectorMap } from '@south-paw/react-vector-maps';
-import world from '../../common/world.svg.json';
 
 const ChartMapWidgets = () => {
     return (
@@ -27,14 +27,15 @@ const ChartMapWidgets = () => {
                         <CardHeader className="align-items-center d-flex">
                             <h4 className="card-title mb-0 flex-grow-1">Live Users By Country</h4>
                             <div className="flex-shrink-0">
-                                <Button color="primary" size='sm' className="btn-soft-primary shadow-none">
+                                <Button color="primary" size='sm' className="btn-soft-primary">
                                     Export Report
                                 </Button>
                             </div>
                         </CardHeader>
                         <CardBody>
                             <div id="users-by-country" style={{ height: "252px" }}>
-                            <div id="world_map_line_markers" className="custom-vector-map">
+                               
+                                 <div id="world_map_line_markers" className="custom-vector-map">
                                         <VectorMap {...world} />
                                     </div>
                             </div>
@@ -81,13 +82,13 @@ const ChartMapWidgets = () => {
                         <CardHeader className="align-items-center d-flex">
                             <h4 className="card-title mb-0 flex-grow-1">Sessions by Countries</h4>
                             <div>
-                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1 shadow-none">
+                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1">
                                     ALL
                                 </Button>
-                                <Button color="primary" size="sm" className="btn-soft-primary me-1 shadow-none">
+                                <Button color="primary" size="sm" className="btn-soft-primary me-1">
                                     1M
                                 </Button>
-                                <Button color="secondary" size="sm" className="btn-soft-secondary shadow-none">
+                                <Button color="secondary" size="sm" className="btn-soft-secondary">
                                     6M
                                 </Button>
                             </div>
@@ -108,16 +109,16 @@ const ChartMapWidgets = () => {
                         <CardHeader className="border-0 align-items-center d-flex">
                             <h4 className="card-title mb-0 flex-grow-1">Audiences Metrics</h4>
                             <div>
-                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1 shadow-none">
+                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1">
                                     ALL
                                 </Button>
-                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1 shadow-none">
+                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1">
                                     1M
                                 </Button>
-                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1 shadow-none">
+                                <Button color="secondary" size="sm" className="btn-soft-secondary me-1">
                                     6M
                                 </Button>
-                                <Button color="primary" size="sm" className="btn-soft-primary shadow-none">
+                                <Button color="primary" size="sm" className="btn-soft-primary">
                                     1Y
                                 </Button>
                             </div>
@@ -137,17 +138,17 @@ const ChartMapWidgets = () => {
                         <CardHeader className="p-0 border-0 bg-light-subtle">
                             <Row className="g-0 text-center">
 
-                                {(widgetsAudiences || []).map((item : any, key : any) => (<div className="col-6 col-sm-4" key={key}>
+                                {(widgetsAudiences || []).map((item, key) => (<div className="col-6 col-sm-4" key={key}>
                                     <div className="p-3 border border-dashed border-start-0">
                                         <h5 className="mb-1">
-                                            {item.subCounter.map((item : any, key : any) => (<span className="counter-value" data-target="3" key={key}>
+                                            {item.subCounter.map((item, key) => (<span className="counter-value" data-target="3" key={key}>
                                                 <CountUp
                                                     start={0}
                                                     prefix={item.prefix}
                                                     suffix={item.suffix}
-                                                    separator={item.separator}
+                                                    separator=','
                                                     end={item.counter}
-                                                    decimals={item.decimals}
+                                                    // decimals={item.decimals}
                                                     duration={4}
                                                 />
                                             </span>))}
@@ -164,7 +165,7 @@ const ChartMapWidgets = () => {
                             <div>
                                 <div id="audiences_metrics_charts" className="apex-charts" dir="ltr">
                                     {/* Audiences Metrics Chart */}
-                                    <AudiencesMetricsCharts dataColors='["--vz-success", "--vz-gray-300"]' />
+                                    <AudiencesMetricsCharts dataColors='["--vz-success", "--vz-light"]' />
                                 </div>
                             </div>
                         </CardBody>
@@ -173,36 +174,6 @@ const ChartMapWidgets = () => {
             </Row>
 
             <Row>
-                <Col xxl={4} xl={6}>
-                    <Card className="card-height-100">
-                        <CardHeader className="align-items-center d-flex">
-                            <h4 className="card-title mb-0 flex-grow-1">Sales by Locations</h4>
-                            <div className="flex-shrink-0">
-                                <Button color="primary" size="sm" className="btn-soft-primary shadow-none">
-                                    Export Report
-                                </Button>
-                            </div>
-                        </CardHeader>
-
-                        <CardBody>
-                            <div id="sales-by-locations" style={{ height: "269px" }}>
-                            <div id="world_map_line_markers" className="custom-vector-map">
-                                        <VectorMap {...world} />
-                                    </div>
-                            </div>
-                            <div className="px-2 py-2 mt-1">
-                                <p className="mb-1">New Maxico <span className="float-end">75%</span></p>
-                                <Progress color="primary" value={75} striped className="mt-2" style={{ height: "6px" }} />
-
-                                <p className="mt-3 mb-1">California <span className="float-end">47%</span></p>
-                                <Progress color="primary" value={47} striped className="mt-2" style={{ height: "6px" }} />
-
-                                <p className="mt-3 mb-1">Texas <span className="float-end">82%</span></p>
-                                <Progress color="primary" value={82} striped className="mt-2" style={{ height: "6px" }} />
-                            </div>
-                        </CardBody>
-                    </Card>
-                </Col>
 
                 <Col xxl={4} xl={6}>
                     <Card className="card-height-100">
@@ -210,7 +181,7 @@ const ChartMapWidgets = () => {
                             <h4 className="card-title mb-0 flex-grow-1">My Portfolio</h4>
                             <div>
 
-                                <UncontrolledDropdown className="card-header-dropdown">
+                                <UncontrolledDropdown className="card-header-dropdown" >
                                     <DropdownToggle tag="button" className="btn btn-soft-primary btn-sm" >
                                         <span className="text-uppercase">Btc<i className="mdi mdi-chevron-down align-middle ms-1"></i></span>
                                     </DropdownToggle>
@@ -268,7 +239,7 @@ const ChartMapWidgets = () => {
                         <CardBody>
                             <div id="color_heatmap" className="apex-charts mt-n3" dir="ltr">
                                 {/* Top Referrals Pages Chart */}
-                                <TopReferralsPagesCharts dataColors='["--vz-info", "--vz-success", "--vz-primary", "--vz-warning", "--vz-danger"]' />
+                                <TopReferralsPagesCharts dataColors='["--vz-success", "--vz-info", "--vz-primary", "--vz-warning", "--vz-secondary"]' />
                             </div>
 
                             <Row className="g-3">
@@ -320,6 +291,37 @@ const ChartMapWidgets = () => {
 
                             <div className="mt-2 text-center">
                                 <Link to="#" className="text-muted text-decoration-underline">Show All</Link>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </Col>
+
+                <Col xxl={4} xl={6}>
+                    <Card className="card-height-100">
+                        <CardHeader className="align-items-center d-flex">
+                            <h4 className="card-title mb-0 flex-grow-1">Sales by Locations</h4>
+                            <div className="flex-shrink-0">
+                                <Button color="primary" size="sm" className="btn-soft-primary">
+                                    Export Report
+                                </Button>
+                            </div>
+                        </CardHeader>
+
+                        <CardBody>
+                            <div id="sales-by-locations" style={{ height: "269px" }}>
+                            <div id="world_map_line_markers" className="custom-vector-map">
+                                        <VectorMap {...at} />
+                                    </div>
+                            </div>
+                            <div className="px-2 py-2 mt-1">
+                                <p className="mb-1">New Maxico <span className="float-end">75%</span></p>
+                                <Progress color="primary" value={75} striped className="mt-2" style={{ height: "6px" }} />
+
+                                <p className="mt-3 mb-1">California <span className="float-end">47%</span></p>
+                                <Progress color="primary" value={47} striped className="mt-2" style={{ height: "6px" }} />
+
+                                <p className="mt-3 mb-1">Texas <span className="float-end">82%</span></p>
+                                <Progress color="primary" value={82} striped className="mt-2" style={{ height: "6px" }} />
                             </div>
                         </CardBody>
                     </Card>

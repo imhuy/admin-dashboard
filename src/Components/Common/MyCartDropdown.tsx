@@ -31,7 +31,7 @@ const MyCartDropdown = () => {
         setCartItem(cartData.length);
     };
 
-    const removeItem = (ele : HTMLElement | null): void => {
+    const removeItem = (ele: HTMLElement | null): void => {
         if (ele) {
             const priceElement = ele.closest(".dropdown-item-cart")?.querySelector('.cart-item-price');
             const subTotalElement = document.getElementById('cart-item-total');
@@ -56,11 +56,12 @@ const MyCartDropdown = () => {
             setCartItem(element);
         }
     };
+    
 
     return (
         <React.Fragment>
             <Dropdown isOpen={isCartDropdown} toggle={toggleCartDropdown} className="topbar-head-dropdown ms-1 header-item">
-                <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle shadow-none">
+                <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
                     <i className='bx bx-shopping-bag fs-22'></i>
                     <span
                         className="position-absolute cartitem-badge topbar-badge fs-10 translate-middle badge rounded-pill bg-info">{cartItem}<span
@@ -74,7 +75,7 @@ const MyCartDropdown = () => {
                                 <h6 className="m-0 fs-16 fw-semibold"> My Cart</h6>
                             </Col>
                             <div className="col-auto">
-                                <span className="badge bg-warning-subtle text-warning fs-13"><span className="cartitem-badge"> {cartItem} </span> items</span>
+                                <span className="badge bg-warning-subtle  text-warning fs-13"><span className="cartitem-badge"> {cartItem} </span> items</span>
                             </div>
                         </Row>
                     </div>

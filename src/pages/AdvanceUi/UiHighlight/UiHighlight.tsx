@@ -13,7 +13,7 @@ document.title="Highlight | Velzon - React Admin & Dashboard Template";
         <React.Fragment>
             <div className="page-content">
                 <Container fluid>
-                    <BreadCrumb title="Highlight" pageTitle="Advance UI" />
+                    <BreadCrumb title="Highlight" pageTitle="Advanced UI" />
 
                     <Row>
                         <Col lg={12}>

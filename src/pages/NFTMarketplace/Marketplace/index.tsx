@@ -3,35 +3,20 @@ import { Card, CardBody, Col, Container, Row } from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import { Link } from "react-router-dom";
 
-import {nftArtworkData, tradingArtworkData, popularCreatorsNFT } from "../../../common/data";
-
-// Import Images
-import Img1 from "../../../assets/images/nft/img-01.jpg";
-import Img2 from "../../../assets/images/nft/img-02.jpg";
-import Img3 from "../../../assets/images/nft/img-03.jpg";
-import Img4 from "../../../assets/images/nft/img-04.jpg";
-import Img5 from "../../../assets/images/nft/img-05.jpg";
-import Img6 from "../../../assets/images/nft/img-06.jpg";
-
-import ImgGif1 from "../../../assets/images/nft/gif/img-1.gif";
-import ImgGif2 from "../../../assets/images/nft/gif/img-2.gif";
-import ImgGif3 from "../../../assets/images/nft/gif/img-3.gif";
-import ImgGif4 from "../../../assets/images/nft/gif/img-4.gif";
-import ImgGif5 from "../../../assets/images/nft/gif/img-5.gif";
+import { nftArtworkData, tradingArtworkData, popularCreatorsNFT, marketPlacewidget } from "../../../common/data";
 
 import BgPattern from "../../../assets/images/nft/bg-pattern.png";
 
 const Marketplace = () => {
     document.title = "Marketplace | Velzon - React Admin & Dashboard Template";
 
-    const favouriteBtn = (ele : any) => {
+    const favouriteBtn = (ele:any) => {
         if (ele.closest("button").classList.contains("active")) {
             ele.closest("button").classList.remove("active");
         } else {
             ele.closest("button").classList.add("active");
         }
     };
-
     return (
         <React.Fragment>
             <div className="page-content">
@@ -40,72 +25,19 @@ const Marketplace = () => {
                     <Row>
                         <Col xl={8}>
                             <Row>
-                                <Col lg={4} md={6}>
+                                {marketPlacewidget.map((item, key) => (<Col lg={4} md={6} key={key}>
                                     <Card>
                                         <CardBody>
                                             <Row className="g-1 mb-3">
-                                                <Col lg={6}>
-                                                    <img src={Img5} alt="" className="img-fluid rounded" />
-                                                    <img src={ImgGif1} alt="" className="img-fluid rounded mt-1" />
-                                                </Col>
-
-                                                <Col lg={6}>
-                                                    <img src={ImgGif4} alt="" className="img-fluid rounded mb-1" />
-                                                    <img src={Img4} alt="" className="img-fluid rounded" />
-                                                </Col>
-
+                                                {item.subItem.map((item, key) => (<Col lg={6} key={key}>
+                                                    {item.isChildren.map((item, key) => (<img src={item.img} alt="" className={"img-fluid rounded " + item.imgClass} key={key} />))}
+                                                </Col>))}
                                             </Row>
-
-                                            <Link to="#!" className="float-end"> View All <i className="ri-arrow-right-line align-bottom"></i></Link>
-                                            <h5 className="mb-0 fs-16"><Link to="#!">Crypto Card <span className="badge bg-success-subtle text-success">743</span></Link></h5>
+                                            <Link to="#" className="float-end"> View All <i className="ri-arrow-right-line align-bottom"></i></Link>
+                                            <h5 className="mb-0 fs-16"><Link to="#">{item.category} <span className="badge bg-success-subtle text-success">{item.quantity}</span></Link></h5>
                                         </CardBody>
                                     </Card>
-                                </Col>
-
-                                <Col lg={4} md={6}>
-                                    <Card>
-                                        <CardBody>
-                                            <Row className="g-1 mb-3">
-                                                <Col lg={6}>
-                                                    <img src={Img6} alt="" className="img-fluid rounded" />
-                                                    <img src={ImgGif2} alt="" className="img-fluid rounded mt-1" />
-                                                </Col>
-
-                                                <Col lg={6}>
-                                                    <img src={ImgGif5} alt="" className="img-fluid rounded mb-1" />
-                                                    <img src={Img3} alt="" className="img-fluid rounded" />
-                                                </Col>
-
-                                            </Row>
-
-                                            <Link to="#!" className="float-end"> View All <i className="ri-arrow-right-line align-bottom"></i></Link>
-                                            <h5 className="mb-0 fs-16"><Link to="#!">Artwork <span className="badge bg-success-subtle text-success">206</span></Link></h5>
-                                        </CardBody>
-                                    </Card>
-                                </Col>
-
-                                <Col lg={4} md={6}>
-                                    <Card>
-                                        <CardBody>
-                                            <Row className="g-1 mb-3">
-                                                <Col lg={6}>
-                                                    <img src={Img2} alt="" className="img-fluid rounded" />
-                                                    <img src={ImgGif3} alt="" className="img-fluid rounded mt-1" />
-                                                </Col>
-
-                                                <Col lg={6}>
-                                                    <img src={ImgGif1} alt="" className="img-fluid rounded mb-1" />
-                                                    <img src={Img1} alt="" className="img-fluid rounded" />
-                                                </Col>
-
-                                            </Row>
-
-                                            <Link to="#!" className="float-end"> View All <i className="ri-arrow-right-line align-bottom"></i></Link>
-                                            <h5 className="mb-0 fs-16"><Link to="#!">Music <span className="badge bg-success-subtle text-success">679</span></Link></h5>
-                                        </CardBody>
-                                    </Card>
-                                </Col>
-
+                                </Col>))}
                             </Row>
                         </Col>
 
@@ -130,11 +62,10 @@ const Marketplace = () => {
 
                     <Row>
                         <Col lg={12}>
-                            <Card className="overflow-hidden">
+                            <Card className="overflow-hidden shadow-none">
                                 <CardBody className="bg-success-subtle text-success fw-semibold d-flex">
-                                <div className="marquee">
+                                    <div>
                                         <div>
-                                            <span>NFT art is a digital asset that is collectable, unique, and non-transferrable, Cortes explained. Every NFT is unique in it's creative design and cannot be duplicated, making them limited and rare. NFTs get their value because the transaction proves ownership of the art.</span>
                                             <span>NFT art is a digital asset that is collectable, unique, and non-transferrable, Cortes explained. Every NFT is unique in it's creative design and cannot be duplicated, making them limited and rare. NFTs get their value because the transaction proves ownership of the art.</span>
                                         </div>
                                     </div>
@@ -150,7 +81,7 @@ const Marketplace = () => {
                                     <h5 className="card-title mb-0 fw-semibold fs-16">Trending Artwork</h5>
                                 </div>
                                 <div className="flex-shrink-0 mt-4 mt-lg-0">
-                                    <Link to="/apps-nft-explore" className="btn btn-primary">View All <i className="ri-arrow-right-line align-bottom"></i></Link>
+                                    <Link to="/apps-nft-explore" className="btn btn-soft-primary">View All <i className="ri-arrow-right-line align-bottom"></i></Link>
                                 </div>
                             </div>
                         </Col>
@@ -182,7 +113,7 @@ const Marketplace = () => {
                                             <img src={item.cardImg} alt="" className="img-fluid explore-img" />
                                             <div className="bg-overlay"></div>
                                             <div className="place-bid-btn">
-                                                <Link to="#!" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
+                                                <Link to="#" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
                                             </div>
                                         </div>
                                         <div className="mt-3">
@@ -220,7 +151,7 @@ const Marketplace = () => {
                                         <img src={item.img} alt="" className="card-img-top explore-img" />
                                         <div className="bg-overlay"></div>
                                         <div className="place-bid-btn">
-                                            <Link to="#!" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
+                                            <Link to="#" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
                                         </div>
                                     </div>
                                     <CardBody>
@@ -261,7 +192,7 @@ const Marketplace = () => {
                                     <img src={item.cardImg} alt="" className="card-img-top object-fit-cover" height="120" />
                                     <CardBody className="text-center">
                                         <img src={item.img} alt="" className="avatar-md mt-n5 rounded-circle mx-auto d-block object-fit-cover" />
-                                        <h5 className="mt-3 mb-1"><Link to="#!">{item.author}</Link></h5>
+                                        <h5 className="mt-3 mb-1"><Link to="#">{item.author}</Link></h5>
                                         <p className="text-muted">{item.products} Products</p>
                                         <div>
                                             <button className={item.isFollow ? "btn btn-primary btn-sm" : "btn btn-soft-primary btn-sm"}>{item.isFollow ? "Follow" : "Unfollow"}</button>

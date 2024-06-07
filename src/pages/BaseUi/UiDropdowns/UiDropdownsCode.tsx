@@ -31,7 +31,7 @@ const singleButtonDropdownCode =
 const SingleButtonDropdownExample = () => (
     <PrismCode
         code={singleButtonDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -165,7 +165,7 @@ const colorDropdownCode =
 const ColorDropdownExample = () => (
     <PrismCode
         code={colorDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -298,7 +298,7 @@ const splitButtonDropdownCode =
 const SplitButtonDropdownExample = () => (
     <PrismCode
         code={splitButtonDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -371,7 +371,7 @@ const sizingDropdownCode =
 const SizingDropdownExample = () => (
     <PrismCode
         code={sizingDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -397,7 +397,7 @@ const darkDropdownCode =
 const DarkDropdownExample = () => (
     <PrismCode
         code={darkDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -501,7 +501,7 @@ const alignDropdownCode =
 const AlignDropdownExample = () => (
     <PrismCode
         code={alignDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -541,7 +541,7 @@ const optionDropdownCode =
 const OptionDropdownExample = () => (
     <PrismCode
         code={optionDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -606,7 +606,7 @@ const autoCloseDropdownCode =
 const AutoCloseDropdownExample = () => (
     <PrismCode
         code={autoCloseDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -722,7 +722,7 @@ const menuItemDropdownCode =
 const MenuItemDropdownExample = () => (
     <PrismCode
         code={menuItemDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -797,7 +797,7 @@ const menuContentDropdownCode =
 const MenuContentDropdownExample = () => (
     <PrismCode
         code={menuContentDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -814,7 +814,7 @@ const notificationDropdownCode =
                     <h6 className="m-0 fs-16 fw-semibold text-white"> Notifications </h6>
                 </Col>
                 <div className="col-auto dropdown-tabs">
-                    <span className="badge bg-light-subtle text-body fs-13"> 4 New</span>
+                    <span className="badge bg-light-subtle fs-13"> 4 New</span>
                 </div>
             </Row>
         </div>
@@ -1012,7 +1012,7 @@ const notificationDropdownCode =
 const NotificationDropdownExample = () => (
     <PrismCode
         code={notificationDropdownCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

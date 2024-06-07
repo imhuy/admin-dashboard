@@ -22,11 +22,11 @@ import ParticlesAuth from "../AuthenticationInner/ParticlesAuth";
 import { createSelector } from "reselect";
 
 const Register = () => {
-    const [loader, setLoader] = useState<boolean>(false);
     const history = useNavigate();
-    const dispatch : any = useDispatch();
+    const dispatch: any = useDispatch();
+    const [loader, setLoader] = useState<boolean>(false);
 
-    const validation : any = useFormik({
+    const validation = useFormik({
         // enableReinitialize : use this flag when initial values needs to be changed
         enableReinitialize: true,
 
@@ -39,10 +39,10 @@ const Register = () => {
         validationSchema: Yup.object({
             email: Yup.string().required("Please Enter Your Email"),
             first_name: Yup.string().required("Please Enter Your Username"),
-            password: Yup.string().required("Please enter your password"),
+            password: Yup.string().required("Please Enter Your Password"),
             confirm_password: Yup.string()
-                .oneOf([Yup.ref("password")], "Passwords do not match")
-                .required("Please confirm your password"),
+                .oneOf([Yup.ref('password'), ""],)
+                .required('Confirm Password is required')
         }),
         onSubmit: (values) => {
             dispatch(registerUser(values));
@@ -50,7 +50,7 @@ const Register = () => {
         }
     });
 
-    const selectLayoutState = (state : any) => state.Account;
+    const selectLayoutState = (state: any) => state.Account;
     const registerdatatype = createSelector(
         selectLayoutState,
         (account) => ({
@@ -62,10 +62,6 @@ const Register = () => {
     const {
         error, success
     } = useSelector(registerdatatype);
-
-    useEffect(() => {
-        // dispatch(apiError(""));
-    }, [dispatch]);
 
     useEffect(() => {
         if (success) {
@@ -83,7 +79,7 @@ const Register = () => {
     return (
         <React.Fragment>
             <ParticlesAuth>
-                <div className="auth-page-content">
+                <div className="auth-page-content mt-lg-5">
                     <Container>
                         <Row>
                             <Col lg={12}>
@@ -214,7 +210,7 @@ const Register = () => {
                                                 </div>
 
                                                 <div className="mt-4">
-                                                <Button color="success" className="w-100" type="submit" disabled={loader && true}>
+                                                    <Button color="success" className="w-100" type="submit" disabled={loader && true}>
                                                         {loader && <Spinner size="sm" className='me-2'> Loading... </Spinner>}
                                                         Sign Up
                                                     </Button>

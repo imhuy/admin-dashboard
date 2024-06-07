@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactApexChart from "react-apexcharts";
 
-const WatchListChart = ({ seriesData, chartsColor } : any) => {
+const WatchListChart = ({ seriesData, chartsColor }:any) => {
     const areachartlitecoinColors = [chartsColor];
-    var options : any = {
+    var options:any = {
         chart: {
             width: 130,
             height: 46,

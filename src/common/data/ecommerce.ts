@@ -644,7 +644,7 @@ const sellersList = [
     chartdata: [12, 14, 2, 47, 42, 15, 47, 75, 65, 19, 14],
     color: "#f06548",
     balance: "$45,415",
-    category:"Health & Medicine"
+    category: "Health & Medicine"
   },
   {
     id: 2,
@@ -654,9 +654,9 @@ const sellersList = [
     name: "Katia Stapleton",
     stock: "784",
     chartdata: [12, 14, 2, 47, 42, 15, 35, 75, 20, 67, 89],
-    color: "#45CB85",
+    color: "#00bd9d",
     balance: "$97,642",
-    category:"Manufacturer"
+    category: "Manufacturer"
   },
   {
     id: 3,
@@ -666,9 +666,9 @@ const sellersList = [
     name: "Harley Fuller",
     stock: "320",
     chartdata: [45, 20, 8, 42, 30, 5, 35, 79, 22, 54, 64],
-    color: "#45CB85",
+    color: "#00bd9d",
     balance: "$27,102",
-    category:"Manufacturer"
+    category: "Manufacturer"
   },
   {
     id: 4,
@@ -680,7 +680,7 @@ const sellersList = [
     chartdata: [26, 15, 48, 12, 47, 19, 35, 19, 85, 68, 50],
     color: "#f06548",
     balance: "$14,933",
-    category:"Food Service"
+    category: "Food Service"
   },
   {
     id: 5,
@@ -690,9 +690,9 @@ const sellersList = [
     name: "Zoe Dennis",
     stock: "363",
     chartdata: [60, 67, 12, 49, 6, 78, 63, 51, 33, 8, 16],
-    color: "#f7b84b",
+    color: "#FFBC0A",
     balance: "$73,426",
-    category:"Computers & Electronics"
+    category: "Computers & Electronics"
   },
   {
     id: 6,
@@ -702,9 +702,9 @@ const sellersList = [
     name: "John Roberts",
     stock: "412",
     chartdata: [78, 63, 51, 33, 8, 16, 60, 67, 12, 49],
-    color: "#45CB85",
+    color: "#00bd9d",
     balance: "$34,241",
-    category:"Computers & Electronics"
+    category: "Computers & Electronics"
   },
   {
     id: 7,
@@ -716,7 +716,7 @@ const sellersList = [
     chartdata: [15, 35, 75, 20, 67, 8, 42, 30, 5, 35],
     color: "#f06548",
     balance: "$17,200",
-    category:"Manufacturer"
+    category: "Manufacturer"
   },
   {
     id: 8,
@@ -726,9 +726,9 @@ const sellersList = [
     name: "James Bowen",
     stock: "784",
     chartdata: [45, 32, 68, 55, 36, 10, 48, 25, 74, 54],
-    color: "#f7b84b",
+    color: "#FFBC0A",
     balance: "$97,642",
-    category:"Retailer"
+    category: "Retailer"
   },
 ];
 

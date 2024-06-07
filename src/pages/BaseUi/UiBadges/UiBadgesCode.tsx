@@ -24,7 +24,7 @@ const defaultBadgesCode =
 const DefaultBadgesExample = () => (
     <PrismCode
         code={defaultBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -35,7 +35,7 @@ const softBadgesCode =
     `
 <span className="badge bg-primary-subtle text-primary">Primary</span>
 
-<span className="badge bg-secondary-subtle text-secondary">Secondary</span>
+<span className="badge bg-secondary-subtle text-secondary ">Secondary</span>
 
 <span className="badge bg-success-subtle text-success">Success</span>
 
@@ -48,12 +48,13 @@ const softBadgesCode =
 <span className="badge bg-dark-subtle text-body">Dark</span>
 
 <span className="badge bg-light-subtle text-body">Light</span>
+
 `;
 
 const SoftBadgesExample = () => (
     <PrismCode
         code={softBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -74,13 +75,15 @@ const outlineBadgesCode =
 
 <span className="badge border border-danger text-danger">Danger</span>
 
-<span className="badge border border-dark text-body">Dark</span>    
+<span className="badge border border-dark text-body">Dark</span>
+    
+<span className="badge border border-light text-body">Light</span> 
 `;
 
 const OutlineBadgesExample = () => (
     <PrismCode
         code={outlineBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -111,7 +114,7 @@ const roundedPillBadgesCode =
 const RoundedPillBadgesExample = () => (
     <PrismCode
         code={roundedPillBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -141,7 +144,7 @@ const labelPillBadgesCode =
 const LabelBadgesExample = () => (
     <PrismCode
         code={labelPillBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -167,7 +170,7 @@ const htmlBadgesCode =
 const HTMLBadgesExample = () => (
     <PrismCode
         code={htmlBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -178,7 +181,7 @@ const roundSoftBadgesCode =
     `
 <span className="badge rounded-pill bg-primary-subtle text-primary">Primary</span>
 
-<span className="badge rounded-pill bg-secondary-subtle text-secondary">Secondary</span>
+<span className="badge rounded-pill bg-secondary-subtle text-secondary ">Secondary</span>
 
 <span className="badge rounded-pill bg-success-subtle text-success">Success</span>
 
@@ -190,13 +193,13 @@ const roundSoftBadgesCode =
 
 <span className="badge rounded-pill bg-dark-subtle text-body">Dark</span>
 
-<span className="badge rounded-pill bg-light-subtle text-body">Light</span>
+<span className="badge rounded-pill bg-light-subtle">Light</span>
 `;
 
 const RoundSoftBadgesExample = () => (
     <PrismCode
         code={roundSoftBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -208,25 +211,25 @@ const softBorderBadgesCode =
     `
 <span className="badge bg-primary-subtle text-primary badge-border">Primary</span>
 
-<span className="badge bg-secondary-subtle text-secondary badge-border">Secondary</span>
+<span className="badge bg-secondary-subtle text-secondary  badge-border">Secondary</span>
 
 <span className="badge bg-success-subtle text-success badge-border">Success</span>
 
-<span className="badge bg-info-subtle text-info badge-border">Info</span>
+<span className="badge bg-info-subtle  text-info badge-border">Info</span>
 
-<span className="badge bg-warning-subtle text-warning badge-border">Warning</span>
+<span className="badge bg-warning-subtle  text-warning badge-border">Warning</span>
 
-<span className="badge bg-danger-subtle text-danger badge-border">Danger</span>
+<span className="badge bg-danger-subtle  text-danger badge-border">Danger</span>
 
-<span className="badge bg-dark-subtle text-body badge-border">Dark</span>
+<span className="badge bg-dark-subtle badge-border">Dark</span>
 
-<span className="badge bg-light-subtle text-body badge-border">Light</span>
+<span className="badge bg-light-subtle badge-border">Light</span>
 `;
 
 const SoftBorderBadgesExample = () => (
     <PrismCode
         code={softBorderBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -250,12 +253,13 @@ const outlinePillBadgesCode =
 <span className="badge rounded-pill border border-dark text-body">Dark</span>
 
 <span className="badge rounded-pill border border-light text-body">Light</span>
+
 `;
 
 const OutlinePillBadgesExample = () => (
     <PrismCode
         code={outlinePillBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -303,7 +307,7 @@ const buttonPositionBadgesCode =
 const ButtonPositionBadgesExample = () => (
     <PrismCode
         code={buttonPositionBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -326,7 +330,7 @@ const buttonBadgesCode =
 const ButtonBadgesExample = () => (
     <PrismCode
         code={buttonBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -353,7 +357,7 @@ const gradientBadgesCode =
 const GradientBadgesExample = () => (
     <PrismCode
         code={gradientBadgesCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

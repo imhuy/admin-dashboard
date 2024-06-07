@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardBody, CardHeader, Col, Row } from 'reactstrap';
 import CountUp from "react-countup";
 import { useSelector, useDispatch } from "react-redux";
-import {AudiencesCharts} from './DashboardAnalyticsCharts';
+import { AudiencesCharts } from './DashboardAnalyticsCharts';
 import { getAudiencesMetricsChartsData } from "../../slices/thunks";
 import { createSelector } from 'reselect';
 
 const AudiencesMetrics = () => {
-    const dispatch : any = useDispatch();
+
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const audiencesData = createSelector(
-        (state : any) => state.DashboardAnalytics.audiencesMetricsData,
-        (audiencesMetricsData) => audiencesMetricsData
+        (state:any) => state.DashboardAnalytics,
+        (audiencesMetricsData) => audiencesMetricsData.audiencesMetricsData
       );
     // Inside your component
     const audiencesMetricsData = useSelector(audiencesData);
@@ -22,13 +23,15 @@ const AudiencesMetrics = () => {
         setchartData(audiencesMetricsData);
     }, [audiencesMetricsData]);
 
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         dispatch(getAudiencesMetricsChartsData(pType));
     };
 
     useEffect(() => {
         dispatch(getAudiencesMetricsChartsData("all"));
     }, [dispatch]);
+
+
     return (
         <React.Fragment>
             <Col xl={6}>

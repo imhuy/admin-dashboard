@@ -19,7 +19,7 @@ export const getEvents = createAsyncThunk("calendar/getEvents", async () => {
   }
 });
 
-export const addNewEvent = createAsyncThunk("calendar/addNewEvent", async (event : any) => {
+export const addNewEvent = createAsyncThunk("calendar/addNewEvent", async (event: any) => {
   try {
     const response = addNewEventApi(event);
     return response;
@@ -28,7 +28,7 @@ export const addNewEvent = createAsyncThunk("calendar/addNewEvent", async (event
   }
 });
 
-export const updateEvent = createAsyncThunk("calendar/updateEvent", async (event : any) => {
+export const updateEvent = createAsyncThunk("calendar/updateEvent", async (event: any) => {
   try {
     const response = updateEventApi(event);
     const modifiedevent = await response;
@@ -38,7 +38,7 @@ export const updateEvent = createAsyncThunk("calendar/updateEvent", async (event
   }
 });
 
-export const deleteEvent = createAsyncThunk("calendar/deleteEvent", async (event : any) => {
+export const deleteEvent = createAsyncThunk("calendar/deleteEvent", async (event: any) => {
   try {
     const response = deleteEventApi(event);
     return response;
@@ -48,28 +48,28 @@ export const deleteEvent = createAsyncThunk("calendar/deleteEvent", async (event
 });
 
 export const getCategories = createAsyncThunk("calendar/getCategories", async () => {
-  try{
+  try {
     const response = getCategoriesApi();
     return response;
-  }catch (error) {
+  } catch (error) {
     return error;
   }
 })
 
 export const getUpCommingEvent = createAsyncThunk("calendar/getUpCommingEvent", async () => {
-  try{
+  try {
     const response = getUpCommingEventApi()
     return response;
-  }catch (error) {
+  } catch (error) {
     return error;
   }
 })
 
 export const resetCalendar = createAsyncThunk("calendar/resetCalendar", async () => {
-  try{
+  try {
     const response = '';
     return response;
-  }catch (error) {
+  } catch (error) {
     return error;
   }
 })

@@ -2,9 +2,9 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../../Components/Common/ChartsDynamicColor";
 
-const Charts = ({ seriesData, dataColors } : any) => {
+const Charts = ({ seriesData, dataColors }:any) => {
   var StatisticsColors = getChartColorsArray(dataColors);
-  const options : any = {
+  const options:any = {
     chart: {
       width: 140,
       type: "area",

@@ -32,8 +32,8 @@ import { Link } from "react-router-dom";
 const EcommerceCheckout = () => {
   const [selectedCountry, setselectedCountry] = useState<any>(null);
   const [selectedState, setselectedState] = useState<any>(null);
-  const [activeTab, setactiveTab] = useState(1);
-  const [passedSteps, setPassedSteps] = useState([1]);
+  const [activeTab, setactiveTab] = useState<any>(1);
+  const [passedSteps, setPassedSteps] = useState<any>([1]);
   const [modal, setModal] = useState<boolean>(false);
   const [deletemodal, setDeleteModal] = useState<boolean>(false);
 
@@ -45,15 +45,15 @@ const EcommerceCheckout = () => {
     setModal(!modal);
   };
 
-  function handleSelectCountry(selectedCountry: any) {
+  function handleSelectCountry(selectedCountry:any) {
     setselectedCountry(selectedCountry);
   }
 
-  function handleSelectState(selectedState: any) {
+  function handleSelectState(selectedStateany:any) {
     setselectedState(selectedState);
   }
 
-  function toggleTab(tab: any) {
+  function toggleTab(tab:any) {
     if (activeTab !== tab) {
       var modifiedSteps = [...passedSteps, tab];
 
@@ -119,34 +119,38 @@ const EcommerceCheckout = () => {
                       >
                         <NavItem role="presentation">
                           <NavLink href="#"
-                            className={classnames({ active: activeTab === 1, done: (activeTab <= 4 && activeTab >= 0) }, "fs-15 p-3")}
+                            className={classnames({ active: activeTab === 1, done: (activeTab <= 4 && activeTab >= 0) }, "p-3 fs-15")}
                             onClick={() => { toggleTab(1); }}
                           >
-                            <i className="ri-user-2-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"></i> Personal Info
+                            <i className="ri-user-2-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"></i>
+                            Personal Info
                           </NavLink>
                         </NavItem>
                         <NavItem role="presentation">
                           <NavLink href="#"
-                            className={classnames({ active: activeTab === 2, done: activeTab <= 4 && activeTab > 1 }, "fs-15 p-3")}
+                            className={classnames({ active: activeTab === 2, done: activeTab <= 4 && activeTab > 1 }, "p-3 fs-15")}
                             onClick={() => { toggleTab(2); }}
                           >
-                            <i className="ri-truck-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"></i> Shipping Info
+                            <i className="ri-truck-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"> </i>
+                            Shipping Info
                           </NavLink>
                         </NavItem>
                         <NavItem role="presentation">
                           <NavLink href="#"
-                            className={classnames({ active: activeTab === 3, done: activeTab <= 4 && activeTab > 2 }, "fs-15 p-3")}
+                            className={classnames({ active: activeTab === 3, done: activeTab <= 4 && activeTab > 2 }, "p-3 fs-15")}
                             onClick={() => { toggleTab(3); }}
                           >
-                            <i className="ri-bank-card-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"></i> Payment Info
+                            <i className="ri-bank-card-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"> </i>
+                             Payment Info
                           </NavLink>
                         </NavItem>
                         <NavItem role="presentation">
                           <NavLink href="#"
-                            className={classnames({ active: activeTab === 4, done: activeTab <= 4 && activeTab > 3 }, "fs-15 p-3")}
+                            className={classnames({ active: activeTab === 4, done: activeTab <= 4 && activeTab > 3 }, "p-3 fs-15")}
                             onClick={() => { toggleTab(4); }}
                           >
-                            <i className="ri-checkbox-circle-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"></i> Finish
+                            <i className="ri-checkbox-circle-line fs-16 p-2 bg-primary-subtle text-primary rounded-circle align-middle me-2"></i>
+                            Finish
                           </NavLink>
                         </NavItem>
                       </Nav>
@@ -205,7 +209,8 @@ const EcommerceCheckout = () => {
                                   htmlFor="billinginfo-email"
                                   className="form-label"
                                 >
-                                  Email <span className="text-muted">(Optional)</span>
+                                  Email
+                                  <span className="text-muted"> (Optional)</span>
                                 </Label>
                                 <Input
                                   type="email"
@@ -257,11 +262,12 @@ const EcommerceCheckout = () => {
                                 </Label>
                                 <Select
                                   value={selectedCountry}
-                                  onChange={(selectedCountry: any) => {
+                                  onChange={(selectedCountry:any) => {
                                     handleSelectCountry(selectedCountry);
                                   }}
                                   options={productCountry}
                                   id="country"
+                                  defaultInputValue="United States"
                                 ></Select>
                               </div>
                             </Col>
@@ -274,10 +280,11 @@ const EcommerceCheckout = () => {
                                 <Select
                                   id="state"
                                   value={selectedState}
-                                  onChange={(selectedState: any) => {
+                                  onChange={(selectedState:any) => {
                                     handleSelectState(selectedState);
                                   }}
                                   options={productState}
+                                  defaultInputValue="California"
                                 ></Select>
                               </div>
                             </Col>
@@ -832,9 +839,9 @@ const EcommerceCheckout = () => {
         </ModalHeader>
         <ModalBody>
           <div className="mt-2 text-center">
-          <i className="ri-delete-bin-5-line display-5 text-danger"></i>
+            <i className="ri-delete-bin-5-line display-5 text-danger"></i>
             <div className="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-              <h4>Are you Sure ?</h4>
+              <h4>Are you sure ?</h4>
               <p className="text-muted mx-4 mb-0">
                 Are you Sure You want to Remove this Address ?
               </p>

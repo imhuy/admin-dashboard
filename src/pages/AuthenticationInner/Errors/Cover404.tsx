@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
 // Import Images
-import error400cover from "../../../assets/images/error400-cover.png";
+// import error400cover from "../../../assets/images/error400-cover.png";
+import error400cover from "../../../assets/images/error400-cover.png"
 
 const Cover404 = () => {
 document.title="404 Error Cover | Velzon - React Admin & Dashboard Template";
     return (
         <React.Fragment>
             <div className="auth-page-content">
-                
                 <div className="auth-page-wrapper py-5 d-flex justify-content-center align-items-center min-vh-100">
                     <div className="auth-page-content overflow-hidden p-0">
                         <Container>

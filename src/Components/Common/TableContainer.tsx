@@ -95,7 +95,6 @@ interface TableContainerProps {
   isContactsFilter?: any;
   isCompaniesFilter?: any;
   isLeadsFilter?: any;
-  iscustomPageSize?: any;
   isCryptoOrdersFilter?: any;
   isInvoiceListFilter?: any;
   isTicketsListFilter?: any;

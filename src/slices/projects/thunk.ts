@@ -19,7 +19,7 @@ export const getProjectList = createAsyncThunk("projects/getProjectList", async 
     }
 });
 
-export const addProjectList = createAsyncThunk("projects/addProjectList", async (project : any) => {
+export const addProjectList = createAsyncThunk("projects/addProjectList", async (project:any) => {
     try {
         const response = addProjectListApi(project);
         const data = await response;
@@ -31,7 +31,7 @@ export const addProjectList = createAsyncThunk("projects/addProjectList", async 
     }
 });
 
-export const updateProjectList = createAsyncThunk("projects/updateProjectList", async (project : any) => {
+export const updateProjectList = createAsyncThunk("projects/updateProjectList", async (project:any) => {
     try {
         const response = updateProjectListApi(project);
         const data = await response;
@@ -43,7 +43,7 @@ export const updateProjectList = createAsyncThunk("projects/updateProjectList", 
     }
 });
 
-export const deleteProjectList = createAsyncThunk("projects/deleteProjectList", async (data : any) => {
+export const deleteProjectList = createAsyncThunk("projects/deleteProjectList", async (data:any) => {
     try {
         const response = deleteProjectListApi(data);
         const newdata = await response;

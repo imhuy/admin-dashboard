@@ -501,7 +501,7 @@ const EcommerceOrders = () => {
                       </button>{" "}
                       <button type="button" className="btn btn-info" onClick={() => setIsExportCSV(true)}>
                         <i className="ri-file-download-line align-bottom me-1"></i>{" "}
-                        Import
+                        Export
                       </button>
                       {" "}
                       {isMultiDeleteButton && <button className="btn btn-soft-danger"
@@ -852,3 +852,5 @@ const EcommerceOrders = () => {
 };
 
 export default EcommerceOrders;
+
+

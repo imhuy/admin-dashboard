@@ -6,7 +6,7 @@ import { ticketsWidgets } from '../../../common/data';
 const Widgets = () => {
     return (
         <React.Fragment>
-            {(ticketsWidgets || []).map((item : any, key : any) => (
+            {(ticketsWidgets || []).map((item, key) => (
                 <Col xxl={3} sm={6} key={key}>
                     <Card className="card-animate">
                         <CardBody>
@@ -25,7 +25,7 @@ const Widgets = () => {
                                             />
                                         </span>
                                     </h2>
-                                    <p className="mb-0 text-muted"><span className={"badge bg-light text-" + item.percentageClass + " mb-0"}>
+                                    <p className="mb-0 text-muted"><span className={"badge bg-" + item.percentageClass + "-subtle text-" + item.percentageClass + " mb-0"}>
                                         <i className={item.arrowIcon + " align-middle"}></i> {item.percentage}
                                     </span> vs. previous month</p>
                                 </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody, Col, Row } from "reactstrap";
-import CountUp from "react-countup";
 import { jobWidgets } from "../../common/data/dashboardJobs";
 import DashboardCharts from "./DashboardCharts";
 
@@ -10,7 +9,7 @@ const Widgets = () => {
       <Col xl={6}>
         <div className="d-flex flex-column h-100">
           <Row>
-            {jobWidgets.map((widget : any, key : any) => (
+            {jobWidgets.map((widget, key) => (
               <Col xl={6} md={6} key={key}>
                 <Card className="card-animate overflow-hidden">
                   <div
@@ -26,7 +25,7 @@ const Widgets = () => {
                     >
                       <path
                         id="Shape 8"
-                        style={{ opacity: ".05", fill: "#299cdb" }}
+                        style={{ opacity: ".05", fill: "rgb(11 152 93)" }}
                         d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z"
                       />
                     </svg>
@@ -40,12 +39,7 @@ const Widgets = () => {
                         </p>
                         <h4 className="fs-22 fw-semibold ff-secondary mb-0">
                           <span className="counter-value" data-target="36894">
-                            <CountUp
-                              start={0}
-                              end={widget.counter}
-                              separator={widget.separator}
-                              duration={4}
-                            />
+                            {widget.jobs}
                           </span>
                         </h4>
                       </div>

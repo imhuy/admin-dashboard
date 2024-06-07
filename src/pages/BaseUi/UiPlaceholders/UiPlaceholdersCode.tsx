@@ -35,7 +35,7 @@ const defaultPlaceholderCode =
 const DefaultPlaceholderExample = () => (
     <PrismCode
         code={defaultPlaceholderCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -55,7 +55,7 @@ const widthCode =
 const WidthExample = () => (
     <PrismCode
         code={widthCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -77,7 +77,7 @@ const sizingCode =
 const SizingExample = () => (
     <PrismCode
         code={sizingCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -109,7 +109,7 @@ const colorCode =
 const ColorExample = () => (
     <PrismCode
         code={colorCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

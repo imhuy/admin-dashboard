@@ -16,7 +16,7 @@ const defaultListCode =
 const DefaultListExample = () => (
     <PrismCode
         code={defaultListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -37,7 +37,7 @@ const activeItemCode =
 const ActiveItemExample = () => (
     <PrismCode
         code={activeItemCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -93,7 +93,7 @@ const disabledItemCode =
 const DisabledItemExample = () => (
     <PrismCode
         code={disabledItemCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -114,7 +114,7 @@ const listlinkCode =
 const ListlinkExample = () => (
     <PrismCode
         code={listlinkCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -135,7 +135,7 @@ const listButtonCode =
 const ListButtonExample = () => (
     <PrismCode
         code={listButtonCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -156,7 +156,7 @@ const flushListCode =
 const FlushListExample = () => (
     <PrismCode
         code={flushListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -185,7 +185,7 @@ const horizontalListCode =
 const HorizontalListExample = () => (
     <PrismCode
         code={horizontalListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -210,7 +210,7 @@ const contextualClassCode =
 const ContextualClassExample = () => (
     <PrismCode
         code={contextualClassCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -235,7 +235,7 @@ const contextualLinkCode =
 const ContextualLinkExample = () => (
     <PrismCode
         code={contextualLinkCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -260,7 +260,7 @@ const coloredListCode =
 const ColoredListExample = () => (
     <PrismCode
         code={coloredListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -336,7 +336,7 @@ const customContentCode =
 const CustomContentExample = () => (
     <PrismCode
         code={customContentCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -367,7 +367,7 @@ const listBadgeCode =
 const ListBadgeExample = () => (
     <PrismCode
         code={listBadgeCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -403,7 +403,7 @@ const listCheckboxCode =
 const ListCheckboxExample = () => (
     <PrismCode
         code={listCheckboxCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -439,7 +439,7 @@ const listRadioCode =
 const ListRadioExample = () => (
     <PrismCode
         code={listRadioCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -460,7 +460,7 @@ const listIconCode =
 const ListIconExample = () => (
     <PrismCode
         code={listIconCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -481,7 +481,7 @@ const listNumberedCode =
 const ListNumberedExample = () => (
     <PrismCode
         code={listNumberedCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -595,7 +595,7 @@ const customListCode =
 const CustomListExample = () => (
     <PrismCode
         code={customListCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

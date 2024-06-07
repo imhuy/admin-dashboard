@@ -26,6 +26,7 @@ import product8 from "../../../assets/images/products/img-8.png";
 
 import { productDetailsWidgets, reviews } from "../../../common/data/ecommerce";
 
+import { Swiper, SwiperSlide } from "swiper/react";
 import classnames from "classnames";
 
 // Import Swiper styles
@@ -34,11 +35,8 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import { FreeMode, Navigation } from "swiper/modules";
+import { FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules";
 import { Link } from "react-router-dom";
-import { Swiper } from "swiper/react";
-import { SwiperSlide } from "swiper/react";
-
 
 const ProductReview = (props:any) => {
   return (
@@ -56,10 +54,10 @@ const ProductReview = (props:any) => {
               </div>
             </div>
           </div>
-          {props.review.subItems && (
+          {props.review.subitem && (
             <React.Fragment>
               <div className="d-flex flex-grow-1 gap-2 mb-3">
-                {props.review.subItems.map((subItem:any, key:any) => (
+                {props.review.subitem.map((subItem:any, key:any) => (
                   <React.Fragment key={key}>
                     <Link to="#" className="d-block">
                       <img
@@ -76,11 +74,11 @@ const ProductReview = (props:any) => {
 
           <div className="d-flex align-items-end">
             <div className="flex-grow-1">
-              <h5 className="fs-15 mb-0">{props.review.name}</h5>
+              <h5 className="fs-14 mb-0">{props.review.name}</h5>
             </div>
 
             <div className="flex-shrink-0">
-              <p className="text-muted mb-0">{props.review.date}</p>
+              <p className="text-muted fs-13 mb-0">{props.review.date}</p>
             </div>
           </div>
         </div>
@@ -112,9 +110,9 @@ const PricingWidgetList = (props:any) => {
 };
 
 function EcommerceProductDetail(props:any) {
-  document.title="Product Details | Velzon - React Admin & Dashboard Template";
-  
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const [ttop, setttop] = useState<boolean>(false);
+
   const [ssize, setssize] = useState<boolean>(false);
   const [msize, setmsize] = useState<boolean>(false);
   const [lsize, setlsize] = useState<boolean>(false);
@@ -126,10 +124,12 @@ function EcommerceProductDetail(props:any) {
     }
   };
 
+document.title ="Product Details | Velzon - React Admin & Dashboard Template";
   return (
     <div className="page-content">
-      <Container fluid>     
+      <Container fluid>        
         <BreadCrumb title="Product Details" pageTitle="Ecommerce" />
+
         <Row>
           <Col lg={12}>
             <Card>
@@ -137,48 +137,11 @@ function EcommerceProductDetail(props:any) {
                 <Row className="gx-lg-5">
                   <Col xl={4} md={8} className="mx-auto">
                     <div className="product-img-slider sticky-side-div">
-                      {/* <Swiper
-                      modules={[Thumbs, Navigation, FreeMode]}
+                      <Swiper
                         navigation={true}
                         thumbs={{ swiper: thumbsSwiper }}
                         className="swiper product-thumbnail-slider p-2 rounded bg-light"
-                      >
-                        <div className="swiper-wrapper">
-                          <SwiperSlide>
-                            <img
-                              src={product8}
-                              alt=""
-                              className="img-fluid d-block"
-                            />
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <img
-                              src={product6}
-                              alt=""
-                              className="img-fluid d-block"
-                            />
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <img
-                              src={product1}
-                              alt=""
-                              className="img-fluid d-block"
-                            />
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <img
-                              src={product8}
-                              alt=""
-                              className="img-fluid d-block"
-                            />
-                          </SwiperSlide>
-                        </div>
-                      </Swiper> */}
-
-<Swiper
-                      modules={[ Navigation, FreeMode]}
-                        navigation={true}
-                        className="swiper product-thumbnail-slider p-2 rounded bg-light"
+                        modules={[Thumbs,Navigation]}
                       >
                         <div className="swiper-wrapper">
                           <SwiperSlide>
@@ -211,61 +174,20 @@ function EcommerceProductDetail(props:any) {
                           </SwiperSlide>
                         </div>
                       </Swiper>
+
                       <div className="product-nav-slider mt-2">
-                        {/* <Swiper
-                          onSwiper={setThumbsSwiper}
-                          slidesPerView={4}
-                          freeMode={true}
-                          watchSlidesProgress={true}
-                          spaceBetween={10}
-                          className="swiper product-nav-slider mt-2 overflow-hidden"
-                        >
-                          <div className="swiper-wrapper">
-                            <SwiperSlide className="rounded">
-                              <div className="nav-slide-item">
-                                <img
-                                  src={product8}
-                                  alt=""
-                                  className="img-fluid d-block rounded"
-                                />
-                              </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <div className="nav-slide-item">
-                                <img
-                                  src={product6}
-                                  alt=""
-                                  className="img-fluid d-block rounded"
-                                />
-                              </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <div className="nav-slide-item">
-                                <img
-                                  src={product1}
-                                  alt=""
-                                  className="img-fluid d-block rounded"
-                                />
-                              </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <div className="nav-slide-item">
-                                <img
-                                  src={product8}
-                                  alt=""
-                                  className="img-fluid d-block rounded"
-                                />
-                              </div>
-                            </SwiperSlide>
-                          </div>
-                        </Swiper> */}
                         <Swiper
-                          // onSwiper={setThumbsSwiper}
+                          onSwiper={setThumbsSwiper}
+                          
+                          pagination={{
+                            type: 'progressbar',
+                          }}
                           slidesPerView={4}
                           freeMode={true}
                           watchSlidesProgress={true}
                           spaceBetween={10}
                           className="swiper product-nav-slider mt-2 overflow-hidden"
+                          modules={[ FreeMode,Pagination]}
                         >
                           <div className="swiper-wrapper">
                             <SwiperSlide className="rounded">
@@ -385,7 +307,7 @@ function EcommerceProductDetail(props:any) {
                       <Row>
                         <Col xl={6}>
                           <div className=" mt-4">
-                            <h5 className="fs-15">Sizes :</h5>
+                            <h5 className="fs-14">Sizes :</h5>
                             <div className="d-flex flex-wrap gap-2">
                               <Tooltip
                                 placement="top"
@@ -481,7 +403,7 @@ function EcommerceProductDetail(props:any) {
 
                         <Col xl={6}>
                           <div className=" mt-4">
-                            <h5 className="fs-15">Colors :</h5>
+                            <h5 className="fs-14">Colors :</h5>
                             <div className="d-flex flex-wrap gap-2">
                               <div
                                 data-bs-toggle="tooltip"
@@ -594,7 +516,7 @@ function EcommerceProductDetail(props:any) {
                       </Row>
 
                       <div className="mt-4 text-muted">
-                        <h5 className="fs-15">Description :</h5>
+                        <h5 className="fs-14">Description :</h5>
                         <p>
                           Tommy Hilfiger men striped pink sweatshirt. Crafted
                           with cotton. Material composition is 100% organic
@@ -608,7 +530,7 @@ function EcommerceProductDetail(props:any) {
                       <Row>
                         <Col sm={6}>
                           <div className="mt-3">
-                            <h5 className="fs-15">Features :</h5>
+                            <h5 className="fs-14">Features :</h5>
                             <ul className="list-unstyled">
                               <li className="py-1">
                                 <i className="mdi mdi-circle-medium me-1 text-muted align-middle"></i>{" "}
@@ -631,7 +553,7 @@ function EcommerceProductDetail(props:any) {
                         </Col>
                         <Col sm={6}>
                           <div className="mt-3">
-                            <h5 className="fs-15">Services :</h5>
+                            <h5 className="fs-14">Services :</h5>
                             <ul className="list-unstyled product-desc-list">
                               <li className="py-1">10 Days Replacement</li>
                               <li className="py-1">
@@ -643,7 +565,7 @@ function EcommerceProductDetail(props:any) {
                       </Row>
 
                       <div className="product-content mt-5">
-                        <h5 className="fs-15 mb-3">Product Description :</h5>
+                        <h5 className="fs-14 mb-3">Product Description :</h5>
                         <Nav tabs className="nav-tabs-custom nav-success">
                           <NavItem>
                             <NavLink
@@ -716,7 +638,7 @@ function EcommerceProductDetail(props:any) {
                             tabId="2"
                           >
                             <div>
-                              <h5 className="mb-3">
+                              <h5 className="font-size-16 mb-3">
                                 Tommy Hilfiger Sweatshirt for Men (Pink)
                               </h5>
                               <p>
@@ -753,7 +675,7 @@ function EcommerceProductDetail(props:any) {
 
                       <div className="mt-5">
                         <div>
-                          <h5 className="fs-15 mb-3">Ratings & Reviews</h5>
+                          <h5 className="fs-14 mb-3">Ratings & Reviews</h5>
                         </div>
                         <Row className="gy-4 gx-0">
                           <Col lg={4}>
@@ -798,6 +720,7 @@ function EcommerceProductDetail(props:any) {
                                           className="progress-bar bg-success"
                                           role="progressbar"
                                           style={{ width: "50.16%" }}
+                                          
                                         ></div>
                                       </div>
                                     </div>
@@ -822,6 +745,7 @@ function EcommerceProductDetail(props:any) {
                                           className="progress-bar bg-success"
                                           role="progressbar"
                                           style={{ width: "19.32%" }}
+                                         
                                         ></div>
                                       </div>
                                     </div>
@@ -846,6 +770,7 @@ function EcommerceProductDetail(props:any) {
                                           className="progress-bar bg-success"
                                           role="progressbar"
                                           style={{ width: "18.12%" }}
+                                         
                                         ></div>
                                       </div>
                                     </div>
@@ -870,6 +795,7 @@ function EcommerceProductDetail(props:any) {
                                           className="progress-bar bg-warning"
                                           role="progressbar"
                                           style={{ width: "7.42%" }}
+                                          
                                         ></div>
                                       </div>
                                     </div>
@@ -895,6 +821,7 @@ function EcommerceProductDetail(props:any) {
                                           className="progress-bar bg-danger"
                                           role="progressbar"
                                           style={{ width: "4.98%" }}
+                                         
                                         ></div>
                                       </div>
                                     </div>
@@ -912,7 +839,7 @@ function EcommerceProductDetail(props:any) {
                           <Col lg={8}>
                             <div className="ps-lg-4">
                               <div className="d-flex flex-wrap align-items-start gap-3">
-                                <h5 className="fs-15">Reviews: </h5>
+                                <h5 className="fs-14">Reviews: </h5>
                               </div>
 
                               <SimpleBar

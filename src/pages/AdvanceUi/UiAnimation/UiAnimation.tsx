@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap';
 
 //import Components
@@ -11,15 +11,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FadeUpExample, FadeDownExample, FadeRightExample, FadeLeftExample, FadeUpRightExample, FadeUpLeftExample, FadeDownRightExample, FadeDownLeftExample, FlipLeftExample, FlipRightExample, FilpUpExample, FilpDownExample, ZoomInExample, ZoomOutExample, ZoomInUpExample, ZoomOutUpExample, ZoomInDownExample, ZoomOutDownExample, ZoomInRightExample, ZoomOutRightExample, ZoomInLeftExample, ZoomOutLeftExample, DurationExample, EasingLinearExample, Offset1Example, Offset2Example, EaseInBackExample, EaseOutCubicExample } from './UiAnimationCode';
 
-AOS.init({
-    easing: 'ease-out-back',
-    duration: 3000,
-    anchorPlacement: 'top-bottom', 
-});
 
 
 const UiAnimation = () => {
-document.title="Animation | Velzon - React Admin & Dashboard Template";
+    useEffect(() => {
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 3000,
+            anchorPlacement: 'top-bottom',
+        });
+    }, []);
+    document.title = "Animation | Velzon - React Admin & Dashboard Template";
     return (
         <React.Fragment>
             <div className="page-content">

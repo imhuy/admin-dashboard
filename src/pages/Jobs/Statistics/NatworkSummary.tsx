@@ -1,18 +1,9 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledDropdown,
-} from "reactstrap";
+import { Card, CardBody, CardHeader, Col, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../../Components/Common/ChartsDynamicColor";
 
-const NatworkSummary = ({ dataColors } : any) => {
+const NatworkSummary = ({ dataColors }:any) => {
   var dealTypeChartsColors = getChartColorsArray(dataColors);
   var series = [
     {
@@ -25,7 +16,7 @@ const NatworkSummary = ({ dataColors } : any) => {
     },
   ];
 
-  var options : any = {
+  var options:any = {
     chart: {
       height: 341,
       type: "radar",
@@ -70,20 +61,20 @@ const NatworkSummary = ({ dataColors } : any) => {
   };
   return (
     <React.Fragment>
-      <Col xxl={4} md={6}>
-        <Card className="card-height-100">
-          <CardHeader className="align-items-center d-flex">
+      <Col className="col-xxl-4 col-md-6">
+        <Card className="card card-height-100">
+          <CardHeader className="card-header align-items-center d-flex">
             <h4 className="card-title mb-0 flex-grow-1">
               Your Network Summary
             </h4>
             <div className="flex-shrink-0">
               <UncontrolledDropdown className="card-header-dropdown">
                 <DropdownToggle
-                    className="text-reset dropdown-btn"
-                    tag="a"
-                    type="a"
-                    to="#"
-                  >
+                  className="text-reset dropdown-btn"
+                  tag="a"
+                  type="a"
+                  href="#"
+                >
                   <span className="fw-semibold text-uppercase fs-12">
                     Sort by:{" "}
                   </span>
@@ -100,7 +91,7 @@ const NatworkSummary = ({ dataColors } : any) => {
               </UncontrolledDropdown>
             </div>
           </CardHeader>
-          <CardBody className="pb-0">
+          <CardBody className="card-body pb-0">
             <ReactApexChart dir="ltr"
               className="apex-charts"
               series={series}

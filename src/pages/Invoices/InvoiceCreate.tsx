@@ -31,17 +31,17 @@ import { useDispatch } from "react-redux";
 import { addNewInvoice as onAddNewInvoice } from "../../slices/thunks";
 
 const InvoiceCreate = () => {
-  const dispatch: any = useDispatch();
+  const dispatch : any = useDispatch();
   const history = useNavigate();
 
   const [ispaymentDetails, setispaymentDetails] = useState<any>(null);
-  const [isCurrency, setisCurrency] = useState("$");
+  const [isCurrency, setisCurrency] = useState<any>("$");
 
-  function handleispaymentDetails(ispaymentDetails: any) {
+  function handleispaymentDetails(ispaymentDetails:any) {
     setispaymentDetails(ispaymentDetails);
   }
 
-  function handleisCurrency(isCurrency: any) {
+  function handleisCurrency(isCurrency:any) {
     setisCurrency(isCurrency);
   }
 
@@ -79,18 +79,18 @@ const InvoiceCreate = () => {
     },
   ];
 
-  const [count, setCount] = useState(0);
-  const [rate, setRate] = useState(0);
-  const [tax, setTax] = useState(0);
-  const [dis, setDis] = useState(0);
-  const [charge, setCharge] = useState(0);
+  const [count, setCount] = useState<number>(0);
+  const [rate, setRate] = useState<number>(0);
+  const [tax, setTax] = useState<number>(0);
+  const [dis, setDis] = useState<number>(0);
+  const [charge, setCharge] = useState<number>(0);
 
   useEffect(() => {
     let tax = (0.125 * rate * count);
     let dis = (0.15 * rate * count);
 
     // if ((rate && count) && isNaN !== 0) {
-    if (rate && count && !isNaN(rate) && !isNaN(count)) {
+      if (rate && count && !isNaN(rate) && !isNaN(count)) {
       setCharge(65);
     } else {
       setCharge(0);
@@ -108,7 +108,7 @@ const InvoiceCreate = () => {
 
   const [date, setDate] = useState(dateFormat());
 
-  const dateformate = (e: any) => {
+  const dateformate = (e:any) => {
     const date = e.toString().split(" ");
     const joinDate = (date[2] + " " + date[1] + ", " + date[3]).toString();
     setDate(joinDate);
@@ -118,7 +118,7 @@ const InvoiceCreate = () => {
 
   document.title = "Create Invoice | Velzon - React Admin & Dashboard Template";
 
-  const validation = useFormik({
+  const validation:any = useFormik({
     enableReinitialize: true,
 
     initialValues: {
@@ -265,7 +265,7 @@ const InvoiceCreate = () => {
                           {validation.errors.postalcode && validation.touched.postalcode ? (
                             <FormFeedback type="invalid">{validation.errors.postalcode}</FormFeedback>
                           ) : null}
-
+                          
                         </div>
                       </div>
                     </Col>
@@ -302,7 +302,7 @@ const InvoiceCreate = () => {
                         {validation.errors.email && validation.touched.email ? (
                           <FormFeedback type="invalid">{validation.errors.email}</FormFeedback>
                         ) : null}
-
+                        
                       </div>
                       <div className="mb-2">
                         <Input
@@ -319,7 +319,7 @@ const InvoiceCreate = () => {
                         {validation.errors.website && validation.touched.website ? (
                           <FormFeedback type="invalid">{validation.errors.website}</FormFeedback>
                         ) : null}
-
+                        
                       </div>
                       <div>
                         <Input
@@ -337,7 +337,7 @@ const InvoiceCreate = () => {
                         {validation.errors.contact && validation.touched.contact ? (
                           <FormFeedback type="invalid">{validation.errors.contact}</FormFeedback>
                         ) : null}
-
+                        
                       </div>
                     </Col>
                   </Row>
@@ -354,7 +354,7 @@ const InvoiceCreate = () => {
                         value={validation.values.invoiceId || ""}
                         onBlur={validation.handleBlur}
                         onChange={validation.handleChange}
-                        placeholder="Invoice No"
+                        placeholder="#VL20499516" 
                         invalid={validation.errors.invoiceId && validation.touched.invoiceId ? true : false}
                       />
                       {validation.errors.invoiceId && validation.touched.invoiceId ? (
@@ -368,16 +368,17 @@ const InvoiceCreate = () => {
                           name="date"
                           id="date-field"
                           className="form-control"
-                          placeholder="Select a date"
+                          placeholder="Select Date-time"
                           options={{
                             altInput: true,
                             altFormat: "d M, Y",
                             dateFormat: "d M, Y",
                           }}
-                          onChange={(e: any) =>
+                          onChange={(e) =>
                             dateformate(e)
                           }
                           value={validation.values.date || ""}
+
                         />
                         {validation.touched.date && validation.errors.date ? (
                           <FormFeedback type="invalid">{validation.errors.date}</FormFeedback>
@@ -411,7 +412,7 @@ const InvoiceCreate = () => {
                             {validation.errors.status}
                           </FormFeedback>
                         ) : null}
-
+                      
                       </div>
                     </Col>
                     <Col lg={3} sm={6}>
@@ -455,7 +456,7 @@ const InvoiceCreate = () => {
                         {validation.errors.name && validation.touched.name ? (
                           <FormFeedback type="invalid">{validation.errors.name}</FormFeedback>
                         ) : null}
-
+                        
                       </div>
                       <div className="mb-2">
                         <Input
@@ -473,7 +474,7 @@ const InvoiceCreate = () => {
                         {validation.errors.billing_address && validation.touched.billing_address ? (
                           <FormFeedback type="invalid">{validation.errors.billing_address}</FormFeedback>
                         ) : null}
-
+                        
                       </div>
                       <div className="mb-2">
                         <Input
@@ -491,7 +492,7 @@ const InvoiceCreate = () => {
                         {validation.errors.billing_phone && validation.touched.billing_phone ? (
                           <FormFeedback type="invalid">{validation.errors.billing_phone}</FormFeedback>
                         ) : null}
-
+                       
                       </div>
                       <div className="mb-3">
                         <Input
@@ -508,7 +509,7 @@ const InvoiceCreate = () => {
                         {validation.errors.billing_taxno && validation.touched.billing_taxno ? (
                           <FormFeedback type="invalid">{validation.errors.billing_taxno}</FormFeedback>
                         ) : null}
-
+                        
                       </div>
                       <div className="form-check">
                         <Input
@@ -548,7 +549,7 @@ const InvoiceCreate = () => {
                             {validation.errors.shipping_name && validation.touched.shipping_name ? (
                               <FormFeedback type="invalid">{validation.errors.shipping_name}</FormFeedback>
                             ) : null}
-
+                            
                           </div>
                           <div className="mb-2">
                             <Input
@@ -566,7 +567,7 @@ const InvoiceCreate = () => {
                             {validation.errors.shipping_address && validation.touched.shipping_address ? (
                               <FormFeedback type="invalid">{validation.errors.shipping_address}</FormFeedback>
                             ) : null}
-
+                            
                           </div>
                           <div className="mb-2">
                             <Input
@@ -584,7 +585,7 @@ const InvoiceCreate = () => {
                             {validation.errors.shipping_phone && validation.touched.shipping_phone ? (
                               <FormFeedback type="invalid">{validation.errors.shipping_phone}</FormFeedback>
                             ) : null}
-
+                            
                           </div>
                           <div>
                             <Input
@@ -601,7 +602,7 @@ const InvoiceCreate = () => {
                             {validation.errors.shipping_taxno && validation.touched.shipping_taxno ? (
                               <FormFeedback type="invalid">{validation.errors.shipping_taxno}</FormFeedback>
                             ) : null}
-
+                            
                           </div>
                         </Col>
                       </Row>
@@ -622,7 +623,7 @@ const InvoiceCreate = () => {
                               Rate
                               <Select
                                 defaultValue={isCurrency}
-                                onChange={(isCurrency: any) => {
+                                onChange={(isCurrency:any) => {
                                   handleisCurrency(isCurrency);
                                 }}
                                 options={allcurrency}
@@ -669,7 +670,7 @@ const InvoiceCreate = () => {
                               {validation.errors.product_name && validation.touched.product_name ? (
                                 <FormFeedback type="invalid">{validation.errors.product_name}</FormFeedback>
                               ) : null}
-
+                              
                             </div>
                             <Input
                               type="textarea"
@@ -685,7 +686,7 @@ const InvoiceCreate = () => {
                               className="form-control product-price bg-light border-0"
                               placeholder="0.00"
                               id="productRate-1" step="0.01"
-                              onChange={(e: any) => {
+                              onChange={(e:any) => {
                                 setRate(e.target.value);
                               }}
                             />
@@ -841,7 +842,7 @@ const InvoiceCreate = () => {
                         <div className="input-light">
                           <Select
                             value={ispaymentDetails}
-                            onChange={(ispaymentDetails: any) => {
+                            onChange={(ispaymentDetails:any) => {
                               handleispaymentDetails(ispaymentDetails);
                             }}
                             options={paymentdetails}

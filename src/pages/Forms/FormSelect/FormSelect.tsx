@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Card, CardBody, CardHeader, Col, Label, Row } from 'reactstrap';
+import { Card, CardBody, CardHeader, Col, Input, Label, Row } from 'reactstrap';
 import BreadCrumb from '../../../Components/Common/BreadCrumb';
 import PreviewCardHeader from '../../../Components/Common/PreviewCardHeader';
 import UiContent from "../../../Components/Common/UiContent";
 
-import { DefaultSelect, MenuSize, SelectSize } from './FormSelectCode';
+import { DefaultSelect, MenuSize, SelectSize } from '../FormSelect/FormSelectCode';
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 const animatedComponents = makeAnimated();
@@ -100,49 +100,68 @@ const noSortingGroup = [
     { value: 'Michigan', label: 'Michigan' },
 ];
 
-const options = [
-    { label: "josh@joshuajohnson.co.uk", value: 1, disabled: true },
-    { label: "joe@bloggs.co.uk", value: 2, disabled: true }
-];
 
 const FormSelect = () => {
     const [selectedSingle, setSelectedSingle] = useState<any>(null);
-    const [selectedGroup, setSelectedGroup] = useState<any>(null);
-    const [selectedGroup2, setSelectedGroup2] = useState<any>(null);
-    const [selectedNoSortingGroup, setSelectedNoSortingGroup] = useState<any>(null);
-    const [selectedMulti, setselectedMulti] = useState<any>(null);
-    const [selectedMulti2, setselectedMulti2] = useState<any>(null);
-    const [selectedMulti3, setselectedMulti3] = useState<any>(null);
+    const [selectedGroup, setSelectedGroup] = useState<any>('');
+    const [selectedGroup2, setSelectedGroup2] = useState<any>('');
+    const [selectedNoSortingGroup, setSelectedNoSortingGroup] = useState<any>('');
+    const [selectedMulti, setselectedMulti] = useState<any>('');
+    const [selectedMulti2, setselectedMulti2] = useState<any>('');
+    const [selectedMulti3, setselectedMulti3] = useState<any>('');
 
-    function handleSelectSingle(selectedSingle : any) {
+    function handleSelectSingle(selectedSingle: any) {
         setSelectedSingle(selectedSingle);
     }
 
-    function handleSelectGroups(selectedGroup : any) {
+    function handleSelectGroups(selectedGroup: any) {
         setSelectedGroup(selectedGroup);
     }
 
-    function handleSelectGroups2(selectedGroup2 : any) {
+    function handleSelectGroups2(selectedGroup2: any) {
         setSelectedGroup2(selectedGroup2);
     }
 
-    function handleSelectNoSortingGroup(selectedNoSortingGroup : any) {
+    function handleSelectNoSortingGroup(selectedNoSortingGroup: any) {
         setSelectedNoSortingGroup(selectedNoSortingGroup);
     }
 
-    function handleMulti(selectedMulti : any) {
+    function handleMulti(selectedMulti: any) {
         setselectedMulti(selectedMulti);
     }
 
-    function handleMulti2(selectedMulti2 : any) {
+    function handleMulti2(selectedMulti2: any) {
         setselectedMulti2(selectedMulti2);
     }
 
-    function handleMulti3(selectedMulti3 : any) {
+    function handleMulti3(selectedMulti3: any) {
         setselectedMulti3(selectedMulti3);
     }
 
-    document.title="Form Select | Velzon - React Admin & Dashboard Template";
+    document.title = "Form Select | Velzon - React Admin & Dashboard Template";
+
+    const customStyles = {
+        multiValue: (styles: any, { data }: any) => {
+            return {
+                ...styles,
+                backgroundColor: "#3762ea",
+            };
+        },
+        multiValueLabel: (styles: any, { data }: any) => ({
+            ...styles,
+            backgroundColor: "#405189",
+            color: "white",
+        }),
+        multiValueRemove: (styles: any, { data }: any) => ({
+            ...styles,
+            color: "white",
+            backgroundColor: "#405189",
+            ':hover': {
+                backgroundColor: "#405189",
+                color: 'white',
+            },
+        }),
+    }
 
     return (
         <React.Fragment>
@@ -154,7 +173,7 @@ const FormSelect = () => {
                         <Col lg={12}>
                             <Card>
                                 <PreviewCardHeader title="Default Select" />
-                                <CardBody>                                    
+                                <CardBody>
                                     <div className="live-preview">
                                         <Row>
                                             <Col lg={6} >
@@ -199,7 +218,7 @@ const FormSelect = () => {
                         <Col lg={12}>
                             <Card >
                                 <PreviewCardHeader title="Menu Size" />
-                                <CardBody>                                   
+                                <CardBody>
                                     <div className="live-preview">
                                         <Row className="gy-4">
                                             <Col lg={6}>
@@ -287,14 +306,14 @@ const FormSelect = () => {
                                 <CardHeader><h4 className="card-title mb-0">Choices</h4></CardHeader>
                                 <CardBody>
                                     <div>
-                                        <div>                                            
+                                        <div>
                                             <Row>
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
-                                                        <Label htmlFor="choices-single-default" className="form-label text-muted">Default</Label>                                                        
+                                                        <Label htmlFor="choices-single-default" className="form-label text-muted">Default</Label>
                                                         <Select
                                                             value={selectedSingle}
-                                                            onChange={(selectedSingle : any) => {
+                                                            onChange={(selectedSingle:any) => {
                                                                 handleSelectSingle(selectedSingle);
                                                             }}
                                                             options={SingleOptions}
@@ -305,11 +324,11 @@ const FormSelect = () => {
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
                                                         <Label htmlFor="choices-single-groups" className="form-label text-muted">Option
-                                                            Groups</Label>                                                        
+                                                            Groups</Label>
                                                         <Select
                                                             value={selectedGroup}
                                                             // searchable
-                                                            onChange={(selectedGroup : any) => {
+                                                            onChange={(selectedGroup:any) => {
                                                                 handleSelectGroups(selectedGroup);
                                                             }}
                                                             options={GroupOptions}
@@ -320,11 +339,11 @@ const FormSelect = () => {
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
                                                         <Label htmlFor="choices-single-no-search" className="form-label text-muted">Options added
-                                                            via config with no search</Label>                                                        
+                                                            via config with no search</Label>
                                                         <Select
                                                             isClearable={true}
                                                             value={selectedGroup2}
-                                                            onChange={(selectedGroup2 : any) => {
+                                                            onChange={(selectedGroup2:any) => {
                                                                 handleSelectGroups2(selectedGroup2);
                                                             }}
                                                             options={GroupOptions2}
@@ -335,10 +354,10 @@ const FormSelect = () => {
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
                                                         <Label htmlFor="choices-single-no-sorting" className="form-label text-muted">Options added
-                                                            via config with no sorting</Label>                                                        
+                                                            via config with no sorting</Label>
                                                         <Select
                                                             value={selectedNoSortingGroup}
-                                                            onChange={(selectedNoSortingGroup : any) => {
+                                                            onChange={(selectedNoSortingGroup:any) => {
                                                                 handleSelectNoSortingGroup(selectedNoSortingGroup);
                                                             }}
                                                             options={noSortingGroup}
@@ -353,14 +372,15 @@ const FormSelect = () => {
                                             <Row>
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
-                                                        <Label htmlFor="choices-multiple-default" className="form-label text-muted">Default</Label>                                                        
+                                                        <Label htmlFor="choices-multiple-default" className="form-label text-muted">Default</Label>
                                                         <Select
                                                             value={selectedMulti}
-                                                            isMulti={true}                                                            
-                                                            onChange={(selectedMulti : any) => {
+                                                            isMulti={true}
+                                                            onChange={(selectedMulti:any) => {
                                                                 handleMulti(selectedMulti);
                                                             }}
                                                             options={SingleOptions}
+                                                            styles={customStyles}
                                                         />
                                                     </div>
                                                 </Col>
@@ -368,15 +388,16 @@ const FormSelect = () => {
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
                                                         <Label htmlFor="choices-multiple-remove-button" className="form-label text-muted">With
-                                                            remove button</Label>                                                        
+                                                            remove button</Label>
                                                         <Select
                                                             value={selectedMulti2}
                                                             isMulti={true}
                                                             isClearable={true}
-                                                            onChange={(selectedMulti2 : any) => {
+                                                            onChange={(selectedMulti2:any) => {
                                                                 handleMulti2(selectedMulti2);
                                                             }}
                                                             options={SingleOptions}
+                                                            styles={customStyles}
                                                         />
                                                     </div>
                                                 </Col>
@@ -384,11 +405,11 @@ const FormSelect = () => {
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
                                                         <Label htmlFor="choices-multiple-groups" className="form-label text-muted">Option
-                                                            groups</Label>                                                      
+                                                            groups</Label>
                                                         <Select
                                                             value={selectedMulti3}
                                                             isMulti={true}
-                                                            onChange={(selectedMulti3 : any) => {
+                                                            onChange={(selectedMulti3:any) => {
                                                                 handleMulti3(selectedMulti3);
                                                             }}
                                                             options={GroupOptions}
@@ -402,31 +423,28 @@ const FormSelect = () => {
 
 
                                         <div className="mt-4">
-                                            {/* <h5 className="fs-14 mb-3">Text inputs</h5>
+                                            <h5 className="fs-14 mb-3">Text inputs</h5>
                                             <Row>
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
-                                                        <Label htmlFor="choices-text-remove-button" className="form-label text-muted">Set limit
-                                                            values with remove button</Label>                                                        
-                                                        <Input className="form-control" onFocus={handleFocus}
-                                                            defaultValue="Task-1" />
+                                                        <Label htmlFor="choices-text-remove-button" className="form-label text-muted">Set limit values with remove button</Label>
+                                                        <p className="text-muted">Set <code>data-choices data-choices-limit="Required Limit" </code> attribute.</p>
+                                                        <Input className="form-control" id="choices-text-remove-button" data-choices data-choices-limit="3" type="text" defaultValue="Task-1" />
                                                     </div>
                                                 </Col>
+
                                                 <Col lg={4} md={6}>
                                                     <div className="mb-3">
-                                                        <Label htmlFor="choices-text-unique-values" className="form-label text-muted">Unique values
-                                                            only, no pasting</Label>                                                       
-                                                        <Input className="form-control" id="choices-text-unique-values" data-choices data-choices-text-unique-true type="text"
-                                                            defaultValue="Project-A, Project-B" />
+                                                        <Label htmlFor="choices-text-unique-values" className="form-label text-muted">Unique values only, no pasting</Label>
+                                                        <p className="text-muted">Set <code>data-choices data-choices-text-unique-true</code> attribute.</p>
+                                                        <Input className="form-control" id="choices-text-unique-values" data-choices data-choices-text-unique-true type="text" defaultValue="Project-A, Project-B" />
                                                     </div>
                                                 </Col>
-                                            </Row> */}
+                                            </Row>
                                             <div>
-                                                <Label htmlFor="choices-text-disabled" className="form-label text-muted">Disabled</Label>                                                
-                                                <Select id={'dropdown'}
-                                                    options={options}
-                                                    isOptionDisabled={(option : any) => option.disabled}>
-                                                </Select>
+                                                <Label htmlFor="choices-text-disabled" className="form-label text-muted">Disabled</Label>
+                                                <p className="text-muted">Set <code>data-choices data-choices-text-disabled-true</code> attribute.</p>
+                                                <Input className="form-control" id="choices-text-disabled" data-choices data-choices-text-disabled-true type="text" defaultValue="josh@joshuajohnson.co.uk, joe@bloggs.co.uk" />
                                             </div>
                                         </div>
                                     </div>
@@ -434,6 +452,8 @@ const FormSelect = () => {
                             </Card>
                         </Col>
                     </Row>
+
+
                 </div>
             </div>
 

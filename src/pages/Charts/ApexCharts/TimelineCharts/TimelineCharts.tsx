@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactApexChart from "react-apexcharts";
+import moment from "moment";
 
 import getChartColorsArray from "../../../../Components/Common/ChartsDynamicColor";
-import moment from 'moment';
 
 const Basic = ({ dataColors } : any) => {
     var chartTimelineBasicColors = getChartColorsArray(dataColors);
@@ -624,27 +624,26 @@ const MultipleSeries = ({ dataColors } : any) => {
             type: "datetime",
         },
         tooltip: {
-            custom: function (opts : any) {
-                const fromYear = new Date(opts.y1).getFullYear()
-                const toYear = new Date(opts.y2).getFullYear()
-                const values = opts.ctx.rangeBar.getTooltipValues(opts)
+            custom: function ({ series, seriesIndex, dataPointIndex, w } : any) {
+                const fromYear = new Date(series[seriesIndex].data[dataPointIndex].y[0]).getFullYear();
+                const toYear = new Date(series[seriesIndex].data[dataPointIndex].y[1]).getFullYear();
 
                 return (
                     '<div class="apexcharts-tooltip-rangebar">' +
                     '<div> <span class="series-name" style="color: ' +
-                    values.color +
+                    w.config.colors[seriesIndex] +
                     '">' +
-                    (values.seriesName ? values.seriesName : '') +
+                    (series[seriesIndex].name ? series[seriesIndex].name : '') +
                     '</span></div>' +
                     '<div> <span class="category">' +
-                    values.ylabel +
+                    w.globals.labels[dataPointIndex] +
                     ' </span> <span class="value start-value">' +
                     fromYear +
                     '</span> <span class="separator">-</span> <span class="value end-value">' +
                     toYear +
                     '</span></div>' +
                     '</div>'
-                )
+                );
             }
         },
         colors: chartMultiSeriesColors,
@@ -652,7 +651,7 @@ const MultipleSeries = ({ dataColors } : any) => {
 
     return (
         <React.Fragment>
-            <ReactApexChart dir="ltr"
+            <ReactApexChart
                 className="apex-charts"
                 options={options}
                 series={series}
@@ -663,7 +662,7 @@ const MultipleSeries = ({ dataColors } : any) => {
     );
 };
 
-const DumbBell = ({ dataColors } : any) => {
+const Dumbbell = ({ dataColors } : any) => {
     var dumbbellChartColors = getChartColorsArray(dataColors);
     const series = [
         {
@@ -699,7 +698,8 @@ const DumbBell = ({ dataColors } : any) => {
             ]
         }
     ];
-    var options : any = {
+
+    const options : any = {
         chart: {
             height: 350,
             type: 'rangeBar',
@@ -745,7 +745,8 @@ const DumbBell = ({ dataColors } : any) => {
                 }
             }
         }
-    };
+    }
+
     return (
         <React.Fragment>
             <ReactApexChart dir="ltr"
@@ -759,11 +760,12 @@ const DumbBell = ({ dataColors } : any) => {
     );
 }
 
+
 export {
-    DumbBell,
     Basic,
     DifferentColor,
     MultiSeries,
     Advanced,
-    MultipleSeries
+    MultipleSeries,
+    Dumbbell
 };

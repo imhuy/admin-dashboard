@@ -18,7 +18,6 @@ const invoiceWidgets = [
         badge: "2,258",
         caption: "Invoices sent",
         feaIcon: "file-text",
-        feaIconClass:"info",
         decimals: 1,
         prefix: "$",
         suffix: "k"
@@ -33,7 +32,6 @@ const invoiceWidgets = [
         badge: "1,958",
         caption: "Paid by clients",
         feaIcon: "check-square",
-        feaIconClass:"primary",
         decimals: 2,
         prefix: "$",
         suffix: "k"
@@ -48,7 +46,6 @@ const invoiceWidgets = [
         badge: "338",
         caption: "Unpaid by clients",
         feaIcon: "clock",
-        feaIconClass:"info",
         decimals: 2,
         prefix: "$",
         suffix: "k"
@@ -63,7 +60,6 @@ const invoiceWidgets = [
         badge: "502",
         caption: "Cancelled by clients",
         feaIcon: "x-octagon",
-        feaIconClass:"primary",
         decimals: 1,
         prefix: "$",
         suffix: "k"

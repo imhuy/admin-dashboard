@@ -68,12 +68,12 @@ const UiBadges = () => {
                             <Card>
                                 <PreviewCardHeader title="Soft Badges" />
                                 <CardBody>
-                                    <p className="text-muted">Use the <code>bg-*-subtle text-*</code> class with the below-mentioned variation to create a softer badge.
+                                    <p className="text-muted">Use the <code>badge-subtle-</code> class with the below-mentioned variation to create a softer badge.
                                     </p>
                                     <div className="live-preview">
                                         <div className="d-flex flex-wrap gap-2">
                                             <span className="badge bg-primary-subtle text-primary">Primary</span>
-                                            <span className="badge bg-secondary-subtle text-secondary">Secondary</span>
+                                            <span className="badge bg-secondary-subtle text-secondary ">Secondary</span>
                                             <span className="badge bg-success-subtle text-success">Success</span>
                                             <span className="badge bg-info-subtle text-info">Info</span>
                                             <span className="badge bg-warning-subtle text-warning">Warning</span>
@@ -99,7 +99,8 @@ const UiBadges = () => {
                             <Card>
                                 <PreviewCardHeader title="Outline Badges" />
                                 <CardBody>
-                                    <p className="text-muted">Use the <code>border</code>, <code>border-*</code> <code>text-*</code> class with the below-mentioned variation to create a badge with the outline.</p>
+                                    <p className="text-muted">Use the <code>badge-outline-</code> class with the below-mentioned variation to create a badge with the outline.
+                                    </p>
                                     <div className="live-preview">
                                         <div className="d-flex flex-wrap gap-2">
                                             <span className="badge border border-primary text-primary">Primary</span>
@@ -109,7 +110,7 @@ const UiBadges = () => {
                                             <span className="badge border border-warning text-warning">Warning</span>
                                             <span className="badge border border-danger text-danger">Danger</span>
                                             <span className="badge border border-dark text-body">Dark</span>
-                                            <span className="badge border border-light text-body text-body">Light</span>
+                                            <span className="badge border border-light text-body">Light</span>
                                         </div>
                                     </div>
                                     <div className="d-none code-view">
@@ -160,19 +161,19 @@ const UiBadges = () => {
                                 <PreviewCardHeader title="Rounded Pill Badges with soft effect" />
                                 <CardBody>
 
-                                    <p className="text-muted">Use the <code>rounded-pill bg-*-subtle text-*</code> class with the below-mentioned variation
+                                    <p className="text-muted">Use the <code>rounded-pill bg-*-subtle</code> class with the below-mentioned variation
                                         to create a badge more rounded with a soft background.</p>
                                     <div className="live-preview">
 
                                         <div className="d-flex flex-wrap gap-2">
                                             <span className="badge rounded-pill bg-primary-subtle text-primary">Primary</span>
-                                            <span className="badge rounded-pill bg-secondary-subtle text-secondary">Secondary</span>
+                                            <span className="badge rounded-pill bg-secondary-subtle text-secondary ">Secondary</span>
                                             <span className="badge rounded-pill bg-success-subtle text-success">Success</span>
                                             <span className="badge rounded-pill bg-info-subtle text-info">Info</span>
                                             <span className="badge rounded-pill bg-warning-subtle text-warning">Warning</span>
                                             <span className="badge rounded-pill bg-danger-subtle text-danger">Danger</span>
                                             <span className="badge rounded-pill bg-dark-subtle text-body">Dark</span>
-                                            <span className="badge rounded-pill bg-light-subtle text-body text-body">Light</span>
+                                            <span className="badge rounded-pill bg-light-subtle text-body">Light</span>
                                         </div>
                                     </div>
 
@@ -193,19 +194,19 @@ const UiBadges = () => {
                                 <CardBody>
 
                                     <p className="text-muted">
-                                        Use the <code>badge-border</code> and <code>bg-*-subtle text-*</code> with below mentioned modifier classes to make badges with border & soft backgorund.
+                                        Use the <code>badge-border</code> and <code>bg-*-subtle</code> with below mentioned modifier classes to make badges with border & soft backgorund.
                                     </p>
                                     <div className="live-preview">
 
                                         <div className="d-flex flex-wrap gap-2">
                                             <span className="badge bg-primary-subtle text-primary badge-border">Primary</span>
-                                            <span className="badge bg-secondary-subtle text-secondary badge-border">Secondary</span>
+                                            <span className="badge bg-secondary-subtle text-secondary  badge-border">Secondary</span>
                                             <span className="badge bg-success-subtle text-success badge-border">Success</span>
-                                            <span className="badge bg-danger-subtle text-danger badge-border">Danger</span>
-                                            <span className="badge bg-warning-subtle text-warning badge-border">Warning</span>
-                                            <span className="badge bg-info-subtle text-info badge-border">Info</span>
+                                            <span className="badge bg-danger-subtle  text-danger badge-border">Danger</span>
+                                            <span className="badge bg-warning-subtle  text-warning badge-border">Warning</span>
+                                            <span className="badge bg-info-subtle  text-info badge-border">Info</span>
                                             <span className="badge bg-dark-subtle text-body badge-border">Dark</span>
-                                            <span className="badge bg-light-subtle text-body badge-border text-body">Light</span>
+                                            <span className="badge bg-light-subtle badge-border text-body">Light</span>
                                         </div>
                                     </div>
 
@@ -227,7 +228,7 @@ const UiBadges = () => {
                                 <PreviewCardHeader title="Outline Pill Badges" />
                                 <CardBody>
                                     <p className="text-muted">
-                                        Use the <code>rounded-pill </code> <code>border</code>, <code>border-*</code> <code>text-*</code> class with the below-mentioned variation
+                                        Use the <code>rounded-pill badge-outline-</code> class with the below-mentioned variation
                                         to create a outline Pill badge.
                                     </p>
                                     <div className="live-preview">
@@ -239,7 +240,7 @@ const UiBadges = () => {
                                             <span className="badge rounded-pill border border-warning text-warning">Warning</span>
                                             <span className="badge rounded-pill border border-danger text-danger">Danger</span>
                                             <span className="badge rounded-pill border border-dark text-body">Dark</span>
-                                            <span className="badge rounded-pill border border-light text-body text-body">Light</span>
+                                            <span className="badge rounded-pill border border-light text-body">Light</span>
                                         </div>
                                     </div>
 

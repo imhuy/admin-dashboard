@@ -5,41 +5,39 @@ import Countdown from "react-countdown";
 import { useSelector, useDispatch } from "react-redux";
 import { getMarketChartsDatas } from '../../slices/thunks';
 
-// Import Images
-import ImgGif2 from "../../assets/images/nft/gif/img-2.gif";
-
 // Import Chart
-import { MarketplaceChart } from "./DashboardNFTCharts";
+import {MarketplaceChart} from "./DashboardNFTCharts";
 import { Link } from 'react-router-dom';
 import { createSelector } from 'reselect';
 
 const Marketplace = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const selectmarketData = createSelector(
-        (state : any) => state.DashboardNFT.marketplaceData,
-        (marketplaceData) => marketplaceData
+        (state:any) => state.DashboardNFT,
+        (marketplaceData) => marketplaceData.marketplaceData
       );
     // Inside your component
     const marketplaceData = useSelector(selectmarketData);
+
 
     useEffect(() => {
         setchartData(marketplaceData);
     }, [marketplaceData]);
 
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         dispatch(getMarketChartsDatas(pType));
     };
 
     useEffect(() => {
         dispatch(getMarketChartsDatas("all"));
     }, [dispatch]);
-    const renderer = ({ days, hours, minutes, seconds, completed } : any) => {
+    const renderer = ({ days, hours, minutes, seconds, completed }:any) => {
         if (completed) {
             // Render a completed state
-            return <span>You are good to go!</span>;
+            return <span>You are good to go!</span>
         } else {
             return (
                 <>
@@ -56,9 +54,9 @@ const Marketplace = () => {
                             <div className="count-num">{seconds}</div></div>
                     </div>
                 </>
-            );
+            )
         }
-    };
+    }
     return (
         <React.Fragment>
             <Row>
@@ -71,16 +69,16 @@ const Marketplace = () => {
                                         <CardHeader className="border-0 align-items-center d-flex">
                                             <h4 className="card-title mb-0 flex-grow-1">Marketplace</h4>
                                             <div className='d-flex gap-1'>
-                                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("all"); }}>
+                                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("all"); }}>
                                                     ALL
                                                 </button>
-                                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("month"); }}>
+                                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("month"); }}>
                                                     1M
                                                 </button>
-                                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("halfyear"); }}>
+                                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("halfyear"); }}>
                                                     6M
                                                 </button>
-                                                <button type="button" className="btn btn-soft-primary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("year"); }}>
+                                                <button type="button" className="btn btn-soft-primary btn-sm" onClick={() => { onChangeChartPeriod("year"); }}>
                                                     1Y
                                                 </button>
                                             </div>
@@ -117,7 +115,7 @@ const Marketplace = () => {
                                                 </div>
                                             </Col>
                                         </Row>
-                                        <MarketplaceChart series={chartData} dataColors='["--vz-primary","--vz-success", "--vz-light"]' />
+                                        <MarketplaceChart series={chartData} dataColors='["--vz-primary","--vz-success", "--vz-gray-300"]' />
                                     </div>
                                 </Col>
 
@@ -126,14 +124,14 @@ const Marketplace = () => {
 
                                         <div className="w-100">
                                             <div className="d-flex align-items-center">
-                                                <img src={ImgGif2} className="img-fluid avatar-xs rounded-circle object-fit-cover" alt="" />
+                                                <img src={"https://img.themesbrand.com/velzon/images/img-2.gif"} className="img-fluid avatar-xs rounded-circle object-fit-cover" alt="" />
                                                 <div className="ms-3 flex-grow-1">
                                                     <h5 className="fs-16 mb-1">Trendy Fashion Portraits</h5>
                                                     <p className="text-muted mb-0">Artwork</p>
                                                 </div>
 
                                                 <UncontrolledDropdown>
-                                                    <DropdownToggle tag="a" className="text-reset dropdown-btn text-muted" role="button">
+                                                    <DropdownToggle tag="a" className="align-middle text-muted" role="button">
                                                         <i className="ri-share-line fs-18"></i>
                                                     </DropdownToggle>
                                                     <DropdownMenu className="dropdown-menu-end">
@@ -163,7 +161,7 @@ const Marketplace = () => {
                                             </div>
 
                                             <div className="dash-countdown mt-4 pt-1">
-                                                <Countdown date="2025/1/1" renderer={renderer} />
+                                                <Countdown date="2025/01/01" renderer={renderer} />
                                             </div>
 
                                             <Row className="mt-4 pt-2">

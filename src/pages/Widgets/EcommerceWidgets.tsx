@@ -29,7 +29,7 @@ const EcommerceWidgets = () => {
 
     const [count , setCount] = useState(2);
 
-    const confirnPayment = () => {
+    const confirmPayment = (): void => {
         const selectedRadio = document?.querySelector<HTMLInputElement>('input[name=listGroupRadioGrid]:checked');
         const notificationOverlay = document.getElementById("notification-overlay") as HTMLElement;
         const notificationWarn = document.getElementById("notification-warn");
@@ -50,15 +50,16 @@ const EcommerceWidgets = () => {
             setTimeout(() => notificationWarn.classList.add("d-none"), 2000);
           }
         }
-    }
+      };
 
-    const backToHome = () => {
+    const backToHome = (): void => {
         const notificationOverlay: HTMLElement | null = document.getElementById("notification-overlay");
         if (notificationOverlay) {
           notificationOverlay.style.visibility = "hidden";
           notificationOverlay.style.opacity = "0";
         }
-    }
+      };
+
     return (
         <React.Fragment>
             <Row>
@@ -99,9 +100,9 @@ const EcommerceWidgets = () => {
                                         </div>
                                         <div className="pt-3">
                                             <h5 className="text-secondary">$99.94</h5>
-                                            <a href="#!">
+                                            <Link to="#">
                                                 <h6 className="fs-15 lh-base text-truncate mb-0">350 ml Glass Grocery Container</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -112,9 +113,9 @@ const EcommerceWidgets = () => {
                                         </div>
                                         <div className="pt-3">
                                             <h5 className="text-secondary">$99.94</h5>
-                                            <a href="#!">
+                                            <Link to="#">
                                                 <h6 className="fs-15 lh-base text-truncate mb-0">Fabric Dual Tone Living Room Chair</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -125,9 +126,9 @@ const EcommerceWidgets = () => {
                                         </div>
                                         <div className="pt-3">
                                             <h5 className="text-secondary">$99.94</h5>
-                                            <a href="#!">
+                                            <Link to="#">
                                                 <h6 className="fs-15 lh-base text-truncate mb-0">Crux Motorsports Helmet</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -138,9 +139,9 @@ const EcommerceWidgets = () => {
                                         </div>
                                         <div className="pt-3">
                                             <h5 className="text-secondary">$99.94</h5>
-                                            <a href="#!">
+                                            <Link to="#">
                                                 <h6 className="fs-15 lh-base text-truncate mb-0">Half Sleeve T-Shirts (Blue)</h6>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -228,7 +229,7 @@ const EcommerceWidgets = () => {
                                 </div>
                             </div>
 
-                            <Link to="#!" className="btn btn-soft-danger d-block">Add to Cart</Link>
+                            <Link to="#" className="btn btn-soft-danger d-block">Add to Cart</Link>
 
                         </CardBody>
                     </Card>
@@ -295,7 +296,7 @@ const EcommerceWidgets = () => {
                                 </div>
                             </div>
                 
-                            <button type="button" className="btn btn-success w-100 mt-3" id="confirm-btn" onClick={confirnPayment}>Confirm</button>
+                            <button type="button" className="btn btn-success w-100 mt-3" id="confirm-btn" onClick={confirmPayment}>Confirm</button>
                 
                             <div id="notification-warn" className="position-absolute top-0 start-0 end-0 d-none">
                                 <div className="alert alert-warning" role="alert">
@@ -305,7 +306,7 @@ const EcommerceWidgets = () => {
                 
                             <div className="notification-elem" id="notification-overlay">
                                 <div className="text-center">
-                                <i className="bx bx-party display-4 text-success"></i>
+                                    <i className="bx bx-party display-4 text-success"></i>
                                     <div className="mt-4 pt-2">
                                         <h5 className="mb-1 success-pay">$6,201 Payment Successfully</h5>
                                         <p className="text-muted mx-4">Aww yeah, you successfully read this important message.</p>
@@ -325,7 +326,7 @@ const EcommerceWidgets = () => {
                         <CardBody>
                             <div className="d-flex align-items-center mb-3">
                                 <div className="avatar-sm me-3 flex-shrink-0">
-                                    <div className="avatar-title bg-danger-subtle rounded">
+                                    <div className="avatar-title bg-info-subtle rounded">
                                         <img src={img8} alt="" className="avatar-xs" />
                                     </div>
                                 </div>
@@ -399,7 +400,7 @@ const EcommerceWidgets = () => {
                                 </div>
                             </div>
 
-                            <Link to="#!" className="btn btn-soft-danger d-block">Add to Cart</Link>
+                            <Link to="#" className="btn btn-soft-danger d-block">Add to Cart</Link>
 
                         </CardBody>
                     </Card>

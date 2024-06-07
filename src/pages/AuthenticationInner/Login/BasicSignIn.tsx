@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardBody, Col, Container, Input, Label, Row,Button, FormFeedback, Form } from 'reactstrap';
-import ParticlesAuth from "../ParticlesAuth";
+import { Card, CardBody, Col, Container, Input, Label, Row, Button, FormFeedback, Form } from 'reactstrap';
 
 // Formik validation
 import * as Yup from "yup";
 import { useFormik } from "formik";
 
+import ParticlesAuth from "../ParticlesAuth";
+
 //import images
 import logoLight from "../../../assets/images/logo-light.png";
 
-
 const BasicSignIn = () => {
     document.title = "Basic SignIn | Velzon - React Admin & Dashboard Template";
-    
+
     const [passwordShow, setPasswordShow] = useState<boolean>(false);
 
     const validation: any = useFormik({
@@ -32,11 +32,11 @@ const BasicSignIn = () => {
             console.log("values", values)
         }
     });
-    
+
     return (
         <React.Fragment>
             <ParticlesAuth>
-                <div className="auth-page-content">                
+                <div className="auth-page-content mt-lg-5">
                     <Container>
                         <Row>
                             <Col lg={12}>
@@ -60,7 +60,7 @@ const BasicSignIn = () => {
                                             <p className="text-muted">Sign in to continue to Velzon.</p>
                                         </div>
                                         <div className="p-2 mt-4">
-                                        <Form
+                                            <Form
                                                 onSubmit={(e) => {
                                                     e.preventDefault();
                                                     validation.handleSubmit();

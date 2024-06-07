@@ -1,18 +1,9 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledDropdown,
-} from "reactstrap";
+import { Card, CardBody, CardHeader, Col, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../../Components/Common/ChartsDynamicColor";
 
-const VisitorGraph = ({ dataColors } : any) => {
+const VisitorGraph = ({ dataColors }:any) => {
   var chartTreemapDiffColor = getChartColorsArray(dataColors);
 
   const series = [
@@ -73,7 +64,7 @@ const VisitorGraph = ({ dataColors } : any) => {
       ],
     },
   ];
-  var options : any = {
+  var options:any = {
     legend: {
       show: false,
     },
@@ -101,9 +92,9 @@ const VisitorGraph = ({ dataColors } : any) => {
   };
   return (
     <React.Fragment>
-      <Col xl={8}>
-        <Card>
-          <CardHeader>
+      <Col className="col-xl-8">
+        <Card className="card">
+          <CardHeader className="card-header">
             <div className="d-flex">
               <h5 className="card-title mb-0 flex-grow-1  ">Visitor Graph</h5>
               <div className="flex-shrink-0">
@@ -112,7 +103,7 @@ const VisitorGraph = ({ dataColors } : any) => {
                     className="text-reset dropdown-btn"
                     tag="a"
                     type="a"
-                    to="#"
+                    href="#"
                   >
                     <span className="fw-semibold text-uppercase fs-12">
                       Sort by:{" "}
@@ -123,7 +114,7 @@ const VisitorGraph = ({ dataColors } : any) => {
                     </span>
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-menu-end">
-                    <DropdownItem href="#">hrefday</DropdownItem>
+                    <DropdownItem href="#">Today</DropdownItem>
                     <DropdownItem href="#">Last Week</DropdownItem>
                     <DropdownItem href="#">Last Month</DropdownItem>
                     <DropdownItem href="#">Current Year</DropdownItem>
@@ -132,7 +123,7 @@ const VisitorGraph = ({ dataColors } : any) => {
               </div>
             </div>
           </CardHeader>
-          <CardBody>
+          <CardBody className="card-body">
             <ReactApexChart dir="ltr"
               className="apex-charts"
               series={series}

@@ -2,10 +2,10 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../../../Components/Common/ChartsDynamicColor";
 
-const AppSummaryChart = ({ dataColors } : any) => {
+const AppSummaryChart = ({ dataColors }:any) => {
   var chartDonutBasicColors = getChartColorsArray(dataColors);
   var series = [98, 63, 35];
-  var options : any = {
+  var options:any = {
     labels: ["New Application", "Approved", "Rejected"],
     chart: {
       height: 300,

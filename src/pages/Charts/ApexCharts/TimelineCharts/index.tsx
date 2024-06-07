@@ -8,7 +8,7 @@ import {
     MultiSeries,
     Advanced,
     MultipleSeries,
-    DumbBell
+    Dumbbell
 } from "./TimelineCharts";
 
 
@@ -83,9 +83,9 @@ const TimelineCharts = () => {
                                 <CardHeader>
                                     <h4 className="card-title mb-0">Dumbbell Chart (Horizontal)</h4>
                                 </CardHeader>
-                        
+
                                 <CardBody>
-                                    <DumbBell dataColors='["--vz-primary", "--vz-success"]' />
+                                    <Dumbbell dataColors='["--vz-primary", "--vz-success"]' />
                                 </CardBody>
                             </Card>
                         </Col>

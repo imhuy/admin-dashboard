@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Card, CardBody, Col, Container, DropdownItem, DropdownMenu, DropdownToggle, FormFeedback, Input, Modal, ModalBody, ModalHeader, Row, UncontrolledDropdown } from 'reactstrap';
-// import SimpleBar from 'simplebar-react';
+import SimpleBar from 'simplebar-react';
 import { ToastContainer } from 'react-toastify';
 import SimpleDonutCharts from './FileManagerCharts';
 import DeleteModal from '../../Components/Common/DeleteModal';
@@ -24,7 +24,6 @@ import * as  Yup from "yup";
 import { useFormik } from "formik";
 import { Link } from 'react-router-dom';
 import { createSelector } from 'reselect';
-import SimpleBar from 'simplebar-react';
 
 
 const FileManager = () => {
@@ -44,6 +43,7 @@ const FileManager = () => {
     const {
         folders, files
     } = useSelector(selectLayoutProperties);
+
 
     const [deleteModal, setDeleteModal] = useState<boolean>(false);
 
@@ -123,7 +123,7 @@ const FileManager = () => {
     const [modalFile, setModalFile] = useState<boolean>(false);
 
 
-    const [fileList, setFileList] = useState(files);
+    const [fileList, setFileList] = useState<any>(files);
 
     useEffect(() => {
         dispatch(onGetFiles());
@@ -343,37 +343,37 @@ const FileManager = () => {
                                             <div className="collapse show" id="collapseExample">
                                                 <ul className="sub-menu list-unstyled">
                                                     <li>
-                                                        <a href="#!">Assets</a>
+                                                        <Link to="#">Assets</Link>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Marketing</a>
+                                                        <Link to="#">Marketing</Link>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Personal</a>
+                                                        <Link to="#">Personal</Link>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Projects</a>
+                                                        <Link to="#">Projects</Link>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Templates</a>
+                                                        <Link to="#">Templates</Link>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li>
-                                            <a href="#!" className={filterActive === "Documents" ? "active" : ""} onClick={() => fileCategory("Documents", "Documents")}><i className="ri-file-list-2-line align-bottom me-2"></i> <span className="file-list-link">Documents</span></a>
+                                            <Link to="#" className={filterActive === "Documents" ? "active" : ""} onClick={() => fileCategory("Documents", "Documents")}><i className="ri-file-list-2-line align-bottom me-2"></i> <span className="file-list-link">Documents</span></Link>
                                         </li>
                                         <li>
-                                            <a href="#!" className={filterActive === "Media" ? "active" : ""} onClick={() => fileCategory("Media", "Media")}><i className="ri-image-2-line align-bottom me-2"></i> <span className="file-list-link">Media</span></a>
+                                            <Link to="#" className={filterActive === "Media" ? "active" : ""} onClick={() => fileCategory("Media", "Media")}><i className="ri-image-2-line align-bottom me-2"></i> <span className="file-list-link">Media</span></Link>
                                         </li>
                                         <li>
-                                            <a href="#!" className={filterActive === "Recents" ? "active" : ""} onClick={() => fileCategory("Media", "Recents")}><i className="ri-history-line align-bottom me-2"></i> <span className="file-list-link">Recent</span></a>
+                                            <Link to="#" className={filterActive === "Recents" ? "active" : ""} onClick={() => fileCategory("Media", "Recents")}><i className="ri-history-line align-bottom me-2"></i> <span className="file-list-link">Recent</span></Link>
                                         </li>
                                         <li>
-                                            <a href="#!" className={filterActive === "Important" ? "active" : ""} onClick={() => fileCategory("Documents", "Important")}><i className="ri-star-line align-bottom me-2"></i> <span className="file-list-link">Important</span></a>
+                                            <Link to="#" className={filterActive === "Important" ? "active" : ""} onClick={() => fileCategory("Documents", "Important")}><i className="ri-star-line align-bottom me-2"></i> <span className="file-list-link">Important</span></Link>
                                         </li>
                                         <li>
-                                            <a href="#!" className={filterActive === "Deleted" ? "active" : ""} onClick={() => fileCategory("Deleted", "Deleted")}><i className="ri-delete-bin-line align-bottom me-2"></i> <span className="file-list-link">Deleted</span></a>
+                                            <Link to="#" className={filterActive === "Deleted" ? "active" : ""} onClick={() => fileCategory("Deleted", "Deleted")}><i className="ri-delete-bin-line align-bottom me-2"></i> <span className="file-list-link">Deleted</span></Link>
                                         </li>
                                     </ul>
                                 </SimpleBar>
@@ -386,7 +386,7 @@ const FileManager = () => {
                                         </div>
                                         <div className="flex-grow-1 ms-3 overflow-hidden">
                                             <div className="progress mb-2 progress-sm">
-                                                <div className="progress-bar bg-success" role="progressbar" style={{ width: "25%" }}></div>
+                                                <div className="progress-bar bg-success" role="progressbar" style={{ width: "25%" }} ></div>
                                             </div>
                                             <span className="text-muted fs-12 d-block text-truncate"><b>47.52</b>GB used of <b>119</b>GB</span>
                                         </div>
@@ -397,7 +397,7 @@ const FileManager = () => {
                         <div className="file-manager-content w-100 p-3 py-0">
                             <div className="mx-n3 pt-4 px-4 file-manager-content-scroll overflow-x-hidden overflow-y-auto">
                                 <div id="folder-list" className="mb-2">
-                                    <Row className="justify-content-beetwen g-2 mb-3 mb-4">
+                                    <Row className="justify-content-beetwen g-2 mb-4">
 
                                         <Col>
                                             <div className="d-flex align-items-center">
@@ -415,21 +415,21 @@ const FileManager = () => {
                                             <div className="d-flex gap-2 align-items-start">
                                                 <select className="form-control" data-choices data-choices-search-false name="choices-single-default" id="file-type">
                                                     <option value="">File Type</option>
-                                                    <option value="All" defaultValue="">All</option>
+                                                    <option value="All" defaultValue=''>All</option>
                                                     <option value="Video">Video</option>
                                                     <option value="Images">Images</option>
                                                     <option value="Music">Music</option>
                                                     <option value="Documents">Documents</option>
                                                 </select>
 
-                                                <button className="btn btn-primary text-nowrap create-folder-modal flex-shrink-0" onClick={() => handleFolderClicks()}><i className="ri-add-line align-bottom me-1"></i> Create Folders</button>
+                                                <button className="btn btn-success text-nowrap create-folder-modal flex-shrink-0" onClick={() => handleFolderClicks()}><i className="ri-add-line align-bottom me-1"></i> Create Folders</button>
                                             </div>
                                         </Col>
                                     </Row>
 
                                     <Row id="folderlist-data">
 
-                                        {(folders || []).map((item: any, key: any) => (
+                                        {(folders || []).map((item: any, key: number) => (
                                             <Col xxl={3} className="col-6 folder-card" key={key}>
                                                 <Card className="bg-light shadow-none" id={"folder-" + item.id}>
                                                     <CardBody>
@@ -440,7 +440,7 @@ const FileManager = () => {
                                                             </div>
 
                                                             <UncontrolledDropdown>
-                                                                <DropdownToggle tag="button" className="btn btn-ghost-primary btn-icon btn-sm dropdown shadow-none">
+                                                                <DropdownToggle tag="button" className="btn btn-ghost-primary btn-icon btn-sm dropdown">
                                                                     <i className="ri-more-2-fill fs-16 align-bottom" />
                                                                 </DropdownToggle>
                                                                 <DropdownMenu className="dropdown-menu-end">
@@ -486,7 +486,7 @@ const FileManager = () => {
                                                 </tr>
                                             </thead>
                                             <tbody id="file-list">
-                                                {(fileList || []).map((item: any, key: any) => (
+                                                {(fileList || []).map((item: any, key: number) => (
                                                     <tr key={key}>
                                                         <td>
                                                             <input className="form-control filelist-id" type="hidden" value="1" id="filelist-1" />
@@ -737,7 +737,7 @@ const FileManager = () => {
             </div>
 
             {/* Folder Modal */}
-            <Modal className="fade zoomIn" isOpen={modalFolder} toggle={() => setModalFolder(!modalFolder)} id="createFolderModal" modalClassName="zoomIn" centered tabIndex={1}>
+            <Modal className="fade zoomIn" isOpen={modalFolder} toggle={() => setModalFolder(!modalFolder)} id="createFolderModal" modalClassName="zoomIn" centered tabIndex={-1}>
                 <ModalHeader className="p-3 bg-success-subtle" id="createFolderModalLabel" toggle={() => setModalFolder(!modalFolder)}> {isEdit ? "Folder Rename" : "Create Folder"} </ModalHeader>
                 <ModalBody>
                     <form autoComplete="off" className="needs-validation createfolder-form" id="createfolder-form"
@@ -764,6 +764,7 @@ const FileManager = () => {
                                 <FormFeedback type="invalid">{folderValidation.errors.folderName}</FormFeedback>
                             ) : null}
                         </div>
+
                         {!isEdit && <div className="mb-4">
                             <Row>
                                 <Col>
@@ -802,6 +803,7 @@ const FileManager = () => {
                                 </Col>
                             </Row>
                         </div>}
+
                         <div className="hstack gap-2 justify-content-end">
                             <button type="button" className="btn btn-ghost-success" onClick={() => setModalFolder(false)}><i className="ri-close-line align-bottom"></i> Close</button>
                             <button type="submit" className="btn btn-primary" id="addNewFolder">{isEdit ? "Save" : "Add Folder"}</button>
@@ -811,7 +813,7 @@ const FileManager = () => {
             </Modal>
 
             {/* File Modal */}
-            <Modal id="createFileModal" isOpen={modalFile} toggle={fileToggle} modalClassName="zoomIn" centered tabIndex={1}>
+            <Modal id="createFileModal" isOpen={modalFile} toggle={fileToggle} modalClassName="zoomIn" centered tabIndex={-1}>
                 <ModalHeader toggle={fileToggle} className="p-3 bg-success-subtle">{!!isEdit ? "File Rename" : "Create File"}</ModalHeader>
                 <ModalBody>
                     <form className="needs-validation createfile-form" id="createfile-form"

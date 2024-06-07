@@ -15,7 +15,7 @@ const Collections = () => {
                     <Row className="g-4 mb-3 align-items-center">
                         <Col className="col-sm-auto">
                             <div>
-                                <h5 className="mb-0 fw-semibold">Top Collections</h5>
+                                <h5 className="mb-0">Top Collections</h5>
                             </div>
                         </Col>
                         <Col className="col-sm">
@@ -27,7 +27,7 @@ const Collections = () => {
                                 <div className="choices">
                                     <select className="form-control w-md">
                                         <option value="All">All</option>
-                                        <option value="Today" defaultValue="Today">Today</option>
+                                        <option value="Today" defaultValue=''>Today</option>
                                         <option value="Yesterday">Yesterday</option>
                                         <option value="Last 7 Days">Last 7 Days</option>
                                         <option value="Last 30 Days">Last 30 Days</option>
@@ -41,16 +41,16 @@ const Collections = () => {
 
                     <Row>
 
-                        {topCollection.map((item : any, key : any) => (<Col xl={3} md={4} sm={6} key={key}>
+                        {topCollection.map((item, key) => (<Col xl={3} md={4} sm={6} key={key}>
                             <Card>
                                 <CardBody>
                                     <Row className="g-1 mb-3">
-                                        {item.subItem.map((item : any, key : any) => (<Col className="col-6" key={key}>
-                                            {item.isChildren.map((item : any, key : any) => (<img src={item.img} alt="" className={"img-fluid rounded " + item.imgClass} key={key} />))}
+                                        {item.subItem.map((item, key) => (<Col className="col-6" key={key}>
+                                            {item.isChildren.map((item, key) => (<img src={item.img} alt="" className={"img-fluid rounded " + item.imgClass} key={key} />))}
                                         </Col>))}
                                     </Row>
-                                    <Link to="#!" className="float-end"> View All <i className="ri-arrow-right-line align-bottom"></i></Link>
-                                    <h5 className="mb-0 fs-16"><Link to="#!">{item.category} <span className="badge bg-success-subtle text-success">{item.quantity}</span></Link></h5>
+                                    <Link to="#" className="float-end"> View All <i className="ri-arrow-right-line align-bottom"></i></Link>
+                                    <h5 className="mb-0 fs-16"><Link to="#">{item.category} <span className="badge bg-success-subtle text-success">{item.quantity}</span></Link></h5>
                                 </CardBody>
                             </Card>
                         </Col>))}

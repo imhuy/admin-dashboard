@@ -3,7 +3,7 @@ import ReactApexChart from "react-apexcharts";
 
 import getChartColorsArray from "../../../../Components/Common/ChartsDynamicColor";
 
-const RangeAreaChartCode = ({ dataColors } : any) => {
+const RangeAreaChartCode = ({ dataColors }: any) => {
     var rangeAreaBasicColors = getChartColorsArray(dataColors);
     const series = [
         {
@@ -61,7 +61,7 @@ const RangeAreaChartCode = ({ dataColors } : any) => {
         }
     ];
 
-    const options : any = {
+    const options: any = {
         chart: {
             height: 350,
             type: 'rangeArea'
@@ -83,7 +83,7 @@ const RangeAreaChartCode = ({ dataColors } : any) => {
         },
         yaxis: {
             labels: {
-                formatter: (val : any) => {
+                formatter: (val: any) => {
                     return val + '°C'
                 }
             }
@@ -91,13 +91,15 @@ const RangeAreaChartCode = ({ dataColors } : any) => {
     }
 
     return (
-        <ReactApexChart dir="ltr" className="apex-charts"
-            series={series}
+        <ReactApexChart
+            className="apex-charts"
             options={options}
+            series={series}
             type="rangeArea"
             height={350}
         />
     );
+    
 }
 
 const RangeAreaBasicChartCode = () => {
@@ -275,7 +277,7 @@ const RangeAreaBasicChartCode = () => {
             ]
         }
     ];
-    const options : any = {
+    const options: any = {
         chart: {
             height: 350,
             type: 'rangeArea',
@@ -309,16 +311,18 @@ const RangeAreaBasicChartCode = () => {
             hover: {
                 sizeOffset: 5
             }
-        }
+        },
     }
 
     return (
-        <ReactApexChart dir="ltr" className="apex-charts"
-            series={series}
-            options={options}
-            type="rangeArea"
-            height={350}
-        />
+        <React.Fragment>
+            <ReactApexChart
+                series={series}
+                options={options}
+                type="rangeArea"
+                height={350}
+            />
+        </React.Fragment>
     );
 
 }

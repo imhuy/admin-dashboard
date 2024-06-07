@@ -84,7 +84,7 @@ const PolarMonochrome = () => {
             series={series}
             options={options}
             type="polarArea"
-            height={310}
+            height={333}
         />
     )
 }

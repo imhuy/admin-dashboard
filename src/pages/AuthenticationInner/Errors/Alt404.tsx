@@ -6,8 +6,6 @@ const Alt404 = () => {
     document.title = "404 Error Alt | Velzon - React Admin & Dashboard Template";
     return (
         <React.Fragment>
-
-
             <div className="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">
                 <div className="bg-overlay"></div>
                 <div className="auth-page-content overflow-hidden pt-lg-5">

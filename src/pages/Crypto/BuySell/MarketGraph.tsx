@@ -4,7 +4,7 @@ import ReactApexChart from "react-apexcharts";
 
 import getChartColorsArray from "../../../Components/Common/ChartsDynamicColor";
 
-const MarketGraph = ({ dataColors } : any) => {
+const MarketGraph = ({ dataColors }:any) => {
     var MarketchartColors = getChartColorsArray(dataColors);
     const series = [{
         data: [{
@@ -249,7 +249,7 @@ const MarketGraph = ({ dataColors } : any) => {
         },
         ]
     }];
-    var options : any = {
+    var options:any = {
         chart: {
             type: 'candlestick',
             height: 360,
@@ -273,7 +273,7 @@ const MarketGraph = ({ dataColors } : any) => {
                 enabled: true
             },
             labels: {
-                formatter: function (value : any) {
+                formatter: function (value:any) {
                     return "$" + value;
                 }
             }
@@ -281,7 +281,7 @@ const MarketGraph = ({ dataColors } : any) => {
         tooltip: {
             shared: true,
             y: [{
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0);
                     }
@@ -289,7 +289,7 @@ const MarketGraph = ({ dataColors } : any) => {
 
                 }
             }, {
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return "$" + y.toFixed(2) + "k";
                     }
@@ -297,7 +297,7 @@ const MarketGraph = ({ dataColors } : any) => {
 
                 }
             }, {
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0) + " Sales";
                     }
@@ -314,19 +314,19 @@ const MarketGraph = ({ dataColors } : any) => {
                     <CardHeader className="border-0 align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Market Graph</h4>
                         <div>
-                            <button type="button" className="btn btn-soft-secondary btn-sm shadow-none me-1">
+                            <button type="button" className="btn btn-soft-secondary btn-sm me-1">
                                 1H
                             </button>
-                            <button type="button" className="btn btn-soft-secondary btn-sm shadow-none me-1">
+                            <button type="button" className="btn btn-soft-secondary btn-sm me-1">
                                 7D
                             </button>
-                            <button type="button" className="btn btn-soft-secondary btn-sm shadow-none me-1">
+                            <button type="button" className="btn btn-soft-secondary btn-sm me-1">
                                 1M
                             </button>
-                            <button type="button" className="btn btn-soft-secondary btn-sm shadow-none me-1">
+                            <button type="button" className="btn btn-soft-secondary btn-sm me-1">
                                 1Y
                             </button>
-                            <button type="button" className="btn btn-soft-primary btn-sm shadow-none">
+                            <button type="button" className="btn btn-soft-primary btn-sm">
                                 ALL
                             </button>
                         </div>

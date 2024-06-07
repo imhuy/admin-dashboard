@@ -14,12 +14,12 @@ const CoverPasswCreate = () => {
     const [passwordShow, setPasswordShow] = useState<boolean>(false);
     const [confrimPasswordShow, setConfrimPasswordShow] = useState<boolean>(false);   
 
-    const validation = useFormik({
+    const validation :any= useFormik({
         enableReinitialize: true,
 
         initialValues: {
             password: "",
-            confirm_password: "",
+            confrim_password: "",
         },
         validationSchema: Yup.object({
             password: Yup.string()
@@ -28,7 +28,7 @@ const CoverPasswCreate = () => {
                 .matches(RegExp('(.*[A-Z].*)'), 'At least uppercase letter')
                 .matches(RegExp('(.*[0-9].*)'), 'At least one number')
                 .required("This field is required"),
-            confirm_password: Yup.string()
+                confirm_password: Yup.string()
                 .oneOf([Yup.ref('password'), ""],)
                 .required('Confirm Password is required')
         }),
@@ -85,14 +85,14 @@ const CoverPasswCreate = () => {
                                                                     className="form-control pe-5 password-input"
                                                                     placeholder="Confirm password"
                                                                     id="confirm-password-input"
-                                                                    name="confirm_password"
-                                                                    value={validation.values.confirm_password}
+                                                                    name="confrim_password"
+                                                                    value={validation.values.confrim_password}
                                                                     onBlur={validation.handleBlur}
                                                                     onChange={validation.handleChange}
-                                                                    invalid={validation.errors.confirm_password && validation.touched.confirm_password ? true : false}
+                                                                    invalid={validation.errors.confrim_password && validation.touched.confrim_password ? true : false}
                                                                 />
-                                                                {validation.errors.confirm_password && validation.touched.confirm_password ? (
-                                                                    <FormFeedback type="invalid">{validation.errors.confirm_password}</FormFeedback>
+                                                                {validation.errors.confrim_password && validation.touched.confrim_password ? (
+                                                                    <FormFeedback type="invalid">{validation.errors.confrim_password}</FormFeedback>
                                                                 ) : null}
                                                                 <Button color="link" onClick={() => setConfrimPasswordShow(!confrimPasswordShow)} className="position-absolute end-0 top-0 text-decoration-none text-muted password-addon">
                                                                 <i className="ri-eye-fill align-middle"></i></Button>

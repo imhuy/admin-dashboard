@@ -103,12 +103,13 @@ const defaultevent = [
     location: "N.A."
   }
 ];
+
 const events = [
   {
     id: 153,
     title: "All Day Event",
     start: new Date(y, m, 1),
-    className: "bg-primary-subtle",
+    className: "bg-primary-subtle text-primary",
     location: "San Francisco, US",
     allDay: false,
     extendedProps: {
@@ -123,7 +124,7 @@ const events = [
     start: new Date(y, m, d - 5),
     end: new Date(y, m, d - 2),
     allDay: false,
-    className: "bg-warning-subtle",
+    className: "bg-warning-subtle text-warning",
     location: "San Francisco, US",
     extendedProps: {
       department: "Long Event",
@@ -137,7 +138,7 @@ const events = [
     start: new Date(y, m, d + 22, 20, 0),
     end: new Date(y, m, d + 24, 16, 0),
     allDay: false,
-    className: "bg-danger-subtle",
+    className: "bg-danger-subtle text-danger",
     location: "California, US",
     extendedProps: {
       department: "Meeting with Alexis",
@@ -151,7 +152,7 @@ const events = [
     start: new Date(y, m, d + 4, 16, 0),
     end: new Date(y, m, d + 9, 16, 0),
     allDay: false,
-    className: "bg-primary-subtle",
+    className: "bg-primary-subtle text-primary",
     location: "Las Vegas, US",
     extendedProps: {
       department: "Repeating Event",
@@ -164,7 +165,7 @@ const events = [
     title: "Meeting With Designer",
     start: new Date(y, m, d, 12, 30),
     allDay: false,
-    className: "bg-success-subtle",
+    className: "bg-success-subtle text-success",
     location: "Head Office, US",
     extendedProps: {
       department: "Meeting",
@@ -177,7 +178,7 @@ const events = [
     start: new Date(y, m, d + 9),
     end: new Date(y, m, d + 11),
     allDay: false,
-    className: "bg-danger-subtle",
+    className: "bg-danger-subtle text-danger",
     location: "Head Office, US",
     extendedProps: {
       department: "Lunch",
@@ -189,7 +190,7 @@ const events = [
     title: "Birthday Party",
     start: new Date(y, m, d + 1, 19, 0),
     allDay: false,
-    className: "bg-success-subtle",
+    className: "bg-success-subtle text-success",
     location: "Los Angeles, US",
     extendedProps: {
       department: "Birthday Party",
@@ -203,7 +204,7 @@ const events = [
     start: new Date(y, m, 28),
     end: new Date(y, m, 29),
     url: "http://google.com/",
-    className: "bg-dark-subtle",
+    className: "bg-dark-subtle text-body",
   },
   {
     id: 456,
@@ -211,7 +212,7 @@ const events = [
     start: new Date(y, m, d + 23, 20, 0),
     end: new Date(y, m, d + 24, 16, 0),
     allDay: false,
-    className: "bg-info-subtle",
+    className: "bg-info-subtle text-info",
     location: "Head Office, US",
     extendedProps: {
       department: "Discussion",

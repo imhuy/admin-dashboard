@@ -9,7 +9,7 @@ const forgotPasswordSlice = createSlice({
   name: "forgotpwd",
   initialState,
   reducers: {
-      userForgetPasswordSuccess(state , action ) {
+      userForgetPasswordSuccess(state, action) {
           state.forgetSuccessMsg = action.payload
       },
       userForgetPasswordError(state, action) {

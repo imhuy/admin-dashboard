@@ -15,7 +15,10 @@ import {
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import { Link } from "react-router-dom";
 
-import Slider from "react-rangeslider"
+// RangeSlider
+
+import Nouislider from "nouislider-react";
+import "nouislider/distribute/nouislider.css";
 
 import { expolreNow } from "../../../common/data/index";
 
@@ -23,7 +26,7 @@ const ExploreNow = () => {
     document.title = "Explore Now | Velzon - React Admin & Dashboard Template";
     const [NFTList, setNFTList] = useState(expolreNow);
 
-    const favouriteBtn = (ele: any) => {
+    const favouriteBtn = (ele:any) => {
         if (ele.closest("button").classList.contains("active")) {
             ele.closest("button").classList.remove("active");
         } else {
@@ -31,27 +34,34 @@ const ExploreNow = () => {
         }
     };
 
+    const onUpdate = (value:any) => {
+        setNFTList(
+            expolreNow.filter(
+                (NFT) => NFT.price >= value[0] && NFT.price <= value[1],
+            )
+        );
+    };
 
-    const category = (e: any) => {
+    const category = (e:any) => {
         setNFTList(
             expolreNow.filter((item) => item.category === e));
     };
 
-    const fileType = (e: any) => {
+    const fileType = (e:any) => {
         setNFTList(
             expolreNow.filter((item) => item.fileType === e));
     };
 
-    const salesType = (e: any) => {
+    const salesType = (e:any) => {
         setNFTList(
             expolreNow.filter((item) => item.sales === e));
     };
 
     const searchNFT = () => {
-        var searchProductList: any = document.getElementById("searchProductList");
+        var searchProductList:any = document.getElementById("searchProductList") ;
         var inputVal = searchProductList.value.toLowerCase();
-        function filterItems(arr: any, query: any) {
-            return arr.filter(function (el: any) {
+        function filterItems(arr:any, query:any) {
+            return arr.filter(function (el:any) {
                 return el.title.toLowerCase().indexOf(query.toLowerCase()) !== -1;
             });
         }
@@ -70,14 +80,6 @@ const ExploreNow = () => {
         setNFTList(filterData);
     };
 
-      // Slider
-  const [reverseValue, setReverseValue] = useState(1000);
-
-  const handleChangeReverse = (newValue: any) => {
-    setReverseValue(newValue);
-  }
-
-
     return (
         <React.Fragment>
             <div className="page-content">
@@ -88,7 +90,7 @@ const ExploreNow = () => {
                             <Card>
                                 <CardHeader className="border-0">
                                     <div className="d-flex align-items-center">
-                                        <h5 className="card-title mb-0 fw-semibold flex-grow-1">
+                                        <h5 className="card-title mb-0 flex-grow-1">
                                             Explore Product
                                         </h5>
                                         <div>
@@ -177,13 +179,14 @@ const ExploreNow = () => {
                                             <Col>
                                                 <h6 className="text-uppercase fs-12 mb-4">Price</h6>
 
-                                                <Slider
-                                                    min={0}
-                                                    max={2000}
-                                                    value={reverseValue}
-                                                    orientation='horizontal'
-                                                    onChange={handleChangeReverse}
-                                                    style={{ backgroundColor: "#7cb342" }}
+                                                <Nouislider
+                                                    range={{ min: 0, max: 2000 }}
+                                                    tooltips={true}
+                                                    start={[0, 1000]}
+                                                    connect
+                                                    // className="slider"
+                                                    // id="range-product-price"
+                                                    onSlide={onUpdate}
                                                 />
                                             </Col>
                                         </Row>
@@ -220,7 +223,7 @@ const ExploreNow = () => {
                         id="explorecard-list"
                     >
 
-                        {NFTList.map((item, key) => (<Col className="list-element" key={key}>
+                        {NFTList.map((item:any, key:any) => (<Col className="list-element" key={key}>
                             <Card className="explore-box card-animate">
                                 <div className="explore-place-bid-img">
                                     <input type="hidden" className="form-control" id="1" />
@@ -233,7 +236,7 @@ const ExploreNow = () => {
                                     <div className="bg-overlay"></div>
                                     <div className="place-bid-btn">
 
-                                        <Link to="#!" className="btn btn-success">
+                                        <Link to="#" className="btn btn-success">
                                             <i className="ri-auction-fill align-bottom me-1"></i> Place
                                             Bid
                                         </Link>
@@ -286,7 +289,7 @@ const ExploreNow = () => {
                         <h5 className="mt-4">Sorry! No Result Found</h5>
                     </div>
                     <div className="text-center mb-3">
-                        <button className=" btn btn-link shadow-none text-success mt-2-success mt-2" id="loadmore">
+                        <button className="btn btn-link text-success mt-2" id="loadmore">
                             <i className="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i>
                             Load More
                         </button>

@@ -35,7 +35,7 @@ const slideOnlyCode =
 const SlideOnlyExample = () => (
     <PrismCode
         code={slideOnlyCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -73,7 +73,7 @@ const withControlCode =
 const WithControlExample = () => (
     <PrismCode
         code={withControlCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -110,7 +110,7 @@ const withIndicatorCode =
 const WithIndicatorExample = () => (
     <PrismCode
         code={withIndicatorCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -147,7 +147,7 @@ const withCaptionCode =
 const WithCaptionExample = () => (
     <PrismCode
         code={withCaptionCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -184,7 +184,7 @@ const crossFadeCode =
 const CrossFadeExample = () => (
     <PrismCode
         code={crossFadeCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -222,7 +222,7 @@ const induvidualIntervalCode =
 const InduvidualIntervalExample = () => (
     <PrismCode
         code={induvidualIntervalCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -261,7 +261,7 @@ const disableTouchCode =
 const DisableTouchExample = () => (
     <PrismCode
         code={disableTouchCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -299,7 +299,7 @@ const darkVariantCode =
 const DarkVariantExample = () => (
     <PrismCode
         code={darkVariantCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

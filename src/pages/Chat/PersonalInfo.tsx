@@ -14,7 +14,7 @@ import Img9 from "../../assets/images/small/img-9.jpg";
 import dummyImage from "../../assets/images/users/user-dummy-img.jpg";
 import { attachements } from "../../common/data/chat";
 
-const Attachements = (props : any) => {
+const Attachements = (props:any) => {
   return (
     <div className="border rounded border-dashed p-2">
       <div className="d-flex align-items-center">
@@ -70,12 +70,12 @@ const Attachements = (props : any) => {
   );
 };
 
-const PersonalInfo = ({ show, onCloseClick, currentuser, cuurentiseImg } : any) => {
+const PersonalInfo = ({ show, onCloseClick, currentuser, cuurentiseImg }:any) => {
   const [menu1, setMenu1] = useState<boolean>(false);
   const [menu2, setMenu2] = useState<boolean>(false);
 
   return (
-    <Offcanvas fade
+    <Offcanvas
       isOpen={show}
       direction="end"
       className="offcanvas-end border-0"

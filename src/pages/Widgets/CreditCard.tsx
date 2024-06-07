@@ -168,14 +168,16 @@ const CreditCard = () => {
                             <h5 className="card-title mb-0">Credit Card - card js plugin</h5>
                         </div>
                         <div className="card-body">
-                            <div className="card-wrapper mb-3">
-
+                            <div className="card-wrapper">
                                 <Cards
                                     cvc={state.cvc}
                                     expiry={state.expiry}
                                     focused={state.focus}
                                     name={state.cardHolder}
                                     number={state.cardNumber}
+                                    // styles={{
+                                    //     cardColor: cardColor,
+                                    //   }}
                                 />
                             </div>
             
@@ -200,8 +202,8 @@ const CreditCard = () => {
                                                         datePattern: ['m', 'y']
                                                     }}
                                                     value={state.expiry}
-                                                    name="cvc"
-                                                    onChange={(e : any) => onChangeHandler(e, 'expiry')}
+                                                    name="expiry"
+                                                    onChange={(e: any) => onChangeHandler(e, 'expiry')}
                                                     onFocus={(e : any) => handleInputFocus(e)}
                                                     className="form-control"
                                                     id="card-cvc-input"
@@ -211,7 +213,7 @@ const CreditCard = () => {
                                         <Col sm={6}>
                                             <div className="mb-3">
                                                 <label htmlFor="card-cvc-input" className="form-label">CVC</label>
-                                                <input onFocus={(e) => handleInputFocus(e)} onChange={(e : any) => onChangeHandler(e, 'cvc')} name='cvc' className="form-control" placeholder="CVC" maxLength={3} type="text" id="card-cvc-input" />
+                                                <input onFocus={(e) => handleInputFocus(e)} onChange={(e) => onChangeHandler(e, 'cvc')} name='cvc' className="form-control" placeholder="CVC" maxLength={3} type="text" id="card-cvc-input" />
                                             </div>
                                         </Col>
                                     </Row>

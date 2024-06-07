@@ -15,22 +15,36 @@ const Widgets1 = () => {
         <React.Fragment>
             <Col lg={12}>
                 <Swiper
-                    slidesPerView={5}
+                    slidesPerView={1}
                     spaceBetween={24}
                     mousewheel={true}
                     autoplay={{
                         delay: 2000,
                         disableOnInteraction: false,
                     }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                        },
+                        1600: {
+                            slidesPerView: 5,
+                        },
+                    }}
                     modules={[Autoplay, Mousewheel]}
                     className="cryptoSlider">
 
-                    {(cryptoSlider || []).map((item : any, key : any) => (
+                    {(cryptoSlider || []).map((item, key) => (
                         <SwiperSlide key={key}>
                             <Card>
                                 <CardBody>
                                     <div className="float-end">
-                                        <UncontrolledDropdown direction='start'>
+                                        <UncontrolledDropdown >
                                             <DropdownToggle className="text-reset" tag="a" role="button">
                                                 <span className="text-muted fs-18"><i className="mdi mdi-dots-horizontal"></i></span>
                                             </DropdownToggle>

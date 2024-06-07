@@ -4,7 +4,7 @@ import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../../../Components/Common/ChartsDynamicColor";
 
 // Candlestick Chart 
-const Basic = ({ dataColors } : any) => {
+const Basic = ({ dataColors }: any) => {
   var chartBoxBasicColors = getChartColorsArray(dataColors);
   const series = [
     {
@@ -64,6 +64,9 @@ const Basic = ({ dataColors } : any) => {
         },
       },
     },
+    stroke: {
+      colors: [chartBoxBasicColors[2]]
+  }
   };
 
   return (
@@ -80,7 +83,7 @@ const Basic = ({ dataColors } : any) => {
 };
 
 // Scatter Chart
-const Scatter = ({ dataColors } : any) => {
+const Scatter = ({ dataColors }: any) => {
   var chartBoxBasicColors = getChartColorsArray(dataColors);
   const series = [
     {
@@ -193,7 +196,7 @@ const Scatter = ({ dataColors } : any) => {
 };
 
 // Horizontal BoxPlot
-const Horizontal = ({ dataColors } : any) => {
+const Horizontal = ({ dataColors }: any) => {
   var chartBoxBasicColors = getChartColorsArray(dataColors);
   const series = [
     {

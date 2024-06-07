@@ -64,7 +64,7 @@ const RecentActivity = () => {
                                         </span>
                                     </div>
                                     <div className="flex-grow-1 ms-3">
-                                        <h6 className="fs-14 mb-1">Sent Eathereum</h6>
+                                        <h6 className="fs-14 mb-1">Sent Ethereum</h6>
                                         <p className="text-muted fs-12 mb-0">
                                             <i className="mdi mdi-circle-medium text-warning fs-15 align-middle"></i>
                                             Sofia Cunha
@@ -152,7 +152,7 @@ const RecentActivity = () => {
                                         </span>
                                     </div>
                                     <div className="flex-grow-1 ms-3">
-                                        <h6 className="fs-14 mb-1">Sent Eathereum</h6>
+                                        <h6 className="fs-14 mb-1">Sent Ethereum</h6>
                                         <p className="text-muted fs-12 mb-0">
                                             <i className="mdi mdi-circle-medium text-warning fs-15 align-middle"></i>
                                             Sofia Cunha

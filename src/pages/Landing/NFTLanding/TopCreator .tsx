@@ -1,8 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardBody, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
-
-import {topCreatorData} from "../../../common/data"
+import { topCreatorData } from '../../../common/data';
 
 const TopCreator = () => {
     
@@ -19,7 +18,7 @@ const TopCreator = () => {
                         </Col>
                     </Row>
                     <Row>
-                    {topCreatorData.map((item : any, key : any) => (
+                    {topCreatorData.map((item, key) => (
                         <Col key={key} xl={4} md={6}>
                             <Card>
                                 <CardBody>

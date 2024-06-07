@@ -14,7 +14,7 @@ fullSymbol="mdi mdi-star text-warning "
 const BasicRaterExample = () => (
     <PrismCode
         code={basicRaterCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -33,7 +33,7 @@ fullSymbol="mdi mdi-star text-warning "
 const RaterWithStepExample = () => (
     <PrismCode
         code={raterWithStepCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -51,7 +51,7 @@ fullSymbol="mdi mdi-star text-warning "
 const CustomMsgExample = () => (
     <PrismCode
         code={customMsgCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -72,7 +72,7 @@ readonly
 const ReadOnlyRaterExample = () => (
     <PrismCode
         code={readOnlyRaterCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -94,7 +94,7 @@ onChange={(customize) => setcustomize(customize)}
 const OnHoverExample = () => (
     <PrismCode
         code={onHoverCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -115,7 +115,7 @@ onHover={() => setreset("mdi mdi-star text-warning")}
 const ReasetRaterExample = () => (
     <PrismCode
         code={reasetRaterCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

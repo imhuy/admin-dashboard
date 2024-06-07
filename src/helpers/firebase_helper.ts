@@ -1,6 +1,4 @@
 import firebase from 'firebase/compat/app';
-
-// Add the Firebase products that you want to use
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
@@ -9,7 +7,7 @@ class FirebaseAuthBackend {
     if (firebaseConfig) {
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      firebase.auth().onAuthStateChanged(user => {
+      firebase.auth().onAuthStateChanged((user: firebase.User | null) => {
         if (user) {
           sessionStorage.setItem("authUser", JSON.stringify(user));
         } else {
@@ -19,9 +17,6 @@ class FirebaseAuthBackend {
     }
   }
 
-  /**
-   * Registers the user with given details
-   */
   registerUser = (email: any, password: any) => {
     return new Promise((resolve, reject) => {
       firebase
@@ -38,28 +33,29 @@ class FirebaseAuthBackend {
     });
   };
 
-  /**
-   * Registers the user with given details
-   */
-  editProfileAPI = (email: any, password: any) => {
+  editProfileAPI = (username: any, idx: any) => {
     return new Promise((resolve, reject) => {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(
-          user => {
-            resolve(firebase.auth().currentUser);
-          },
-          error => {
-            reject(this._handleError(error));
-          }
-        );
-    });
-  };
+      const currentUser = firebase.auth().currentUser;
 
-  /**
-   * Login user with given details
-   */
+      if (currentUser) {
+        // Update the display name        
+        currentUser.updateProfile({
+          displayName: username
+        })
+          .then(() => {
+            const data = (currentUser as any).multiFactor.user.displayName;
+
+            resolve({ data: { username: data }, status: "Profile Updated Successfully" });
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      } else {
+        reject(new Error('User not authenticated'));
+      }
+    });
+  }
+
   loginUser = (email: any, password: any) => {
     return new Promise((resolve, reject) => {
       firebase
@@ -76,16 +72,12 @@ class FirebaseAuthBackend {
     });
   };
 
-  /**
-   * forget Password user with given details
-   */
-  forgetPassword = (email: any) => {
+  forgetPassword = (email: any): Promise<boolean> => {
     return new Promise((resolve, reject) => {
       firebase
         .auth()
         .sendPasswordResetEmail(email, {
-          url:
-            window.location.protocol + "//" + window.location.host + "/login",
+          url: `${window.location.protocol}//${window.location.host}/login`,
         })
         .then(() => {
           resolve(true);
@@ -96,10 +88,7 @@ class FirebaseAuthBackend {
     });
   };
 
-  /**
-   * Logout the user
-   */
-  logout = () => {
+  logout = (): Promise<boolean> => {
     return new Promise((resolve, reject) => {
       firebase
         .auth()
@@ -113,9 +102,6 @@ class FirebaseAuthBackend {
     });
   };
 
-  /**
-   * Social Login user with given details
-   */
   socialLoginUser = async (type: any) => {
     let provider: firebase.auth.AuthProvider | null = null;
     if (type === "google") {
@@ -135,18 +121,17 @@ class FirebaseAuthBackend {
     throw new Error(`Invalid social login type: ${type}`);
   };
 
-
   addNewUserToFirestore = (user: any) => {
     const collection = firebase.firestore().collection("users");
-    const { profile } = user.additionalUserInfo;
+    const { profile } = user.additionalUserInfo!;
     const details = {
-      firstName: profile.given_name ? profile.given_name : profile.first_name,
-      lastName: profile.family_name ? profile.family_name : profile.last_name,
-      fullName: profile.name,
-      email: profile.email,
-      picture: profile.picture,
+      firstName: profile?.given_name ? profile.given_name : profile?.first_name,
+      lastName: profile?.family_name ? profile.family_name : profile?.last_name,
+      fullName: profile?.name,
+      email: profile?.email,
+      picture: profile?.picture,
       createdDtm: firebase.firestore.FieldValue.serverTimestamp(),
-      lastLoginTime: firebase.firestore.FieldValue.serverTimestamp()
+      lastLoginTime: firebase.firestore.FieldValue.serverTimestamp(),
     };
     collection.doc(firebase.auth().currentUser!.uid).set(details);
     return { user, details };
@@ -156,32 +141,19 @@ class FirebaseAuthBackend {
     sessionStorage.setItem("authUser", JSON.stringify(user));
   };
 
-  /**
-   * Returns the authenticated user
-   */
   getAuthenticatedUser = (): firebase.User | null => {
     const authUser = sessionStorage.getItem("authUser");
     if (!authUser) return null;
     return JSON.parse(authUser);
   };
 
-  /**
-   * Handle the error
-   * @param {*} error
-   */
-  _handleError(error: any) {
-    // var errorCode = error.code;
-    var errorMessage = error.message;
-    return errorMessage;
+  _handleError(error: firebase.auth.Error): string {
+    return error.message;
   }
 }
 
 let _fireBaseBackend: FirebaseAuthBackend | null = null;
 
-/**
- * Initilize the backend
- * @param {*} config
- */
 const initFirebaseBackend = (config: any): FirebaseAuthBackend => {
   if (!_fireBaseBackend) {
     _fireBaseBackend = new FirebaseAuthBackend(config);
@@ -189,9 +161,6 @@ const initFirebaseBackend = (config: any): FirebaseAuthBackend => {
   return _fireBaseBackend;
 };
 
-/**
- * Returns the firebase backend
- */
 const getFirebaseBackend = (): FirebaseAuthBackend | null => {
   return _fireBaseBackend;
 };

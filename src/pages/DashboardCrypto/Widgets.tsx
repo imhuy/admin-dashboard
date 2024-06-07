@@ -6,7 +6,7 @@ import { cyptoWidgets } from '../../common/data';
 const Widgets = () => {
     return (
         <React.Fragment>
-            {(cyptoWidgets || []).map((item : any, key : any) => (
+            {(cyptoWidgets || []).map((item, key) => (
                 <Col lg={4} md={6} key={key}>
                     <Card>
                         <CardBody>
@@ -22,7 +22,7 @@ const Widgets = () => {
                                     </h4>
                                 </div>
                                 <div className="flex-shrink-0 align-self-end">
-                                    <span className={"badge bg-" + item.badgeColor+"-subtle text-"+ item.badgeColor}><i className={"align-middle me-1 " + item.badge}></i>{item.percentage} %<span>
+                                    <span className={"badge bg-" + item.badgeColor+"-subtle text-"+item.badgeColor+""}><i className={"align-middle me-1 " + item.badge}></i>{item.percentage} %<span>
                                     </span></span></div>
                             </div>
                         </CardBody>

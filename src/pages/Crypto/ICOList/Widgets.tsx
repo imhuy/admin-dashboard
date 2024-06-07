@@ -5,7 +5,7 @@ import { CryptoicoWidgets } from '../../../common/data';
 const Widgets = () => {
     return (
         <React.Fragment>
-            {(CryptoicoWidgets || []).map((item : any, key : any) => (
+            {(CryptoicoWidgets || []).map((item, key) => (
                 <Col key={key}>
                     <Card>
                         <CardBody className="d-flex">

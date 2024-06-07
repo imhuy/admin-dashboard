@@ -977,7 +977,7 @@ const UiDropdowns = () => {
                                                                     <label className="form-check-label" htmlFor="rememberdropdownCheck">Remember me</label>
                                                                 </div>
                                                             </div>
-                                                            <Button type="submit" className="btn btn-primary">Sign in</Button>
+                                                            <Button type="submit" className='bg-primary'>Sign in</Button>
                                                         </form>
                                                     </DropdownMenu>
                                                 </UncontrolledDropdown>

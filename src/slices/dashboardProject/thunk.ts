@@ -11,7 +11,7 @@ import {
   getQuarterProjectStatusData as getQuarterProjectStatusDataApi
 } from "../../helpers/fakebackend_helper";
 
-export const getProjectChartsData = createAsyncThunk("dashboardProject/getProjectChartsData", async (data : any) => {
+export const getProjectChartsData = createAsyncThunk("dashboardProject/getProjectChartsData", async (data:any) => {
   try {
     var response;
     if (data === "all") {
@@ -32,7 +32,7 @@ export const getProjectChartsData = createAsyncThunk("dashboardProject/getProjec
   }
 });
 
-export const getProjectStatusChartsData = createAsyncThunk("dashboardProject/getProjectStatusChartsData", async (data : any) => {
+export const getProjectStatusChartsData = createAsyncThunk("dashboardProject/getProjectStatusChartsData", async (data:any) => {
   try {
     var response;
     if (data === "all") {

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {connectData} from "../../../common/data"
+import { connectData } from '../../../common/data';
 
 const Connect = () => {
-  
+   
     return (
         <React.Fragment>
             <section className="section" id="wallet">
@@ -19,14 +19,14 @@ const Connect = () => {
                     </Row>
 
                     <Row className="g-4">
-                        {connectData.map((item : any, key : any) => (
+                        {connectData.map((item, key) => (
                             <Col key={key} lg={4}>
-                                <Card className="text-center border">
+                                <Card className="text-center border shadow-none">
                                     <CardBody className="py-5 px-4">
                                         <img src={item.img} alt="" height="55" className="mb-3 pb-2" />
                                         <h5>{item.title}</h5>
-                                        <p className="text-muted pb-1 fs-13">{item.textContent}</p>
-                                        <Link to="#!" className={item.bgColor ? "btn btn-info" : "btn btn-soft-info" }>Connect Wallet</Link>
+                                        <p className="text-muted pb-1">{item.textContent}</p>
+                                        <Link to="#" className={item.bgColor ? "btn btn-info" : "btn btn-soft-info" }>Connect Wallet</Link>
                                     </CardBody>
                                 </Card>
                             </Col>

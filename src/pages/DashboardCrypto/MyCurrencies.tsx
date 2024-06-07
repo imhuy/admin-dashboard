@@ -7,15 +7,15 @@ const MyCurrencies = () => {
     return (
         <React.Fragment>
             <Col xl={8}>
-                <Card className='card-height-100'>
+                <Card>
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">My Currencies</h4>
                         <div className="flex-shrink-0">
-                            <button className="btn btn-soft-primary btn-sm shadow-none">24H</button>
+                            <button className="btn btn-soft-primary btn-sm">24H</button>
                         </div>
                         <div className="flex-shrink-0 ms-2">
                             <UncontrolledDropdown className="card-header-dropdown" direction='start'>
-                                <DropdownToggle className="btn btn-soft-primary btn-sm shadow-none" role="button" tag="a">
+                                <DropdownToggle className="btn btn-soft-primary btn-sm" role="button" tag="a">
                                     Get Report<i className="mdi mdi-chevron-down align-middle ms-1"></i>
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu dropdown-menu-end">

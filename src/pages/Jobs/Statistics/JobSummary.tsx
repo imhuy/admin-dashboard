@@ -1,22 +1,13 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledDropdown,
-} from "reactstrap";
+import { Card, CardBody, CardHeader, Col, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../../Components/Common/ChartsDynamicColor";
 
-const JobSummary = ({ dataColors } : any) => {
+const JobSummary = ({ dataColors }:any) => {
   var revenueExpensesChartsColors = getChartColorsArray(dataColors);
   var series = [
     {
-      name: "Application Sent",
+      name: "Application Sent  ",
       data: [33, 28, 30, 35, 40, 55, 70, 110, 150, 180, 210, 250],
     },
     {
@@ -32,7 +23,7 @@ const JobSummary = ({ dataColors } : any) => {
       data: [8, 13, 22, 27, 32, 34, 46, 59, 65, 97, 100, 110],
     },
   ];
-  var options : any = {
+  var options:any = {
     chart: {
       height: 320,
       type: "area",
@@ -77,11 +68,11 @@ const JobSummary = ({ dataColors } : any) => {
             <div className="flex-shrink-0">
               <UncontrolledDropdown className="card-header-dropdown">
                 <DropdownToggle
-                    className="text-reset dropdown-btn"
-                    tag="a"
-                    type="a"
-                    to="#"
-                  >
+                  className="text-reset dropdown-btn"
+                  tag="a"
+                  type="a"
+                  href="#"
+                >
                   <span className="fw-semibold text-uppercase fs-12">
                     Sort by:{" "}
                   </span>
@@ -99,7 +90,7 @@ const JobSummary = ({ dataColors } : any) => {
               </UncontrolledDropdown>
             </div>
           </CardHeader>
-          <CardBody className="px-0">
+          <CardBody className="card-body px-0">
             <ReactApexChart dir="ltr"
               className="apex-charts"
               series={series}

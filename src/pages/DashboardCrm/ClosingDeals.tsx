@@ -32,7 +32,7 @@ const ClosingDeals = () => {
                                 </thead>
 
                                 <tbody>
-                                    {(closingDeals || []).map((item : any, key : any) => (
+                                    {(closingDeals || []).map((item, key) => (
                                         <tr key={key}>
                                             <td>{item.dealName}</td>
                                             <td><img src={item.img} alt="" className="avatar-xs rounded-circle me-2" />

@@ -2,8 +2,11 @@ import React from "react";
 import { Col, Card, CardBody, CardHeader, Row } from "reactstrap";
 import ReactApexChart from "react-apexcharts";
 import CountUp from "react-countup";
+import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
-const ApplicationsStatistic = () => {
+const ApplicationsStatistic = ({ dataColors }: any) => {
+  var applicationsStatisticColors = getChartColorsArray(dataColors);
+
   const series = [
     {
       name: "New Application",
@@ -14,11 +17,11 @@ const ApplicationsStatistic = () => {
       data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10],
     },
     {
-      name: " Hired",
+      name: "Hired",
       data: [36, 42, 60, 42, 13, 18, 29, 37, 36, 51, 32, 35],
     },
   ];
-  const options : any = {
+  const options: any = {
     chart: {
       height: 345,
       type: "line",
@@ -29,7 +32,7 @@ const ApplicationsStatistic = () => {
         show: false,
       },
     },
-    colors: ["#45cb85d9", "#4b38b3", "#007bff"],
+    colors: applicationsStatisticColors,
 
     dataLabels: {
       enabled: false,
@@ -49,7 +52,7 @@ const ApplicationsStatistic = () => {
         data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10],
       },
       {
-        name: " Hired",
+        name: "Hired",
         data: [36, 42, 60, 42, 13, 18, 29, 37, 36, 51, 32, 35],
       },
     ],
@@ -81,6 +84,8 @@ const ApplicationsStatistic = () => {
     },
   };
 
+ 
+
   return (
     <React.Fragment>
       <Col xxl={8}>
@@ -89,14 +94,14 @@ const ApplicationsStatistic = () => {
             <h4 className="card-title mb-0 flex-grow-1">
               Applications Statistic
             </h4>
-            <div className="d-flex gap-1">
-              <button type="button" className="btn btn-soft-secondary btn-sm">
+            <div>
+              <button type="button" className="btn btn-soft-secondary btn-sm me-1">
                 ALL
               </button>
-              <button type="button" className="btn btn-soft-secondary btn-sm">
+              <button type="button" className="btn btn-soft-secondary btn-sm me-1">
                 1M
               </button>
-              <button type="button" className="btn btn-soft-secondary btn-sm">
+              <button type="button" className="btn btn-soft-secondary btn-sm me-1">
                 6M
               </button>
               <button type="button" className="btn btn-soft-primary btn-sm">
@@ -111,7 +116,11 @@ const ApplicationsStatistic = () => {
                 <div className="p-3 border border-dashed border-start-0">
                   <h5 className="mb-1">
                     <span className="counter-value" data-target="3364">
-                      <CountUp start={0} end={3364} duration={4} />
+                      <CountUp
+                        start={0}
+                        end={3364}
+                        duration={3}
+                      />
                     </span>
                   </h5>
                   <p className="text-muted mb-0">New Applications</p>
@@ -121,7 +130,11 @@ const ApplicationsStatistic = () => {
                 <div className="p-3 border border-dashed border-start-0">
                   <h5 className="mb-1">
                     <span className="counter-value" data-target="2804">
-                      <CountUp start={0} end={2804} duration={4} />
+                      <CountUp
+                        start={0}
+                        end={2804}
+                        duration={3}
+                      />
                     </span>
                   </h5>
                   <p className="text-muted mb-0">Interview</p>
@@ -131,7 +144,11 @@ const ApplicationsStatistic = () => {
                 <div className="p-3 border border-dashed border-start-0">
                   <h5 className="mb-1">
                     <span className="counter-value" data-target="2402">
-                      <CountUp start={0} end={2402} duration={4} />
+                      <CountUp
+                        start={0}
+                        end={2402}
+                        duration={3}
+                      />
                     </span>
                   </h5>
                   <p className="text-muted mb-0">Hired</p>
@@ -141,9 +158,13 @@ const ApplicationsStatistic = () => {
                 <div className="p-3 border border-dashed border-start-0 border-end-0">
                   <h5 className="mb-1 text-success">
                     <span className="counter-value" data-target="8">
-                      <CountUp start={0} end={8} duration={4} />
+                      <CountUp
+                        start={0}
+                        end={8}
+                        duration={3}
+                      />
                     </span>
-                    K
+                    k
                   </h5>
                   <p className="text-muted mb-0">Total Applications</p>
                 </div>

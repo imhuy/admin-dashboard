@@ -4,22 +4,21 @@ import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
 import { CountriesCharts } from './DashboardAnalyticsCharts';
 
+import { VectorMap } from '@south-paw/react-vector-maps'
+import world from '../../common/world.svg.json';
 import { getAllData } from "../../slices/thunks";
 import { createSelector } from 'reselect';
 
-import { VectorMap } from '@south-paw/react-vector-maps';
-import world from '../../common/world.svg.json';
-
 const LiveUsers = () => {
-    const dispatch : any = useDispatch();
+    const dispatch: any = useDispatch();
 
     const [countryData, setcountryData] = useState<any>([]);
-    const [periodType, setPeriodType] = useState("halfyearly");
+    const [periodType, setPeriodType] = useState<string>("halfyearly");
 
     const liveuserData = createSelector(
-        (state : any) => state.DashboardAnalytics.chartData,
-        (chartData) => chartData
-      );
+        (state: any) => state.DashboardAnalytics,
+        (chartData) => chartData.chartData
+    );
     // Inside your component
     const chartData = useSelector(liveuserData);
 
@@ -27,7 +26,7 @@ const LiveUsers = () => {
         setcountryData(chartData);
     }, [chartData]);
 
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType: any) => {
         setPeriodType(pType);
         dispatch(getAllData(pType));
     };
@@ -44,7 +43,7 @@ const LiveUsers = () => {
                             <div className="card-header align-items-center d-flex">
                                 <h4 className="card-title mb-0 flex-grow-1">Live Users By Country</h4>
                                 <div className="flex-shrink-0">
-                                    <button type="button" className="btn btn-soft-primary btn-sm shadow-none">
+                                    <button type="button" className="btn btn-soft-primary btn-sm">
                                         Export Report
                                     </button>
                                 </div>
@@ -56,7 +55,12 @@ const LiveUsers = () => {
                                     className="text-center"
                                     style={{ height: "252px" }}
                                 >
-                                   <div id="world_map_line_markers" className="custom-vector-map">
+                                    {/* <Vector
+                                        value="world_mill"
+                                        color="#f3f6f9"
+                                    /> */}
+
+                                    <div id="world_map_line_markers" className="custom-vector-map">
                                         <VectorMap {...world} />
                                     </div>
                                 </div>
@@ -104,20 +108,20 @@ const LiveUsers = () => {
                             <div className="card-header align-items-center d-flex">
                                 <h4 className="card-title mb-0 flex-grow-1">Sessions by Countries</h4>
                                 <div className="d-flex gap-1">
-                                    <button type="button" className={classNames({ active: periodType === "all" }, "btn btn-soft-secondary btn-sm shadow-none")} onClick={() => { onChangeChartPeriod("all"); }}>
+                                    <button type="button" className={classNames({ active: periodType === "all" }, "btn btn-soft-secondary btn-sm")} onClick={() => { onChangeChartPeriod("all"); }}>
                                         ALL
                                     </button>
-                                    <button type="button" className={classNames({ active: periodType === "monthly" }, "btn btn-soft-primary btn-sm shadow-none")} onClick={() => { onChangeChartPeriod("monthly"); }}>
+                                    <button type="button" className={classNames({ active: periodType === "monthly" }, "btn btn-soft-primary btn-sm")} onClick={() => { onChangeChartPeriod("monthly"); }}>
                                         1M
                                     </button>
-                                    <button type="button" className={classNames({ active: periodType === "halfyearly" }, "btn btn-soft-secondary btn-sm shadow-none")} onClick={() => { onChangeChartPeriod("halfyearly"); }}>
+                                    <button type="button" className={classNames({ active: periodType === "halfyearly" }, "btn btn-soft-secondary btn-sm")} onClick={() => { onChangeChartPeriod("halfyearly"); }}>
                                         6M
                                     </button>
                                 </div>
                             </div>
                             <div className="card-body p-0">
                                 <div>
-                                    <CountriesCharts series={countryData} dataColors='["--vz-primary", "--vz-primary", "--vz-info", "--vz-info", "--vz-danger", "--vz-primary", "--vz-primary", "--vz-warning", "--vz-primary", "--vz-primary"]' />
+                                    <CountriesCharts series={countryData} dataColors='["--vz-info", "--vz-info", "--vz-info", "--vz-info", "--vz-danger", "--vz-info", "--vz-info", "--vz-info", "--vz-info", "--vz-info"]' />
                                 </div>
                             </div>
                         </Card>

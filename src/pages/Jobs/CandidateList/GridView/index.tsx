@@ -2,12 +2,13 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardBody, Col, Container, Form, FormFeedback, Input, Label, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
+import { jobCandidates } from "../../../../common/data/appsJobs";
 import BreadCrumb from "../../../../Components/Common/BreadCrumb";
 import Pagination from "../../../../Components/Common/Pagination";
 import { ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { jobCandidates } from "../../../../common/data/appsJobs";
+
 import { getCandidateGrid as onGetCandidateGrid, addCandidateGrid as onAddCandidateGrid } from "slices/thunks";
 import dummy from "assets/images/users/user-dummy-img.jpg"
 import { useFormik } from "formik";
@@ -40,7 +41,6 @@ const CandidateGrid = () => {
     dispatch(onGetCandidateGrid());
   }, [dispatch]);
 
-  const [calendarGrid, setCalendarGrid] = useState<any>([]);
 
   //add modal state
   const [modal, setModal] = useState<boolean>(false);
@@ -52,8 +52,8 @@ const CandidateGrid = () => {
     setCalendarGrid(candidategrid)
   }, [dispatch, candidategrid])
 
+  const [calendarGrid, setCalendarGrid] = useState<any>();
   const [currentPage, setCurrentPage] = useState(1);
-  const [candidategridData, setCandidategridData] = useState<any>();
 
 
   //pagination
@@ -63,7 +63,7 @@ const CandidateGrid = () => {
   const currentdata = useMemo(() => jobCandidates?.slice(indexOfFirst, indexOfLast), [indexOfFirst, indexOfLast])
 
   useEffect(() => {
-    setCandidategridData(currentdata)
+    setCalendarGrid(currentdata)
   }, [currentdata]);
 
 
@@ -202,7 +202,7 @@ const CandidateGrid = () => {
           </Row>
 
           <Row className="gy-2 mb-2" id="candidate-list">
-            {(candidategridData || []).map((item: any, key: any) => (
+            {(calendarGrid || []).map((item: any, key: any) => (
               <Col className="col-xxl-3 col-md-6" key={key}>
                 <Card className="card">
                   <CardBody className="card-body">
@@ -262,7 +262,7 @@ const CandidateGrid = () => {
           <Pagination
             className="g-0 justify-content-end mb-4"
             perPageData={perPageData}
-            data={calendarGrid}
+            data={jobCandidates}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />
@@ -294,7 +294,7 @@ const CandidateGrid = () => {
                     </div>
                     <div className="avatar-lg p-1" onClick={(item: any) => handleClick(item)}>
                       <div className="avatar-title bg-light rounded-circle">
-                        <img src={selectedImage || dummy } alt="" id="customer-img" className="avatar-md rounded-circle object-cover" />
+                        <img src={selectedImage || dummy} alt="" id="customer-img" className="avatar-md rounded-circle object-cover" />
                       </div>
                     </div>
 

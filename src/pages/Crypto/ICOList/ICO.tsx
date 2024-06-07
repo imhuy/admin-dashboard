@@ -6,10 +6,10 @@ import { icoWidgetsList } from '../../../common/data';
 import Flatpickr from "react-flatpickr";
 
 const ICO = () => {
-    const [icoList, setIcoList] = useState(icoWidgetsList);
-    const type = (e : any) => { setIcoList(icoWidgetsList.filter(item => item.title === e)); };
+    const [icoList, setIcoList] = useState<any>(icoWidgetsList);
+    const type = (e:any) => { setIcoList(icoWidgetsList.filter(item => item.title === e)); };
 
-    const rating = (e : any) => {
+    const rating = (e:any) => {
         let output = icoWidgetsList.filter(item => {
             let opt = item.subItem.some((
                 { rating }) => rating > e);
@@ -18,7 +18,7 @@ const ICO = () => {
         setIcoList(output);
     };
 
-    const datefilter = (e : any) => {
+    const datefilter = (e:any) => {
         const date = e.toString().split(" ");
         const joinDate = (date[2] + " " + date[1] + ", " + date[3]).toString();
 
@@ -48,12 +48,12 @@ const ICO = () => {
                                     dateFormat: "d M, Y"
                                 }}
                                 placeholder="Select Date"
-                                onChange={(e : any) => datefilter(e)}
+                                onChange={(e) => datefilter(e)}
                             />
                         </Col>
                         <Col xxl={2} lg={6}>
                             <select className="form-control" data-choices data-choices-search-false name="choices-single-default2"
-                                id="choices-single-default2" onChange={(e : any) => type(e.target.value)}>
+                                id="choices-single-default2" onChange={(e) => type(e.target.value)}>
                                 <option value="Active ICOs">Active</option>
                                 <option value="Ended ICOs">Ended</option>
                                 <option value="Upcoming ICOs">Upcoming</option>
@@ -80,7 +80,7 @@ const ICO = () => {
             </Card>
 
             <Row>
-                {(icoList || []).map((item, key) => (
+                {(icoList || []).map((item:any, key:any) => (
                     <React.Fragment key={key}>
                         {item.title === "Active ICOs" ?
                             <Col xxl={3} md={6}>
@@ -89,12 +89,12 @@ const ICO = () => {
                                         <h5 className="fs-17 text-center mb-0">{item.title}</h5>
                                     </CardBody>
                                 </Card>
-                                {(item.subItem || []).map((subItem : any, key : any) => (
+                                {(item.subItem || []).map((subItem:any, key:any) => (
                                     <Card className="mb-2" key={key}>
                                         <CardBody>
                                             <div className="d-flex mb-3">
                                                 <div className="flex-shrink-0 avatar-sm">
-                                                    <div className="avatar-title bg-light rounded shadow">
+                                                    <div className="avatar-title bg-light rounded">
                                                         <img src={subItem.img} alt="" className="avatar-xxs" />
                                                     </div>
                                                 </div>
@@ -126,12 +126,12 @@ const ICO = () => {
                                             <h5 className="fs-17 text-center mb-0">{item.title}</h5>
                                         </CardBody>
                                     </Card>
-                                    {(item.subItem || []).map((subItem : any, key : any) => (
+                                    {(item.subItem || []).map((subItem:any, key:any) => (
                                         <Card className="mb-2" key={key}>
                                             <CardBody>
                                                 <div className="d-flex mb-3">
                                                     <div className="flex-shrink-0 avatar-sm">
-                                                        <div className="avatar-title bg-light rounded shadow">
+                                                        <div className="avatar-title bg-light rounded">
                                                             <img src={subItem.img} alt="" className="avatar-xxs" />
                                                         </div>
                                                     </div>
@@ -163,12 +163,12 @@ const ICO = () => {
                                                 <h5 className="fs-17 text-center mb-0">{item.title}</h5>
                                             </CardBody>
                                         </Card>
-                                        {(item.subItem || []).map((subItem : any, key : any) => (
+                                        {(item.subItem || []).map((subItem:any, key:any) => (
                                             <Card className="mb-2" key={key}>
                                                 <CardBody>
                                                     <div className="d-flex mb-3">
                                                         <div className="flex-shrink-0 avatar-sm">
-                                                            <div className="avatar-title bg-light rounded shadow">
+                                                            <div className="avatar-title bg-light rounded">
                                                                 <img src={subItem.img} alt="" className="avatar-xxs" />
                                                             </div>
                                                         </div>
@@ -200,13 +200,13 @@ const ICO = () => {
                                                     <h5 className="fs-17 text-center mb-0">{item.title}</h5>
                                                 </CardBody>
                                             </Card>
-                                            {(item.subItem || []).map((subItem : any, key : any) => (
+                                            {(item.subItem || []).map((subItem:any, key:any) => (
                                                 <Card className="mb-2 ribbon-box ribbon-fill right" key={key}>
                                                     <div className="ribbon ribbon-info shadow-none"><i className="ri-flashlight-fill me-1"></i>{subItem.ribbonNumber}</div>
                                                     <CardBody>
                                                         <div className="d-flex mb-3">
                                                             <div className="flex-shrink-0 avatar-sm">
-                                                                <div className="avatar-title bg-light rounded shadow">
+                                                                <div className="avatar-title bg-light rounded">
                                                                     <img src={subItem.img} alt="" className="avatar-xxs" />
                                                                 </div>
                                                             </div>

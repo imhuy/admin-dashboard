@@ -14,6 +14,7 @@ function UpcommingEvents(props: any) {
     const t = time.split(":");
     var hours = t[0];
     var minutes = t[1];
+
     var newformat = hours >= 12 ? "PM" : "AM";
     hours = hours % 12;
     hours = hours ? hours : 12;
@@ -46,10 +47,12 @@ function UpcommingEvents(props: any) {
   };
 
   const category = props.event.className.split("-");
+
   var endUpdatedDay: any = "";
   if (props.event.end) {
     endUpdatedDay = new Date(props.event.end);
     var updatedDay = endUpdatedDay.setDate(endUpdatedDay.getDate() - 1);
+
   }
   var e_dt = updatedDay ? updatedDay : undefined;
   if (e_dt === "Invalid Date" || e_dt === undefined) {
@@ -88,11 +91,11 @@ function UpcommingEvents(props: any) {
 
   var end_dt = e_dt ? " to " + e_dt : "";
   var e_time_s = tConvert(getTime(props.event.start));
-  var e_time_e: any = tConvert(getTime(updatedDay));
+  var e_time_e = tConvert(getTime(updatedDay));
 
   if (e_time_s === e_time_e) {
     e_time_s = "Full day event";
-    e_time_e = null;
+    e_time_e = '';
   }
   e_time_e = e_time_e ? " to " + e_time_e : "";
 
@@ -109,7 +112,7 @@ function UpcommingEvents(props: any) {
             </span>
           </div>
           <div className="flex-shrink-0">
-            <small className="badge bg-primary-subtle text-primary ms-auto">
+            <small className={`badge bg-primary-subtle text-primary ms-auto`}>
               {e_time_s} {e_time_e}
             </small>
           </div>

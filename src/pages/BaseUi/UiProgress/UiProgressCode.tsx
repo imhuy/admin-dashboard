@@ -28,7 +28,7 @@ const defaultProgressCode =
 const DefaultProgressExample = () => (
     <PrismCode
         code={defaultProgressCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -62,7 +62,7 @@ const backgroundColorCode =
 const BackgroundColorExample = () => (
     <PrismCode
         code={backgroundColorCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -78,7 +78,7 @@ const labelCode =
 const LabelExample = () => (
     <PrismCode
         code={labelCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -98,7 +98,7 @@ const multipleBarsCode =
 const MultipleBarsExample = () => (
     <PrismCode
         code={multipleBarsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -134,7 +134,7 @@ const heightCode =
 const HeightExample = () => (
     <PrismCode
         code={heightCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -154,7 +154,7 @@ const stripedCode =
 const StripedExample = () => (
     <PrismCode
         code={stripedCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -171,7 +171,7 @@ const animatedStripedCode =
 const AnimatedStripedExample = () => (
     <PrismCode
         code={animatedStripedCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -200,7 +200,7 @@ const gradientCode =
 const GradientExample = () => (
     <PrismCode
         code={gradientCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -229,7 +229,7 @@ const animatedCode =
 const AnimatedExample = () => (
     <PrismCode
         code={animatedCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -258,7 +258,7 @@ const customCode =
 const CustomExample = () => (
     <PrismCode
         code={customCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -316,7 +316,7 @@ const customProgressCode =
 const CustomProgressExample = () => (
     <PrismCode
         code={customProgressCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -382,7 +382,7 @@ const contentCode =
 const ContentExample = () => (
     <PrismCode
         code={contentCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -402,7 +402,7 @@ const progressWithStepCode =
 const ProgressWithStepExample = () => (
     <PrismCode
         code={progressWithStepCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -421,7 +421,7 @@ const stepProgressArrowCode =
 const StepProgressArrowExample = () => (
     <PrismCode
         code={stepProgressArrowCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

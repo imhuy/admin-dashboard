@@ -16,7 +16,7 @@ import {
 
 
 const BarCharts = () => {
-    document.title="Bar Charts | Velzon - React Admin & Dashboard Template";
+    document.title="Apex Bar Charts | Velzon - React Admin & Dashboard Template";
     return (
         <React.Fragment>
             <div className="page-content">            
@@ -50,7 +50,7 @@ const BarCharts = () => {
                         <Col lg={6}>
                             <Card>
                                 <CardHeader>
-                                    <h4 className="card-title mb-0">Stacked Bar Charts</h4>
+                                    <h4 className="card-title mb-0">Stacked Bar Chart</h4>
                                 </CardHeader>
                                 <CardBody>
                                     <Stacked dataColors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'/>

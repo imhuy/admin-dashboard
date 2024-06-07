@@ -57,7 +57,7 @@ const TicketDetails = () => {
                                         <td className="fw-medium">Status:</td>
                                         <td>
                                             <select className="form-select" id="t-status" data-choices data-choices-search-false aria-label="Default select example">
-                                                <option value="Status">Stauts</option>
+                                                <option value=''>Stauts</option>
                                                 <option defaultValue="New">New</option>
                                                 <option value="Open">Open</option>
                                                 <option value="Inprogress">Inprogress</option>
@@ -109,7 +109,7 @@ const TicketDetails = () => {
                                 </div>
                             </div>
                             <div className="flex-grow-1 ms-3">
-                                <h6 className="mb-1"><Link to="#" className='text-body'>Velzon-admin.zip</Link></h6>
+                                <h6 className="mb-1"><Link to="#">Velzon-admin.zip</Link></h6>
                                 <small className="text-muted">3.2 MB</small>
                             </div>
                             <div className="hstack gap-3 fs-16">
@@ -124,7 +124,7 @@ const TicketDetails = () => {
                                 </div>
                             </div>
                             <div className="flex-grow-1 ms-3">
-                                <h6 className="mb-1"><Link to="#" className='text-body'>Velzon-admin.ppt</Link></h6>
+                                <h6 className="mb-1"><Link to="#">Velzon-admin.ppt</Link></h6>
                                 <small className="text-muted">4.5 MB</small>
                             </div>
                             <div className="hstack gap-3 fs-16">

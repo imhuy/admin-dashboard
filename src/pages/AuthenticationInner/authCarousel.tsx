@@ -10,7 +10,6 @@ import logoLight from "../../assets/images/logo-light.png";
 const AuthSlider = () => {
     return (
         <React.Fragment>
-
             <Col lg={6}>
                 <div className="p-lg-5 p-4 auth-one-bg h-100">
                     <div className="bg-overlay"></div>
@@ -25,7 +24,9 @@ const AuthSlider = () => {
                                 <i className="ri-double-quotes-l display-4 text-success"></i>
                             </div>
 
-                            <Carousel showThumbs={false} autoPlay={true} showArrows={false} showStatus={false} infiniteLoop={true} className="carousel slide" >
+                            <Carousel showThumbs={false} autoPlay={true} showArrows={false} showStatus={false} infiniteLoop={true} className="slide" 
+                            // id="qoutescarouselIndicators"
+                            >
                                 <div className="carousel-inner text-center text-white-50 pb-5">
                                     <div className="item">
                                         <p className="fs-15 fst-italic">" Great! Clean code, clean design, easy for customization. Thanks very much! "</p>

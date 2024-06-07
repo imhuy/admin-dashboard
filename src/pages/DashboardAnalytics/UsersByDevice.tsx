@@ -9,27 +9,29 @@ import { getUserDeviceChartsData } from "../../slices/thunks";
 import { UsersByDeviceCharts } from './DashboardAnalyticsCharts';
 import { createSelector } from 'reselect';
 
+
 const UsersByDevice = () => {
     const [isUserDropdown, setUserDropdown] = useState<boolean>(false);
     const toggleDropdown = () => setUserDropdown(!isUserDropdown);
 
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
-    const [chartData, setchartData] = useState<any>([]);
+    const [chartData, setchartData] = useState([]);
 
     const userdeviceData = createSelector(
-        (state : any) => state.DashboardAnalytics.userDeviceData,
-        (userDeviceData) => userDeviceData
+        (state:any) => state.DashboardAnalytics,
+        (userDeviceData) => userDeviceData.userDeviceData
       );
     // Inside your component
     const userDeviceData = useSelector(userdeviceData);
+
 
     useEffect(() => {
         setchartData(userDeviceData);
     }, [userDeviceData]);
 
     const [seletedMonth, setSeletedMonth] = useState("today");
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         setSeletedMonth(pType);
         dispatch(getUserDeviceChartsData(pType));
     };

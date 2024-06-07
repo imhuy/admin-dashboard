@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import withRouter from '../Components/Common/withRouter';
 
-
 //import Components
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -27,10 +26,10 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from 'reselect';
 
-
 const Layout = (props : any) => {
-
+    const [headerClass, setHeaderClass] = useState("");
     const dispatch : any = useDispatch();
+
     const selectLayoutState = (state : any) => state.Layout;
     const selectLayoutProperties = createSelector(
         selectLayoutState,
@@ -59,7 +58,6 @@ const Layout = (props : any) => {
         leftsidbarSizeType,
         leftSidebarViewType,
         leftSidebarImageType,
-        // preloader,
         sidebarVisibilitytype
     } = useSelector(selectLayoutProperties);
 
@@ -111,11 +109,11 @@ const Layout = (props : any) => {
         }
     };
 
-    const [headerClass, setHeaderClass] = useState<any>("");
-    // class add remove in header
+    // class add remove in header 
     useEffect(() => {
         window.addEventListener("scroll", scrollNavigation, true);
     });
+
     function scrollNavigation() {
         var scrollup = document.documentElement.scrollTop;
         if (scrollup > 50) {
@@ -141,8 +139,11 @@ const Layout = (props : any) => {
                     headerClass={headerClass}
                     layoutModeType={layoutModeType}
                     onChangeLayoutMode={onChangeLayoutMode} />
-                <Sidebar layoutType={layoutType} />
-                <div className="main-content">{props.children}
+                <Sidebar
+                    layoutType={layoutType}
+                />
+                <div className="main-content">
+                    {props.children}
                     <Footer />
                 </div>
             </div>

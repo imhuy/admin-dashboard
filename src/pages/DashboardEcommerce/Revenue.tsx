@@ -7,13 +7,13 @@ import { getRevenueChartsData } from "../../slices/thunks";
 import { createSelector } from "reselect";
 
 const Revenue = () => {
-  const dispatch : any = useDispatch();
+  const dispatch:any = useDispatch();
 
   const [chartData, setchartData] = useState<any>([]);
-
+ 
   const selectDashboardData = createSelector(
-    (state : any) => state.DashboardEcommerce.revenueData,
-    (revenueData) => revenueData
+    (state:any) => state.DashboardEcommerce,
+    (revenueData:any) => revenueData.revenueData
   );
   // Inside your component
   const revenueData = useSelector(selectDashboardData);
@@ -23,7 +23,7 @@ const Revenue = () => {
     setchartData(revenueData);
   }, [revenueData]);
 
-  const onChangeChartPeriod = (pType : any) => {
+  const onChangeChartPeriod = (pType:any) => {
     dispatch(getRevenueChartsData(pType));
   };
 
@@ -36,16 +36,16 @@ const Revenue = () => {
         <CardHeader className="border-0 align-items-center d-flex">
           <h4 className="card-title mb-0 flex-grow-1">Revenue</h4>
           <div className="d-flex gap-1">
-            <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("all"); }}>
+            <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("all"); }}>
               ALL
             </button>
-            <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("month"); }}>
+            <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("month"); }}>
               1M
             </button>
-            <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("halfyear"); }}>
+            <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("halfyear"); }}>
               6M
             </button>
-            <button type="button" className="btn btn-soft-primary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("year"); }}>
+            <button type="button" className="btn btn-soft-primary btn-sm" onClick={() => { onChangeChartPeriod("year"); }}>
               1Y
             </button>
           </div>
@@ -104,7 +104,7 @@ const Revenue = () => {
         <CardBody className="p-0 pb-2">
           <div className="w-100">
             <div dir="ltr">
-              <RevenueCharts series={chartData} dataColors='["--vz-success", "--vz-primary", "--vz-danger"]' />
+              <RevenueCharts series={chartData} dataColors='["--vz-primary", "--vz-success", "--vz-danger"]' />
             </div>
           </div>
         </CardBody>

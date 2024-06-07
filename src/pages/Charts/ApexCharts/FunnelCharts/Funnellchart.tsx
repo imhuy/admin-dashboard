@@ -91,7 +91,7 @@ const PyramidChartCode = ({ dataColors } : any) => {
         colors: pyramidChartColors,
         dataLabels: {
             enabled: true,
-            formatter: function (opt : any) {
+            formatter: function (val : any, opt : any) {
                 return opt.w.globals.labels[opt.dataPointIndex]
             },
             dropShadow: {

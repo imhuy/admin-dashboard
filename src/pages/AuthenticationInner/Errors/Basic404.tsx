@@ -10,9 +10,8 @@ const Basic404 = () => {
 document.title ="404 Error Basic | Velzon - React Admin & Dashboard Template";
     return (
         <React.Fragment>
-            <div className="auth-page-wrapper">
                 <ParticlesAuth>
-                    <div className="auth-page-content">
+                    <div className="auth-page-content mt-lg-5">
                         <Container>
                             <Row>
                                 <Col lg={12}>
@@ -32,7 +31,6 @@ document.title ="404 Error Basic | Velzon - React Admin & Dashboard Template";
                         </Container>
                     </div>
                 </ParticlesAuth>
-            </div>
         </React.Fragment>
     );
 };

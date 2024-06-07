@@ -13,7 +13,7 @@ const ratio169Code =
 const Ratio169Example = () => (
     <PrismCode
         code={ratio169Code}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -32,7 +32,7 @@ const ratio219Code =
 const Ratio219Example = () => (
     <PrismCode
         code={ratio219Code}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -50,7 +50,7 @@ const ratio43Code =
 const Ratio43Example = () => (
     <PrismCode
         code={ratio43Code}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -69,7 +69,7 @@ const ratio11Code =
 const Ratio11Example = () => (
     <PrismCode
         code={ratio11Code}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -88,7 +88,7 @@ const customRationCode =
 const CustomRationExample = () => (
     <PrismCode
         code={customRationCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

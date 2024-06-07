@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, Col, DropdownMenu, DropdownToggle, UncontrolledDropdown, DropdownItem } from 'reactstrap';
 import { useSelector, useDispatch } from "react-redux";
-import {AudiencesSessionsCharts} from './DashboardAnalyticsCharts';
+import { AudiencesSessionsCharts } from './DashboardAnalyticsCharts';
 import { getAudiencesSessionsChartsData } from "../../slices/thunks";
 import { createSelector } from 'reselect';
 
 const AudiencesSessions = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const sessionsData = createSelector(
-        (state : any) => state.DashboardAnalytics.audiencesSessionsData,
-        (audiencesSessionsData) => audiencesSessionsData
+        (state:any) => state.DashboardAnalytics,
+        (audiencesSessionsData) => audiencesSessionsData.audiencesSessionsData
       );
     // Inside your component
     const audiencesSessionsData = useSelector(sessionsData);
@@ -22,7 +22,7 @@ const AudiencesSessions = () => {
     }, [audiencesSessionsData]);
 
     const [seletedMonth, setSeletedMonth] = useState("today");
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         setSeletedMonth(pType);
         dispatch(getAudiencesSessionsChartsData(pType));
     };
@@ -30,6 +30,7 @@ const AudiencesSessions = () => {
     useEffect(() => {
         dispatch(getAudiencesSessionsChartsData("today"));
     }, [dispatch]);
+
     return (
         <React.Fragment>
             <Col xl={6}>

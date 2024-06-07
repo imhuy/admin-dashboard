@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 import logo_dark from "../../../../assets/images/logo-dark.png";
 
 const SubscribeAction = () => {
-    function changeBackground(e : any) {
+    function changeBackground(e:any) {
         e.target.style.background = "#099885";
     }
-    function bgColor(e : any) {
+    function bgColor(e:any) {
         e.target.style.background = "#0ab39c";
     }
     return (

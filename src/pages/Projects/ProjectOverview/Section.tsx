@@ -11,8 +11,8 @@ import TeamTab from './TeamTab';
 
 const Section = () => {
     //Tab 
-    const [activeTab, setActiveTab] = useState('1');
-    const toggleTab = (tab : any) => {
+    const [activeTab, setActiveTab] = useState<any>('1');
+    const toggleTab = (tab:any) => {
         if (activeTab !== tab) {
             setActiveTab(tab);
         }
@@ -53,13 +53,13 @@ const Section = () => {
                                     </div>
                                     <div className="col-md-auto">
                                         <div className="hstack gap-1 flex-wrap">
-                                            <button type="button" className="btn py-0 fs-16 favourite-btn active shadow-none">
+                                            <button type="button" className="btn py-0 fs-16 favourite-btn active">
                                                 <i className="ri-star-fill"></i>
                                             </button>
-                                            <button type="button" className="btn py-0 fs-16 text-body shadow-none">
+                                            <button type="button" className="btn py-0 fs-16 text-body">
                                                 <i className="ri-share-line"></i>
                                             </button>
-                                            <button type="button" className="btn py-0 fs-16 text-body shadow-none">
+                                            <button type="button" className="btn py-0 fs-16 text-body">
                                                 <i className="ri-flag-line"></i>
                                             </button>
                                         </div>

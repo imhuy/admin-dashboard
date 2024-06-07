@@ -31,6 +31,9 @@ const Client = () => {
                                 <Swiper
                                     slidesPerView={4}
                                     spaceBetween={30}
+                                    // pagination={{
+                                    //     clickable: true,
+                                    // }}
                                     pagination={false}
                                     breakpoints={{
                                         576: {

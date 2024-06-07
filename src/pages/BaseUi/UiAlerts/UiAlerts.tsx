@@ -14,8 +14,9 @@ import { DefaultAlertsExample, BorderlessExample, DismissingExample, LinkColorEx
 
 
 const UiAlerts = () => {
-    document.title = "Alerts | Velzon - React Admin & Dashboard Template";
+    document.title="Alerts | Velzon - React Admin & Dashboard Template";
     const [show, setShow] = useState<boolean>(false);
+
     return (
         <React.Fragment>
             <UiContent />
@@ -32,44 +33,44 @@ const UiAlerts = () => {
                                         <Row>
                                             <Col xl={6}>
                                                 <h6>Primary Alert</h6>
-                                                <Alert className='shadow' color="primary">
+                                                <Alert color="primary">
                                                     <strong> Hi! </strong> A simple <b>Primary alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Secondary Alert</h6>
-                                                <Alert className='shadow' color="secondary">
+                                                <Alert color="secondary">
                                                     <strong> How are you! </strong> A simple <b>secondary alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Success Alert</h6>
-                                                <Alert className='shadow' color="success">
+                                                <Alert color="success">
                                                     <strong> Yey! Everything worked! </strong> A simple <b>success alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Danger Alert</h6>
-                                                <Alert color="danger" className='mb-0 shadow'>
+                                                <Alert color="danger" className='mb-0'>
                                                     <strong> Something is very wrong! </strong> A simple <b>danger alert</b> —check it out!
                                                 </Alert>
                                             </Col>
 
                                             <Col xl={6}>
                                                 <h6>Warning Alert</h6>
-                                                <Alert className='shadow' color="warning">
+                                                <Alert color="warning">
                                                     <strong> Uh oh, something went wrong </strong> A simple <b>warning alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Info Alert</h6>
-                                                <Alert className='shadow' color="info">
+                                                <Alert color="info">
                                                     <strong>Don't forget' it !</strong> A simple <b>info alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Light Alert</h6>
-                                                <Alert className='shadow' color="light">
+                                                <Alert color="light">
                                                     <strong>Mind Your Step!</strong> A simple <b>light alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Dark Alert</h6>
-                                                <Alert color="dark" className='mb-0 shadow'>
+                                                <Alert color="dark" className='mb-0'>
                                                     <strong>Did you know?</strong> A simple <b>dark alert</b> —check it out!
                                                 </Alert>
                                             </Col>
@@ -99,22 +100,22 @@ const UiAlerts = () => {
                                         <Row>
                                             <Col xl={6}>
                                                 <h6>Primary Alert</h6>
-                                                <Alert color="primary" className='shadow border-0'>
+                                                <Alert color="primary" className='border-0 border-0'>
                                                     <strong> Hi! </strong> A simple <b>Primary alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Secondary Alert</h6>
-                                                <Alert color="secondary" className='shadow border-0'>
+                                                <Alert color="secondary" className='border-0 border-0'>
                                                     <strong> How are you! </strong> A simple <b>secondary alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Success Alert</h6>
-                                                <Alert color="success" className='shadow border-0'>
+                                                <Alert color="success" className='border-0 border-0'>
                                                     <strong> Yey! Everything worked! </strong> A simple <b>success alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Danger Alert</h6>
-                                                <Alert color="danger" className='shadow border-0 mb-xl-0'>
+                                                <Alert color="danger" className='border-0 border-0 mb-xl-0'>
                                                     <strong> Something is very wrong! </strong> A simple danger alert—check it out!
                                                 </Alert>
 
@@ -122,22 +123,22 @@ const UiAlerts = () => {
 
                                             <Col xl={6}>
                                                 <h6>Warning Alert</h6>
-                                                <Alert color="warning" className='shadow border-0'>
+                                                <Alert color="warning" className='border-0 border-0'>
                                                     <strong> Uh oh, something went wrong </strong> A simple <b>warning alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Info Alert</h6>
-                                                <Alert color="info" className='shadow border-0'>
+                                                <Alert color="info" className='border-0 border-0'>
                                                     <strong>Don't forget' it !</strong> A simple <b>info alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Light Alert</h6>
-                                                <Alert color="light" className='shadow border-0 bg-light'>
+                                                <Alert color="light" className='border-0 border-0 bg-light'>
                                                     <strong>Mind Your Step!</strong> A simple <b>light alert</b> —check it out!
                                                 </Alert>
 
                                                 <h6>Dark Alert</h6>
-                                                <Alert color="dark" className='shadow border-0 mb-0'>
+                                                <Alert color="dark" className='border-0 border-0 mb-0'>
                                                     <strong>Did you know?</strong> A simple <b>dark alert</b> —check it out!
                                                 </Alert>
 
@@ -168,44 +169,44 @@ const UiAlerts = () => {
                                         <Row>
                                             <Col xl={6}>
                                                 <h6>Primary Alert</h6>
-                                                <UncontrolledAlert className='shadow' color="primary">
+                                                <UncontrolledAlert color="primary">
                                                     <strong> Hi! </strong> A simple <b>Dismissible primary Alert </b> — check it out!
                                                 </UncontrolledAlert>
 
                                                 <h6>Secondary Alert</h6>
-                                                <UncontrolledAlert className='shadow' color="secondary">
+                                                <UncontrolledAlert color="secondary">
                                                     <strong> How are you! </strong> A simple <b>Dismissible secondary alert</b> —check it out!
                                                 </UncontrolledAlert>
 
                                                 <h6>Success Alert</h6>
-                                                <UncontrolledAlert className='shadow' color="success">
+                                                <UncontrolledAlert color="success">
                                                     <strong>Right Way !</strong> A simple <b>Dismissible success alert</b> —check it out!
                                                 </UncontrolledAlert>
 
                                                 <h6>Danger Alert</h6>
-                                                <UncontrolledAlert color="danger" className="mb-xl-0 shadow">
+                                                <UncontrolledAlert color="danger" className="mb-xl-0">
                                                     <strong> Something is very wrong! </strong> A simple <b>Dismissible danger alert</b> —check it out!
                                                 </UncontrolledAlert>
                                             </Col>
 
                                             <Col xl={6}>
                                                 <h6>Warning Alert</h6>
-                                                <UncontrolledAlert className='shadow' color="warning">
+                                                <UncontrolledAlert color="warning">
                                                     <strong>Welcome Back!</strong> A simple <b>Dismissible warning alert</b> —check it out!
                                                 </UncontrolledAlert>
 
                                                 <h6>Info Alert</h6>
-                                                <UncontrolledAlert className='shadow' color="info">
+                                                <UncontrolledAlert color="info">
                                                     <strong>Don't forget' it !</strong> A simple <b>Dismissible info alert</b> —check it out!
                                                 </UncontrolledAlert>
 
                                                 <h6>Light Alert</h6>
-                                                <UncontrolledAlert className='shadow' color="light">
+                                                <UncontrolledAlert color="light">
                                                     <strong>Mind Your Step!</strong> A simple <b>Dismissible light alert</b> —check it out!
                                                 </UncontrolledAlert>
 
                                                 <h6>Dark Alert</h6>
-                                                <UncontrolledAlert color="dark" className="mb-0 shadow">
+                                                <UncontrolledAlert color="dark" className="mb-0">
                                                     <strong>Did you know?</strong> A simple <b>Dismissible dark alert</b> —check it out!
                                                 </UncontrolledAlert>
 
@@ -236,25 +237,25 @@ const UiAlerts = () => {
                                             <Col xl={6}>
                                                 <h6>Primary Alert</h6>
 
-                                                <Alert className='shadow' color="primary">
+                                                <Alert color="primary">
                                                     A simple Primary alert with <Link to="#" className="alert-link">an example
                                                         link</Link>. Give it a click if you like.
                                                 </Alert>
 
                                                 <h6>Secondary Alert</h6>
-                                                <Alert className='shadow' color="secondary">
+                                                <Alert color="secondary">
                                                     A simple Secondary alert with <Link to="#" className="alert-link">an example
                                                         link</Link>.  Give it a click if you like.
                                                 </Alert>
 
                                                 <h6>Success Alert</h6>
-                                                <Alert className='shadow' color="success">
+                                                <Alert color="success">
                                                     A simple Success alert with <Link to="#" className="alert-link">an example
                                                         link</Link>. Give it a click if you like.
                                                 </Alert>
 
                                                 <h6>Danger Alert</h6>
-                                                <Alert color="danger" className="mb-xl-0 shadow">
+                                                <Alert color="danger" className="mb-xl-0">
                                                     A simple Danger alert with <Link to="#" className="alert-link">an example
                                                         link</Link>. Give it a click if you like.
                                                 </Alert>
@@ -262,25 +263,25 @@ const UiAlerts = () => {
 
                                             <Col xl={6}>
                                                 <h6>Warning Alert</h6>
-                                                <Alert className='shadow' color="warning">
+                                                <Alert color="warning">
                                                     A simple Warning alert with <Link to="#" className="alert-link">an example
                                                         link</Link>. Give  it a click if you like.
                                                 </Alert>
 
                                                 <h6>Info Alert</h6>
-                                                <Alert className='shadow' color="info">
+                                                <Alert color="info">
                                                     A simple Info alert with <Link to="#" className="alert-link">an example
                                                         link</Link>. Give it  a click if you like.
                                                 </Alert>
 
                                                 <h6>Light Alert</h6>
-                                                <Alert className='shadow' color="light">
+                                                <Alert color="light">
                                                     A simple Light alert with <Link to="#" className="alert-link">an example
                                                         link</Link>. Give it a click if you like.
                                                 </Alert>
 
                                                 <h6>Dark Alert</h6>
-                                                <Alert color="dark" className="mb-0 shadow">
+                                                <Alert color="dark" className="mb-0">
                                                     A simple Dark alert with <Link to="#" className="alert-link">an example
                                                         link</Link>. Give it a click if you like.
                                                 </Alert>
@@ -340,22 +341,22 @@ const UiAlerts = () => {
                                             <Col xl={6}>
                                                 <h6>Primary Outline Alert</h6>
 
-                                                <UncontrolledAlert color="primary" className="shadow border-2 bg-body-secondary">
+                                                <UncontrolledAlert color="primary" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
                                                     <strong> Hi! </strong> - Outline <b>primary alert</b> example
                                                 </UncontrolledAlert>
 
                                                 <h6>Secondary Outline Alert</h6>
-                                                <UncontrolledAlert color="secondary" className="shadow border-2 bg-body-secondary">
+                                                <UncontrolledAlert color="secondary" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
                                                     <strong> How are you! </strong> - Outline <b>secondary alert</b> example
                                                 </UncontrolledAlert>
 
                                                 <h6>Success Outline Alert</h6>
-                                                <UncontrolledAlert color="success" className="shadow border-2 bg-body-secondary">
+                                                <UncontrolledAlert color="success" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
                                                     <strong> Yey! Everything worked! </strong> - Outline <b>success alert</b> example
                                                 </UncontrolledAlert>
 
                                                 <h6>Danger Outline Alert</h6>
-                                                <UncontrolledAlert color="danger" className="shadow border-2 bg-body-secondary mb-xl-0">
+                                                <UncontrolledAlert color="danger" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show mb-xl-0">
                                                     <strong> Something is very wrong! </strong> - Outline <b>danger alert</b> example
                                                 </UncontrolledAlert>
 
@@ -363,17 +364,17 @@ const UiAlerts = () => {
 
                                             <Col xl={6}>
                                                 <h6>Warning Outline Alert</h6>
-                                                <UncontrolledAlert color="warning" className="shadow border-2 bg-body-secondary">
+                                                <UncontrolledAlert color="warning" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
                                                     <strong> Uh oh, something went wrong! </strong> - Outline <b>warning alert</b> example
                                                 </UncontrolledAlert>
 
                                                 <h6>Info Outline Alert</h6>
-                                                <UncontrolledAlert color="info" className="shadow border-2 bg-body-secondary">
+                                                <UncontrolledAlert color="info" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
                                                     <strong>Don't forget' it !</strong> - Outline <b>info alert</b> example
                                                 </UncontrolledAlert>
 
                                                 <h6>Dark Alert</h6>
-                                                <UncontrolledAlert color="dark" className="shadow border-2 bg-body-secondary mb-0">
+                                                <UncontrolledAlert color="dark" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show mb-0">
                                                     <strong>Did you know?</strong> - Outline <b>dark alert</b> example
                                                 </UncontrolledAlert>
 
@@ -404,46 +405,53 @@ const UiAlerts = () => {
                                         <Row>
                                             <Col xl={6}>
                                                 <h6>Primary Alert</h6>
-                                                <UncontrolledAlert color="primary" className="alert-border-left shadow">
+                                                <UncontrolledAlert color="primary" className="alert-border-left">
                                                     <i className="ri-user-smile-line me-3 align-middle fs-16"></i><strong>Primary</strong> - Left border alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Secondary Alert</h6>
-                                                <UncontrolledAlert color="secondary" className="alert-border-left shadow">
-                                                    <i className="ri-check-double-line me-3 align-middle fs-16"></i><strong>Secondary</strong> - Left border alert
+                                                <UncontrolledAlert color="secondary" className="alert-border-left">
+                                                    <i className="ri-check-double-line me-3 align-middle fs-16"></i><strong>Secondary</strong>
+                                                    - Left border alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Success Alert</h6>
-                                                <UncontrolledAlert color="success" className="alert-border-left shadow">
-                                                    <i className="ri-notification-off-line me-3 align-middle fs-16"></i><strong>Success</strong> - Left border alert
+                                                <UncontrolledAlert color="success" className="alert-border-left">
+                                                    <i className="ri-notification-off-line me-3 align-middle fs-16"></i><strong>Success</strong>
+                                                    - Left border alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Danger Alert</h6>
-                                                <UncontrolledAlert color="danger" className="alert-border-left shadow mb-xl-0">
-                                                    <i className="ri-error-warning-line me-3 align-middle fs-16"></i><strong>Danger</strong> - Left border alert
+                                                <UncontrolledAlert color="danger" className="alert-border-left mb-xl-0">
+                                                    <i className="ri-error-warning-line me-3 align-middle fs-16"></i><strong>Danger</strong>
+                                                    - Left border alert
                                                 </UncontrolledAlert>
 
                                             </Col>
 
                                             <Col xl={6}>
                                                 <h6>Warning Alert</h6>
-                                                <UncontrolledAlert color="warning" className="alert-border-left shadow">
-                                                    <i className="ri-alert-line me-3 align-middle fs-16"></i><strong>Warning</strong> - Left border alert
+                                                <UncontrolledAlert color="warning" className="alert-border-left">
+                                                    <i className="ri-alert-line me-3 align-middle fs-16"></i><strong>Warning</strong>
+                                                    - Left border alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Info Alert</h6>
-                                                <UncontrolledAlert color="info" className="alert-border-left shadow">
-                                                    <i className="ri-airplay-line me-3 align-middle fs-16"></i><strong>Info</strong> - Left border alert
+                                                <UncontrolledAlert color="info" className="alert-border-left">
+                                                    <i className="ri-airplay-line me-3 align-middle fs-16"></i><strong>Info</strong>
+                                                    - Left border alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Light Alert</h6>
-                                                <UncontrolledAlert color="light" className="alert-border-left shadow">
-                                                    <i className="ri-mail-line me-3 align-middle fs-16"></i><strong>Light</strong> - Left border alert
+                                                <UncontrolledAlert color="light" className="alert-border-left">
+                                                    <i className="ri-mail-line me-3 align-middle fs-16"></i><strong>Light</strong>
+                                                    - Left border alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Dark Alert</h6>
-                                                <UncontrolledAlert color="dark" className="alert-border-left shadow mb-0">
-                                                    <i className="ri-refresh-line me-3  align-middle fs-16"></i><strong>Dark</strong> - Left border alert
+                                                <UncontrolledAlert color="dark" className="alert-border-left mb-0">
+                                                    <i className="ri-refresh-line me-3  align-middle fs-16"></i><strong>Dark</strong>
+                                                    - Left border alert
                                                 </UncontrolledAlert>
 
                                             </Col>
@@ -472,46 +480,56 @@ const UiAlerts = () => {
                                         <Row>
                                             <Col xl={6}>
                                                 <h6>Primary Alert</h6>
-                                                <UncontrolledAlert color="primary" className="bg-primary text-white alert-label-icon shadow" closeClassName="btn-close-white">
-                                                    <i className="ri-user-smile-line label-icon"></i><strong>Primary</strong> -Label icon alert
+                                                <UncontrolledAlert color="primary" className="alert-solid alert-dismissible bg-primary text-white alert-label-icon fade show" closeClassName="btn-close-white">
+                                                    <i className="ri-user-smile-line label-icon"></i><strong>Primary</strong> - Label icon alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Secondary Alert</h6>
-                                                <UncontrolledAlert color="secondary" className="bg-secondary text-white alert-label-icon shadow" closeClassName="btn-close-white" >
-                                                    <i className="ri-check-double-line label-icon"></i><strong>Secondary</strong> - Label icon alert
+                                                <UncontrolledAlert color="secondary" className="alert-solid alert-dismissible bg-secondary text-white alert-label-icon fade show" closeClassName="btn-close-white" >
+                                                    <i className="ri-check-double-line label-icon"></i><strong>Secondary</strong>
+                                                    - Label icon
+                                                    alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Success Alert</h6>
-                                                <UncontrolledAlert color="success" className="bg-success text-white alert-label-icon shadow" closeClassName="btn-close-white">
-                                                    <i className="ri-notification-off-line label-icon"></i><strong>Success</strong> - Label icon alert
+                                                <UncontrolledAlert color="success" className="alert-solid alert-dismissible bg-success text-white alert-label-icon fade show" closeClassName="btn-close-white">
+                                                    <i className="ri-notification-off-line label-icon"></i><strong>Success</strong>
+                                                    - Label
+                                                    icon alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Danger Alert</h6>
-                                                <UncontrolledAlert color="danger" className="bg-danger text-white alert-label-icon shadow mb-xl-0" closeClassName="btn-close-white">
-                                                    <i className="ri-error-warning-line label-icon"></i><strong>Danger</strong> - Label icon alert
+                                                <UncontrolledAlert color="danger" className="alert-solid alert-dismissible bg-danger text-white alert-label-icon fade show mb-xl-0" closeClassName="btn-close-white">
+                                                    <i className="ri-error-warning-line label-icon"></i><strong>Danger</strong>
+                                                    - Label
+                                                    icon alert
                                                 </UncontrolledAlert>
 
                                             </Col>
 
                                             <Col xl={6}>
                                                 <h6>Warning Alert</h6>
-                                                <UncontrolledAlert color="warning" className="bg-warning text-white alert-label-icon shadow" closeClassName="btn-close-white">
-                                                    <i className="ri-alert-line label-icon"></i><strong>warning</strong> - Label icon alert
+                                                <UncontrolledAlert color="warning" className="alert-solid alert-dismissible bg-warning text-white alert-label-icon fade show" closeClassName="btn-close-white">
+                                                    <i className="ri-alert-line label-icon"></i><strong>warning</strong> - Label
+                                                    icon alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Info Alert</h6>
-                                                <UncontrolledAlert color="info" className="bg-info text-white alert-label-icon shadow" closeClassName="btn-close-white">
-                                                    <i className="ri-airplay-line label-icon"></i><strong>Info</strong> - Label icon alert
+                                                <UncontrolledAlert color="info" className="alert-solid alert-dismissible bg-info text-white alert-label-icon fade show" closeClassName="btn-close-white">
+                                                    <i className="ri-airplay-line label-icon"></i><strong>Info</strong> - Label
+                                                    icon alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Light Alert</h6>
-                                                <UncontrolledAlert color="light" className="bg-light text-body alert-label-icon shadow" closeClassName="btn-close-white">
-                                                    <i className="ri-mail-line label-icon"></i><strong>Light</strong> - Label icon alert
+                                                <UncontrolledAlert color="light" className="alert-solid alert-dismissible bg-light text-white alert-label-icon fade show" closeClassName="btn-close-white">
+                                                    <i className="ri-mail-line label-icon"></i><strong>Light</strong> -
+                                                    Label icon alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Dark Alert</h6>
-                                                <UncontrolledAlert color="dark" className="bg-dark text-white alert-label-icon shadow mb-0" closeClassName="btn-close-white">
-                                                    <i className="ri-refresh-line label-icon"></i><strong>Dark</strong> - Label icon alert
+                                                <UncontrolledAlert color="dark" className="alert-solid alert-dismissible bg-dark text-white alert-label-icon fade show mb-0" closeClassName="btn-close-white">
+                                                    <i className="ri-refresh-line label-icon"></i><strong>Dark</strong> -
+                                                    Label icon alert
                                                 </UncontrolledAlert>
 
                                             </Col>
@@ -684,13 +702,13 @@ const UiAlerts = () => {
 
                                                 <h6>Light Alert</h6>
                                                 <UncontrolledAlert color="light" className="alert-top-border">
-                                                    <i className="ri-mail-line me-3 align-middle fs-16"></i><strong>Light</strong>
+                                                    <i className="ri-mail-line me-3 align-middle fs-16 text-body"></i><strong>Light</strong>
                                                     - Top border alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Dark Alert</h6>
                                                 <UncontrolledAlert color="dark" className="alert-top-border mb-0">
-                                                    <i className="ri-refresh-line me-3 align-middle fs-16"></i><strong>Dark</strong>
+                                                    <i className="ri-refresh-line me-3 align-middle fs-16 text-body"></i><strong>Dark</strong>
                                                     - Top border alert
                                                 </UncontrolledAlert>
 
@@ -802,27 +820,27 @@ const UiAlerts = () => {
                                         <Row>
                                             <Col xl={6}>
                                                 <h6>Primary Alert</h6>
-                                                <UncontrolledAlert color="primary" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="primary" className="alert-label-icon rounded-label">
                                                     <i className="ri-user-smile-line label-icon"></i><strong>Primary</strong> -
                                                     Rounded label alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Secondary Alert</h6>
-                                                <UncontrolledAlert color="secondary" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="secondary" className="alert-label-icon rounded-label">
                                                     <i className="ri-check-double-line label-icon"></i><strong>Secondary</strong>
                                                     - Rounded
                                                     label alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Success Alert</h6>
-                                                <UncontrolledAlert color="success" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="success" className="alert-label-icon rounded-label">
                                                     <i className="ri-notification-off-line label-icon"></i><strong>Success</strong>
                                                     - Rounded
                                                     label alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Danger Alert</h6>
-                                                <UncontrolledAlert color="danger" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="danger" className="alert-label-icon rounded-label">
                                                     <i className="ri-error-warning-line label-icon"></i><strong>Danger</strong>
                                                     - Rounded
                                                     label alert
@@ -832,27 +850,27 @@ const UiAlerts = () => {
 
                                             <Col xl={6}>
                                                 <h6>Warning Alert</h6>
-                                                <UncontrolledAlert color="warning" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="warning" className="alert-label-icon rounded-label">
                                                     <i className="ri-alert-line label-icon"></i><strong>Warning</strong> - Rounded
                                                     label alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Info Alert</h6>
-                                                <UncontrolledAlert color="info" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="info" className="alert-label-icon rounded-label">
                                                     <i className="ri-airplay-line label-icon"></i><strong>Info</strong> -
                                                     Rounded label
                                                     alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Light Alert</h6>
-                                                <UncontrolledAlert color="light" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="light" className="alert-label-icon rounded-label">
                                                     <i className="ri-mail-line label-icon"></i><strong>Light</strong> -
                                                     Rounded label
                                                     alert
                                                 </UncontrolledAlert>
 
                                                 <h6>Dark Alert</h6>
-                                                <UncontrolledAlert color="dark" className="alert-label-icon rounded-label shadow">
+                                                <UncontrolledAlert color="dark" className="alert-label-icon rounded-label">
                                                     <i className="ri-refresh-line label-icon"></i><strong>Dark</strong> -
                                                     Rounded label
                                                     alert
@@ -878,52 +896,54 @@ const UiAlerts = () => {
                             <Card>
                                 <PreviewCardHeader title="Solid Alerts" />
                                 <CardBody>
-                                    <p className="text-muted">Use the <code>bg-*</code>, <code>border-*</code> & <code>text-white</code> class to set an alert with solid style.</p>
+                                    <p className="text-muted">Use the <code>alert-solid</code> class to set an alert with solid style.</p>
 
                                     <div className="live-preview">
                                         <Row>
                                             <Col xl={6}>
                                                 <h6>Primary Solid Alert</h6>
-                                                <Alert color="primary" className="alert bg-primary border-primary text-white shadow">
+                                                <Alert color="primary" className="bg-primary text-white border-0">
                                                     <strong>Hi!</strong> - Solid <b>primary alert</b> example
                                                 </Alert>
 
                                                 <h6>Secondary Solid Alert</h6>
-                                                <Alert color="secondary" className="alert bg-secondary border-secondary text-white shadow">
+                                                <Alert color="secondary" className="border-0 bg-secondary text-white">
                                                     <strong>How are you!</strong> - Solid <b>secondary alert</b> example
                                                 </Alert>
 
                                                 <h6>Success Solid Alert</h6>
-                                                <Alert color="success" className="alert bg-success border-success text-white shadow">
+                                                <Alert color="success" className="border-0 bg-success text-white">
                                                     <strong>Yey! Everything worked! </strong> - Solid <b>success alert</b> example
                                                 </Alert>
 
                                                 <h6>Danger Solid Alert</h6>
-                                                <Alert color="danger" className="alert bg-danger border-danger text-white shadow mb-xl-0">
+                                                <Alert color="danger" className="border-0 bg-danger text-white mb-xl-0">
                                                     <strong>Something is very wrong!</strong> - Solid <b>danger alert</b> example
                                                 </Alert>
+
                                             </Col>
 
                                             <Col xl={6}>
                                                 <h6>Warning Solid Alert</h6>
-                                                <Alert color="warning" className="alert bg-warning border-warning text-white shadow">
+                                                <Alert color="warning" className="border-0 bg-warning text-white">
                                                     <strong>Uh oh, something went wrong!</strong> - Solid <b>warning alert</b> example
                                                 </Alert>
 
                                                 <h6>Info Solid Alert</h6>
-                                                <Alert color="info" className="alert bg-info border-info text-white shadow">
+                                                <Alert color="info" className="border-0 bg-info text-white">
                                                     <strong>Don't forget' it !</strong> - Solid <b>info alert</b> example
                                                 </Alert>
 
                                                 <h6>Light Solid Alert</h6>
-                                                <Alert color="light" className="alert bg-light border-light text-body shadow">
+                                                <Alert color="light" className="border-0 bg-light text-white">
                                                     <strong>Mind Your Step!</strong> - Solid <b>secondary alert</b> example
                                                 </Alert>
 
                                                 <h6>Dark Solid Alert</h6>
-                                                <Alert color="dark" className="alert bg-dark border-dark text-white shadow mb-0">
+                                                <Alert color="dark" className="border-0 bg-dark text-white mb-0">
                                                     <strong>Did you know?</strong> - Solid <b>dark alert</b> example
                                                 </Alert>
+
                                             </Col>
                                         </Row>
                                     </div>
@@ -940,7 +960,7 @@ const UiAlerts = () => {
                     </Row>
                 </Container>
             </div>
-        </React.Fragment>
+        </React.Fragment >
     );
 };
 

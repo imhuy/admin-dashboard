@@ -30,9 +30,10 @@ const Widget = () => {
                                 </div>
                                 <div>
                                     <div className="avatar-sm flex-shrink-0">
-                                        <span className="avatar-title bg-primary rounded-circle fs-2">
+                                        <span className="avatar-title bg-info-subtle rounded-circle fs-2">
                                             <FeatherIcon
                                                 icon="users"
+                                                className="text-info"
                                             />
                                         </span>
                                     </div>
@@ -63,9 +64,10 @@ const Widget = () => {
                                 </div>
                                 <div>
                                     <div className="avatar-sm flex-shrink-0">
-                                        <span className="avatar-title bg-danger rounded-circle fs-2">
+                                        <span className="avatar-title bg-info-subtle rounded-circle fs-2">
                                             <FeatherIcon
                                                 icon="activity"
+                                                className="text-info"
                                             />
                                         </span>
                                     </div>
@@ -104,9 +106,10 @@ const Widget = () => {
                                 </div>
                                 <div>
                                     <div className="avatar-sm flex-shrink-0">
-                                        <span className="avatar-title bg-warning rounded-circle fs-2">
+                                        <span className="avatar-title bg-info-subtle rounded-circle fs-2">
                                             <FeatherIcon
                                                 icon="clock"
+                                                className="text-info"
                                             />
                                         </span>
                                     </div>
@@ -137,9 +140,10 @@ const Widget = () => {
                                 </div>
                                 <div>
                                     <div className="avatar-sm flex-shrink-0">
-                                        <span className="avatar-title bg-success rounded-circle fs-2">
+                                        <span className="avatar-title bg-info-subtle rounded-circle fs-2">
                                             <FeatherIcon
                                                 icon="external-link"
+                                                className="text-info"
                                             />
                                         </span>
                                     </div>

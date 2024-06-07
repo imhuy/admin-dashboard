@@ -18,7 +18,7 @@ const NewsFeed = () => {
                     </CardHeader>
 
                     <CardBody>
-                        {(newsFeed || []).map((item : any, key : any) => (
+                        {(newsFeed || []).map((item, key) => (
                             <div className={item.id === 1 ? "d-flex align-middle" : "d-flex mt-4"} key={key}>
                                 <div className="flex-shrink-0">
                                     <img src={item.img} className="rounded img-fluid" style={{ height: "60px" }} alt="" />

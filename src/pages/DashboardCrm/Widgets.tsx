@@ -9,7 +9,7 @@ const Widgets = () => {
                 <div className="card crm-widget">
                     <div className="card-body p-0">
                         <div className="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-0">
-                            {(crmWidgets).map((widget : any, index : any) => (
+                            {(crmWidgets).map((widget, index) => (
                                 <div className="col" key={index}>
                                     <div className="py-4 px-3">
                                         <h5 className="text-muted text-uppercase fs-13">{widget.label}<i className={widget.badge + " fs-18 float-end align-middle"}></i></h5>

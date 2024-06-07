@@ -4,12 +4,12 @@ import UiContent from "../../../Components/Common/UiContent";
 
 //import Components
 import BreadCrumb from '../../../Components/Common/BreadCrumb';
-import { Card, CardBody, Col, Container, DropdownItem, DropdownMenu, DropdownToggle, Input, Label, Row, UncontrolledDropdown } from 'reactstrap';
+import { Card, CardBody, Col, Container, DropdownItem, DropdownMenu, DropdownToggle, FormGroup, Input, Label, Row, UncontrolledDropdown } from 'reactstrap';
 import PreviewCardHeader from '../../../Components/Common/PreviewCardHeader';
 
 
 const BasicElements = () => {
-    document.title="Basic Elements | Velzon - React Admin & Dashboard Template";
+    document.title = "Basic Elements | Velzon - React Admin & Dashboard Template";  
 
     return (
         <React.Fragment>
@@ -23,7 +23,7 @@ const BasicElements = () => {
                             <Card>
                                 <PreviewCardHeader title="Input Example" />
 
-                                <CardBody className="card-body">
+                                <CardBody className="card-body mb-0">
                                     <div className="live-preview">
                                         <Row className="gy-4">
                                             <Col xxl={3} md={6}>
@@ -167,12 +167,23 @@ const BasicElements = () => {
                                                     <Input type="text" className="form-control rounded-pill" id="exampleInputrounded" placeholder="Enter your name" />
                                                 </div>
                                             </Col>
+
                                             <Col xxl={3} md={6}>
-                                                <div className="form-floating">
-                                                    <Input type="text" className="form-control" id="firstnamefloatingInput" placeholder="Enter your firstname"/>
-                                                    <Label for="firstnamefloatingInput">Floating Input</Label>
+                                                <div>
+                                                    <FormGroup floating>
+                                                        <Input
+                                                            id="exampleEmail"
+                                                            name="email"
+                                                            placeholder="Floating Input"
+                                                            type="text"
+                                                        />
+                                                        <Label for="exampleEmail">
+                                                            Floating Input
+                                                        </Label>
+                                                    </FormGroup>
                                                 </div>
                                             </Col>
+
                                         </Row>
 
                                     </div>
@@ -548,7 +559,7 @@ const BasicElements = () => {
                                             <Row className="g-3">
                                                 <Col lg={6}>
                                                     <UncontrolledDropdown className="input-group">
-                                                        <DropdownToggle tag="button" className="btn btn-primary" type="button">Dropdown</DropdownToggle>
+                                                        <DropdownToggle tag="button" className="btn btn-primary dropdown-toggle" type="button">Dropdown</DropdownToggle>
                                                         <DropdownMenu>
                                                             <li><DropdownItem>Action</DropdownItem></li>
                                                             <li><DropdownItem>Another action</DropdownItem></li>
@@ -562,7 +573,7 @@ const BasicElements = () => {
                                                 <Col lg={6}>
                                                     <UncontrolledDropdown className="input-group">
                                                         <Input type="text" className="form-control" aria-label="Text input with dropdown button" />
-                                                        <DropdownToggle tag="button" className="btn btn-success" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</DropdownToggle>
+                                                        <DropdownToggle tag="button" className="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</DropdownToggle>
                                                         <DropdownMenu className="dropdown-menu-end">
                                                             <li><DropdownItem>Action</DropdownItem></li>
                                                             <li><DropdownItem>Another action</DropdownItem></li>
@@ -574,7 +585,7 @@ const BasicElements = () => {
                                                 </Col>
                                                 <Col lg={12}>
                                                     <UncontrolledDropdown className="input-group">
-                                                        <DropdownToggle tag="button" className="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</DropdownToggle>
+                                                        <DropdownToggle tag="button" className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</DropdownToggle>
                                                         <DropdownMenu>
                                                             <li><DropdownItem>Action before</DropdownItem></li>
                                                             <li><DropdownItem>Another action before</DropdownItem></li>
@@ -583,7 +594,7 @@ const BasicElements = () => {
                                                             <li><DropdownItem>Separated link</DropdownItem></li>
                                                         </DropdownMenu>
                                                         <Input type="text" className="form-control" aria-label="Text input with 2 dropdown buttons" />
-                                                        <DropdownToggle tag="button" className="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</DropdownToggle>
+                                                        <DropdownToggle tag="button" className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</DropdownToggle>
                                                         <DropdownMenu className="dropdown-menu-end">
                                                             <li><DropdownItem>Action</DropdownItem></li>
                                                             <li><DropdownItem>Another action</DropdownItem></li>

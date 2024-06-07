@@ -23,7 +23,6 @@ import {
 import { Link } from "react-router-dom";
 import SimpleBar from "simplebar-react";
 import classnames from "classnames";
-// import EmojiPicker from 'emoji-picker-react';
 import EmojiPicker from 'emoji-picker-react';
 
 //Import Icons
@@ -36,8 +35,7 @@ import { chatContactData } from "../../common/data";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getDirectContact as onGetDirectContact,
-  getMessages,
-  // getChannels as onGetChannels,
+  getMessages as onGetMessages,
   addMessage as onAddMessage,
   deleteMessage as onDeleteMessage
 } from "../../slices/thunks";
@@ -154,7 +152,7 @@ const Chat = () => {
   };
   useEffect(() => {
     dispatch(onGetDirectContact());
-    dispatch(getMessages(currentRoomId));
+    dispatch(onGetMessages(currentRoomId));
   }, [dispatch, currentRoomId]);
 
   //Use For Chat Box
@@ -163,14 +161,18 @@ const Chat = () => {
     setCurrentRoomId(chats.roomId);
     setChat_Box_Image(chats.image);
     setUser_Status(chats.status)
-    dispatch(getMessages(chats.roomId));
+    dispatch(onGetMessages(chats.roomId));
     if (window.innerWidth < 892) {
       userChatShow.current.classList.add("user-chat-show");
     }
     // remove unread msg on read in chat
     var unreadMessage: any = document.getElementById("unread-msg-user" + chats.id);
+    var msgUser: any = document.getElementById("msgUser" + chats.id);
     if (unreadMessage) {
       unreadMessage.style.display = "none";
+    }
+    if (msgUser) {
+      msgUser.classList.remove("unread-msg-user");
     }
   };
 
@@ -278,9 +280,8 @@ const Chat = () => {
   // emoji
   const [emojiArray, setemojiArray] = useState<any>([]);
   const onEmojiClick = (event: any, emojiObject: any) => {
-    // Assuming event.emoji contains the selected emoji
-    setemojiArray([...emojiArray, emojiObject.emoji]);
-    setcurMessage(curMessage + event.emoji); // Use emojiObject.emoji to get the selected emoji
+    setemojiArray([...emojiArray, event.emoji]);
+    setcurMessage(curMessage + event.emoji);
   };
 
   document.title = "Chat | Velzon - React Admin & Dashboard Template";
@@ -321,7 +322,6 @@ const Chat = () => {
                   <i className="ri-search-2-line search-icon"></i>
                 </div>
               </div>
-
 
               <Nav tabs className="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3">
                 <NavItem>
@@ -384,7 +384,7 @@ const Chat = () => {
                             {(chats || []).map((chatContact: chatContactType) => (
                               chatContact.direactContact && (chatContact.direactContact || [])?.map((chat) => (
                                 <li key={chat.id + chat.status} className={Chat_Box_Username === chat.name ? "active" : ""}>
-                                  <Link to="#" onClick={() => userChatOpen(chat)} className={chat.badge && chat.badge !== 0 ? "unread-msg-user" : ''}>
+                                  <Link to="#!" onClick={() => userChatOpen(chat)} className={chat.badge && chat.badge !== 0 ? "unread-msg-user" : ''} id={"msgUser" + chat.id}>
                                     <div className="d-flex align-items-center">
                                       <div className={`flex-shrink-0 chat-user-img ${chat.status === 'Online' ? "online" : "away"} align-self-center me-2 ms-0`}>
                                         <div className="avatar-xxs">
@@ -705,19 +705,17 @@ const Chat = () => {
                                                       {
                                                         userChat.reply ?
                                                           <>
-                                                            <div className="ctext-wrap-content">
-                                                              <div className="replymessage-block mb-0 d-flex align-items-start">
-                                                                <div className="flex-grow-1">
-                                                                  <h5 className="conversation-name">{userChat.reply.sender}</h5>
-                                                                  <p className="mb-0">{userChat.reply.msg}</p>
-                                                                </div>
-                                                                <div className="flex-shrink-0">
-                                                                  <button type="button" className="btn btn-sm btn-link mt-n2 me-n3 font-size-18">
-                                                                  </button>
-                                                                </div>
+                                                            <div className="replymessage-block mb-0 d-flex align-items-start">
+                                                              <div className="flex-grow-1">
+                                                                <h5 className="conversation-name">{userChat.reply.sender}</h5>
+                                                                <p className="mb-0">{userChat.reply.msg}</p>
                                                               </div>
-                                                              <p className="mb-0 ctext-content mt-1">{userChat.msg}</p>
+                                                              <div className="flex-shrink-0">
+                                                                <button type="button" className="btn btn-sm btn-link mt-n2 me-n3 font-size-18">
+                                                                </button>
+                                                              </div>
                                                             </div>
+                                                            <p className="mb-0 ctext-content mt-1">{userChat.msg}</p>
                                                           </>
                                                           :
                                                           <p className="mb-0 ctext-content">
@@ -821,7 +819,7 @@ const Chat = () => {
                                 <button
                                   type="button"
                                   disabled={curMessage === ""}
-                                  onClick={() => { addMessage(); setemojiPicker(false); setemojiArray(""); }}
+                                  onClick={() => { addMessage(); setemojiPicker(false); setemojiArray(''); }}
                                   className="btn btn-success chat-send waves-effect waves-light disable"
                                 >
                                   <i className="ri-send-plane-2-fill align-bottom"></i>

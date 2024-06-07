@@ -1,9 +1,9 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
-const DashboardCharts = ({ seriesData, colors } : any) => {
+const DashboardCharts = ({ seriesData, colors }:any) => {
   const series = [seriesData];
-  const options : any = {
+  const options:any = {
     chart: {
       type: "radialBar",
       width: 105,

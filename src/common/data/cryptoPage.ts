@@ -219,7 +219,7 @@ const buysellWidgets = [
     {
         id: 1,
         title: "Total Buy",
-        counter: "243",
+        counter: 243,
         decimal: "10",
         icon: "ri-shopping-bag-line",
         iconClass: "danger",
@@ -227,7 +227,7 @@ const buysellWidgets = [
     {
         id: 2,
         title: "Total Sell",
-        counter: "658",
+        counter: 658,
         decimal: "00",
         icon: "ri-funds-line",
         iconClass: "info",
@@ -235,7 +235,7 @@ const buysellWidgets = [
     {
         id: 3,
         title: "Today's Buy",
-        counter: "104",
+        counter: 104,
         decimal: "85",
         icon: "ri-arrow-left-down-fill",
         iconClass: "warning",
@@ -243,7 +243,7 @@ const buysellWidgets = [
     {
         id: 4,
         title: "Today's Sell",
-        counter: "87",
+        counter: 87,
         decimal: "35",
         icon: "ri-arrow-right-up-fill",
         iconClass: "success",
@@ -585,7 +585,7 @@ const watchlist = [
         percentage: "+0.63%",
         percentageClass: "success",
         coinNameAbbr: "BTC",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Bitcoin",
             data: [85, 68, 35, 90, 8, 11, 26, 54]
@@ -615,7 +615,7 @@ const watchlist = [
         coinNameAbbr: "ETH",   
         chartsColor: "#f06548",
         series: [{
-            name: "Eathereum",
+            name: "Ethereum",
             data: [36, 21, 65, 22, 35, 50, 29, 44]
         }],
     },
@@ -641,7 +641,7 @@ const watchlist = [
         percentage: "+16.38%",
         percentageClass: "success",
         coinNameAbbr: "DASH",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Dash",
             data: [24, 68, 39, 86, 29, 42, 11, 58]
@@ -655,7 +655,7 @@ const watchlist = [
         percentage: "+0.36%",
         percentageClass: "success",
         coinNameAbbr: "MKR",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Dash",
             data: [13, 76, 12, 85, 25, 60, 9, 54]
@@ -669,7 +669,7 @@ const watchlist = [
         percentage: "32.07%",
         percentageClass: "success",
         coinNameAbbr: "NEO",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Neo",
             data: [9, 66, 41, 89, 12, 36, 25, 54]

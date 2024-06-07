@@ -4,7 +4,6 @@ import { Card, CardBody, Col, DropdownItem, DropdownMenu, DropdownToggle, Input,
 import DeleteModal from "../../../Components/Common/DeleteModal";
 import { ToastContainer } from 'react-toastify';
 
-
 //redux
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -19,16 +18,16 @@ import {
 import { createSelector } from 'reselect';
 
 const List = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const selectDashboardData = createSelector(
-        (state : any) => state.Projects.projectLists,
-        (projectLists) => projectLists
+        (state:any) => state.Projects,
+        (projectLists) => projectLists.projectLists
       );
     // Inside your component
     const projectLists = useSelector(selectDashboardData);
 
-    const [project, setProject] = useState<any>([]);
+    const [project, setProject] = useState(null);
     const [deleteModal, setDeleteModal] = useState<boolean>(false);
 
     useEffect(() => {
@@ -40,19 +39,19 @@ const List = () => {
     }, [projectLists]);
 
     // delete
-    const onClickData = (project : any) => {
+    const onClickData = (project:any) => {
         setProject(project);
         setDeleteModal(true);
     };
 
     const handleDeleteProjectList = () => {
         if (project) {
-            dispatch(onDeleteProjectList(project.id));
+            dispatch(onDeleteProjectList(project));
             setDeleteModal(false);
         }
     };
 
-    const activebtn = (ele : any) => {
+    const activebtn = (ele:any) => {
         if (ele.closest("button").classList.contains("active")) {
             ele.closest("button").classList.remove("active");
         } else {
@@ -89,14 +88,14 @@ const List = () => {
                             <option value="Last Year">Last Year</option>
                             <option value="This Month">This Month</option>
                             <option value="Today">Today</option>
-                            <option value="Yesterday" defaultValue="">Yesterday</option>
+                            <option value="Yesterday" defaultValue=''>Yesterday</option>
                         </select>
                     </div>
                 </div>
             </Row>
 
             <div className="row">
-                {(projectLists || []).map((item : any, index : any) => (
+                {(projectLists || []).map((item:any, index:any) => (
                     <React.Fragment key={index}>
                         {item.isDesign1 ?
                             <Col xxl={3} sm={6} className="project-card">
@@ -109,19 +108,19 @@ const List = () => {
                                                 </div>
                                                 <div className="flex-shrink-0">
                                                     <div className="d-flex gap-1 align-items-center">
-                                                        <button type="button" className={`btn avatar-xs mt-n1 p-0 favourite-btn shadow-none ${item.ratingClass}`} onClick={(e) => activebtn(e.target)}>
+                                                        <button type="button" className={`btn avatar-xs mt-n1 p-0 favourite-btn ${item.ratingClass}`} onClick={(e) => activebtn(e.target)}>
                                                             <span className="avatar-title bg-transparent fs-15">
                                                                 <i className="ri-star-fill"></i>
                                                             </span>
                                                         </button>
                                                         <UncontrolledDropdown direction='start'>
-                                                            <DropdownToggle tag="button" className="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15 shadow-none">
+                                                            <DropdownToggle tag="button" className="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15">
                                                                 <FeatherIcon icon="more-horizontal" className="icon-sm" />
                                                             </DropdownToggle>
 
                                                             <DropdownMenu className="dropdown-menu-end">
-                                                                <DropdownItem href="/apps-projects-overview"><i className="ri-eye-fill align-bottom me-2 text-muted"></i> View</DropdownItem>
-                                                                <DropdownItem href="/apps-projects-create"><i className="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</DropdownItem>
+                                                                <DropdownItem href="apps-projects-overview"><i className="ri-eye-fill align-bottom me-2 text-muted"></i> View</DropdownItem>
+                                                                <DropdownItem href="apps-projects-create"><i className="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</DropdownItem>
                                                                 <div className="dropdown-divider"></div>
                                                                 <DropdownItem href="#" onClick={() => onClickData(item)} data-bs-toggle="modal" data-bs-target="#removeProjectModal"><i className="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Remove</DropdownItem>
                                                             </DropdownMenu>
@@ -132,7 +131,7 @@ const List = () => {
                                             <div className="d-flex mb-2">
                                                 <div className="flex-shrink-0 me-3">
                                                     <div className="avatar-sm">
-                                                        <span className={"avatar-title rounded p-2 bg-" + item.imgbgColor + "-subtle"}>
+                                                        <span className={"avatar-title rounded p-2 bg-" + item.imgbgColor+"-subtle"}>
                                                             <img src={item.img} alt="" className="img-fluid p-1" />
                                                         </span>
                                                     </div>
@@ -153,7 +152,7 @@ const List = () => {
                                                 </div>
                                                 <div className="progress progress-sm animated-progess">
                                                     <div className="progress-bar bg-success"
-                                                        role="progressbar"
+                                                        role="progressbar" 
                                                         style={{ width: item.progressBar }}>
                                                     </div>
                                                 </div>
@@ -164,7 +163,7 @@ const List = () => {
                                         <div className="d-flex align-items-center">
                                             <div className="flex-grow-1">
                                                 <div className="avatar-group">
-                                                    {item.subItem.map((item : any, key : any) => (
+                                                    {item.subItem.map((item:any, key:any) => (
                                                         <React.Fragment key={key}>
                                                             {item.imgFooter ? <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Darline Williams">
                                                                 <div className="avatar-xxs">
@@ -201,13 +200,13 @@ const List = () => {
                                                     </div>
                                                     <div className="flex-shrink-0">
                                                         <div className="d-flex gap-1 align-items-center my-n2">
-                                                            <button type="button" className={`btn avatar-xs mt-n1 p-0 favourite-btn shadow-none ${item.ratingClass}`} onClick={(e) => activebtn(e.target)}>
+                                                            <button type="button" className={`btn avatar-xs mt-n1 p-0 favourite-btn ${item.ratingClass}`} onClick={(e) => activebtn(e.target)}>
                                                                 <span className="avatar-title bg-transparent fs-15">
                                                                     <i className="ri-star-fill"></i>
                                                                 </span>
                                                             </button>
                                                             <UncontrolledDropdown direction='start'>
-                                                                <DropdownToggle tag="button" className="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15 shadow-none">
+                                                                <DropdownToggle tag="button" className="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15">
                                                                     <FeatherIcon icon="more-horizontal" className="icon-sm" />
                                                                 </DropdownToggle>
 
@@ -228,7 +227,7 @@ const List = () => {
                                                     <Col xs={6}>
                                                         <div>
                                                             <p className="text-muted mb-1">Status</p>
-                                                            <div className={"fs-12 badge bg-" + item.statusClass + "-subtle text-" + item.statusClass}>{item.status}</div>
+                                                            <div className={"fs-12 badge bg-" + item.statusClass+"-subtle text-" + item.statusClass}>{item.status}</div>
                                                         </div>
                                                     </Col>
                                                     <Col xs={6}>
@@ -243,7 +242,7 @@ const List = () => {
                                                     <p className="text-muted mb-0 me-2">Team :</p>
                                                     <div className="avatar-group">
 
-                                                        {item.subItem.map((item : any, key : any) => (
+                                                        {item.subItem.map((item:any, key:any) => (
                                                             <React.Fragment key={key}>
                                                                 {item.imgTeam ? <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Darline Williams">
                                                                     <div className="avatar-xxs">
@@ -286,14 +285,14 @@ const List = () => {
                                             <CardBody>
                                                 <div className={`p-3 mt-n3 mx-n3 bg-${item.cardHeaderClass} rounded-top`}>
                                                     <div className="d-flex gap-1 align-items-center justify-content-end my-n2">
-                                                        <button type="button" className={`btn avatar-xs mt-n1 p-0 favourite-btn shadow-none ${item.ratingClass}`} onClick={(e : any) => activebtn(e.target)}>
+                                                        <button type="button" className={`btn avatar-xs mt-n1 p-0 favourite-btn ${item.ratingClass}`} onClick={(e) => activebtn(e.target)}>
                                                             <span className="avatar-title bg-transparent fs-15">
                                                                 <i className="ri-star-fill"></i>
                                                             </span>
                                                         </button>
                                                         <UncontrolledDropdown>
 
-                                                            <DropdownToggle tag="button" className="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15 shadow-none">
+                                                            <DropdownToggle tag="button" className="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15">
                                                                 <FeatherIcon icon="more-horizontal" className="icon-sm" />
                                                             </DropdownToggle>
 
@@ -316,7 +315,7 @@ const List = () => {
                                                         <Col xs={6}>
                                                             <div>
                                                                 <p className="text-muted mb-1">Status</p>
-                                                                <div className={"fs-12 badge bg-" + item.statusClass + "-subtle text-" + item.statusClass}>{item.status}</div>
+                                                                <div className={"fs-12 badge bg-" + item.statusClass+"-subtle text-"+ item.statusClass}>{item.status}</div>
                                                             </div>
                                                         </Col>
                                                         <Col xs={6}>
@@ -330,7 +329,7 @@ const List = () => {
                                                     <div className="d-flex align-items-center mt-3">
                                                         <p className="text-muted mb-0 me-2">Team :</p>
                                                         <div className="avatar-group">
-                                                            {item.subItem.map((item : any, key : any) => (
+                                                            {item.subItem.map((item:any, key:any) => (
                                                                 <React.Fragment key={key}>
                                                                     {item.imgTeam ? <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Darline Williams">
                                                                         <div className="avatar-xxs">
@@ -359,7 +358,7 @@ const List = () => {
                                                     </div>
                                                     <div className="progress progress-sm animated-progess">
                                                         <div className="progress-bar bg-success"
-                                                            role="progressbar" 
+                                                            role="progressbar"
                                                             style={{ width: item.progressBar }}>
                                                         </div>
                                                     </div>
@@ -406,9 +405,6 @@ const List = () => {
                         </ul>
                     </Col>
                 </Row>
-
-                
-                <ToastContainer closeButton={false} limit={1} />
         </React.Fragment>
     );
 };

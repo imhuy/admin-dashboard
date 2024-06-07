@@ -1,6 +1,6 @@
-const getChartColorsArray = (colors : any) => {
-    colors = JSON.parse(colors);
-    return colors.map(function (value : any) {
+const getChartColorsArray = (colors: string): string[] => {
+    const parsedColors: string[] = JSON.parse(colors);
+    return parsedColors.map(function (value: string) {
         var newValue = value.replace(" ", "");
         if (newValue.indexOf(",") === -1) {
             var color = getComputedStyle(document.documentElement).getPropertyValue(newValue);

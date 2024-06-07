@@ -44,7 +44,7 @@ const Counter = () => {
                                         start={0}
                                         end={20.3}
                                         duration={3}
-                                        decimals={1}
+                                        // decimal={1}
                                     />
                                 </span>
                                     k

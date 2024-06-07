@@ -16,14 +16,11 @@ import {
 
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 
+import DualListbox from './DualListbox';
 
-
-// Import Image
-import usFlag from "../../../assets/images/flags/us.svg"
-import MultiSelect from "./MultiSelect";
+import usflag from '../../../assets/images/flags/us.svg'
 import SimpleBar from "simplebar-react";
 import { country } from "../../../common/data";
-
 
 const FormAdvanced = () => {
   const [defaultCounter, setdefaultCounter] = useState(5);
@@ -47,27 +44,31 @@ const FormAdvanced = () => {
 
   document.title = "Form Advanced | Velzon - React Admin & Dashboard Template";
 
-
-  const [seletedCountry, setseletedCountry] = useState<any>('');
+  const [seletedCountry, setseletedCountry] = useState('');
   const [seletedCountry1, setseletedCountry1] = useState<any>({});
-  const [seletedCountry2, setseletedCountry2] = useState<any>('');
-  const [seletedCountry3, setseletedCountry3] = useState({
+
+  const [seletedCountry2, setseletedCountry2] = useState('');
+  const [seletedCountry3, setseletedCountry3] = useState<any>({
     id: 240,
-    flagImg: usFlag,
+    flagImg: usflag,
     countryName: "United States of America",
     countryCode: "+1"
   });
-  const [seletedCountry4, setseletedCountry4] = useState({
+
+  const [seletedCountry4, setseletedCountry4] = useState<any>({
     id: 240,
-    flagImg: usFlag,
+    flagImg: usflag,
     countryName: "United States of America",
     countryCode: "+1"
   });
+
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [dropdownOpen2, setDropdownOpen2] = useState<boolean>(false);
   const [dropdownOpen3, setDropdownOpen3] = useState<boolean>(false);
   const [dropdownOpen4, setDropdownOpen4] = useState<boolean>(false);
   const [dropdownOpen5, setDropdownOpen5] = useState<boolean>(false);
+
+
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const toggle2 = () => setDropdownOpen2((prevState) => !prevState);
   const toggle3 = () => setDropdownOpen3((prevState) => !prevState);
@@ -76,8 +77,10 @@ const FormAdvanced = () => {
   return (
     <React.Fragment>
       <div className="page-content">
+
         <Container fluid>
           <BreadCrumb title="Form Advanced" pageTitle="Forms" />
+
           <Row>
             <Col lg={12}>
               <Card>
@@ -96,7 +99,7 @@ const FormAdvanced = () => {
                           <DropdownMenu tag='ul' className="list-unstyled w-100 dropdown-menu-list mb-0">
                             <SimpleBar style={{ maxHeight: "220px" }} className="px-3">
                               {
-                                country.map((item, key) => (
+                                country.map((item : any, key : any) => (
                                   <DropdownItem as='li'
                                     onClick={() => setseletedCountry(item.countryName)} key={key}
                                     className="dropdown-item d-flex">
@@ -116,6 +119,7 @@ const FormAdvanced = () => {
                           </DropdownMenu>
                         </Dropdown>
                       </div>
+
                       <div className="mt-3">
                         <Label>Select input flag with img & name</Label>
                         <Dropdown isOpen={dropdownOpen2} toggle={toggle2}>
@@ -126,7 +130,7 @@ const FormAdvanced = () => {
                           </DropdownToggle>
                           <DropdownMenu as='ul' className="list-unstyled w-100 dropdown-menu-list mb-0">
                             <SimpleBar style={{ maxHeight: "220px" }} className="px-3">
-                              {(country || []).map((item, key) => (
+                              {(country || []).map((item : any, key : any) => (
                                 <DropdownItem as='li' onClick={() => setseletedCountry1(item)} key={key} className="dropdown-item d-flex">
                                   <div className="flex-shrink-0 me-2">
                                     <img src={item.flagImg} alt="country flag" className="options-flagimg" height="20" />
@@ -143,6 +147,7 @@ const FormAdvanced = () => {
                           </DropdownMenu>
                         </Dropdown>
                       </div>
+
                       <div className="mt-3">
                         <Label>Search input false in dropdown menu</Label>
                         <Dropdown isOpen={dropdownOpen3} toggle={toggle3}>
@@ -173,6 +178,7 @@ const FormAdvanced = () => {
                         </Dropdown>
                       </div>
                     </Col>
+
                     <Col lg={6}>
                       <div>
                         <Label>Select input with buttons & Flag with number</Label>
@@ -200,12 +206,13 @@ const FormAdvanced = () => {
                             </SimpleBar>
                           </DropdownMenu>
                         </Dropdown>
-                        {/* <div className="dropdown-menu w-100">
+
+                        <div className="dropdown-menu w-100">
                           <div className="p-2 px-3 pt-1 searchlist-input">
-                            <label type="text" className="form-control-sm border search-countryList" placeholder="Search country name or country code..." />
+                            <Label type="text" className="form-control-sm border search-countryList" placeholder="Search country name or country code..." />
                           </div>
                           <ul className="list-unstyled dropdown-menu-list mb-0"></ul>
-                        </div> */}
+                        </div>
                       </div>
                       <div className="mt-3">
                         <Label>Select input with buttons & Flag</Label>
@@ -216,7 +223,7 @@ const FormAdvanced = () => {
                           <input type="number" className="form-control rounded-end flag-input" placeholder="Enter number" />
                           <DropdownMenu as='ul' className="list-unstyled w-100 dropdown-menu-list mb-0">
                             <SimpleBar style={{ maxHeight: "220px" }} className="px-3">
-                              {(country || []).map((item : any, key : any) => (
+                              {(country || []).map((item, key) => (
                                 <DropdownItem as='li' onClick={() => setseletedCountry4(item)} key={key} className="dropdown-item d-flex">
                                   <div className="flex-shrink-0 me-2">
                                     <img src={item.flagImg} alt="country flag" className="options-flagimg" height="20" />
@@ -239,7 +246,7 @@ const FormAdvanced = () => {
               </Card>
             </Col>
           </Row>
-          
+
           <Row>
             <Col lg={12}>
               <Card>
@@ -590,50 +597,44 @@ const FormAdvanced = () => {
 
 
           {/* Advanced */}
-
-
-
           <Row>
-                <Col lg={12}>
-                    <Card>
-                        <CardHeader>
-                            <h4 className="card-title mb-0">Auto Complete</h4>
-                        </CardHeader>
+            <Col lg={12}>
+              <Card>
+                <CardHeader>
+                  <h4 className="card-title mb-0">Auto Complete</h4>
+                </CardHeader>
+                <CardBody>
+                  <div>
+                    <Row className="g-3">
+                      <Col lg="6">
+                        <div>
+                          <Label for="autoCompleteFruit" className="text-muted">Search Result of Fruit Names</Label>
+                          <Input id="autoCompleteFruit" type="text" dir="ltr" spellCheck={true} autoComplete="on" autoCapitalize="off" />
+                        </div>
+                      </Col>
+                      <Col lg="6">
+                        <div>
+                          <Label for="autoCompleteCars" className="text-muted">Search Result of Car Names</Label>
+                          <Input id="autoCompleteCars" type="text" dir="ltr" spellCheck={true} autoComplete="on" autoCapitalize="off" />
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
 
-                        <CardBody>
-                            <div>
-                                <Row className="g-3">
-                                    <Col lg={6}>
-                                        <div>
-                                            <Label className="text-muted">Search Result of Fruit Names</Label>
-                                           
-                                            <Input placeholder='Search for fruits...' id="autoCompleteFruit" type="text" dir="ltr" spellCheck={false} autoComplete="off" autoCapitalize="off" />
-                                        </div>
-                                    </Col>
-                                    <Col lg={6}>
-                                        <div>
-                                            <Label className="text-muted">Search Result of Car Names</Label>
-                                           
-                                            <Input placeholder='Search for cars...' id="autoCompleteCars" type="text" dir="ltr" spellCheck={false} autoComplete="off" autoCapitalize="off" />
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </Col>
-            </Row>
-          
 
           <Row>
             <Col lg={12}>
               <Card>
                 <CardHeader>
-                  <h4 className="card-title mb-0">Multi List</h4>
+                  <h4 className="card-title mb-0">Tranfer List</h4>
                 </CardHeader>
 
                 <CardBody>
-                  <MultiSelect/>
+                  <DualListbox />
                 </CardBody>
 
               </Card>

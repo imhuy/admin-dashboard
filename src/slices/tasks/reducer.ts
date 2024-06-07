@@ -20,7 +20,7 @@ const TasksSlice = createSlice({
             state.isTaskSuccess = true;
         });
         builder.addCase(addNewTask.fulfilled, (state: any, action: any) => {
-            state.taskList.push(action.payload);
+            state.taskList.unshift(action.payload);
             state.isTaskCreated = true;
             state.isTaskAdd = true;
             state.isTaskAddFail = false;
@@ -93,10 +93,10 @@ const TasksSlice = createSlice({
                                 ? { card, ...action.payload }
                                 : card
                         ),
-                    }
+                    };
                 }
-                return task
-            })
+                return task;
+            });
         });
         builder.addCase(updateCardData.rejected, (state: any, action: any) => {
             state.error = action.payload || null;
@@ -110,7 +110,7 @@ const TasksSlice = createSlice({
                     }),
                 };
                 return updatedTaskList;
-            })
+            });
         });
         builder.addCase(deleteKanban.rejected, (state: any, action: any) => {
             state.error = action.payload.error || null;

@@ -15,7 +15,7 @@ import gitbox from "../../assets/images/giftbox.png";
 import SimpleBar from "simplebar-react";
 import { topCategories } from "../../common/data";
 
-const RecentActivity = (props : any) => {
+const RecentActivity = (props:any) => {
   return (
     <React.Fragment>
       <div className={props.rightColumn ? "col-auto layout-rightside-col d-block" : "col-auto layout-rightside-col d-none"} id="layout-rightside-coll">
@@ -145,9 +145,9 @@ const RecentActivity = (props : any) => {
                       </div>
                     </div>
                     <div className="flex-grow-1 ms-3">
-                      <h6 className="mb-1 lh-base">Favorite Product</h6>
+                      <h6 className="mb-1 lh-base">Favoried Product</h6>
                       <p className="text-muted mb-2">
-                        Esther James have Favorite product.
+                        Esther James have favorited product.
                       </p>
                       <small className="mb-0 text-muted">25 Nov, 2021</small>
                     </div>
@@ -253,14 +253,14 @@ const RecentActivity = (props : any) => {
                   <div className="d-flex align-items-center">
                     <div className="flex-grow-1">
                       <div className="fs-16 align-middle text-warning">
-                        <i className="ri-star-fill me-1"></i>
-                        <i className="ri-star-fill me-1"></i>
-                        <i className="ri-star-fill me-1"></i>
-                        <i className="ri-star-fill me-1"></i>
+                        <i className="ri-star-fill"></i>
+                        <i className="ri-star-fill"></i>
+                        <i className="ri-star-fill"></i>
+                        <i className="ri-star-fill"></i>
                         <i className="ri-star-half-fill"></i>
                       </div>
                     </div>
-                    <div className="flex-shrink-0"> 
+                    <div className="flex-shrink-0">
                       <h6 className="mb-0">4.5 out of 5</h6>
                     </div>
                   </div>
@@ -280,7 +280,7 @@ const RecentActivity = (props : any) => {
                     </div>
                     <div className="col">
                       <div className="p-1">
-                        <div className="progress bg-success-subtle animated-progress progress-sm">
+                        <div className="progress animated-progess progress-sm">
                           <div
                             className="progress-bar bg-success"
                             role="progressbar"
@@ -304,11 +304,12 @@ const RecentActivity = (props : any) => {
                     </div>
                     <div className="col">
                       <div className="p-1">
-                        <div className="progress bg-success-subtle animated-progress progress-sm">
+                        <div className="progress animated-progess progress-sm">
                           <div
                             className="progress-bar bg-success"
                             role="progressbar"
                             style={{ width: "29.32%" }}
+                           
                           ></div>
                         </div>
                       </div>
@@ -328,11 +329,12 @@ const RecentActivity = (props : any) => {
                     </div>
                     <div className="col">
                       <div className="p-1">
-                        <div className="progress bg-warning-subtle animated-progress progress-sm">
+                        <div className="progress animated-progess progress-sm">
                           <div
                             className="progress-bar bg-warning"
                             role="progressbar"
                             style={{ width: "18.12%" }}
+                            
                           ></div>
                         </div>
                       </div>
@@ -352,11 +354,12 @@ const RecentActivity = (props : any) => {
                     </div>
                     <div className="col">
                       <div className="p-1">
-                        <div className="progress bg-success-subtle animated-progress progress-sm">
+                        <div className="progress animated-progess progress-sm">
                           <div
                             className="progress-bar bg-success"
                             role="progressbar"
                             style={{ width: "4.98%" }}
+                            
                           ></div>
                         </div>
                       </div>
@@ -377,11 +380,12 @@ const RecentActivity = (props : any) => {
                     </div>
                     <div className="col">
                       <div className="p-1">
-                        <div className="progress bg-danger-subtle animated-progress progress-sm">
+                        <div className="progress animated-progess progress-sm">
                           <div
                             className="progress-bar bg-danger"
                             role="progressbar"
-                            style={{ width: "7.42%" }} 
+                            style={{ width: "7.42%" }}
+                            
                           ></div>
                         </div>
                       </div>

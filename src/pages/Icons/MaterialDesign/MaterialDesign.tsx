@@ -16,7 +16,7 @@ const Materialdesign = () => {
               <Card>
                 <CardBody>
                   <h4 className="card-title">New Icons</h4>
-                  <p className="card-title-desc mb-2">Use <code>&lt;i className="mdi mdi-*-*"&gt;&lt;/i&gt;</code> className.<span className="badge bg-success">v 6.5.95</span>.</p>
+                  <p className="card-title-desc mb-2">Use <code>&lt;i className="mdi mdi-*-*"&gt;&lt;/i&gt;</code> class.<span className="badge bg-success">v 6.5.95</span>.</p>
                   <Row className="icon-demo-content" id="newIcons">
                     <div className="col-xl-3 col-lg-4 col-sm-6">
                       <i className="mdi mdi-account-lock-open"></i>

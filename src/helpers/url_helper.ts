@@ -24,6 +24,7 @@ export const DELETE_EVENT = "/delete/event";
 export const GET_DIRECT_CONTACT = "/chat";
 export const GET_MESSAGES = "/messages";
 export const ADD_MESSAGE = "add/message";
+export const GET_CHANNELS = "/channels";
 export const DELETE_MESSAGE = "delete/message";
 
 //Mailbox
@@ -36,16 +37,16 @@ export const TRASH_MAIL = "/trash/mail";
 
 // Ecommerce
 // Product
-export const GET_PRODUCTS = "/product";
-export const DELETE_PRODUCT = "/delete/product";
-export const ADD_NEW_PRODUCT = "/add/product";
-export const UPDATE_PRODUCT = "/update/product";
+export const GET_PRODUCTS = "/apps/product";
+export const DELETE_PRODUCT = "/apps/product";
+export const ADD_NEW_PRODUCT = "/apps/product";
+export const UPDATE_PRODUCT = "/apps/product";
 
 // Orders
-export const GET_ORDERS = "/order";
-export const ADD_NEW_ORDER = "/add/order";
-export const UPDATE_ORDER = "/update/order";
-export const DELETE_ORDER = "/delete/order";
+export const GET_ORDERS = "/apps/order";
+export const ADD_NEW_ORDER = "/apps/order";
+export const UPDATE_ORDER = "/apps/order";
+export const DELETE_ORDER = "/apps/order";
 
 // Customers
 export const GET_CUSTOMERS = "/apps/customer";
@@ -104,10 +105,10 @@ export const UPDATE_INVOICE = "/apps/invoice";
 export const DELETE_INVOICE = "/apps/invoice";
 
 // TicketsList
-export const GET_TICKETS_LIST = "/ticket";
-export const ADD_NEW_TICKET = "/add/ticket";
-export const UPDATE_TICKET = "/update/ticket";
-export const DELETE_TICKET = "/delete/ticket";
+export const GET_TICKETS_LIST = "/apps/ticket";
+export const ADD_NEW_TICKET = "/apps/ticket";
+export const UPDATE_TICKET = "/apps/ticket";
+export const DELETE_TICKET = "/apps/ticket";
 
 // Dashboard Analytics
 
@@ -162,6 +163,10 @@ export const GET_MONTHREVENUE_DATA = "/monthRevenue-data";
 export const GET_HALFYEARREVENUE_DATA = "/halfYearRevenue-data";
 export const GET_YEARREVENUE_DATA = "/yearRevenue-data";
 
+// Dashboard Job
+// Applications Statistic
+export const GET_APPLICTION_DATA = "/applictionStatistic-data";
+
 // Dashboard Crypto
 // Portfolio
 export const GET_BTCPORTFOLIO_DATA = "/btcPortfolio-data";
@@ -187,6 +192,9 @@ export const GET_ALLPROJECTSTATUS_DATA = "/allProjectStatus-data";
 export const GET_WEEKPROJECTSTATUS_DATA = "/weekProjectStatus-data";
 export const GET_MONTHPROJECTSTATUS_DATA = "/monthProjectStatus-data";
 export const GET_QUARTERPROJECTSTATUS_DATA = "/quarterProjectStatus-data";
+
+// job
+export const GET_JOBAPPLICATIONSTATISTIC = "/applicationstatistic"
 
 // Dashboard NFT
 // Marketplace

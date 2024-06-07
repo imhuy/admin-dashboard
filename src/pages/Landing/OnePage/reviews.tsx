@@ -39,7 +39,7 @@ const Reviews = () => {
                                                 </div>
                                             </div>
                                         </SwiperSlide>
-                                        <SwiperSlide>
+                                        <SwiperSlide className='mb-3'>
                                             <div className="row justify-content-center">
                                                 <div className="col-10">
                                                     <div className="text-white-50">
@@ -73,7 +73,7 @@ const Reviews = () => {
                                     </div>
                                     <div className="swiper-button-next bg-white rounded-circle"></div>
                                     <div className="swiper-button-prev bg-white rounded-circle"></div>
-                                    <div className="swiper-pagination position-relative mt-2"></div>
+                                    <div className="swiper-pagination position-relative mt-4"></div>
                                 </Swiper>
                             </div>
                         </Col>

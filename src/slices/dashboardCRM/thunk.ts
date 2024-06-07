@@ -16,7 +16,7 @@ import {
 }
   from "../../helpers/fakebackend_helper";
 
-export const getBalanceChartsData = createAsyncThunk("dashboardCrm/getBalanceChartsData", async (data : any) => {
+export const getBalanceChartsData = createAsyncThunk("dashboardCrm/getBalanceChartsData", async (data:any) => {
   try {
     var response;
     if (data === "today") {
@@ -37,7 +37,7 @@ export const getBalanceChartsData = createAsyncThunk("dashboardCrm/getBalanceCha
   }
 });
 
-export const getDialChartsData = createAsyncThunk("dashboardCrm/getDialChartsData", async (data : any) => {
+export const getDialChartsData = createAsyncThunk("dashboardCrm/getDialChartsData", async (data:any) => {
   try {
     var response;
     if (data === "today") {
@@ -59,7 +59,7 @@ export const getDialChartsData = createAsyncThunk("dashboardCrm/getDialChartsDat
   }
 });
 
-export const getSalesChartsData = createAsyncThunk("dashboardCrm/getSalesChartsData", async (data : any) => {
+export const getSalesChartsData = createAsyncThunk("dashboardCrm/getSalesChartsData", async (data:any) => {
   try {
     var response;
     if (data === "oct") {

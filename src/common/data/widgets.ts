@@ -30,10 +30,10 @@ const tileBoxs1 = [
         caption: "View net earnings",
         icon: "bx bx-dollar-circle",
         iconClass: "success-subtle",
+        color: "success",
         decimals: 2,
         prefix: "$",
         suffix: "k",
-        color:"success"
     },
     {
         id: 2,
@@ -53,7 +53,6 @@ const tileBoxs1 = [
         prefix: "",
         separator: ",",
         suffix: "",
-        color:"white"
     },
     {
         id: 3,
@@ -66,10 +65,10 @@ const tileBoxs1 = [
         caption: "See details",
         icon: "bx bx-user-circle",
         iconClass: "warning-subtle",
+        color:"warning",
         decimals: 2,
         prefix: "",
         suffix: "M",
-        color:"warning"
     },
     {
         id: 4,
@@ -81,11 +80,11 @@ const tileBoxs1 = [
         caption: "Withdraw money",
         icon: "bx bx-wallet",
         iconClass: "primary-subtle",
+        color:"primary",
         decimals: 2,
         prefix: "$",
         separator: ",",
         suffix: "k",
-        color:"primary"
     },
 ];
 
@@ -95,7 +94,7 @@ const tileBoxs2 = [
         label: "Campaign Sent",
         badge: "ri-arrow-up-circle-line text-success",
         icon: "ri-space-ship-line",
-        counter: "197",
+        counter: 197,
         decimals: 0,
         suffix: "",
         prefix: "",
@@ -105,17 +104,17 @@ const tileBoxs2 = [
         label: "Annual Profit",
         badge: "ri-arrow-up-circle-line text-success",
         icon: "ri-exchange-dollar-line",
-        counter: "489.4",
+        counter: 489.4,
         decimals: 1,
         suffix: "k",
         prefix: "$",
     },
     {
         id: 3,
-        label: "Lead Conversation",
+        label: "Lead Coversation",
         badge: "ri-arrow-down-circle-line text-danger",
         icon: "ri-pulse-line",
-        counter: "32.89",
+        counter: 32.89,
         decimals: 2,
         suffix: "%",
         prefix: "",
@@ -125,7 +124,7 @@ const tileBoxs2 = [
         label: "Daily Average Income",
         badge: "ri-arrow-up-circle-line text-success",
         icon: "ri-trophy-line",
-        counter: "1596.5",
+        counter: 1596.5,
         decimals: 1,
         prefix: "$",
         separator: ",",
@@ -136,7 +135,7 @@ const tileBoxs2 = [
         label: "Annual Deals",
         badge: "ri-arrow-down-circle-line text-danger",
         icon: "ri-service-line",
-        counter: "2659",
+        counter: 2659,
         decimals: 0,
         separator: ",",
         suffix: "",
@@ -158,7 +157,7 @@ const tileBoxs3 = [
         subCounter: [
             {
                 id: 1,
-                counter: "28.05",
+                counter: 28.05,
                 decimals: 2,
                 suffix: "k",
                 prefix: "",
@@ -178,7 +177,7 @@ const tileBoxs3 = [
         subCounter: [
             {
                 id: 1,
-                counter: "97.66",
+                counter: 97.66,
                 decimals: 2,
                 suffix: "k",
                 prefix: "",
@@ -202,14 +201,14 @@ const tileBoxs3 = [
         subCounter: [
             {
                 id: 1,
-                counter: "3",
+                counter: 3,
                 decimals: 0,
                 suffix: "m ",
                 prefix: "",
             },
             {
                 id: 2,
-                counter: "40",
+                counter: 40,
                 decimals: 0,
                 suffix: "sec",
                 prefix: "",
@@ -229,7 +228,7 @@ const tileBoxs3 = [
         subCounter: [
             {
                 id: 1,
-                counter: "33.48",
+                counter: 33.48,
                 decimals: 2,
                 suffix: "%",
                 prefix: "",
@@ -246,7 +245,7 @@ const tileBoxes4 = [
         iconClass: "white bg-opacity-25",
         label: "Total Sales",
         labelClass: "white-50",
-        counter: "2045",
+        counter: 2045,
         counterClass: "text-white",
         caption: "From 1930 last year",
         captionClass: "white-50",
@@ -265,7 +264,7 @@ const tileBoxes4 = [
         color:"warning",
         label: "Number of Users",
         labelClass: "muted",
-        counter: "7522",
+        counter: 7522,
         caption: "From 9530 last year",
         captionClass: "muted",
         percentage: "10.35 %",
@@ -283,7 +282,7 @@ const tileBoxes4 = [
         color: "danger",
         label: "Total Revenue",
         labelClass: "muted",
-        counter: "2845.05",
+        counter: 2845.05,
         caption: "From $1,750.04 last year",
         captionClass: "muted",
         percentage: "22.96 %",
@@ -301,7 +300,7 @@ const tileBoxes4 = [
         color:"info",
         label: "Number of Stores",
         labelClass: "muted",
-        counter: "405",
+        counter: 405,
         caption: "From 308 last year",
         captionClass: "muted",
         percentage: "16.31 %",
@@ -536,7 +535,7 @@ const widgetsTasks = [
 const widgetsAudiences = [
     {
         id: 1,
-        subCounter: [{ id: 1, counter: "854", suffix: "", prefix: "" }],
+        subCounter: [{ id: 1, counter: 854, suffix: "", prefix: "" }],
         caption: "Avg. Session",
         percentage: "49%",
     },
@@ -545,9 +544,8 @@ const widgetsAudiences = [
         subCounter: [
             {
                 id: 1,
-                counter: "1278",
+                counter: 1278,
                 decimals: 0,
-                separator: ",",
                 suffix: "",
                 prefix: "",
             },
@@ -561,14 +559,14 @@ const widgetsAudiences = [
         subCounter: [
             {
                 id: 1,
-                counter: "3",
+                counter: 3,
                 decimals: 0,
                 suffix: "m ",
                 prefix: "",
             },
             {
                 id: 2,
-                counter: "40",
+                counter: 40,
                 decimals: 0,
                 suffix: "sec",
                 prefix: "",

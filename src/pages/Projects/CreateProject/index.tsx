@@ -25,15 +25,15 @@ const CreateProject = () => {
 
     const [selectedMulti, setselectedMulti] = useState<any>(null);
 
-    function handleMulti(selectedMulti : any) {
+    const handleMulti = (selectedMulti:any) => {
     setselectedMulti(selectedMulti);
     }  
     
     //Dropzone file upload
     const [selectedFiles, setselectedFiles] = useState<any>([]);
   
-    function handleAcceptedFiles(files : any) {
-      files.map((file : any) =>
+    const handleAcceptedFiles = (files:any) => {
+      files.map((file:any) =>
         Object.assign(file, {
           preview: URL.createObjectURL(file),
           formattedSize: formatBytes(file.size),
@@ -45,7 +45,7 @@ const CreateProject = () => {
         /**
      * Formats the size
      */
-    function formatBytes(bytes : any, decimals = 2) {
+    const formatBytes = (bytes:any, decimals = 2) => {
         if (bytes === 0) return "0 Bytes";
         const k = 1024;
         const dm = decimals < 0 ? 0 : decimals;
@@ -86,9 +86,9 @@ document.title="Create Project | Velzon - React Admin & Dashboard Template";
                                                 // You can store the "editor" and use when it is needed.
                                                 
                                             }}
-                                            onChange={(editor : any) => {
-                                                editor.getData();
-                                            }}
+                                            // onChange={(editor) => {
+                                            //     editor.getData();
+                                            // }}
                                             />
                                     </div>
 
@@ -122,7 +122,7 @@ document.title="Create Project | Velzon - React Admin & Dashboard Template";
                                                     options={{
                                                     dateFormat: "d M, Y"
                                                     }}
-                                                    placeholder="Selact Date"
+                                                    placeholder="Enter due date"
                                                 />
                                             </div>
                                         </Col>
@@ -159,7 +159,7 @@ document.title="Create Project | Velzon - React Admin & Dashboard Template";
 
                                         <ul className="list-unstyled mb-0" id="dropzone-preview">
                                         
-                                        {selectedFiles.map((f : any, i : any) => {
+                                        {selectedFiles.map((f:any, i:any) => {
                                             return (
                                                 <Card
                                                 className="mt-1 mb-0 shadow-none border dz-processing dz-image-preview dz-success dz-complete"
@@ -242,7 +242,7 @@ document.title="Create Project | Velzon - React Admin & Dashboard Template";
                                         <Select
                                             value={selectedMulti}
                                             isMulti={true}                                                            
-                                            onChange={(selectedMulti : any) => {
+                                            onChange={(selectedMulti:any) => {
                                                 handleMulti(selectedMulti);
                                             }}
                                             options={SingleOptions}

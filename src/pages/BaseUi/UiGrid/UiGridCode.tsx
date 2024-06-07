@@ -21,7 +21,7 @@ const verticalStartCode =
 const VerticalStartExample = () => (
     <PrismCode
         code={verticalStartCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -47,7 +47,7 @@ const verticalCenterCode =
 const VerticalCenterExample = () => (
     <PrismCode
         code={verticalCenterCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -73,7 +73,7 @@ const verticalEndCode =
 const VerticalEndExample = () => (
     <PrismCode
         code={verticalEndCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -99,7 +99,7 @@ const alignSelfCode =
 const AlignSelfExample = () => (
     <PrismCode
         code={alignSelfCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -130,7 +130,7 @@ const horizontalAlignCode =
 const HorizontalAlignExample = () => (
     <PrismCode
         code={horizontalAlignCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

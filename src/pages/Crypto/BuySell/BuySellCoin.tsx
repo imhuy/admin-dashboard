@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 const BuySellCoin = () => {
     //Tab 
-    const [activeTab, setActiveTab] = useState('1');
-    const toggleTab = (tab : any) => {
+    const [activeTab, setActiveTab] = useState<any>('1');
+    const toggleTab = (tab:any) => {
         if (activeTab !== tab) {
             setActiveTab(tab);
         }

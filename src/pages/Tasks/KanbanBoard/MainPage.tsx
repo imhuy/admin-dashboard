@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect} from "react"
 import {
   Card,
   CardBody,
@@ -65,7 +65,6 @@ interface KanbanColumn {
   name: string;
   badge?: number;
   color?: string;
-  // cards?: KanbanCard[];
   cards?: any;
 }
 
@@ -330,8 +329,6 @@ const TasksKanban = () => {
 
   const handleDeleteCard = () => {
     if (card) {
-      console.log("card ===", card);
-
       dispatch(OnDeleteKanban(card.id));
       setDeleteModal(false);
     }
@@ -344,10 +341,7 @@ const TasksKanban = () => {
       : [...images, image];
 
     setImages(updatedImages);
-    console.log("updatedImages", updatedImages);
-
     validation.setFieldValue('userImages', updatedImages)
-
   }
   useEffect(() => {
     if (card) {
@@ -714,11 +708,7 @@ const TasksKanban = () => {
                   id="taskassignee"
                 >
                   {(AddTeamMember || []).map((image: any, index: any) => {
-                    console.log("image", image.id);
-
                     const isChecked = images.some((item: any) => {
-                      console.log("item.id === image.id", item.id === image.id, " ===>>>>>>>>>>>>>>>...", item.id, image.id);
-
                       return item.id === image.id
                     });
                     return (

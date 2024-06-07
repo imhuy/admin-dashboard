@@ -47,7 +47,7 @@ const popoversCode =
 const PopoversExample = () => (
     <PrismCode
         code={popoversCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -87,7 +87,7 @@ const tooltipsCode =
 const TooltipsExample = () => (
     <PrismCode
         code={tooltipsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -117,7 +117,7 @@ const breadcrumbCode =
 const BreadcrumbExample = () => (
     <PrismCode
         code={breadcrumbCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -184,7 +184,7 @@ const paginationCode =
 <!-- Pagination Alignment -->
 
 <!-- Center Alignment -->
-<Pagination listClassName="justify-content-center">
+<Pagination size="lg" listClassName="justify-content-center">
     <PaginationItem disabled> <PaginationLink to="#"> ← &nbsp; Prev </PaginationLink> </PaginationItem>
     <PaginationItem> <PaginationLink to="#"> 1 </PaginationLink> </PaginationItem>
     <PaginationItem> <PaginationLink to="#"> 2 </PaginationLink> </PaginationItem>
@@ -203,7 +203,7 @@ const paginationCode =
 
 
 <!-- Pagination Rounded -->
-<Pagination className="pagination-rounded">
+<Pagination size="sm" className="pagination-rounded">
     <PaginationItem disabled> <PaginationLink to="#"> ← </PaginationLink> </PaginationItem>
     <PaginationItem> <PaginationLink to="#"> 1 </PaginationLink> </PaginationItem>
     <PaginationItem active> <PaginationLink to="#"> 2 </PaginationLink> </PaginationItem>
@@ -217,7 +217,7 @@ const paginationCode =
 const PaginationExample = () => (
     <PrismCode
         code={paginationCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -266,7 +266,7 @@ const spinnersCode =
 const SpinnersExample = () => (
     <PrismCode
         code={spinnersCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

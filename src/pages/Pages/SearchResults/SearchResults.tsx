@@ -9,6 +9,7 @@ import smallImage1 from '../../../assets/images/small/img-1.jpg';
 import smallImage3 from '../../../assets/images/small/img-3.jpg';
 import smallImage4 from '../../../assets/images/small/img-4.jpg';
 import smallImage5 from '../../../assets/images/small/img-5.jpg';
+
 import { SearchGallery, news, video, swiper  } from '../../../common/data';
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,7 +18,7 @@ import { Autoplay } from "swiper/modules";
 const SearchResults = () => {
 
     // SwiperCore.use([Autoplay]);
-
+  
     //Tab 
     const [activeTab, setActiveTab] = useState('1');
     const toggleTab = (tab : any) => {
@@ -57,7 +58,7 @@ document.title="Search Results | Velzon - React Admin & Dashboard Template";
                                                 <Col>
                                                     <div className="position-relative mb-3">
                                                         <Input type="text" className="form-control form-control-lg bg-light border-light" placeholder="Search here.." defaultValue="Admin Dashboard" />
-                                                        <Link to="#" className="btn btn-link link-success btn-lg position-absolute end-0 top-0 shadow-none" onClick={toggleOffCanvas}><i className="ri-mic-fill"></i></Link>
+                                                        <Link to="#" className="btn btn-link link-success btn-lg position-absolute end-0 top-0" onClick={toggleOffCanvas}><i className="ri-mic-fill"></i></Link>
                                                     </div>
                                                 </Col>
                                                 <div className="col-auto">
@@ -70,13 +71,13 @@ document.title="Search Results | Velzon - React Admin & Dashboard Template";
                                         </Col>
                                     </Row>
 
-                                    <Offcanvas fade isOpen={isOpen}
+                                    <Offcanvas isOpen={isOpen}
                                         direction="top"
                                         toggle={toggleOffCanvas}
                                         tabIndex={1}
                                     >
                                         <OffcanvasBody>
-                                            <button type="button" className="btn-close text-reset float-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            <button type="button" onClick={() => setIsOpen(false)} className="btn-close text-reset float-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             <div className="d-flex flex-column h-100 justify-content-center align-items-center">
                                                 <div className="search-voice">
                                                     <i className="ri-mic-fill align-middle"></i>
@@ -294,8 +295,8 @@ document.title="Search Results | Velzon - React Admin & Dashboard Template";
                                                         slidesPerView={9}
                                                         spaceBetween={20}
                                                         autoplay={{ delay: 3000 }}
-                                                        modules={[Autoplay]}
                                                         pagination={{ clickable: true }}
+                                                        modules={[Autoplay]}
                                                         className="images-menu mb-3 swiper-initialized swiper-horizontal swiper-pointer-events"
                                                     >
                                                         <div className="swiper-wrapper">
@@ -377,6 +378,8 @@ document.title="Search Results | Velzon - React Admin & Dashboard Template";
                                                                     <div className="flex-grow-1 ms-sm-4 mt-3 mt-sm-0">
                                                                         <ul className="list-inline mb-2">
                                                                             <li className="list-inline-item"><span className={`badge bg-${item.badgeClass}-subtle text-${item.badgeClass} fs-11`}>{item.badgeText}</span></li>
+                                                                            {/* <li className="list-inline-item"><span className={`badge badge-soft-${item.badgeClass} fs-11`}>{item.badgeText}</span></li> */}
+
                                                                         </ul>
                                                                         <h5><Link to="#">{item.title}</Link></h5>
                                                                         <ul className="list-inline mb-0">

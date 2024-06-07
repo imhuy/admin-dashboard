@@ -43,11 +43,9 @@ const APIKey = () => {
 
   const apikeyData = createSelector(
     (state: any) => state.APIKey,
-    (state) => ({
-      apiKey : state.apiKey
-    })
+    (apiKey) => apiKey.apiKey
   );
-  const {apiKey} = useSelector(apikeyData);
+  const APIKey = useSelector(apikeyData);
 
   useEffect(() => {
     dispatch(getAPIKey());
@@ -267,7 +265,7 @@ const APIKey = () => {
                   <div>
                     <TableContainer
                       columns={columns}
-                      data={apiKey || []}
+                      data={APIKey || []}
                       customPageSize={8}
                       divClass="table-responsive table-card mb-3  "
                       tableClass="table align-middle table-nowrap mb-0"

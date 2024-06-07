@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 
-const FullScreenDropdown = () => {
-    /*
-    mode
-    */
-    const [isFullScreenMode, setIsFullScreenMode] = useState(true);
+const FullScreenDropdown: React.FC = () => {
+    const [isFullScreenMode, setIsFullScreenMode] = useState<boolean>(true);
 
-    /*
-    full screen
-    */
     const toggleFullscreen = () => {
         let document : any = window.document;
         document.body.classList.add("fullscreen-enable");
@@ -18,7 +12,6 @@ const FullScreenDropdown = () => {
             !document.mozFullScreenElement &&
             !document.webkitFullscreenElement
         ) {
-            // current working methods
             setIsFullScreenMode(false);
             if (document.documentElement.requestFullscreen) {
                 document.documentElement.requestFullscreen();
@@ -38,7 +31,6 @@ const FullScreenDropdown = () => {
             }
         }
 
-        // handle fullscreen exit
         const exitHandler = () => {
             if (
                 !document.webkitIsFullScreen &&
@@ -51,18 +43,19 @@ const FullScreenDropdown = () => {
         document.addEventListener("webkitfullscreenchange", exitHandler);
         document.addEventListener("mozfullscreenchange", exitHandler);
     };
+
     return (
-        <React.Fragment>
+        <>
             <div className="ms-1 header-item d-none d-sm-flex">
                 <button
                     onClick={toggleFullscreen}
                     type="button"
-                    className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle shadow-none"
+                    className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                 >
                     <i className={isFullScreenMode ? 'bx bx-fullscreen fs-22' : "bx bx-exit-fullscreen fs-22"}></i>
                 </button>
             </div>
-        </React.Fragment>
+        </>
     );
 };
 

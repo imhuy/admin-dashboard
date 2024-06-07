@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardBody, CardHeader, Col, DropdownItem, DropdownMenu, DropdownToggle, Row, UncontrolledDropdown } from 'reactstrap';
 import { recentNFTsData } from "../../common/data/dashboardNFT";
 import { topCollectionData } from "../../common/data/dashboardNFT";
@@ -19,11 +19,39 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 // Vector Map
-import { Link } from 'react-router-dom';
-import { VectorMap } from '@south-paw/react-vector-maps';
+import { VectorMap } from '@south-paw/react-vector-maps'
 import world from '../../common/world.svg.json';
+import { Link } from 'react-router-dom';
+import { SorttingData, sortElementsById } from 'Components/Common/SorttingData';
+
+interface recentNFTsType {
+    id: number;
+    img: string;
+    title: string;
+    category: string;
+    icon: string;
+    volume: string;
+    hours: number;
+    creators: string;
+    items: string;
+    textColor?: boolean;
+}
 
 const RecentNFTs = () => {
+    const [recentNFT, setRecentNFT] = useState<recentNFTsType[]>(recentNFTsData);
+    const [recentNFTDrop, setRecentNFTDrop] = useState<string>("Popular")
+
+    const handleSorting = (value: string) => {
+        setRecentNFTDrop(value)
+        if (value === "Popular") {
+            SorttingData({ data: recentNFTsData, item: "title", setState: setRecentNFT })
+        } else if (value === "Newest") {
+            sortElementsById({ data: recentNFTsData, item: "volume", setState: setRecentNFT })
+        } else {
+            SorttingData({ data: recentNFTsData, item: "category", setState: setRecentNFT })
+        }
+
+    }
     return (
         <React.Fragment>
             <Row>
@@ -34,12 +62,12 @@ const RecentNFTs = () => {
                             <div className="flex-shrink-0">
                                 <UncontrolledDropdown className='card-header-dropdown'>
                                     <DropdownToggle tag="a" className="text-reset dropdown-btn" role="button">
-                                        <span className="fw-semibold text-uppercase fs-12">Sort by: </span><span className="text-muted">Popular <i className="mdi mdi-chevron-down ms-1"></i></span>
+                                        <span className="fw-semibold text-uppercase fs-12">Sort by: </span><span className="text-muted">{recentNFTDrop} <i className="mdi mdi-chevron-down ms-1"></i></span>
                                     </DropdownToggle>
                                     <DropdownMenu className="dropdown-menu-end">
-                                        <DropdownItem to="#">Popular</DropdownItem>
-                                        <DropdownItem to="#">Newest</DropdownItem>
-                                        <DropdownItem to="#">Oldest</DropdownItem>
+                                        <DropdownItem to="#" onClick={() => handleSorting('Popular')}>Popular</DropdownItem>
+                                        <DropdownItem to="#" onClick={() => handleSorting('Newest')}>Newest</DropdownItem>
+                                        <DropdownItem to="#" onClick={() => handleSorting('Oldest')}>Oldest</DropdownItem>
                                     </DropdownMenu>
                                 </UncontrolledDropdown>
                             </div>
@@ -57,7 +85,7 @@ const RecentNFTs = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {recentNFTsData.map((item, key) => (
+                                        {(recentNFT || []).map((item: recentNFTsType, key: number) => (
                                             <tr key={key}>
                                                 <td>
                                                     <div className="d-flex align-items-center">
@@ -91,18 +119,19 @@ const RecentNFTs = () => {
                         <CardHeader className="align-items-center d-flex">
                             <h4 className="card-title mb-0 flex-grow-1">Worldwide Top Creators</h4>
                             <div className="flex-shrink-0">
-                                <button type="button" className="btn btn-soft-primary btn-sm shadow-none">
+                                <button type="button" className="btn btn-soft-primary btn-sm">
                                     Export Report
                                 </button>
                             </div>
                         </CardHeader>
                         <CardBody>
-                        <div id="world_map_line_markers" className="custom-vector-map">
-                                        <VectorMap {...world} className='mt-3'/>
-                                    </div>
-                            {/* <div id="creators-by-locations" data-colors='["--vz-light", "--vz-success", "--vz-primary"]' style={{ height: "265px" }} dir="ltr"></div> */}
-                            <div className="mt-4 mb-0">
-                                <p className="mb-1 mt-2"><img src={usFlag} alt="" height="15" className="rounded me-2" /> United States <span className="float-end">34%</span></p>
+                            <div id="world_map_line_markers" className="custom-vector-map">
+                                <VectorMap {...world} />
+                            </div>
+                            {/* <Vector value="world_mill" /> */}
+                            {/* <div id="creators-by-locations" data-colors='["--vz-gray-200", "--vz-success", "--vz-primary"]' style={{ height: "265px" }} dir="ltr"></div> */}
+                            <div className="mt-1">
+                                <p className="mb-1"><img src={usFlag} alt="" height="15" className="rounded me-2" /> United States <span className="float-end">34%</span></p>
                                 <p className="mb-1"><img src={russiaFlag} alt="" height="15" className="rounded me-2" /> Russia <span className="float-end">27%</span></p>
                                 <p className="mb-1"><img src={spainFlag} alt="" height="15" className="rounded me-2" /> Spain <span className="float-end">21%</span></p>
                                 <p className="mb-1"><img src={italyFlag} alt="" height="15" className="rounded me-2" /> Italy <span className="float-end">13%</span></p>
@@ -115,7 +144,7 @@ const RecentNFTs = () => {
                     <Card>
                         <CardHeader className="d-flex align-items-center">
                             <h6 className="card-title flex-grow-1 mb-0">Top Collections</h6>
-                            <Link to="/apps-nft-collections" type="button" className="btn btn-soft-primary shadow-none btn-sm flex-shrink-0">
+                            <Link to="/apps-nft-collections" type="button" className="btn btn-soft-primary btn-sm flex-shrink-0">
                                 See All <i className="ri-arrow-right-line align-bottom"></i>
                             </Link>
                         </CardHeader>
@@ -139,14 +168,14 @@ const RecentNFTs = () => {
                                                 <img src={item.img} alt="" height="220" className="object-fit-cover w-100" />
                                                 <div className="content position-absolute bottom-0 m-2 p-2 start-0 end-0 rounded d-flex align-items-center">
                                                     <div className="flex-grow-1">
-                                                        <Link to="#!">
+                                                        <Link to="#">
                                                             <h5 className="text-white fs-16 mb-1">{item.category}</h5>
                                                         </Link>
                                                         <p className="text-white text-opacity-75 mb-0">{item.items} Items</p>
                                                     </div>
                                                     <div className="avatar-xxs">
                                                         <div className="avatar-title bg-white rounded-circle">
-                                                            <Link to="#!" className="link-success"><i className="ri-arrow-right-line"></i></Link>
+                                                            <Link to="#" className="link-success"><i className="ri-arrow-right-line"></i></Link>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -160,7 +189,7 @@ const RecentNFTs = () => {
                     <Card>
                         <CardHeader className="d-flex align-items-center">
                             <h5 className="card-title flex-grow-1 mb-0">Popular Creators</h5>
-                            <Link to="/apps-nft-creators" type="button" className="btn btn-soft-primary shadow-none btn-sm flex-shrink-0">
+                            <Link to="/apps-nft-creators" type="button" className="btn btn-soft-primary btn-sm flex-shrink-0">
                                 See All <i className="ri-arrow-right-line align-bottom"></i>
                             </Link>
                         </CardHeader>

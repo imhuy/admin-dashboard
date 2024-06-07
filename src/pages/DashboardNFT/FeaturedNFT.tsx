@@ -2,31 +2,28 @@ import React from 'react';
 import { Card, CardBody, Col, Row } from 'reactstrap';
 import { topartWork } from "../../common/data/index";
 import { featuredNFTData } from "../../common/data/dashboardNFT";
-
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
-
+// import { Navigation, Autoplay } from "swiper";
+import { Navigation, Autoplay  } from "swiper/modules";
 // Import Chart
 import { TopArtworkChart } from "./DashboardNFTCharts";
-
 //SimpleBar
 import SimpleBar from "simplebar-react";
 import { Link } from 'react-router-dom';
-
 const FeaturedNFT = () => {
-
     return (
         <React.Fragment>
             <Row>
                 <Col xxl={8}>
-                    <div className="d-flex pt-2 pb-4">
-                        <h5 className="card-title fs-18 mb-1">Featured NFTs Artworks</h5>
+                    <div className="d-flex pt-2 mb-n4">
+                        <h5 className="card-title fs-18 mb-0">Featured NFTs Artworks</h5>
                     </div>
-                    <Swiper modules={[Navigation, Autoplay]}
+                    <Swiper 
+                    modules={[Navigation, Autoplay]}
                         slidesPerView={1}
                         spaceBetween={10}
                         navigation={{
@@ -49,19 +46,19 @@ const FeaturedNFT = () => {
                         }}
                         loop={true}
                         autoplay={{ delay: 2500, disableOnInteraction: false }}
-                        className="mySwiper marketplace-swiper rounded gallery-light">
+                        className="mySwiper marketplace-swiper rounded gallery-light pt-5">
                         <div className="swiper-wrapper">
                             {featuredNFTData.map((item, key) => (
                                 <SwiperSlide key={key}>
                                     <div className="card explore-box card-animate rounded">
-                                        {/* <div className="bookmark-icon position-absolute top-0 end-0 p-2">
+                                        <div className="bookmark-icon position-absolute top-0 end-0 p-2">
                                             <button type="button" className="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i className="mdi mdi-cards-heart fs-16"></i></button>
-                                        </div> */}
+                                        </div>
                                         <div className="explore-place-bid-img">
                                             <img src={item.img} alt="" className="img-fluid card-img-top explore-img" />
                                             <div className="bg-overlay"></div>
                                             <div className="place-bid-btn">
-                                                <Link to="#!" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
+                                                <Link to="#" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</Link>
                                             </div>
                                         </div>
                                         <CardBody>
@@ -91,7 +88,7 @@ const FeaturedNFT = () => {
                             <h4 className="card-title mb-0 flex-grow-1">Top Artworks</h4>
                             <div className="flex-shrink-0">
                                 <div>
-                                    <button type="button" className="btn btn-soft-primary btn-sm shadow-none">
+                                    <button type="button" className="btn btn-soft-primary btn-sm">
                                         See All
                                     </button>
                                 </div>
@@ -108,7 +105,7 @@ const FeaturedNFT = () => {
                                                         <div className="d-flex align-items-center">
                                                             <img src={item.img} alt="" className="avatar-sm rounded-circle" />
                                                             <div className="ms-3">
-                                                                <Link to="#!">
+                                                                <Link to="#">
                                                                     <h6 className="fs-15 mb-1">{item.title}</h6>
                                                                 </Link>
                                                                 <p className="mb-0 text-muted">{item.sales} Sales</p>
@@ -119,7 +116,7 @@ const FeaturedNFT = () => {
                                                         <TopArtworkChart seriesData={item.series} chartsColor={item.chartsColor} />
                                                     </td>
                                                     <td className="text-end">
-                                                        <Link to="#!">
+                                                        <Link to="#">
                                                             <h6 className="fs-15 mb-1">${item.collection}+</h6>
                                                         </Link>
                                                         <p className="mb-0 text-muted">Total USD</p>
@@ -136,5 +133,4 @@ const FeaturedNFT = () => {
         </React.Fragment>
     );
 };
-
 export default FeaturedNFT;

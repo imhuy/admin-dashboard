@@ -33,11 +33,11 @@ const UiTypography = () => {
                                                 <div className="text-muted">
                                                     <p>Body Font Family</p>
                                                     <div>
-                                                        <p className="display-4 text-body font-weight-medium">Aa</p>
+                                                        <p className="display-4 text-body fw-medium">Aa</p>
                                                     </div>
                                                     <div>
                                                         <p className="mb-2">Font Family</p>
-                                                        <h5 className="mb-0">"Inter", sans-serif</h5>
+                                                        <h5 className="mb-0">"Poppins", sans-serif</h5>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -46,11 +46,11 @@ const UiTypography = () => {
                                                 <div className="text-muted mt-4 mt-sm-0">
                                                     <p>Heading Font Family</p>
                                                     <div>
-                                                        <h1 className="display-4 text-body font-weight-medium">Aa</h1>
+                                                        <h1 className="display-4 text-body fw-medium">Aa</h1>
                                                     </div>
                                                     <div>
                                                         <p className="mb-2">Font Family</p>
-                                                        <h5 className="mb-0">"Inter", sans-serif</h5>
+                                                        <h5 className="mb-0">"Poppins", sans-serif</h5>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -399,7 +399,7 @@ const UiTypography = () => {
                     </Row>
 
                     <Row>
-                        <div className="col-xl-12">
+                        <Col xl={12}>
                             <Card>
                                 <PreviewCardHeader title="Description List Alignment" />
                                 <CardBody>
@@ -441,7 +441,7 @@ const UiTypography = () => {
                                     </div>
                                 </CardBody>
                             </Card>
-                        </div>
+                        </Col>
                     </Row>
 
                     <Row>

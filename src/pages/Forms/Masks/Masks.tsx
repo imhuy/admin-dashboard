@@ -6,16 +6,16 @@ import "cleave.js/dist/addons/cleave-phone.in";
 
 
 const Masks = () => {
-  const [date, setDate] = useState<any>("");
-  const [dateFormat, setDateFormat] = useState<any>("");
-  const [time, setTime] = useState<any>("");
-  const [timeFormat, setTimeFormat] = useState<any>("");
-  const [creditCardNo, setCreditCardNo] = useState<any>("");
-  const [delimiter, setDelimiter] = useState<any>("");
-  const [delimiter2, setDelimiter2] = useState<any>("");
-  const [prefix, setPrefix] = useState<any>("");
-  const [phone, setPhone] = useState<any>("");
-  const [number, setNumber] = useState<any>("");
+  const [date, setDate] = useState("");
+  const [dateFormat, setDateFormat] = useState("");
+  const [time, setTime] = useState("");
+  const [timeFormat, setTimeFormat] = useState("");
+  const [creditCardNo, setCreditCardNo] = useState("");
+  const [delimiter, setDelimiter] = useState("");
+  const [delimiter2, setDelimiter2] = useState("");
+  const [prefix, setPrefix] = useState("");
+  const [phone, setPhone] = useState("");
+  const [number, setNumber] = useState("");
 
   //Date 
   function onDateChange(e : any) {

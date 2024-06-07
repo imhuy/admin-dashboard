@@ -17,10 +17,10 @@ import { productDetails } from "../../../common/data/ecommerce";
 import EcommerceOrderProduct from "./EcommerceOrderProduct";
 import avatar3 from "../../../assets/images/users/avatar-3.jpg";
 
-const EcommerceOrderDetail = (props : any) => {
-  const [col1, setcol1] = useState(true);
-  const [col2, setcol2] = useState(true);
-  const [col3, setcol3] = useState(true);
+const EcommerceOrderDetail = (props:any) => {
+  const [col1, setcol1] = useState<boolean>(true);
+  const [col2, setcol2] = useState<boolean>(true);
+  const [col3, setcol3] = useState<boolean>(true);
 
   function togglecol1() {
     setcol1(!col1);
@@ -180,7 +180,7 @@ document.title ="Order Details | Velzon - React Admin & Dashboard Template";
                           </p>
 
                           <h6 className="mb-1">
-                            Seller has proccessed your order.
+                            Seller has processed your order.
                           </h6>
                           <p className="text-muted mb-0">
                             Thu, 16 Dec 2021 - 5:48AM
@@ -190,14 +190,14 @@ document.title ="Order Details | Velzon - React Admin & Dashboard Template";
                     </div>
                     <div className="accordion-item border-0" onClick={togglecol2}>
                       <div className="accordion-header" id="headingTwo">
-                        <Link to="#"
+                        <Link to="#collapseTwo"
                           className={classnames(
                             "accordion-button",
                             "p-2",
                             "shadow-none",
                             { collapsed: !col2 }
                           )}
-                          // to="#collapseTwo"
+                          
                         >
                           <div className="d-flex align-items-center">
                             <div className="flex-shrink-0 avatar-xs">
@@ -223,7 +223,7 @@ document.title ="Order Details | Velzon - React Admin & Dashboard Template";
                       >
                         <div className="accordion-body ms-2 ps-5 pt-0">
                           <h6 className="mb-1">
-                            Your Item has been picked up by courier partner
+                            Your Item has been picked up by courier patner
                           </h6>
                           <p className="text-muted mb-0">
                             Fri, 17 Dec 2021 - 9:45AM
@@ -233,14 +233,14 @@ document.title ="Order Details | Velzon - React Admin & Dashboard Template";
                     </div>
                     <div className="accordion-item border-0" onClick={togglecol3}>
                       <div className="accordion-header" id="headingThree">
-                        <Link to="#"
+                        <Link to="#collapseThree"
                           className={classnames(
                             "accordion-button",
                             "p-2",
                             "shadow-none",
                             { collapsed: !col3 }
                           )}
-                          // href="#collapseThree"
+                         
                         >
                           <div className="d-flex align-items-center">
                             <div className="flex-shrink-0 avatar-xs">
@@ -327,7 +327,8 @@ document.title ="Order Details | Velzon - React Admin & Dashboard Template";
               <CardHeader>
                 <div className="d-flex">
                   <h5 className="card-title flex-grow-1 mb-0">
-                    <i className="mdi mdi-truck-fast-outline align-middle me-1 text-muted"></i> Logistics Details
+                    <i className="mdi mdi-truck-fast-outline align-middle me-1 text-muted"></i>
+                    Logistics Details
                   </h5>
                   <div className="flex-shrink-0">
                     <Link to="#" className="badge bg-primary-subtle text-primary fs-11">
@@ -338,7 +339,7 @@ document.title ="Order Details | Velzon - React Admin & Dashboard Template";
               </CardHeader>
               <CardBody>
                 <div className="text-center">
-                <i className="ri-truck-line display-5 text-danger"></i>
+                  <i className="ri-truck-line display-5 text-danger"></i>
                   <h5 className="fs-16 mt-2">RQK Logistics</h5>
                   <p className="text-muted mb-0">ID: MFDS1400457854</p>
                   <p className="text-muted mb-0">Payment Mode : Debit Card</p>

@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Col, Container, Input, Label, Row, Button, FormFeedback, Form } from 'reactstrap';
-import AuthSlider from '../authCarousel';
+import { Card, Col, Container, Input, Label, Row, Button, Form, FormFeedback } from 'reactstrap';
 
 // Formik validation
 import * as Yup from "yup";
 import { useFormik } from "formik";
 
+import AuthSlider from '../authCarousel';
+
 const CoverSignIn = () => {
+    document.title = "Cover SignIn | Velzon - React Admin & Dashboard Template";
+
     const [passwordShow, setPasswordShow] = useState<boolean>(false);
 
     const validation: any = useFormik({
@@ -26,7 +29,7 @@ const CoverSignIn = () => {
             console.log("values", values)
         }
     });
-    document.title = "Cover SignIn | Velzon - React Admin & Dashboard Template";
+
     return (
         <React.Fragment>
             <div className="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">

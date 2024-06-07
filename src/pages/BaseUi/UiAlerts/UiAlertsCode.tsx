@@ -48,7 +48,7 @@ const defaultAlertsCode =
 const DefaultAlertsExample = () => (
     <PrismCode
         code={defaultAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -58,49 +58,49 @@ const DefaultAlertsExample = () => (
 
 const borderlessAlertsCode = `
 <!-- Primary Alert -->
-<Alert color="primary" className="border-0">
+<Alert color="primary" className="border-0 border-0">
     <strong> Hi! </strong> A simple <b>Primary alert</b> —check it out!
 </Alert>
 
 <!-- Secondary Alert -->
-<Alert color="secondary" className="border-0">
+<Alert color="secondary" className="border-0 border-0">
     <strong> How are you! </strong> A simple <b>secondary alert</b> —check it out!
 </Alert>
 
 <!-- Success Alert -->
-<Alert color="success" className="border-0">
+<Alert color="success" className="border-0 border-0">
     <strong> Yey! Everything worked! </strong> A simple <b>success alert</b> —check it out!
 </Alert>
 
 <!-- Danger Alert -->
-<Alert color="danger" className="border-0 mb-xl-0">
+<Alert color="danger" className="border-0 border-0 mb-xl-0">
     <strong> Something is very wrong! </strong> A simple danger alert—check it out!
 </Alert>
 
 <!-- Warning Alert -->
-<Alert color="warning" className="border-0">
+<Alert color="warning" className="border-0 border-0">
     <strong> Uh oh, something went wrong </strong> A simple <b>warning alert</b> —check it out!
 </Alert>
 
 <!-- Info Alert -->
-<Alert color="info" className="border-0">
+<Alert color="info" className="border-0 border-0">
     <strong>Don't forget' it !</strong> A simple <b>info alert</b> —check it out!
 </Alert>
 
 <!-- Light Alert -->
-<Alert color="light" className="border-0 bg-light">
+<Alert color="light" className="border-0 border-0 bg-light">
     <strong>Mind Your Step!</strong> A simple <b>light alert</b> —check it out!
 </Alert>
 
 <!-- Dark Alert -->
-<Alert color="dark" className="border-0 mb-0">
+<Alert color="dark" className="border-0 border-0 mb-0">
     <strong>Did you know?</strong> A simple <b>dark alert</b> —check it out!
 </Alert>`;
 
 const BorderlessExample = () => (
     <PrismCode
         code={borderlessAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -151,7 +151,7 @@ const dismissingAlertsCode = `
 const DismissingExample = () => (
     <PrismCode
         code={dismissingAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -202,7 +202,7 @@ const linkColorAlertsCode = `
 const LinkColorExample = () => (
     <PrismCode
         code={linkColorAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -219,7 +219,7 @@ const [show, setShow] = useState<boolean>(false);
 const LiveExample = () => (
     <PrismCode
         code={liveAlertsCode}
-        language={("html")}
+        language={("jsx")}
         plugins={["line-numbers"]}
     />
 );
@@ -228,44 +228,44 @@ const LiveExample = () => (
 
 const outlineAlertsCode = `
 <!-- Primary Alert -->
-<UncontrolledAlert color="primary" className="border-2 bg-body-secondary">
+<UncontrolledAlert color="primary" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
     <strong> Hi! </strong> - Outline <b>primary alert</b> example
 </UncontrolledAlert>
 
 <!-- Secondary Alert -->
-<UncontrolledAlert color="secondary" className="border-2 bg-body-secondary">
+<UncontrolledAlert color="secondary" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
     <strong> How are you! </strong> - Outline <b>secondary alert</b> example
 </UncontrolledAlert>
 
 <!-- Success Alert -->
-<UncontrolledAlert color="success" className="border-2 bg-body-secondary">
+<UncontrolledAlert color="success" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
     <strong> Yey! Everything worked! </strong> - Outline <b>success alert</b> example
 </UncontrolledAlert>
 
 <!-- Danger Alert -->
-<UncontrolledAlert color="danger" className="border-2 bg-body-secondary mb-xl-0">
+<UncontrolledAlert color="danger" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show mb-xl-0">
     <strong> Something is very wrong! </strong> - Outline <b>danger alert</b> example
 </UncontrolledAlert>
 
 <!-- Warning Alert -->
-<UncontrolledAlert color="warning" className="border-2 bg-body-secondary">
+<UncontrolledAlert color="warning" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
     <strong> Uh oh, something went wrong! </strong> - Outline <b>warning alert</b> example
 </UncontrolledAlert>
 
 <!-- Info Alert -->
-<UncontrolledAlert color="info" className="border-2 bg-body-secondary">
+<UncontrolledAlert color="info" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show">
     <strong>Don't forget' it !</strong> - Outline <b>info alert</b> example
 </UncontrolledAlert>
 
 <!-- Dark Alert -->
-<UncontrolledAlert color="dark" className="border-2 bg-body-secondary mb-0">
+<UncontrolledAlert color="dark" className="border-2 bg-body-secondary alert-dismissible border-2 bg-body-secondary fade show mb-0">
     <strong>Did you know?</strong> - Outline <b>dark alert</b> example
 </UncontrolledAlert>`;
 
 const OutlineAlertsExample = () => (
     <PrismCode
         code={outlineAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -317,7 +317,7 @@ const leftBorderAlertsCode = `
 const LeftBorderAlertsExample = () => (
     <PrismCode
         code={leftBorderAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -327,56 +327,49 @@ const LeftBorderAlertsExample = () => (
 
 const labelIconAlertsCode = `
 <!-- Primary Alert -->
-<UncontrolledAlert color="primary" className="bg-primary text-white alert-label-icon" closeClassName="btn-close-white">
-    <i className="ri-user-smile-line label-icon"></i><strong>Primary</strong> -Label icon alert
+<UncontrolledAlert color="primary" className="alert-solid alert-dismissible bg-primary text-white alert-label-icon fade show">
+    <i className="ri-user-smile-line label-icon"></i><strong>Primary</strong> -Label icon alert 
 </UncontrolledAlert>
 
 <!-- Secondary Alert -->
-<UncontrolledAlert color="secondary" className="bg-secondary text-white alert-label-icon" closeClassName="btn-close-white" >
-    <i className="ri-check-double-line label-icon"></i><strong>Secondary</strong>
-    - Label icon alert
+<UncontrolledAlert color="secondary" className="alert-solid alert-dismissible bg-secondary text-white alert-label-icon fade show">
+    <i className="ri-check-double-line label-icon"></i><strong>Secondary</strong> - Label icon alert
 </UncontrolledAlert>
 
 <!-- Success Alert -->
-<UncontrolledAlert color="success" className="bg-success text-white alert-label-icon" closeClassName="btn-close-white">
-    <i className="ri-notification-off-line label-icon"></i><strong>Success</strong>
-    - Label icon alert
+<UncontrolledAlert color="success" className="alert-solid alert-dismissible bg-success text-white alert-label-icon fade show">
+    <i className="ri-notification-off-line label-icon"></i><strong>Success</strong> - Label icon alert
 </UncontrolledAlert>
 
 <!-- Danger Alert -->
-<UncontrolledAlert color="danger" className="bg-danger text-white alert-label-icon mb-xl-0" closeClassName="btn-close-white">
-    <i className="ri-error-warning-line label-icon"></i><strong>Danger</strong>
-    - Label icon alert
+<UncontrolledAlert color="danger" className="alert-solid alert-dismissible bg-danger text-white alert-label-icon fade show mb-xl-0">
+    <i className="ri-error-warning-line label-icon"></i><strong>Danger</strong> - Label icon alert
 </UncontrolledAlert>
 
 <!-- Warning Alert -->
-<UncontrolledAlert color="warning" className="bg-warning text-white alert-label-icon" closeClassName="btn-close-white">
-    <i className="ri-alert-line label-icon"></i><strong>warning</strong> - Label
-    icon alert
+<UncontrolledAlert color="warning" className="alert-solid alert-dismissible bg-warning text-white alert-label-icon fade show">
+    <i className="ri-alert-line label-icon"></i><strong>warning</strong> - Label icon alert
 </UncontrolledAlert>
 
 <!-- Info Alert -->
-<UncontrolledAlert color="info" className="bg-info text-white alert-label-icon" closeClassName="btn-close-white">
-    <i className="ri-airplay-line label-icon"></i><strong>Info</strong> - Label
-    icon alert
+<UncontrolledAlert color="info" className="alert-solid alert-dismissible bg-info text-white alert-label-icon fade show">
+    <i className="ri-airplay-line label-icon"></i><strong>Info</strong> - Label icon alert
 </UncontrolledAlert>
 
 <!-- Light Alert -->
-<UncontrolledAlert color="light" className="bg-light text-body alert-label-icon" closeClassName="btn-close-white">
-    <i className="ri-mail-line label-icon"></i><strong>Light</strong> -
-    Label icon alert
+<UncontrolledAlert color="light" className="alert-solid alert-dismissible bg-light text-white alert-label-icon fade show">
+    <i className="ri-mail-line label-icon"></i><strong>Light</strong> - Label icon alert
 </UncontrolledAlert>
 
 <!-- Dark Alert -->
-<UncontrolledAlert color="dark" className="bg-dark text-white alert-label-icon mb-0" closeClassName="btn-close-white">
-    <i className="ri-refresh-line label-icon"></i><strong>Dark</strong> -
-    Label icon alert
+<UncontrolledAlert color="dark" className="alert-solid alert-dismissible bg-dark text-white alert-label-icon fade show mb-0">
+    <i className="ri-refresh-line label-icon"></i><strong>Dark</strong> - Label icon alert
 </UncontrolledAlert>`;
 
 const LabelIconAlertsExample = () => (
     <PrismCode
         code={labelIconAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -428,7 +421,7 @@ const topBarAlertsCode = `
 const TopBarAlertsExample = () => (
     <PrismCode
         code={topBarAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -480,7 +473,7 @@ const labelIconArrowAlertsCode = `
 const LabelIconArrowAlertsExample = () => (
     <PrismCode
         code={labelIconArrowAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -532,7 +525,7 @@ const roundedLabelIconAlertsCode = `
 const RoundedLabelIconAlertsExample = () => (
     <PrismCode
         code={roundedLabelIconAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -617,7 +610,7 @@ const additionalContentAlertsCode = `
 const AdditionalContentAlertsExample = () => (
     <PrismCode
         code={additionalContentAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -628,49 +621,49 @@ const AdditionalContentAlertsExample = () => (
 
 const solidAlertsCode = `
 <!-- Primary Alert -->
-<Alert color="primary" className="alert-solid">
+<Alert color="primary" className="bg-primary text-white border-0">
     <strong>Hi!</strong> - Solid <b>primary alert</b> example
 </Alert>
 
 <!-- Secondary Alert -->
-<Alert color="secondary" className="alert-solid">
+<Alert color="secondary" className="border-0 bg-secondary text-white">
     <strong>How are you!</strong> - Solid <b>secondary alert</b> example
 </Alert>
 
 <!-- Success Alert -->
-<Alert color="success" className="alert-solid">
+<Alert color="success" className="border-0 bg-success text-white">
     <strong>Yey! Everything worked! </strong> - Solid <b>success alert</b> example
 </Alert>
 
 <!-- Danger Alert -->
-<Alert color="danger" className="alert-solid mb-xl-0">
+<Alert color="danger" className="border-0 bg-danger text-white mb-xl-0">
     <strong>Something is very wrong!</strong> - Solid <b>danger alert</b> example
 </Alert>
 
 <!-- Warning Alert -->
-<Alert color="warning" className="alert-solid">
+<Alert color="warning" className="border-0 bg-warning text-white">
     <strong>Uh oh, something went wrong!</strong> - Solid <b>warning alert</b> example
 </Alert>
 
 <!-- Info Alert -->
-<Alert color="info" className="alert-solid">
+<Alert color="info" className="border-0 bg-info text-white">
     <strong>Don't forget' it !</strong> - Solid <b>info alert</b> example
 </Alert>
 
 <!-- Light Alert -->
-<Alert color="light" className="alert-solid">
+<Alert color="light" className="border-0 bg-secondary text-white">
     <strong>Mind Your Step!</strong> - Solid <b>secondary alert</b> example
 </Alert>
 
 <!-- Dark Alert -->
-<Alert color="dark" className="alert-solid mb-0">
+<Alert color="dark" className="border-0 bg-dark text-white mb-0">
     <strong>Did you know?</strong> - Solid <b>dark alert</b> example
 </Alert>`;
 
 const SolidAlertsExample = () => (
     <PrismCode
         code={solidAlertsCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

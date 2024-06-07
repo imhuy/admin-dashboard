@@ -15,12 +15,12 @@ import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
-const FileUpload = () => {
-  const [selectedFiles, setselectedFiles] = useState<any>([]);
+const FileUpload  = () => {
+  const [selectedFiles, setselectedFiles] = useState([]);
   const [files, setFiles] = useState<any>([]);
 
   function handleAcceptedFiles(files : any) {
-    files.map((file : any) =>
+    files.map((file: any) =>
       Object.assign(file, {
         preview: URL.createObjectURL(file),
         formattedSize: formatBytes(file.size),
@@ -28,7 +28,6 @@ const FileUpload = () => {
     );
     setselectedFiles(files);
   }
-
   /**
    * Formats the size
    */
@@ -57,7 +56,7 @@ const FileUpload = () => {
 
                   <p className="text-muted">DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews.</p>
                   <Dropzone
-                    onDrop={acceptedFiles => {
+                    onDrop={(acceptedFiles : any) => {
                       handleAcceptedFiles(acceptedFiles);
                     }}
                   >

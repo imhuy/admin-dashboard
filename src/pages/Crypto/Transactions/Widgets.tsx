@@ -15,12 +15,12 @@ const Widgets = () => {
                     <CardBody>
                         <div className="d-flex mb-3">
                             <div className="flex-grow-1">
-                                <i className="ri-briefcase-line display-5 text-success"></i>
+                            <i className="ri-briefcase-line display-5 text-success"></i>
                             </div>
                             <div className="flex-shrink-0">
-                                <Link to="#" className="badge bg-warning-subtle text-warning badge-border">BTC</Link>
-                                <Link to="#" className="badge bg-info-subtle text-info badge-border">ETH</Link>
-                                <Link to="#" className="badge bg-primary-subtle text-primary badge-border">USD</Link>
+                                <Link to="#" className="badge bg-warning-subtle text-warning badge-border">BTC </Link>&nbsp;
+                                <Link to="#" className="badge bg-info-subtle text-info badge-border">ETH</Link>&nbsp;
+                                <Link to="#" className="badge bg-primary-subtle text-primary badge-border">USD</Link>&nbsp;
                                 <Link to="#" className="badge bg-danger-subtle text-danger badge-border">EUR</Link>
                             </div>
                         </div>
@@ -41,9 +41,9 @@ const Widgets = () => {
                                 <i className="ri-coin-line display-5 text-success"></i>
                             </div>
                             <div className="flex-shrink-0">
-                                <Link to="#" className="badge bg-warning-subtle text-warning badge-border">BTC</Link>
-                                <Link to="#" className="badge bg-info-subtle text-info badge-border">ETH</Link>
-                                <Link to="#" className="badge bg-primary-subtle text-primary badge-border">USD</Link>
+                                <Link to="#" className="badge bg-warning-subtle text-warning badge-border">BTC</Link>&nbsp;
+                                <Link to="#" className="badge bg-info-subtle text-info badge-border">ETH</Link>&nbsp;
+                                <Link to="#" className="badge bg-primary-subtle text-primary badge-border">USD</Link>&nbsp;
                                 <Link to="#" className="badge bg-danger-subtle text-danger badge-border">EUR</Link>
                             </div>
                         </div>
@@ -61,12 +61,12 @@ const Widgets = () => {
                     <CardBody>
                         <div className="d-flex mb-3">
                             <div className="flex-grow-1">
-                                <i className="ri-wallet-3-line display-5 text-success"></i>
+                                <i className="ri-wallet-3-line display-5 text-success"></i>.
                             </div>
                             <div className="flex-shrink-0">
-                                <Link to="#" className="badge bg-warning-subtle text-warning badge-border">BTC</Link>
-                                <Link to="#" className="badge bg-info-subtle text-info badge-border">ETH</Link>
-                                <Link to="#" className="badge bg-primary-subtle text-primary badge-border">USD</Link>
+                                <Link to="#" className="badge bg-warning-subtle text-warning badge-border">BTC</Link>&nbsp;
+                                <Link to="#" className="badge bg-info-subtle text-info badge-border">ETH</Link>&nbsp;
+                                <Link to="#" className="badge bg-primary-subtle text-primary badge-border">USD</Link>&nbsp;
                                 <Link to="#" className="badge bg-danger-subtle text-danger badge-border">EUR</Link>
                             </div>
                         </div>
@@ -92,7 +92,7 @@ const Widgets = () => {
                     modules={[Autoplay, Mousewheel]}
                     className="default-swiper rounded">
                     <SwiperSlide>
-                        <Card className="card-animate overflow-hidden">
+                        <Card className="card-animate">
                             <div className="card-body bg-warning-subtle">
                                 <div className="d-flex mb-3">
                                     <div className="flex-grow-1">
@@ -108,7 +108,7 @@ const Widgets = () => {
                         </Card>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Card className="card-animate overflow-hidden">
+                        <Card className="card-animate">
                             <div className="card-body bg-warning-subtle">
                                 <div className="d-flex mb-3">
                                     <div className="flex-grow-1">
@@ -128,7 +128,7 @@ const Widgets = () => {
                             <div className="card-body bg-warning-subtle">
                                 <div className="d-flex mb-3">
                                     <div className="flex-grow-1">
-                                        <i className="ri-copper-coin-line display-5 text-success"></i>u
+                                        <i className="ri-copper-coin-line display-5 text-success"></i>
                                     </div>
                                     <div className="flex-shrink-0">
                                         <Link to="#" className="fw-medium">Monero (XMR)</Link>

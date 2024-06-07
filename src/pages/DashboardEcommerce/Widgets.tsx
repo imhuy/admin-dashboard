@@ -7,7 +7,7 @@ import { ecomWidgets } from "../../common/data";
 const Widgets = () => {
     return (
         <React.Fragment>
-            {ecomWidgets.map((item : any, key : any) => (
+            {ecomWidgets.map((item, key) => (
                 <Col xl={3} md={6} key={key}>
                     <Card className="card-animate">
                         <CardBody>
@@ -37,8 +37,8 @@ const Widgets = () => {
                                     <Link to="#" className="text-decoration-underline">{item.link}</Link>
                                 </div>
                                 <div className="avatar-sm flex-shrink-0">
-                                    <span className={"avatar-title rounded fs-3 bg-" + item.bgcolor}>
-                                        <i className={`${item.icon}`}></i>
+                                    <span className={"avatar-title rounded fs-3 bg-" + item.bgcolor+"-subtle"}>
+                                        <i className={`text-${item.bgcolor} ${item.icon}`}></i>
                                     </span>
                                 </div>
                             </div>

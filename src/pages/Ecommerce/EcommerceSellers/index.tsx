@@ -36,17 +36,18 @@ import SellerChats from "./SellerChats";
 import { createSelector } from "reselect";
 
 const EcommerceSellers = () => {
-  const dispatch : any = useDispatch();
+  const dispatch:any = useDispatch();
   const [sellerList, setSellerList] = useState<any>([]);
   const [modal, setModal] = useState<boolean>(false);
   const [companyType, setcompanyType] = useState<any>(null);
 
   const selectsellerData = createSelector(
-    (state : any) => state.Ecommerce.sellers,
-    (sellers) => sellers
+    (state:any) => state.Ecommerce,
+    (sellers) => sellers.sellers
   );
   // Inside your component
   const sellers = useSelector(selectsellerData);
+
 
   useEffect(() => {
     setSellerList(sellers);
@@ -70,7 +71,7 @@ const EcommerceSellers = () => {
 
   //Tab
   const [activeTab, setActiveTab] = useState("1");
-  const toggleTab = (tab : any) => {
+  const toggleTab = (tab:any) => {
     if (activeTab !== tab) {
       setActiveTab(tab);
     }
@@ -89,15 +90,15 @@ const EcommerceSellers = () => {
     },
   ];
 
-  function handlecompanyType(companyType : any) {
+  function handlecompanyType(companyType:any) {
     setcompanyType(companyType);
   }
 
-  const category = (e : any) => {
+  const category = (e:any) => {
     if (e === "All") {
-      var filter = sellers.filter((item : any) => item.category !== e);
+      var filter = sellers.filter((item:any) => item.category !== e);
     } else {
-      filter = sellers.filter((item : any) => item.category === e);
+      filter = sellers.filter((item:any) => item.category === e);
     }
     setSellerList(filter);
   };
@@ -162,7 +163,7 @@ const EcommerceSellers = () => {
           </Card>
 
           <Row className="mt-4">
-            {sellerList.map((seller : any, key : any) => (
+            {sellerList.map((seller:any, key:any) => (
               <React.Fragment key={key}>
                 <Col xl={3} lg={6}>
                   <Card className="ribbon-box right overflow-hidden">
@@ -504,7 +505,7 @@ const EcommerceSellers = () => {
                             name="choices-single-default"
                             id="choices-single-default"
                             value={companyType}
-                            onChange={(companyType : any) => {
+                            onChange={(companyType:any) => {
                               handlecompanyType(companyType);
                             }}
                             options={companytypes}

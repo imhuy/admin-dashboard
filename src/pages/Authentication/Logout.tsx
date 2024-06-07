@@ -11,13 +11,16 @@ import withRouter from "../../Components/Common/withRouter";
 import { createSelector } from "reselect";
 
 const Logout = () => {
-  const dispatch : any = useDispatch();
+  const dispatch: any = useDispatch();
 
-  const isUserLogoutSelector = createSelector(
-    (state : any) => state.Login.isUserLogout,
-    (isUserLogout) => isUserLogout
+
+  const logoutData = createSelector(
+    (state) => state.Login,
+    (isUserLogout) => isUserLogout.isUserLogout
   );
-  const isUserLogout = useSelector(isUserLogoutSelector);
+
+  // Inside your component
+  const isUserLogout = useSelector(logoutData);
 
   useEffect(() => {
     dispatch(logoutUser());
@@ -27,7 +30,7 @@ const Logout = () => {
     return <Navigate to="/login" />;
   }
 
-  return <></>;
+  return <React.Fragment></React.Fragment>;
 };
 
 Logout.propTypes = {

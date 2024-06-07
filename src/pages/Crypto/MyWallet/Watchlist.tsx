@@ -28,7 +28,7 @@ const Watchlist = () => {
                 }}
                 modules={[Autoplay, Mousewheel]}
                 className="cryptoSlider">
-                {(watchlist || []).map((item : any, key : any) => (
+                {(watchlist || []).map((item, key) => (
                     <SwiperSlide key={key}>
                         <Card>
                             <CardBody>

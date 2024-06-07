@@ -1,8 +1,5 @@
 // Variables
 
-// Google Font
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 //
 // custom-variables
 //
@@ -13,8 +10,8 @@ $variable-prefix:             vz-; // Deprecated in v5.2.0 for the shorter `$pre
 $prefix:                      $variable-prefix;
 
 // Font Family
-$font-family-primary:                             'Inter', sans-serif;
-$font-family-secondary:                           'Inter', sans-serif;
+$font-family-primary:                             'Poppins', sans-serif;
+$font-family-secondary:                           'hkgrotesk', sans-serif;
 
 //custom variables managed by
 //light mode
@@ -65,13 +62,13 @@ $grays: (
 
 // scss-docs-start color-variables
 $blue:       #3577f1;
-$indigo:     #4b38b3;
+$indigo:     #405189;
 $purple:     #6559cc;
 $pink:       #f672a7;
 $red:        #f06548;
 $orange:     #f1963b;
-$yellow:     #ffbe0b;
-$green:      #45CB85;
+$yellow:     #f7b84b;
+$green:      #0ab39c;
 $teal:       #02a8b5;
 $cyan:       #299cdb;
 // scss-docs-end color-variables
@@ -96,7 +93,7 @@ $colors: (
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-$min-contrast-ratio:   1.65;
+$min-contrast-ratio:   1.75;
 
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      $black;
@@ -202,6 +199,7 @@ $cyan-600: shade-color($cyan, 20%);
 $cyan-700: shade-color($cyan, 40%);
 $cyan-800: shade-color($cyan, 60%);
 $cyan-900: shade-color($cyan, 80%);
+
 $blues: (
   "blue-100": $blue-100,
   "blue-200": $blue-200,
@@ -336,7 +334,6 @@ $dark:          $gray-900;
 
 
 
-
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -461,7 +458,7 @@ $position-values: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   #f2f2f7;
+$body-bg:                   #f3f3f9;
 $body-color:                $gray-900;
 $body-text-align:           null;
 
@@ -583,11 +580,11 @@ $border-radius-2xl:           $border-radius-xxl; // Deprecated in v5.3.0
 // fusv-enable
 
 // scss-docs-start box-shadow-variables
-$box-shadow:                  0 3px 3px rgba(56, 65, 74, 0.1);
+$box-shadow:                  0 1px 2px rgba(56,65,74,0.15);
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075);
 $box-shadow-lg:               0 5px 10px rgba(30, 32, 37, 0.12);
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075);
-$element-shadow:              $box-shadow;
+$element-shadow:              none;
 // scss-docs-end box-shadow-variables
 
 $component-active-color:      $white;
@@ -597,6 +594,8 @@ $component-active-bg:         $primary;
 $focus-ring-width:      0.25rem;
 $focus-ring-opacity:    .25;
 $focus-ring-color:      rgba(var(--#{$prefix}primary-rgb), $focus-ring-opacity);
+$focus-ring-blur:       1;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
 // scss-docs-end focus-ring-variables
 
 // scss-docs-start caret-variables
@@ -972,6 +971,7 @@ $input-height-sm:                       add($input-line-height * 1em, add($input
 $input-height-lg:                       add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
 
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
 $form-color-width:                      3rem;
 // scss-docs-end form-input-variables
 
@@ -1151,7 +1151,7 @@ $form-validation-states: (
     "tooltip-color": #fff,
     "tooltip-bg-color": var(--#{$prefix}success),
     "focus-box-shadow": 0 0 $input-btn-focus-blur $input-focus-width rgba(var(--#{$prefix}success-rgb), $input-btn-focus-color-opacity),
-    "border-color": var(--#{$prefix}form-valid-border-color),
+    // "border-color": var(--#{$prefix}form-valid-border-color),
   ),
   "invalid": (
     "color": var(--#{$prefix}form-invalid-color),
@@ -1159,7 +1159,7 @@ $form-validation-states: (
     "tooltip-color": #fff,
     "tooltip-bg-color": var(--#{$prefix}danger),
     "focus-box-shadow": 0 0 $input-btn-focus-blur $input-focus-width rgba(var(--#{$prefix}danger-rgb), $input-btn-focus-color-opacity),
-    "border-color": var(--#{$prefix}form-invalid-border-color),
+    // "border-color": var(--#{$prefix}form-invalid-border-color),
   )
 );
 // scss-docs-end form-validation-states
@@ -1191,6 +1191,7 @@ $zindex-levels: (
   3: 3
 );
 // scss-docs-end zindex-levels-map
+
 
 // Navs
 

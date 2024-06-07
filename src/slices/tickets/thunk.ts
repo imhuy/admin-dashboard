@@ -19,7 +19,7 @@ export const getTicketsList = createAsyncThunk("tickets/getTicketsList", async (
     }
 });
 
-export const addNewTicket = createAsyncThunk("tickets/addNewTicket", async (ticket : any) => {
+export const addNewTicket = createAsyncThunk("tickets/addNewTicket", async (ticket:any) => {
     try {
         const response = addNewTicketApi(ticket);
         const data = await response;
@@ -30,7 +30,7 @@ export const addNewTicket = createAsyncThunk("tickets/addNewTicket", async (tick
     }
 });
 
-export const updateTicket = createAsyncThunk("tickets/updateTicket", async (ticket : any) => {
+export const updateTicket = createAsyncThunk("tickets/updateTicket", async (ticket:any) => {
     try {
         const response = updateTicketApi(ticket);
         const data = await response;
@@ -42,7 +42,7 @@ export const updateTicket = createAsyncThunk("tickets/updateTicket", async (tick
     }
 });
 
-export const deleteTicket = createAsyncThunk("tickets/deleteTicket", async (ticket : any) => {
+export const deleteTicket = createAsyncThunk("tickets/deleteTicket", async (ticket:any) => {
     try {
         const response = deleteTicketApi(ticket);
         toast.success("Ticket Delete Successfully", { autoClose: 3000 });

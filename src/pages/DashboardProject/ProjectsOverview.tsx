@@ -7,13 +7,13 @@ import { getProjectChartsData } from '../../slices/thunks';
 import { createSelector } from 'reselect';
 
 const ProjectsOverview = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const selectprojectData = createSelector(
-        (state : any) => state.DashboardProject.projectData,
-        (projectData) => projectData
+        (state:any) => state.DashboardProject,
+        (projectData) => projectData.projectData
       );
     // Inside your component
     const projectData = useSelector(selectprojectData);
@@ -23,7 +23,7 @@ const ProjectsOverview = () => {
         setchartData(projectData);
     }, [projectData]);
 
-    const onChangeChartPeriod = (pType : any) => {
+    const onChangeChartPeriod = (pType:any) => {
         dispatch(getProjectChartsData(pType));
     };
 
@@ -39,16 +39,16 @@ const ProjectsOverview = () => {
                         <CardHeader className="border-0 align-items-center d-flex">
                             <h4 className="card-title mb-0 flex-grow-1">Projects Overview</h4>
                             <div className="d-flex gap-1">
-                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("all"); }}>
+                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("all"); }}>
                                     ALL
                                 </button>
-                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("month"); }}>
+                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("month"); }}>
                                     1M
                                 </button>
-                                <button type="button" className="btn btn-soft-secondary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("halfyear"); }}>
+                                <button type="button" className="btn btn-soft-secondary btn-sm" onClick={() => { onChangeChartPeriod("halfyear"); }}>
                                     6M
                                 </button>
-                                <button type="button" className="btn btn-soft-primary btn-sm shadow-none" onClick={() => { onChangeChartPeriod("year"); }}>
+                                <button type="button" className="btn btn-soft-primary btn-sm" onClick={() => { onChangeChartPeriod("year"); }}>
                                     1Y
                                 </button>
                             </div>
@@ -112,7 +112,9 @@ const ProjectsOverview = () => {
                         </CardHeader>
                         <CardBody className="p-0 pb-2">
                             <div>
-                                <ProjectsOverviewCharts series={chartData} dataColors='["--vz-primary", "--vz-warning", "--vz-success"]' />
+                                <div dir="ltr" className="apex-charts">
+                                    <ProjectsOverviewCharts series={chartData} dataColors='["--vz-primary", "--vz-warning", "--vz-success"]' />
+                                </div>
                             </div>
                         </CardBody>
                     </Card>

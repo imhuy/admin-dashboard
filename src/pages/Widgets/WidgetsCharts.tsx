@@ -2,7 +2,7 @@ import React from 'react';
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
-const AudiencesMetricsCharts = ({ dataColors } : any) => {
+const AudiencesMetricsCharts = ({ dataColors }: any) => {
     var chartAudienceColumnChartsColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'Last Year',
@@ -11,7 +11,7 @@ const AudiencesMetricsCharts = ({ dataColors } : any) => {
         name: 'Current Year',
         data: [36.2, 22.4, 38.2, 30.5, 26.4, 30.4, 20.2, 29.6, 10.9, 36.2, 22.4, 38.2]
     }];
-    var options : any  = {
+    var options : any = {
         chart: {
             type: 'bar',
             height: 309,
@@ -87,7 +87,7 @@ const AudiencesMetricsCharts = ({ dataColors } : any) => {
     );
 };
 
-const MyPortfolioCharts = ({ dataColors } : any) => {
+const MyPortfolioCharts = ({ dataColors }: any) => {
     var donutchartportfolioColors = getChartColorsArray(dataColors);
     const series = [19405, 40552, 15824, 30635];
     var options : any = {
@@ -169,7 +169,7 @@ const MyPortfolioCharts = ({ dataColors } : any) => {
     );
 };
 
-const SessionsByCountriesCharts = ({ dataColors } : any) => {
+const SessionsByCountriesCharts = ({ dataColors }: any) => {
     var barchartCountriesColors = getChartColorsArray(dataColors);
     const series = [{
         data: [1010, 1640, 490, 1255, 1050, 689, 800, 420, 1085, 589],
@@ -227,7 +227,7 @@ const SessionsByCountriesCharts = ({ dataColors } : any) => {
     );
 };
 
-const TopReferralsPagesCharts = ({ dataColors } : any) => {
+const TopReferralsPagesCharts = ({ dataColors }: any) => {
     var chartHeatMapColors = getChartColorsArray(dataColors);
 
     function generateData(count : any, yrange : any) {
@@ -246,7 +246,7 @@ const TopReferralsPagesCharts = ({ dataColors } : any) => {
         return series;
     }
 
-    const dataChart : any = {
+    const dataChart: any = {
         series: [{
             name: 'Jan',
             data: generateData(20, {
@@ -382,7 +382,7 @@ const TopReferralsPagesCharts = ({ dataColors } : any) => {
     );
 };
 
-const OtherWidgetsCharts = ({ dataColors , seriesData } : any) => {
+const OtherWidgetsCharts = ({ dataColors, seriesData }: any) => {
     var areachartbitcoinColors = getChartColorsArray(dataColors);
     var options : any = {
         chart: {
@@ -429,4 +429,4 @@ const OtherWidgetsCharts = ({ dataColors , seriesData } : any) => {
 };
 
 
-export { AudiencesMetricsCharts, MyPortfolioCharts, SessionsByCountriesCharts, TopReferralsPagesCharts,OtherWidgetsCharts };
+export { AudiencesMetricsCharts, MyPortfolioCharts, SessionsByCountriesCharts, TopReferralsPagesCharts, OtherWidgetsCharts };

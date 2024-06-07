@@ -10,10 +10,9 @@ import logoLight from "../../../assets/images/logo-light.png";
 const BasicTwosVerify = () => {
     document.title = "Two Step Verification | Velzon - React Admin & Dashboard Template";
 
-    const getInputElement = (index : any) : HTMLInputElement => {
+    const getInputElement = (index: number): HTMLInputElement => {
         return document.getElementById('digit' + index + '-input') as HTMLInputElement;
-    }
-
+      };
     const moveToNext = (index : any) => {
         if (getInputElement(index).value.length === 1) {
             if (index !== 4) {
@@ -25,6 +24,7 @@ const BasicTwosVerify = () => {
             }
         }
     }
+
 
     return (
         <React.Fragment>
@@ -59,7 +59,7 @@ const BasicTwosVerify = () => {
 
                                             <div className="p-2 mt-4">
                                                 <div className="text-muted text-center mb-4 mx-lg-3">
-                                                    <h4>Verify Your Email</h4>
+                                                    <h4 className="">Verify Your Email</h4>
                                                     <p>Please enter the 4 digit code sent to <span className="fw-semibold">example@abc.com</span></p>
                                                 </div>
 

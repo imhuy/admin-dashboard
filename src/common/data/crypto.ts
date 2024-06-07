@@ -20,11 +20,11 @@ const cyptoWidgets = [
         id: 1,
         icon: "ri-money-dollar-circle-fill",
         label: "Total Invested",
-        counter: "2390.68",
+        counter: 2390.68,
         badge: "ri-arrow-up-s-fill",
         badgeColor: "success",
         percentage: "6.24",
-        decimal: "2",
+        decimal: 2,
         prefix: "$",
         separator: ","
     },
@@ -32,11 +32,11 @@ const cyptoWidgets = [
         id: 2,
         icon: "ri-arrow-up-circle-fill",
         label: "Total Change",
-        counter: "19523.25",
+        counter: 19523.25,
         badge: "ri-arrow-up-s-fill",
         badgeColor: "success",
         percentage: "3.67",
-        decimal: "2",
+        decimal: 2,
         prefix: "$",
         separator: ","
     },
@@ -44,11 +44,11 @@ const cyptoWidgets = [
         id: 3,
         icon: "ri-arrow-down-circle-fill",
         label: "Day Change",
-        counter: "14799.44",
+        counter: 14799.44,
         badge: "ri-arrow-down-s-fill",
         badgeColor: "danger",
         percentage: "4.80",
-        decimal: "2",
+        decimal: 2,
         prefix: "$",
         separator: ","
     },
@@ -63,7 +63,7 @@ const cryptoSlider = [
         change: "+13.11%",
         changeClass: "success",
         coinName: "btc",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Bitcoin",
             data: [85, 68, 35, 90, 8, 11, 26, 54]
@@ -77,7 +77,7 @@ const cryptoSlider = [
         change: "+15.08%",
         changeClass: "success",
         coinName: "ltc",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Litecoin",
             data: [25, 50, 41, 87, 12, 36, 9, 54]
@@ -86,14 +86,14 @@ const cryptoSlider = [
     {
         id: 3,
         img: etcCoin,
-        label: "Eathereum",
+        label: "Ethereum",
         price: "$3,312,870",
         change: "+08.57%",
         changeClass: "success",
         coinName: "etc",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
-            name: "Eathereum",
+            name: "Ethereum",
             data: [36, 21, 65, 22, 35, 50, 29, 44]
         }],
     },
@@ -119,7 +119,7 @@ const cryptoSlider = [
         change: "+12.07%",
         changeClass: "success",
         coinName: "dash",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Dash",
             data: [24, 68, 39, 86, 29, 42, 11, 58]
@@ -133,7 +133,7 @@ const cryptoSlider = [
         change: "+14.99%",
         changeClass: "success",
         coinName: "usdt",
-        chartsColor: "#45CB85",
+        chartsColor: "#0ab39c",
         series: [{
             name: "Dash",
             data: [13, 76, 12, 85, 25, 60, 9, 54]
@@ -181,7 +181,7 @@ const currencies = [
     {
         id: 3,
         img: ethCoin,
-        coinName: "Eathereum",
+        coinName: "Ethereum",
         price: "33,847.961",
         iconClass: "success",
         icon: "mdi mdi-trending-up",
@@ -264,7 +264,7 @@ const recentActivity = [
         id: 3,
         feaIcon: "send",
         feaIconClass: "warning",
-        label: "Sent Eathereum",
+        label: "Sent Ethereum",
         caption: " Sofia Cunha",
         captionColor: "warning",
         coinActivity: "-0.09025182",
@@ -314,7 +314,7 @@ const recentActivity = [
         id: 9,
         feaIcon: "send",
         feaIconClass: "warning",
-        label: "Sent Eathereum",
+        label: "Sent Ethereum",
         caption: " Sofia Cunha",
         captionColor: "warning",
         coinActivity: "-0.09025182",
@@ -350,7 +350,7 @@ const topPerformers = [
     {
         id: 2,
         img: ethCoin,
-        coinName: "Eathereum",
+        coinName: "Ethereum",
         marketCap: "27.4",
         price: "08,256.04",
         change: "+$51.19",

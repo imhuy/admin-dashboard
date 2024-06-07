@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getMarketChartsDatas } from './thunk';
-export const initialState = {
+export const initialState : any = {
   marketplaceData: [],
   error: {}
 };
@@ -8,13 +8,13 @@ export const initialState = {
 const DashboardNFTSlice = createSlice({
   name: 'DashboardNFT',
   initialState,
-  reducers: {},
+  reducers :{},
   extraReducers: (builder) => {
-    builder.addCase(getMarketChartsDatas.fulfilled, (state : any, action : any) => {
+    builder.addCase(getMarketChartsDatas.fulfilled, (state:any, action:any) => {
       state.marketplaceData = action.payload;
     });
 
-    builder.addCase(getMarketChartsDatas.rejected, (state : any, action : any) => {
+    builder.addCase(getMarketChartsDatas.rejected, (state:any, action:any) => {
       state.error = action.payload.error || null;
     });
   }

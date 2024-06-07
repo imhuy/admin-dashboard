@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Col, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap';
 import { useSelector, useDispatch } from "react-redux";
 import { getPortfolioChartsData } from '../../slices/thunks';
 
@@ -13,23 +13,24 @@ import { PortfolioCharts } from './DashboardCryptoCharts';
 import { createSelector } from 'reselect';
 
 const MyPortfolio = () => {
-    const dispatch : any = useDispatch();
+    const dispatch:any = useDispatch();
 
     const [chartData, setchartData] = useState<any>([]);
 
     const selectDashboardData = createSelector(
-        (state : any) => state.DashboardCrypto.portfolioData,
-        (portfolioData) => portfolioData
+        (state:any) => state.DashboardCrypto,
+        (portfolioData) => portfolioData.portfolioData
       );
     // Inside your component
     const portfolioData = useSelector(selectDashboardData);
+
 
     useEffect(() => {
         setchartData(portfolioData);
     }, [portfolioData]);
 
-    const [seletedMonth, setSeletedMonth] = useState("Btc");
-    const onChangeChartPeriod = (pType : any) => {
+    const [seletedMonth, setSeletedMonth] = useState<any>("Btc");
+    const onChangeChartPeriod = (pType:any) => {
         setSeletedMonth(pType);
         dispatch(getPortfolioChartsData(pType));
     };
@@ -39,13 +40,13 @@ const MyPortfolio = () => {
     }, [dispatch]);
     return (
         <React.Fragment>
-            <Col xxl={3}>
-                <Card className="card-height-100">
+            <div className="col-xxl-3">
+                <div className="card card-height-100">
                     <div className="card-header border-0 align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">My Portfolio</h4>
                         <div>
-                            <UncontrolledDropdown direction='start'>
-                                <DropdownToggle tag="button" className="btn btn-soft-primary btn-sm shadow-none" >
+                            <UncontrolledDropdown >
+                                <DropdownToggle tag="button" className="btn btn-soft-primary btn-sm" >
                                     <span className="text-uppercase">{seletedMonth}<i className="mdi mdi-chevron-down align-middle ms-1"></i></span>
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu dropdown-menu-end">
@@ -130,8 +131,8 @@ const MyPortfolio = () => {
                             </li>
                         </ul>
                     </div>
-                </Card>
-            </Col>
+                </div>
+            </div>
         </React.Fragment>
     );
 };

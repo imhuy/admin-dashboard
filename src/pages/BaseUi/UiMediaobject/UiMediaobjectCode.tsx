@@ -39,7 +39,7 @@ const defultCode =
 const DefultExample = () => (
     <PrismCode
         code={defultCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -83,7 +83,7 @@ const nestingCode =
 const NestingExample = () => (
     <PrismCode
         code={nestingCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -130,7 +130,7 @@ const mediaCode =
 const MediaExample = () => (
     <PrismCode
         code={mediaCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

@@ -15,7 +15,7 @@ const code =`<Col lg={4} md={6}>
         </Label>
     </div>                                                        
     <div className="form-check">
-        <Input className="form-check-input" type="checkbox" id="formCheck2" defaultChecked/>                                                           / 
+        <Input className="form-check-input" type="checkbox" id="formCheck2" defaultChecked/>                                                           
         <Label className="form-check-label" for="formCheck2">
             Checked checkbox
         </Label>

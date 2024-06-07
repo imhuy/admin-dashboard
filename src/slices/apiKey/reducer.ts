@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getAPIKey } from './thunk';
 
-export const initialState = {
+export const initialState : any = {
     apiKey: [],
     error: {},
 };
 
-const APIKeyslice = createSlice({
+const APIKeyslice : any = createSlice({
     name: 'APIKey',
     initialState,
     reducers: {},

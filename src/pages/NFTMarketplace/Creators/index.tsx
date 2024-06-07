@@ -28,7 +28,7 @@ const Creators = () => {
                                     <select className="form-control w-md" data-choices data-choices-search-false>
                                         <option value="All">All</option>
                                         <option value="Today">Today</option>
-                                        <option value="Yesterday" defaultValue="Yesterday">Yesterday</option>
+                                        <option value="Yesterday" defaultValue=''>Yesterday</option>
                                         <option value="Last 7 Days">Last 7 Days</option>
                                         <option value="Last 30 Days">Last 30 Days</option>
                                         <option value="This Month">This Month</option>
@@ -90,7 +90,7 @@ const Creators = () => {
                                         </Link>
                                         <p className="text-muted mb-2">{item.products} Products</p>
                                         <p className="text-muted">You can make an NFT of a digital painting, a text, a piece of music, a video.</p>
-                                        <button className={item.isFollowBtn ? "btn btn-success w-100" : "btn btn-soft-success w-100"}>{item.isFollowBtn ? "Follow" : "Unfollow"}</button>
+                                        <button className={item.isFollowBtn ? "btn btn-success w-100" : "btn btn-soft-success w-100"}>{item.isFollowBtn ? "Follow" : "UnFollow"} </button>
                                     </div>
                                 </Card>
                             </Col>

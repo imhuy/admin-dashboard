@@ -15,7 +15,7 @@ const Settings = () => {
         if (activeTab !== tab) setActiveTab(tab);
     };
 
-    document.title="Profile Settings | Velzon - React Admin & Dashboard Template";
+    document.title = "Profile Settings | Velzon - React Admin & Dashboard Template";
 
     return (
         <React.Fragment>
@@ -95,7 +95,7 @@ const Settings = () => {
                                     </div>
                                     <div className="mb-3 d-flex">
                                         <div className="avatar-xs d-block flex-shrink-0 me-3">
-                                            <span className="avatar-title rounded-circle fs-16 bg-body  text-body ">
+                                            <span className="avatar-title rounded-circle fs-16 bg-dark text-light">
                                                 <i className="ri-github-fill"></i>
                                             </span>
                                         </div>
@@ -294,7 +294,7 @@ const Settings = () => {
                                                                 className="form-label">Description</Label>
                                                             <textarea className="form-control"
                                                                 id="exampleFormControlTextarea"
-                                                                rows={3} defaultValue="Hi I'm Anna Adame,It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is European languages are members of the same family."></textarea>
+                                                                rows={3} defaultValue="Hi I'm Anna Adame, It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is European languages are members of the same family."></textarea>
                                                         </div>
                                                     </Col>
                                                     <Col lg={12}>
@@ -529,10 +529,12 @@ const Settings = () => {
                                                                 <div className="mb-3">
                                                                     <Label htmlFor="jobDescription" className="form-label">Job
                                                                         Description</Label>
-                                                                    {/* <textarea className="form-control" id="jobDescription"
-                                                                    defaultValue=""
+                                                                    <Input type='textarea'
+                                                                        className="form-control" id="jobDescription"
                                                                         rows="3"
-                                                                        placeholder="Enter description">You always want to make sure that your fonts work well together and try to limit the number of fonts you use to three or less. Experiment and play around with the fonts that you already have in the software you're working with reputable font websites. </textarea> */}
+                                                                        placeholder='Enter description'
+                                                                        defaultValue="You always want to make sure that your fonts work well together and try to limit the number of fonts you use to three or less. Experiment and play around with the fonts that you already have in the software you're working with reputable font websites."
+                                                                    />
                                                                 </div>
                                                             </Col>
 

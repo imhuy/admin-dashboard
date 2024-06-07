@@ -483,7 +483,7 @@ const ZoomableTimeseries = ({ dataColors } : any) => {
             showAlways: true,
             labels: {
                 show: true,
-                formatter: function (val : any ) {
+                formatter: function (val : any) {
                     return (val / 1000000).toFixed(0);
                 },
             },
@@ -1237,8 +1237,6 @@ const ChartSyncingLine = ({ dataColors } : any) => {
     );
 };
 
-
-
 const ChartSyncingLine2 = ({ dataColors } : any) => {
     var chartSyncingColors2 = getChartColorsArray(dataColors);
     const series = [{
@@ -1309,7 +1307,6 @@ const ChartSyncingLine2 = ({ dataColors } : any) => {
         </React.Fragment>
     );
 };
-
 
 const ChartSyncingArea = ({ dataColors } : any) => {
     var ChartSyncingAreaColors = getChartColorsArray(dataColors);

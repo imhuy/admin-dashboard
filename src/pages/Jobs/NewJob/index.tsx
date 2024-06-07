@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   Card,
   CardBody,
   CardHeader,
@@ -13,62 +12,26 @@ import {
 } from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import Flatpickr from "react-flatpickr";
-import Select from "react-select";
 
 const NewJobs = () => {
   document.title = "New Job | Velzon -  Admin & Dashboard Template";
 
-  const SingleOptions = [
-    {
-      options: [
-        { value: "Accounting & Finance", label: "Accounting & Finance" },
-        { value: "Purchasing Manager", label: "Purchasing Manager" },
-        { value: "Education & training", label: "Education & training" },
-        { value: "Marketing & Advertising", label: "Marketing & Advertising" },
-        { value: "It / Software Jobs", label: "It / Software Jobs" },
-        { value: "Digital Marketing", label: "Digital Marketing" },
-        { value: "Administrative Officer", label: "Administrative Officer" },
-        { value: "Government Jobs", label: "Government Jobs" },
-      ],
-    },
-  ];
-  const JobType = [
-    {
-      options: [
-        { value: "Full Time", label: "Full Time" },
-        { value: "Part Time", label: "Part Time" },
-        { value: "Freelancer", label: "Education & training" },
-        { value: "Internship", label: "Internship" },
-      ],
-    },
-  ];
-  const Experience = [
-    {
-      options: [
-        { value: "0 Years", label: "0 Years" },
-        { value: "1 Years", label: "1 Years" },
-        { value: "2 Years", label: "2 Years" },
-        { value: "3 Years", label: "3 Years" },
-        { value: "4 Years", label: "4 Years" },
-      ],
-    },
-  ];
   return (
     <React.Fragment>
       <div className="page-content">
-        <Container fluid>
+        <Container fluid className="container-fluid">
           <BreadCrumb title="New Job" pageTitle="Jobs" />
 
-          <Row>
-            <Col lg={12}>
-              <Card>
+          <Row className="row">
+            <Col className="col-lg-12">
+              <Card className="card">
                 <Form action="#">
-                  <CardHeader>
+                  <CardHeader className="card-header">
                     <h5 className="card-title mb-0">Create Job</h5>
                   </CardHeader>
-                  <CardBody>
-                    <Row className="g-4">
-                      <Col lg={6}>
+                  <CardBody className="card-body">
+                    <Row className="row g-4">
+                      <Col className="col-lg-6">
                         <div>
                           <Label
                             htmlFor="job-title-Input"
@@ -85,7 +48,7 @@ const NewJobs = () => {
                           />
                         </div>
                       </Col>
-                      <Col lg={6}>
+                      <Col className="col-lg-6">
                         <div>
                           <Label
                             htmlFor="job-position-Input"
@@ -102,7 +65,7 @@ const NewJobs = () => {
                           />
                         </div>
                       </Col>
-                      <Col lg={6}>
+                      <Col className="col-lg-6">
                         <div>
                           <Label
                             htmlFor="job-category-Input"
@@ -110,15 +73,41 @@ const NewJobs = () => {
                           >
                             Job Category <span className="text-danger">*</span>
                           </Label>
-                          <Select
-                            className="js-example-basic-single mb-0"
-                            name="state"
-                            options={SingleOptions}
+                          <select
+                            className="form-control"
+                            data-choices
+                            name="job-category-Input"
                             required
-                          ></Select>
+                          >
+                            <option value="">Select Category</option>
+                            <option value="Accounting & Finance">
+                              Accounting & Finance
+                            </option>
+                            <option value="Purchasing Manager">
+                              Purchasing Manager
+                            </option>
+                            <option value="Education & training">
+                              Education & training
+                            </option>
+                            <option value="Marketing & Advertising">
+                              Marketing & Advertising
+                            </option>
+                            <option value="It / Software Jobs">
+                              It / Software Jobs
+                            </option>
+                            <option value="Digital Marketing">
+                              Digital Marketing
+                            </option>
+                            <option value="Administrative Officer">
+                              Administrative Officer
+                            </option>
+                            <option value="Government Jobs">
+                              Government Jobs
+                            </option>
+                          </select>
                         </div>
                       </Col>
-                      <Col lg={6}>
+                      <Col className="col-lg-6">
                         <div>
                           <Label
                             htmlFor="job-type-Input"
@@ -126,17 +115,22 @@ const NewJobs = () => {
                           >
                             Job Type <span className="text-danger">*</span>
                           </Label>
-                          <Select
-                            className="js-example-basic-single mb-0"
+                          <select
+                            className="form-control"
                             data-choices
                             name="job-type-Input"
-                            options={JobType}
                             required
-                          ></Select>
+                          >
+                            <option value="">Select job type</option>
+                            <option value="Full Time">Full Time</option>
+                            <option value="Part Time">Part Time</option>
+                            <option value="Freelance">Freelance</option>
+                            <option value="Intership">Intership</option>
+                          </select>
                         </div>
                       </Col>
 
-                      <Col lg={12}>
+                      <Col className="col-lg-12">
                         <div>
                           <Label
                             htmlFor="description-field"
@@ -154,25 +148,25 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col md={6}>
+                      <Col className="col-md-6">
                         <div>
                           <Label
                             htmlFor="vancancy-Input"
                             className="form-label"
                           >
-                            No. of vacancy{" "}
+                            No. of Vancancy{" "}
                             <span className="text-danger">*</span>
                           </Label>
                           <Input
                             type="number"
                             className="form-control"
                             id="vancancy-Input"
-                            placeholder="No. of vacancy"
+                            placeholder="No. of vancancy"
                             required
                           />
                         </div>
                       </Col>
-                      <Col md={6}>
+                      <Col className="col-md-6">
                         <div>
                           <Label
                             htmlFor="experience-Input"
@@ -180,14 +174,22 @@ const NewJobs = () => {
                           >
                             Experience <span className="text-danger">*</span>
                           </Label>
-                          <Select
-                            className="js-example-basic-single mb-0"
-                            options={Experience}
-                          ></Select>
+                          <select
+                            className="form-control"
+                            data-choices
+                            name="experience-Input"
+                          >
+                            <option value="">Select Experience</option>
+                            <option value="0 Year">0 Year</option>
+                            <option value="2 Yeasr">2 Years</option>
+                            <option value="3 Years">3 Years</option>
+                            <option value="4 Years">4 Years</option>
+                            <option value="5 Years">5 Years</option>
+                          </select>
                         </div>
                       </Col>
 
-                      <Col lg={6}>
+                      <Col className="col-lg-6">
                         <div>
                           <Label
                             htmlFor="last-apply-date-Input"
@@ -210,7 +212,7 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col lg={6}>
+                      <Col className="col-lg-6">
                         <div>
                           <Label
                             htmlFor="close-date-Input"
@@ -232,7 +234,7 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col md={6}>
+                      <Col className="col-md-6">
                         <div>
                           <Label
                             htmlFor="start-salary-Input"
@@ -250,7 +252,7 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col md={6}>
+                      <Col className="col-md-6">
                         <div>
                           <Label
                             htmlFor="last-salary-Input"
@@ -268,7 +270,7 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col md={6}>
+                      <Col className="col-md-6">
                         <div>
                           <Label htmlFor="country-Input" className="form-label">
                             Country <span className="text-danger">*</span>
@@ -283,7 +285,7 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col md={6}>
+                      <Col className="col-md-6">
                         <div>
                           <Label htmlFor="city-Input" className="form-label">
                             State <span className="text-danger">*</span>
@@ -298,14 +300,13 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col lg={12}>
+                      <Col className="col-lg-12">
                         <div>
                           <Label htmlFor="website-field" className="form-label">
                             Tags
                           </Label>
                           <Input
-                            color="primary"
-                            className="form-control primary"
+                            className="form-control"
                             id="choices-text-unique-values"
                             data-choices
                             data-choices-text-unique-true
@@ -316,19 +317,18 @@ const NewJobs = () => {
                         </div>
                       </Col>
 
-                      <Col lg={12}>
+                      <Col className="col-lg-12">
                         <div className="hstack justify-content-end gap-2">
-                          <Button
+                          <button
                             type="button"
-                            className="btn"
-                            color="ghost-danger"
+                            className="btn btn-ghost-danger"
                           >
                             <i className="ri-close-line align-bottom"></i>{" "}
                             Cancel
-                          </Button>
-                          <Button type="submit" color="secondary">
+                          </button>
+                          <button type="submit" className="btn btn-secondary">
                             Add Job
-                          </Button>
+                          </button>
                         </div>
                       </Col>
                     </Row>

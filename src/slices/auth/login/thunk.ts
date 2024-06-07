@@ -8,7 +8,6 @@ import {
 import { loginSuccess, logoutUserSuccess, apiError, reset_login_flag } from './reducer';
 
 export const loginUser = (user : any, history : any) => async (dispatch : any) => {
-
   try {
     let response;
     if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
@@ -23,7 +22,7 @@ export const loginUser = (user : any, history : any) => async (dispatch : any) =
         password: user.password
       });
 
-    } else if (process.env.REACT_APP_API_URL) {
+    } else if (process.env.REACT_APP_DEFAULTAUTH) {
       response = postFakeLogin({
         email: user.email,
         password: user.password,
@@ -41,7 +40,8 @@ export const loginUser = (user : any, history : any) => async (dispatch : any) =
         if (finallogin.status === "success") {
           dispatch(loginSuccess(data));
           history('/dashboard')
-        } else {
+        } 
+        else {
           dispatch(apiError(finallogin));
         }
       } else {
@@ -49,7 +49,7 @@ export const loginUser = (user : any, history : any) => async (dispatch : any) =
         history('/dashboard')
       }
     }
-  } catch (error : any) {
+  } catch (error) {
     dispatch(apiError(error));
   }
 };
@@ -65,7 +65,7 @@ export const logoutUser = () => async (dispatch : any) => {
       dispatch(logoutUserSuccess(true));
     }
 
-  } catch (error : any) {
+  } catch (error) {
     dispatch(apiError(error));
   }
 };
@@ -89,7 +89,7 @@ export const socialLogin = (type : any, history : any) => async (dispatch : any)
       history('/dashboard')
     }
 
-  } catch (error : any) {
+  } catch (error) {
     dispatch(apiError(error));
   }
 };
@@ -98,7 +98,7 @@ export const resetLoginFlag = () => async (dispatch : any) => {
   try {
     const response = dispatch(reset_login_flag());
     return response;
-  } catch (error : any) {
+  } catch (error) {
     dispatch(apiError(error));
   }
 };

@@ -294,7 +294,7 @@ const UiGeneral = () => {
                                                     <p className="text-muted">Use <code>pagination-separated</code> class to pagination class to set custom separated pagination.</p>
 
                                                     {/* <!-- Custom Separated Pagination Large --> */}
-                                                    <Pagination size='lg' className="pagination-separated">
+                                                    <Pagination size='lg' className="pagination-lg pagination-separated">
                                                         <PaginationItem disabled> <PaginationLink to="#"> ← </PaginationLink> </PaginationItem>
                                                         <PaginationItem> <PaginationLink to="#"> 1 </PaginationLink> </PaginationItem>
                                                         <PaginationItem active> <PaginationLink to="#"> 2 </PaginationLink> </PaginationItem>
@@ -333,7 +333,7 @@ const UiGeneral = () => {
 
                                                     {/* <!-- Pagination rounded --> */}
 
-                                                    <Pagination size='lg' className="pagination-rounded">
+                                                    <Pagination size='lg' className="pagination-lg pagination-rounded">
                                                         <PaginationItem disabled> <PaginationLink to="#"> ← </PaginationLink> </PaginationItem>
                                                         <PaginationItem> <PaginationLink to="#"> 1 </PaginationLink> </PaginationItem>
                                                         <PaginationItem active> <PaginationLink to="#"> 2 </PaginationLink> </PaginationItem>
@@ -353,7 +353,7 @@ const UiGeneral = () => {
                                                         <PaginationItem> <PaginationLink to="#"> → </PaginationLink> </PaginationItem>
                                                     </Pagination>
 
-                                                    <Pagination size='sm' className="pagination-rounded">
+                                                    <Pagination size='sm' className="pagination-sm pagination-rounded">
                                                         <PaginationItem disabled> <PaginationLink to="#"> ← </PaginationLink> </PaginationItem>
                                                         <PaginationItem> <PaginationLink to="#"> 1 </PaginationLink> </PaginationItem>
                                                         <PaginationItem active> <PaginationLink to="#"> 2 </PaginationLink> </PaginationItem>

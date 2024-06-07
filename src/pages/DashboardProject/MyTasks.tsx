@@ -7,7 +7,7 @@ const MyTasks = () => {
     return (
         <React.Fragment>
             <Col xl={5}>
-                <Card className='card-height-100'>
+                <Card>
                     <CardHeader className="card-header align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1 py-1">My Tasks</h4>
                         <div className="flex-shrink-0">
@@ -36,17 +36,15 @@ const MyTasks = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {(projectTasks || []).map((item : any, key : any) => (<tr key={key}>
+                                    {(projectTasks || []).map((item, key) => (<tr key={key}>
                                         <td>
                                             <div className="form-check">
                                                 <input className="form-check-input fs-15" type="checkbox" value="" id={item.forId} />
-                                                <label className="form-check-label ms-1" htmlFor={item.forId}>
-                                                    {item.label}
-                                                </label>
+                                                <label className="form-check-label ms-1" htmlFor={item.forId}>{item.label} </label>
                                             </div>
                                         </td>
                                         <td className="text-muted">{item.dedline}</td>
-                                        <td><span className={"badge bg-" + item.statusClass+"-subtle text-"+ item.statusClass}>{item.status}</span></td>
+                                        <td><span className={"badge bg-" + item.statusClass + "-subtle text-" + item.statusClass + ""}>{item.status}</span></td>
                                         <td>
                                             <Link to="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Mary Stoner">
                                                 <img src={item.img} alt="" className="rounded-circle avatar-xxs" />

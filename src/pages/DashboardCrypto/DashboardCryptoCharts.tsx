@@ -2,10 +2,10 @@ import React from 'react';
 import ReactApexChart from "react-apexcharts";
 import getChartColorsArray from "../../Components/Common/ChartsDynamicColor";
 
-const PortfolioCharts = ({ dataColors, series } : any) => {
+const PortfolioCharts = ({ dataColors, series }:any) => {
     var donutchartportfolioColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         labels: ["Bitcoin", "Ethereum", "Litecoin", "Dash"],
         chart: {
             type: "donut",
@@ -32,23 +32,22 @@ const PortfolioCharts = ({ dataColors, series } : any) => {
                             color: '#343a40',
                             fontWeight: 500,
                             offsetY: 5,
-                            formatter: function (val : any) {
+                            formatter: function (val:any) {
                                 return "$" + val;
                             }
                         },
                         total: {
                             show: true,
                             fontSize: '13px',
-                            label: 'Total value', 
+                            label: 'Total',
                             color: '#9599ad',
                             fontWeight: 500,
-                            formatter: function (w : any) {
-                                return "$" + w.globals.seriesTotals.reduce(function (a : any, b : any) {
+                            formatter: function (w:any) {
+                                return "$" + w.globals.seriesTotals.reduce(function (a:any, b:any) {
                                     return a + b;
                                 }, 0);
                             }
                         }
-                       
                     }
                 },
             },
@@ -61,7 +60,7 @@ const PortfolioCharts = ({ dataColors, series } : any) => {
         },
         yaxis: {
             labels: {
-                formatter: function (value : any) {
+                formatter: function (value:any) {
                     return "$" + value;
                 }
             }
@@ -85,10 +84,10 @@ const PortfolioCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const MarkerCharts = ({ dataColors, series } : any) => {
+const MarkerCharts = ({ dataColors, series }:any) => {
     var MarketchartColors = getChartColorsArray(dataColors);
 
-    var options : any = {
+    var options:any = {
         chart: {
             type: 'candlestick',
             height: 294,
@@ -112,7 +111,7 @@ const MarkerCharts = ({ dataColors, series } : any) => {
                 enabled: true
             },
             labels: {
-                formatter: function (value : any) {
+                formatter: function (value:any) {
                     return "$" + value;
                 }
             }
@@ -120,7 +119,7 @@ const MarkerCharts = ({ dataColors, series } : any) => {
         tooltip: {
             shared: true,
             y: [{
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0);
                     }
@@ -128,7 +127,7 @@ const MarkerCharts = ({ dataColors, series } : any) => {
 
                 }
             }, {
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return "$" + y.toFixed(2) + "k";
                     }
@@ -136,7 +135,7 @@ const MarkerCharts = ({ dataColors, series } : any) => {
 
                 }
             }, {
-                formatter: function (y : any) {
+                formatter: function (y:any) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0) + " Sales";
                     }
@@ -159,9 +158,9 @@ const MarkerCharts = ({ dataColors, series } : any) => {
     );
 };
 
-const WidgetsCharts = ({ seriesData, chartsColor } : any) => {
+const WidgetsCharts = ({ seriesData, chartsColor }:any) => {
     const areachartlitecoinColors = [chartsColor];
-    var options : any = {
+    var options:any = {
         chart: {
             width: 130,
             height: 46,

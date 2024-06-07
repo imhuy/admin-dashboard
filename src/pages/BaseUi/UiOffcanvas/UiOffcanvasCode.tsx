@@ -32,7 +32,7 @@ const toggleDefultCanvas = () => {
 const DefaultOffcanvasExample = () => (
     <PrismCode
         code={defaultOffcanvasCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -114,7 +114,7 @@ const toggleLeftCanvas = () => {
 const PlacementOffcanvasExample = () => (
     <PrismCode
         code={placementOffcanvasCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );
@@ -177,7 +177,7 @@ const toggleScrollBackDrop = () => {
 const BackdropOffcanvasExample = () => (
     <PrismCode
         code={backdropOffcanvasCode}
-        language={("html")}
+        language={("js")}
         plugins={["line-numbers"]}
     />
 );

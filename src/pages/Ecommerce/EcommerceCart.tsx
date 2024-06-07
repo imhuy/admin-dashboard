@@ -17,13 +17,13 @@ import {
 } from "reactstrap";
 
 const EcommerceCart = () => {
+  const [productList, setproductList] = useState<any>(shoppingCart);
 
-  const [productList, setproductList] = useState(shoppingCart);
-  const [charge, setCharge] = useState(0);
-  const [tax, setTax] = useState(0);
-  const [dis, setDis] = useState(0);
+  const [charge, setCharge] = useState<any>(0);
+  const [tax, setTax] = useState<any>(0);
+  const [dis, setDis] = useState<any>(0);
 
-  const assigned = productList.map((item) => item.total);
+  const assigned = productList.map((item:any) => item.total);
   let subTotal = 0;
   for (let i = 0; i < assigned.length; i++) {
     subTotal += Math.round(assigned[i]);
@@ -42,31 +42,31 @@ const EcommerceCart = () => {
     setDis(tax);
   }, [subTotal]);
 
-  function removeCartItem(id : any) {
-    var filtered = productList.filter(function (item) {
+  function removeCartItem(id:any) {
+    var filtered = productList.filter(function (item:any) {
       return item.id !== id;
     });
 
     setproductList(filtered);
   }
 
-  function countUP(id  : any, prev_data_attr : any, itemPrice : any) {
+  function countUP(id:any, prev_data_attr:any, itemPrice:any) {
     setproductList(
-      productList.map((p) =>
+      productList.map((p:any) =>
         p.id === id ? { ...p, data_attr: prev_data_attr + 1, total: (prev_data_attr + 1) * itemPrice } : p
       )
     );
   }
 
-  function countDown(id : any, prev_data_attr : any, itemPrice : any) {
+  function countDown(id:any, prev_data_attr:any, itemPrice:any) {
     setproductList(
-      productList.map((p) =>
+      productList.map((p:any) =>
         (p.id === id && p.data_attr > 0) ? { ...p, data_attr: prev_data_attr - 1, total: (prev_data_attr - 1) * itemPrice } : p
       )
     );
   }
 
-  document.title = "Shopping Cart | Velzon - React Admin & Dashboard Template";
+document.title ="Shopping Cart | Velzon - React Admin & Dashboard Template";
   return (
     <React.Fragment>
       <div className="page-content">
@@ -90,7 +90,7 @@ const EcommerceCart = () => {
                   </Link>
                 </div>
               </Row>
-              {productList.map((cartItem, key) => (
+              {productList.map((cartItem:any, key:any) => (
                 <React.Fragment key={cartItem.id}>
                   <Card className="product">
                     <CardBody>
@@ -253,7 +253,7 @@ const EcommerceCart = () => {
                           <tr>
                             <td>Sub Total :</td>
                             <td className="text-end" id="cart-subtotal">
-                              $ {subTotal}
+                            $ {subTotal}
                             </td>
                           </tr>
                           <tr>
@@ -262,26 +262,26 @@ const EcommerceCart = () => {
                               <span className="text-muted">(VELZON15)</span> :{" "}
                             </td>
                             <td className="text-end" id="cart-discount">
-                              - $ {dis}
+                            - $ {dis}
                             </td>
                           </tr>
                           <tr>
                             <td>Shipping Charge :</td>
                             <td className="text-end" id="cart-shipping">
-                              $ {charge}
+                            $ {charge}
                             </td>
                           </tr>
                           <tr>
                             <td>Estimated Tax (12.5%) : </td>
                             <td className="text-end" id="cart-tax">
-                              $ {tax}
+                            $ {tax}
                             </td>
                           </tr>
                           <tr className="table-active">
                             <th>Total (USD) :</th>
                             <td className="text-end">
                               <span className="fw-semibold" id="cart-total">
-                                ${subTotal + charge + tax - dis}
+                              ${subTotal + charge + tax - dis}
                               </span>
                             </td>
                           </tr>
@@ -293,14 +293,14 @@ const EcommerceCart = () => {
 
                 <UncontrolledAlert color="danger" className="border-dashed">
                   <div className="d-flex align-items-center">
-                  <i className="ri-gift-line display-5 text-danger"></i>
+                    <i className="ri-gift-line display-5 text-danger"></i>
                     <div className="ms-2">
                       <h5 className="fs-14 text-danger fw-semibold">
                         {" "}
                         Buying for a loved one?
                       </h5>
-                      <p className="text-body mb-1">
-                        Gift wrap and personalized message on card, <br />
+                      <p className="text-black mb-1">
+                        Gift wrap and personalised message on card, <br />
                         Only for <span className="fw-semibold">$9.99</span> USD
                       </p>
                       <button

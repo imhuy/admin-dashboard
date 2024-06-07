@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactApexChart from "react-apexcharts";
 import { dataSeries, githubdata, seriesData } from '../series';
+import moment from "moment";
 
 import getChartColorsArray from "../../../../Components/Common/ChartsDynamicColor";
-import moment from 'moment';
 
-const BasicAreaCharts = ({dataColors} :any) => {
+const BasicAreaCharts = ({dataColors} : any) => {
     var BasicAreaChartsColors = getChartColorsArray(dataColors);
     const series = [{
         name: "STOCK ABC",
         data: seriesData.monthDataSeries1.prices
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'area',
             height: 350,
@@ -63,7 +63,7 @@ const BasicAreaCharts = ({dataColors} :any) => {
     );
 };
 
-const SplineAreaChart = ({dataColors} :any) => {
+const SplineAreaChart = ({dataColors} : any) => {
     var areachartSplineColors = getChartColorsArray(dataColors);    
     const series = [{
         name: 'series1',
@@ -72,7 +72,7 @@ const SplineAreaChart = ({dataColors} :any) => {
         name: 'series2',
         data: [11, 32, 45, 32, 34, 52, 41]
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             height: 350,
             type: 'area',
@@ -111,7 +111,7 @@ const SplineAreaChart = ({dataColors} :any) => {
     );
 };
 
-const AxisChart = ({dataColors} :any) => {
+const AxisChart = ({dataColors} : any) => {
     var BasicAreaChartsColors = getChartColorsArray(dataColors);
     const series = [{
         data: [
@@ -392,7 +392,7 @@ const AxisChart = ({dataColors} :any) => {
             [1361919600000, 39.60],
         ]
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             id: 'area-datetime',
             type: 'area',
@@ -474,7 +474,7 @@ const AxisChart = ({dataColors} :any) => {
     );
 };
 
-const NegativeAreaChart = ({dataColors} :any) => {
+const NegativeAreaChart = ({dataColors} : any) => {
     var areachartNegativeColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'North',
@@ -643,7 +643,7 @@ const NegativeAreaChart = ({dataColors} :any) => {
         }
         ]
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'area',
             height: 350,
@@ -731,13 +731,13 @@ const NegativeAreaChart = ({dataColors} :any) => {
     );
 };
 
-const GithubStyleCharts = ({dataColors} :any) => {
+const GithubStyleCharts = ({dataColors} : any) => {
     var areachartMonthsColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'commits',
         data: githubdata.series
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             id: 'chartyear',
             type: 'area',
@@ -747,17 +747,17 @@ const GithubStyleCharts = ({dataColors} :any) => {
                 autoSelected: 'pan'
             },
             events: {
-                mounted: function (chart :any) {
-                    var commitsEl :any = document.querySelector('.cmeta span.commits');
+                mounted: function (chart : any) {
+                    var commitsEl = document.querySelector('.cmeta span.commits');
                     var commits = chart.getSeriesTotalXRange(chart.w.globals.minX, chart.w.globals.maxX);
 
-                    commitsEl.innerHTML = commits;
+                    commitsEl!.innerHTML = commits;
                 },
-                updated: function (chart :any) {
-                    var commitsEl :any = document.querySelector('.cmeta span.commits');
+                updated: function (chart : any) {
+                    var commitsEl = document.querySelector('.cmeta span.commits');
                     var commits = chart.getSeriesTotalXRange(chart.w.globals.minX, chart.w.globals.maxX);
 
-                    commitsEl.innerHTML = commits;
+                    commitsEl!.innerHTML = commits;
                 }
             }
         },
@@ -796,13 +796,13 @@ const GithubStyleCharts = ({dataColors} :any) => {
     );
 };
 
-const GithubStyleCharts1 = ({dataColors} :any) => {
+const GithubStyleCharts1 = ({dataColors} : any) => {
     var BasicAreaChartsColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'commits',
         data: githubdata.series
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             height: 170,
             type: 'area',
@@ -856,9 +856,9 @@ const GithubStyleCharts1 = ({dataColors} :any) => {
     );
 };
 
-const StackedAreaChart = ({dataColors} :any) => {
+const StackedAreaChart = ({dataColors} : any) => {
     var BasicAreaChartsColors = getChartColorsArray(dataColors);
-    var generateDayWiseTimeSeries = function (baseval :any, count :any, yrange :any) {
+    var generateDayWiseTimeSeries = function (baseval : any, count : any, yrange : any) {
         var i = 0;
         var series = [];
         while (i < count) {
@@ -894,7 +894,7 @@ const StackedAreaChart = ({dataColors} :any) => {
         })
     }
     ];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'area',
             height: 350,
@@ -903,7 +903,7 @@ const StackedAreaChart = ({dataColors} :any) => {
                 show: false
             },
             events: {
-                selection: function (e :any) {
+                selection: function (chart : any, e : any) {
                     console.log(new Date(e.xaxis.min));
                 }
             },
@@ -944,7 +944,7 @@ const StackedAreaChart = ({dataColors} :any) => {
     );
 };
 
-const IrregularAreaCharts = ({dataColors} :any) => {
+const IrregularAreaCharts = ({dataColors} : any) => {
     var BasicAreaChartsColors = getChartColorsArray(dataColors);    
     var ts1 = 1388534400000;
     var ts2 = 1388620800000;
@@ -983,7 +983,7 @@ const IrregularAreaCharts = ({dataColors} :any) => {
         name: 'PRODUCT C',
         data: dataSet[2]
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'area',
             stacked: false,
@@ -1017,7 +1017,7 @@ const IrregularAreaCharts = ({dataColors} :any) => {
                     colors: '#8e8da4',
                 },
                 offsetX: 0,
-                formatter: function (val :any) {
+                formatter: function (val : any) {
                     return (val / 1000000).toFixed(2);
                 },
             },
@@ -1036,7 +1036,7 @@ const IrregularAreaCharts = ({dataColors} :any) => {
             labels: {
                 rotate: -15,
                 rotateAlways: true,
-                formatter: function (timestamp :any) {
+                formatter: function (val : any, timestamp : any) {
                     return moment(new Date(timestamp)).format("DD MMM YYYY");
                 }
             }
@@ -1073,7 +1073,7 @@ const IrregularAreaCharts = ({dataColors} :any) => {
     );
 };
 
-const AreaNullValueChart = ({dataColors} :any) => {
+const AreaNullValueChart = ({dataColors} : any) => {
     var BasicAreaChartsColors = getChartColorsArray(dataColors);
     const series = [{
         name: 'Network',
@@ -1171,7 +1171,7 @@ const AreaNullValueChart = ({dataColors} :any) => {
         }
         ],
     }];
-    var options :any = {
+    var options : any = {
         chart: {
             type: 'area',
             height: 350,

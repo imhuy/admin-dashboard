@@ -275,7 +275,7 @@ const ImageRadialbar = () => {
             series={series}
             options={options}
             type="radialBar"
-            height={315}
+            height={320.8}
         />
     );
 };
@@ -334,7 +334,7 @@ const StrokedCircleRadial = ({ dataColors } : any) => {
             series={series}
             options={options}
             type="radialBar"
-            height={326}
+            height={320.8}
         />
     );
 };

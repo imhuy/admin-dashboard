@@ -12,13 +12,13 @@ const RemixIcons = () => {
     Object.keys(icons).forEach(function (key : any) {
       if (key === "Editor") {
         iconData = iconData + '<div class="card"><div class="card-body"><h4 class="card-title">' + key + ' </h4><p class="card-title-desc mb-2">Use <code>&lt;i class="ri-bold"&gt;&lt;/i&gt;</code> <span class="badge badge-success">v 2.4.1</span>.</p><div class="row icon-demo-content">';
-        Object.keys(icons[key]).forEach(function (k : any) {
+        Object.keys(icons[key]).forEach(function (k) {
           iconData += '<div class="col-xl-3 col-lg-4 col-sm-6">' +
             '<i class="ri-' + k + '"></i> ri-' + k + '</div>';
         });
       } else {
         iconData = iconData + '<div class="card"><div class="card-body"><h4 class="card-title">' + key + ' </h4><p class="card-title-desc mb-2">Use <code>&lt;i className="ri-home-line"&gt;&lt;/i&gt;</code> or <code>&lt;i className="ri-home-fill"&gt;&lt;/i&gt;</code> <span class="badge badge-success">v 2.4.1</span>.</p><div class="row icon-demo-content">';
-        Object.keys(icons[key]).forEach(function (k : any) {
+        Object.keys(icons[key]).forEach(function (k) {
           iconData += '<div class="col-xl-3 col-lg-4 col-sm-6">' +
             '<i class="ri-' + k + '-line"></i> ri-' + k + '-line' +
             '</div><div class="col-xl-3 col-lg-4 col-sm-6">' +
@@ -28,7 +28,7 @@ const RemixIcons = () => {
       }
       iconData += '</div></div></div>';
     });
-    (document.getElementById("all-icon") as HTMLElement).innerHTML = iconData;
+    (document.getElementById("all-icon") as HTMLElement).innerHTML = iconData ;
   });
 
 document.title ="Remix Icons | Velzon - React Admin & Dashboard Template";

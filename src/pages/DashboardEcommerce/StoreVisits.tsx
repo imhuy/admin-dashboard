@@ -10,7 +10,7 @@ const StoreVisits = () => {
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Store Visits by Source</h4>
                         <div className="flex-shrink-0">
-                            <UncontrolledDropdown className="card-header-dropdown" direction='start'>
+                            <UncontrolledDropdown className="card-header-dropdown" >
                                 <DropdownToggle tag="a" className="text-reset dropdown-btn" role="button">
                                     <span className="text-muted">Report<i className="mdi mdi-chevron-down ms-1"></i></span>
                                 </DropdownToggle>
@@ -23,7 +23,11 @@ const StoreVisits = () => {
                         </div>
                     </CardHeader>
 
-                    <StoreVisitsCharts dataColors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]' />
+                    <div className="card-body">
+                        {/* <div dir="ltr"> */}
+                            <StoreVisitsCharts dataColors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'/>
+                        {/* </div> */}
+                    </div>
                 </Card>
             </Col>
         </React.Fragment>

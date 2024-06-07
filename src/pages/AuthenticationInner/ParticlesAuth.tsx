@@ -1,7 +1,7 @@
-import React from 'react';
+ import React from 'react';
 import withRouter from '../../Components/Common/withRouter';
 
-const ParticlesAuth = ({ children } : any) => {
+const ParticlesAuth = ({ children }: any) => {
     return (
         <React.Fragment>
             <div className="auth-page-wrapper pt-5">
@@ -14,10 +14,11 @@ const ParticlesAuth = ({ children } : any) => {
                             <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
                         </svg>
                     </div>
-                </div>
 
-                {/* pass the children */}
-                {children}
+                    {/* pass the children */}
+                    {children}
+
+                </div>
 
                 <footer className="footer">
                     <div className="container">

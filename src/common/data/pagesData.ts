@@ -37,8 +37,8 @@ const gallery = [
         img: smallImage2,
         title: "Working at a coffee shop",
         auther: "Nancy Martino",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "3.2K",
+        comments: "1.1K",
         category: "Project"
     },
     {
@@ -46,8 +46,8 @@ const gallery = [
         img: smallImage3,
         title: "Photo was taken in Beach",
         auther: "Elwood Arter",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "2.1K",
+        comments: "1K",
         category: "Project"
     },
     {
@@ -55,8 +55,8 @@ const gallery = [
         img: smallImage4,
         title: "Drawing a sketch",
         auther: "Jason McQuaid",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "825K",
+        comments: "101K",
         category: "Project"
     },
     {
@@ -64,8 +64,8 @@ const gallery = [
         img: smallImage5,
         title: "Working from home little spot",
         auther: "Henry Baird",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "632K",
+        comments: "95K",
         category: "Project"
     },
     {
@@ -73,7 +73,7 @@ const gallery = [
         img: smallImage6,
         title: "Glasses and laptop from above",
         auther: "Erica Kernan",
-        likes: "2.2K",
+        likes: "3.4K",
         comments: "1.3K",
         category: "Designing"
     },
@@ -82,8 +82,8 @@ const gallery = [
         img: smallImage7,
         title: "Sunrise above a beach",
         auther: "James Ballard",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "735K",
+        comments: "150K",
         category: "Development"
     },
     {
@@ -91,8 +91,8 @@ const gallery = [
         img: smallImage8,
         title: "Project discussion with team",
         auther: "Ruby Griffin",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "1.5K",
+        comments: "250K",
         category: "Designing"
     },
     {
@@ -109,8 +109,8 @@ const gallery = [
         img: smallImage10,
         title: "Fun day at the Hill Station",
         auther: "Henry Baird",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "632K",
+        comments: "95K",
         category: "Development"
     },
     {
@@ -127,8 +127,8 @@ const gallery = [
         img: smallImage12,
         title: "A mix of friends and strangers heading off to find an adventure.",
         auther: "Erica Kernan",
-        likes: "2.2K",
-        comments: "1.3K",
+        likes: "3.2K",
+        comments: "1.1K",
         category: "Designing"
     },
     {
@@ -136,7 +136,7 @@ const gallery = [
         img: smallImage8,
         title: "Project discussion with team",
         auther: "Ruby Griffin",
-        likes: "2.2K",
+        likes: "3.4K",
         comments: "1.3K",
         category: "Photography"
     },
@@ -162,7 +162,8 @@ const pricing1 = [
         btntxt: "Your Current Plan",
         btnstatus: " disabled ",
         rateYear: "$171",
-        delrateYear: "$228"
+        delrateYear: "$228",
+        limit:"Unlimited"
     },
     {
         id: 2,
@@ -182,7 +183,8 @@ const pricing1 = [
         planButtonClassname: "info",
         btntxt: "Change Plan",
         rateYear: "261",
-        delrateYear: "348"
+        delrateYear: "348",
+        limit:"Unlimited"
     },
     {
         id: 3,
@@ -202,7 +204,8 @@ const pricing1 = [
         planButtonClassname: "info",
         btntxt: "Change Plan",
         rateYear: "351",
-        delrateYear: "468"
+        delrateYear: "468",
+        limit:"35GB"
     },
     {
         id: 4,
@@ -222,7 +225,8 @@ const pricing1 = [
         planButtonClassname: "info",
         btntxt: "Change Plan",
         rateYear: "441",
-        delrateYear: "588"
+        delrateYear: "588",
+        limit:"Unlimited"
     },
 ];
 
@@ -943,8 +947,8 @@ const team = [
         designation: "Full Stack Developer",
         projectCount: 352,
         taskCount: 376,
-        bgColor: "danger",
-        textColor: "danger",
+        bgColor: "light",
+        textColor: "primary",
     },
     {
         id: 3,
@@ -974,8 +978,8 @@ const team = [
         designation: "Team Leader & Web Developer",
         projectCount: 201,
         taskCount: 263,
-        bgColor: "success",
-        textColor: "success",
+        bgColor: "light",
+        textColor: "primary",
 
     },
     {
@@ -997,8 +1001,8 @@ const team = [
         designation: "Front-End Developer",
         projectCount: 352,
         taskCount: 376,
-        bgColor: "info",
-        textColor: "info",
+        bgColor: "light",
+        textColor: "primary",
     },
     {
         id: 8,
@@ -1050,8 +1054,8 @@ const team = [
         designation: "Backend Developer",
         projectCount: 145,
         taskCount: 210,
-        bgColor: "success",
-        textColor: "success",
+        bgColor: "light",
+        textColor: "primary",
 
     },
 

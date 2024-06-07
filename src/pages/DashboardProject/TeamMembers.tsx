@@ -7,7 +7,7 @@ const TeamMembers = () => {
     return (
         <React.Fragment>
             <Col xxl={4}>
-                <Card className='card-height-100 pb-0'>
+                <Card>
                     <CardHeader className="align-items-center d-flex">
                         <h4 className="card-title mb-0 flex-grow-1">Team Members</h4>
                         <div className="flex-shrink-0">
@@ -29,7 +29,7 @@ const TeamMembers = () => {
 
                     <div className="card-body">
 
-                        <div className="table-responsive table-card mb-0 pb-0">
+                        <div className="table-responsive table-card">
                             <table className="table table-borderless table-nowrap align-middle mb-0">
                                 <thead className="table-light text-muted">
                                     <tr>
@@ -40,7 +40,7 @@ const TeamMembers = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {(teamMembers || []).map((item : any, key : any) => (<tr key={key}>
+                                    {(teamMembers || []).map((item, key) => (<tr key={key}>
                                         <td className="d-flex">
                                             <img src={item.img} alt="" className="avatar-xs rounded-3 me-2" />
                                             <div>
@@ -55,7 +55,10 @@ const TeamMembers = () => {
                                             {item.tasks}
                                         </td>
                                         <td style={{ width: "5%" }}>
-                                            <TeamMembersCharts seriesData={item.series} chartsColor={item.chartsColor} />
+                                            
+                                            {/* <div id="radialBar_chart_1" data-colors='["--vz-primary"]' data-chart-series="50" className="apex-charts" dir="ltr"> */}
+                                                <TeamMembersCharts seriesData={item.series} chartsColor={item.chartsColor} />
+                                            {/* </div> */}
                                         </td>
                                     </tr>))}
                                 </tbody>
@@ -64,7 +67,6 @@ const TeamMembers = () => {
                     </div>
                 </Card>
             </Col>
-
         </React.Fragment>
     );
 };

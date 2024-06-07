@@ -7,6 +7,7 @@ import classnames from "classnames";
 import { pricing1, pricing2, pricing3 } from '../../../common/data';
 
 const Pricing = () => {
+
     //Tab 
     const [activeTab, setActiveTab] = useState('1');
     const toggleTab = (tab : any) => {
@@ -54,7 +55,7 @@ const Pricing = () => {
                     </Row>
 
                     <Row >
-                        {(pricing1 || []).map((price1, key) => (
+                        {(pricing1 || []).map((price1 : any, key : any) => (
                             <Col xxl={3} lg={6} key={key}>
 
                                 <Card className="pricing-box ribbon-box right" >
@@ -134,7 +135,7 @@ const Pricing = () => {
                                                         <i className={`ri-${price1.storageClassSymbol}-circle-fill fs-15 align-middle`}></i>
                                                     </div>
                                                     <div className="flex-grow-1">
-                                                        <b>Unlimited</b> Storage
+                                                        <b>{price1.limit}</b> Storage
                                                     </div>
                                                 </div>
                                             </li>
@@ -172,7 +173,7 @@ const Pricing = () => {
 
                         <Col xl={9}>
                             <Row>
-                                {(pricing2 || []).map((price2, key) => (
+                                {(pricing2 || []).map((price2 : any, key : any) => (
                                     <Col lg={4} key={key}>
                                         <Card className="pricing-box ribbon-box right">
                                             {price2.ribbon === true ? <div className="ribbon-two ribbon-two-danger"><span>Popular</span></div> : ""}
@@ -288,7 +289,7 @@ const Pricing = () => {
                     </Row>
 
                     <Row>
-                        {(pricing3 || []).map((price3, key) => (
+                        {(pricing3 || []).map((price3 : any, key : any) => (
                             <Col lg={6} key={key}>
                                 <Card className="pricing-box ribbon-box ribbon-fill text-center">
                                     {price3.ribbon === true ?
@@ -303,7 +304,7 @@ const Pricing = () => {
                                                 </div>
 
                                                 <div className="py-4">
-                                                    <h2><sup><small>$</small></sup>{price3.rate}<span className="fs-13 text-muted"> /Per month</span></h2>
+                                                    <h2><sup><small>$</small></sup>{price3.rate} <span className="fs-13 text-muted"> /Per month</span></h2>
                                                 </div>
 
                                                 <div className="text-center plan-btn mt-2">

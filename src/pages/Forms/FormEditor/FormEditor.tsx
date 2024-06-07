@@ -32,13 +32,13 @@ document.title ="Editors | Velzon - React Admin & Dashboard Template";
                     <CKEditor
                       editor={ClassicEditor}
                       data="<p>Hello from CKEditor 5!</p>"
-                      onReady={() => {
+                      onReady={(editor) => {
                         // You can store the "editor" and use when it is needed.
                         
                       }}
-                      onChange={(editor : any) => {
-                        editor.getData();
-                      }}
+                      // onChange={(editor) => {
+                      //    editor.getData();
+                      // }}
                     />
                   </Form>
                 </CardBody>

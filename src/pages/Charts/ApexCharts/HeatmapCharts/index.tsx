@@ -25,7 +25,7 @@ const HeatmapCharts = () => {
                                 </CardHeader>
                                 <CardBody>
                                     <div className="live-preview">
-                                        <BasicHeatmap dataColors='["--vz-success", "--vz-secondary-bg"]'/>
+                                        <BasicHeatmap dataColors='["--vz-success", "--vz-card-custom"]'/>
                                     </div>
                                 </CardBody>
                             </Card>
@@ -38,7 +38,7 @@ const HeatmapCharts = () => {
                                 </CardHeader>
 
                                 <CardBody>
-                                    <MultipleHeatmap dataColors='["--vz-primary", "--vz-secondary", "--vz-success", "--vz-info", "--vz-warning", "--vz-danger", "--vz-dark", "--vz-primary", "--vz-secondary-bg"]'/>
+                                    <MultipleHeatmap dataColors='["--vz-primary", "--vz-secondary", "--vz-success", "--vz-info", "--vz-warning", "--vz-danger", "--vz-dark", "--vz-primary", "--vz-card-custom"]'/>
                                 </CardBody>
                             </Card>
                         </Col>

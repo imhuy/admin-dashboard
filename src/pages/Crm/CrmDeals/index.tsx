@@ -37,10 +37,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from "reselect";
 
 const CrmDeals = () => {
-  const dispatch : any = useDispatch();
+  const dispatch: any = useDispatch();
+
   const crmdealsData = createSelector(
-    (state : any) => state.Crm.deals,
-    (deals) => deals
+    (state: any) => state.Crm,
+    (deals) => deals.deals
   );
   // Inside your component
   const deals = useSelector(crmdealsData);
@@ -51,12 +52,12 @@ const CrmDeals = () => {
     }
   }, [dispatch, deals]);
 
-  const [sortBy, setsortBy] = useState("Owner");
+  const [sortBy, setsortBy] = useState<string>("Owner");
   const [modal, setModal] = useState<boolean>(false);
 
-  function handlesortBy(sortBy : any) {
+  const handlesortBy = (sortBy: any) => {
     setsortBy(sortBy);
-  }
+  };
 
   const sortbyname = [
     {
@@ -108,6 +109,7 @@ const CrmDeals = () => {
     }
   });
 
+
   document.title = "Deals | Velzon - React Admin & Dashboard Template";
 
   return (
@@ -136,11 +138,12 @@ const CrmDeals = () => {
                       <Select
                         className="mb-0"
                         value={sortBy}
-                        onChange={(sortBy : any) => {
+                        onChange={(sortBy: any) => {
                           handlesortBy(sortBy);
                         }}
                         options={sortbyname}
                         id="choices-single-default"
+                        defaultInputValue="Owner"
                       ></Select>
                     </div>
                     <button className="btn btn-success" onClick={toggle}>
@@ -150,7 +153,7 @@ const CrmDeals = () => {
                     <UncontrolledDropdown>
                       <DropdownToggle
                         href="#"
-                        className="btn btn-soft-info btn-icon fs-14 shadow"
+                        className="btn btn-soft-info btn-icon fs-14"
                         tag="button"
                       >
                         <i className="ri-settings-4-line"></i>
@@ -180,9 +183,9 @@ const CrmDeals = () => {
           </Card>
 
           <Row className="row-cols-xxl-5 row-cols-lg-3 row-cols-md-2 row-cols-1">
-            {deals.map((deal : any, key : any) => (
+            {deals.map((deals: any, key: any) => (
               <React.Fragment key={key}>
-                <LeadDiscover deal={deal} index={key} />
+                <LeadDiscover deal={deals} index={key} />
               </React.Fragment>
             ))}
           </Row>
@@ -198,7 +201,7 @@ const CrmDeals = () => {
           validation.handleSubmit();
           return false;
         }}>
-        <ModalBody>
+          <ModalBody>
             <div className="mb-3">
               <label htmlFor="deatType" className="form-label">Deals Type</label>
               <Input type="select" className="form-select" id="deatType"
@@ -338,20 +341,10 @@ const CrmDeals = () => {
             </div>
           </ModalBody>
           <ModalFooter>
-            <Button
-              type="button"
-              color="light"
-              id="close-modal"
-              onClick={() => {
-                setModal(false);
-              }}
-            >
+            <Button type="button" color="light" id="close-modal" onClick={() => { setModal(false); }}>
               Close
             </Button>
-            <Button
-              type="submit"
-              color="success"
-            >
+            <Button type="submit" color="success">
               <i className="ri-save-line align-bottom me-1"></i> Save
             </Button>
           </ModalFooter>

@@ -747,7 +747,7 @@ const UiModals = () => {
 
                 </ModalHeader>
                 <ModalBody className="text-center p-5">
-                <i className="bx bx-party display-4 text-success"></i>
+                    <i className="bx bx-party display-4 text-success"></i>
 
                     <div className="mt-4">
                         <h4 className="mb-3">You've made it!</h4>
@@ -804,7 +804,7 @@ const UiModals = () => {
 
                 </ModalHeader>
                 <ModalBody className="text-center p-5">
-                <i className="ri-chat-smile-2-line display-2 text-success"></i>
+                    <i className="ri-chat-smile-2-line display-2 text-success"></i>
                     <div className="mt-4 pt-3">
                         <h4 className="mb-3">Follow-Up Email</h4>
                         <p className="text-muted mb-4">Hide this modal and show the first with the button below Automatically Send your invitees a follow -Up email.</p>
@@ -1869,7 +1869,7 @@ const UiModals = () => {
                     Modal Heading
                 </ModalHeader>
                 <ModalBody className="text-center p-5">
-                <i className="ri-emotion-happy-line display-2 text-success"></i>
+                    <i className="ri-emotion-happy-line display-2 text-success"></i>
                     <div className="mt-4">
                         <h4 className="mb-3">Your event has been created.</h4>
                         <p className="text-muted mb-4"> The transfer was not successfully received by us. the email of the recipient wasn't correct.</p>
@@ -1888,7 +1888,7 @@ const UiModals = () => {
                     Modal Heading
                 </ModalHeader>
                 <ModalBody className="text-center p-5">
-                <i className="ri-emotion-happy-line display-2 text-success"></i>
+                    <i className="ri-emotion-happy-line display-2 text-success"></i>
                     <div className="mt-4">
                         <h4 className="mb-3">Your event has been created.</h4>
                         <p className="text-muted mb-4"> The transfer was not successfully received by us. the email of the recipient wasn't correct.</p>
@@ -1907,7 +1907,7 @@ const UiModals = () => {
                     Modal Heading
                 </ModalHeader>
                 <ModalBody className="text-center p-5">
-                <i className="ri-emotion-happy-line display-2 text-success"></i>
+                    <i className="ri-emotion-happy-line display-2 text-success"></i>
                     <div className="mt-4">
                         <h4 className="mb-3">Your event has been created.</h4>
                         <p className="text-muted mb-4">The transfer was not successfully received by us. the email of the recipient wasn't correct.</p>
@@ -1926,7 +1926,7 @@ const UiModals = () => {
                     Modal Heading
                 </ModalHeader>
                 <ModalBody className="text-center p-5">
-                <i className="ri-emotion-happy-line display-2 text-success"></i>
+                    <i className="ri-emotion-happy-line display-2 text-success"></i>
                     <div className="mt-4">
                         <h4 className="mb-3">Your event has been created.</h4>
                         <p className="text-muted mb-4"> The transfer was not successfully received by us. the email of the recipient wasn't correct.</p>
@@ -1949,7 +1949,7 @@ const UiModals = () => {
                         <button type="button" onClick={() => { tog_successMessage(); }} className="btn-close text-end" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="mt-2">
-                    <i className="ri-chat-smile-2-line display-2 text-success"></i>
+                        <i className="ri-chat-smile-2-line display-2 text-success"></i>
                         <h4 className="mb-3 mt-4">Your Transaction is Successfull !</h4>
                         <p className="text-muted fs-15 mb-4">Successful transaction is the status of operation whose result is the payment of the amount paid by the customer in favor of the merchant.</p>
                         <div className="hstack gap-2 justify-content-center">
